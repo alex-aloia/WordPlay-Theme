@@ -1,0 +1,13 @@
+plugins/*
+vendor/*
+mu-plugins/*
+
+# Include your project-specific ignores in this file
+# Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
+themes/roots/node_modules
+themes/roots/assets/vendor/*
+themes/roots/assets/css/main.css.map
+themes/roots/assets/css/*main*.css
+themes/roots/assets/js/*scripts*.js
+themes/roots/assets/js/vendor/modernizr.min.js
+themes/roots/assets/manifest.json

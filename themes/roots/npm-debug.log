@@ -1,0 +1,100 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '--save-dev',
+1 verbose cli   'gulp-modernizr' ]
+2 info using npm@2.0.2
+3 info using node@v0.10.32
+4 verbose node symlink /usr/local/bin/node
+5 verbose readDependencies using package.json deps
+6 verbose cache add [ 'gulp-modernizr', null ]
+7 verbose cache add spec="gulp-modernizr" args=["gulp-modernizr",null]
+8 verbose parsed spec { raw: 'gulp-modernizr',
+8 verbose parsed spec   scope: null,
+8 verbose parsed spec   name: 'gulp-modernizr',
+8 verbose parsed spec   rawSpec: '',
+8 verbose parsed spec   spec: '*',
+8 verbose parsed spec   type: 'range' }
+9 verbose parsed spec { raw: 'gulp-modernizr',
+9 verbose parsed spec   scope: null,
+9 verbose parsed spec   name: 'gulp-modernizr',
+9 verbose parsed spec   rawSpec: '',
+9 verbose parsed spec   spec: '*',
+9 verbose parsed spec   type: 'range' }
+10 verbose addNamed [ 'gulp-modernizr', '*' ]
+11 verbose addNamed [ null, '*' ]
+12 silly lockFile c16fed3a-gulp-modernizr gulp-modernizr@*
+13 verbose lock gulp-modernizr@* /Users/tripl3inf/.npm/c16fed3a-gulp-modernizr.lock
+14 silly addNameRange { name: 'gulp-modernizr', range: '*', hasData: false }
+15 verbose mapToRegistry name gulp-modernizr
+16 verbose mapToRegistry uri https://registry.npmjs.org/gulp-modernizr
+17 verbose request on initialization, where is /gulp-modernizr
+18 verbose request after pass 1, where is /gulp-modernizr
+19 verbose request url raw /gulp-modernizr
+20 verbose request resolving registry [ 'https://registry.npmjs.org/', './gulp-modernizr' ]
+21 verbose request after pass 2, where is https://registry.npmjs.org/gulp-modernizr
+22 verbose request no auth needed
+23 info attempt registry request try #1 at 02:35:16
+24 verbose request id a4fa7849987d65b3
+25 http request GET https://registry.npmjs.org/gulp-modernizr
+26 http 404 https://registry.npmjs.org/gulp-modernizr
+27 verbose headers { date: 'Thu, 09 Oct 2014 07:35:17 GMT',
+27 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+27 verbose headers   'content-type': 'application/json',
+27 verbose headers   'cache-control': 'max-age=0',
+27 verbose headers   'content-length': '52',
+27 verbose headers   'accept-ranges': 'bytes',
+27 verbose headers   via: '1.1 varnish',
+27 verbose headers   age: '0',
+27 verbose headers   'x-served-by': 'cache-ord1734-ORD',
+27 verbose headers   'x-cache': 'MISS',
+27 verbose headers   'x-cache-hits': '0',
+27 verbose headers   'x-timer': 'S1412840117.832128,VS0,VE65',
+27 verbose headers   'keep-alive': 'timeout=10, max=50',
+27 verbose headers   connection: 'Keep-Alive' }
+28 silly registry.get cb [ 404,
+28 silly registry.get   { date: 'Thu, 09 Oct 2014 07:35:17 GMT',
+28 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+28 silly registry.get     'content-type': 'application/json',
+28 silly registry.get     'cache-control': 'max-age=0',
+28 silly registry.get     'content-length': '52',
+28 silly registry.get     'accept-ranges': 'bytes',
+28 silly registry.get     via: '1.1 varnish',
+28 silly registry.get     age: '0',
+28 silly registry.get     'x-served-by': 'cache-ord1734-ORD',
+28 silly registry.get     'x-cache': 'MISS',
+28 silly registry.get     'x-cache-hits': '0',
+28 silly registry.get     'x-timer': 'S1412840117.832128,VS0,VE65',
+28 silly registry.get     'keep-alive': 'timeout=10, max=50',
+28 silly registry.get     connection: 'Keep-Alive' } ]
+29 silly lockFile c16fed3a-gulp-modernizr gulp-modernizr@*
+30 silly lockFile c16fed3a-gulp-modernizr gulp-modernizr@*
+31 verbose stack Error: 404 Not Found: gulp-modernizr
+31 verbose stack     at RegClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:258:14)
+31 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:197:65)
+31 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:237:22)
+31 verbose stack     at Request.emit (events.js:98:17)
+31 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1146:14)
+31 verbose stack     at Request.emit (events.js:117:20)
+31 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1097:12)
+31 verbose stack     at IncomingMessage.emit (events.js:117:20)
+31 verbose stack     at _stream_readable.js:943:16
+31 verbose stack     at process._tickCallback (node.js:419:13)
+32 verbose statusCode 404
+33 verbose pkgid gulp-modernizr
+34 verbose cwd /Users/tripl3inf/Vagrant/t3inf/srv/dev/t3inf/content/themes/roots
+35 error Darwin 13.4.0
+36 error argv "node" "/usr/local/bin/npm" "install" "--save-dev" "gulp-modernizr"
+37 error node v0.10.32
+38 error npm  v2.0.2
+39 error code E404
+40 error 404 Not Found: gulp-modernizr
+40 error 404
+40 error 404 'gulp-modernizr' is not in the npm registry.
+40 error 404 You should bug the author to publish it (or use the name yourself!)
+40 error 404 It was specified as a dependency of 'roots'
+40 error 404
+40 error 404 Note that you can also install from a
+40 error 404 tarball, folder, http url, or git url.
+41 verbose exit [ 1, true ]
