@@ -45,7 +45,6 @@ gulp.task('scripts_dev', function() {
         .pipe(sourcemaps.init())
         .pipe(concat('scripts.js'))
         .pipe(sourcemaps.write())
-        .pipe(modernizr('modernizer.min.js'))
         .pipe(gulp.dest('assets/js'))
 });
 
