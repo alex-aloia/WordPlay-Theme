@@ -34,7 +34,6 @@ gulp.task('browser-sync', function () {
 gulp.task('scripts', function() {
     gulp.src(['assets/js/_*.js', 'assets/js/plugins/*.js', 'assets/vendor/bootstrap/js/*.js' ])
         .pipe(concat('scripts.min.js'))
-        .pipe(modernizr('modernizer.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('assets/js'))
 });
