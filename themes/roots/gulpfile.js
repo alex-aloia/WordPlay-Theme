@@ -8,7 +8,7 @@ var browserSync = require('browser-sync');
 var reload      = browserSync.reload;
 var watch = require('gulp-watch');
 
-gulp.task('less', function () {
+gulp.task('less_dev', function () {
   gulp.src('assets/less/main.less')
     .pipe(sourcemaps.init())
     .pipe(less())
@@ -17,6 +17,13 @@ gulp.task('less', function () {
     .pipe(gulp.dest('./assets/css'));
 });
 
+gulp.task('less', function () {
+  gulp.src('assets/less/main.less')
+    .pipe(less())
+    .pipe(minifyCSS({keepBreaks:false, debug:false}))
+    .pipe(rename('main.min.css'))
+    .pipe(gulp.dest('./assets/css'));
+});
 
 gulp.task('browser-sync', function () {
    var files = [
