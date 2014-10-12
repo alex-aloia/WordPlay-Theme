@@ -21,7 +21,6 @@ gulp.task('less', function () {
   gulp.src('assets/less/main.less')
     .pipe(less())
     .pipe(minifyCSS({keepBreaks:false, debug:false}))
-    .pipe(rename('main.min.css'))
     .pipe(gulp.dest('./assets/css'));
 });
 
