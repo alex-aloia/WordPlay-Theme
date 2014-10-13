@@ -19,7 +19,7 @@ function roots_scripts() {
    * The build task in Grunt renames production assets with a hash
    * Read the asset names from assets-manifest.json
    */
-  if (WP_ENV === 'development') {
+  if (WP_ENV === 'dev') {
     $assets = array(
       'css'       => '/assets/css/main.css',
       'js'        => '/assets/js/scripts.js',
