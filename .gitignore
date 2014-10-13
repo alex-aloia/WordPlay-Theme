@@ -4,7 +4,8 @@ mu-plugins/*
 
 # Include your project-specific ignores in this file
 # Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
-themes/roots/node_modules
+**node_modules**
+*.log
 themes/roots/assets/vendor/*
 themes/roots/assets/css/main.css.map
 themes/roots/assets/css/*main*.css

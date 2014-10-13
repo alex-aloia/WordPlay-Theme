@@ -1,100 +1,126 @@
 0 info it worked if it ends with ok
-1 verbose cli [ 'node',
-1 verbose cli   '/usr/local/bin/npm',
-1 verbose cli   'install',
-1 verbose cli   '--save-dev',
-1 verbose cli   'gulp-modernizr' ]
-2 info using npm@2.0.2
-3 info using node@v0.10.32
-4 verbose node symlink /usr/local/bin/node
-5 verbose readDependencies using package.json deps
-6 verbose cache add [ 'gulp-modernizr', null ]
-7 verbose cache add spec="gulp-modernizr" args=["gulp-modernizr",null]
-8 verbose parsed spec { raw: 'gulp-modernizr',
-8 verbose parsed spec   scope: null,
-8 verbose parsed spec   name: 'gulp-modernizr',
-8 verbose parsed spec   rawSpec: '',
-8 verbose parsed spec   spec: '*',
-8 verbose parsed spec   type: 'range' }
-9 verbose parsed spec { raw: 'gulp-modernizr',
-9 verbose parsed spec   scope: null,
-9 verbose parsed spec   name: 'gulp-modernizr',
-9 verbose parsed spec   rawSpec: '',
-9 verbose parsed spec   spec: '*',
-9 verbose parsed spec   type: 'range' }
-10 verbose addNamed [ 'gulp-modernizr', '*' ]
-11 verbose addNamed [ null, '*' ]
-12 silly lockFile c16fed3a-gulp-modernizr gulp-modernizr@*
-13 verbose lock gulp-modernizr@* /Users/tripl3inf/.npm/c16fed3a-gulp-modernizr.lock
-14 silly addNameRange { name: 'gulp-modernizr', range: '*', hasData: false }
-15 verbose mapToRegistry name gulp-modernizr
-16 verbose mapToRegistry uri https://registry.npmjs.org/gulp-modernizr
-17 verbose request on initialization, where is /gulp-modernizr
-18 verbose request after pass 1, where is /gulp-modernizr
-19 verbose request url raw /gulp-modernizr
-20 verbose request resolving registry [ 'https://registry.npmjs.org/', './gulp-modernizr' ]
-21 verbose request after pass 2, where is https://registry.npmjs.org/gulp-modernizr
-22 verbose request no auth needed
-23 info attempt registry request try #1 at 02:35:16
-24 verbose request id a4fa7849987d65b3
-25 http request GET https://registry.npmjs.org/gulp-modernizr
-26 http 404 https://registry.npmjs.org/gulp-modernizr
-27 verbose headers { date: 'Thu, 09 Oct 2014 07:35:17 GMT',
-27 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-27 verbose headers   'content-type': 'application/json',
-27 verbose headers   'cache-control': 'max-age=0',
-27 verbose headers   'content-length': '52',
-27 verbose headers   'accept-ranges': 'bytes',
-27 verbose headers   via: '1.1 varnish',
-27 verbose headers   age: '0',
-27 verbose headers   'x-served-by': 'cache-ord1734-ORD',
-27 verbose headers   'x-cache': 'MISS',
-27 verbose headers   'x-cache-hits': '0',
-27 verbose headers   'x-timer': 'S1412840117.832128,VS0,VE65',
-27 verbose headers   'keep-alive': 'timeout=10, max=50',
-27 verbose headers   connection: 'Keep-Alive' }
-28 silly registry.get cb [ 404,
-28 silly registry.get   { date: 'Thu, 09 Oct 2014 07:35:17 GMT',
-28 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-28 silly registry.get     'content-type': 'application/json',
-28 silly registry.get     'cache-control': 'max-age=0',
-28 silly registry.get     'content-length': '52',
-28 silly registry.get     'accept-ranges': 'bytes',
-28 silly registry.get     via: '1.1 varnish',
-28 silly registry.get     age: '0',
-28 silly registry.get     'x-served-by': 'cache-ord1734-ORD',
-28 silly registry.get     'x-cache': 'MISS',
-28 silly registry.get     'x-cache-hits': '0',
-28 silly registry.get     'x-timer': 'S1412840117.832128,VS0,VE65',
-28 silly registry.get     'keep-alive': 'timeout=10, max=50',
-28 silly registry.get     connection: 'Keep-Alive' } ]
-29 silly lockFile c16fed3a-gulp-modernizr gulp-modernizr@*
-30 silly lockFile c16fed3a-gulp-modernizr gulp-modernizr@*
-31 verbose stack Error: 404 Not Found: gulp-modernizr
-31 verbose stack     at RegClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:258:14)
-31 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:197:65)
-31 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:237:22)
-31 verbose stack     at Request.emit (events.js:98:17)
-31 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1146:14)
-31 verbose stack     at Request.emit (events.js:117:20)
-31 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1097:12)
-31 verbose stack     at IncomingMessage.emit (events.js:117:20)
-31 verbose stack     at _stream_readable.js:943:16
-31 verbose stack     at process._tickCallback (node.js:419:13)
-32 verbose statusCode 404
-33 verbose pkgid gulp-modernizr
-34 verbose cwd /Users/tripl3inf/Vagrant/t3inf/srv/dev/t3inf/content/themes/roots
-35 error Darwin 13.4.0
-36 error argv "node" "/usr/local/bin/npm" "install" "--save-dev" "gulp-modernizr"
-37 error node v0.10.32
-38 error npm  v2.0.2
-39 error code E404
-40 error 404 Not Found: gulp-modernizr
-40 error 404
-40 error 404 'gulp-modernizr' is not in the npm registry.
-40 error 404 You should bug the author to publish it (or use the name yourself!)
-40 error 404 It was specified as a dependency of 'roots'
-40 error 404
-40 error 404 Note that you can also install from a
-40 error 404 tarball, folder, http url, or git url.
-41 verbose exit [ 1, true ]
+1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'install' ]
+2 info using npm@1.3.10
+3 info using node@v0.10.25
+4 verbose readDependencies using package.json deps
+5 verbose install where, deps [ '/srv/dev/t3inf/repo/20141013003927/themes/roots', [] ]
+6 info preinstall WordPlay-Theme@
+7 warn package.json browser-sync@1.5.7 No README data
+8 warn package.json gulp-concat@2.4.1 No README data
+9 warn package.json gulp-csso@0.2.9 No README data
+10 warn package.json gulp-less@1.3.6 No README data
+11 warn package.json gulp-minify-css@0.3.10 No README data
+12 warn package.json gulp-rename@1.2.0 No README data
+13 warn package.json gulp-sourcemaps@1.2.4 No README data
+14 warn package.json gulp-uglify@1.0.1 No README data
+15 warn package.json gulp-watch@1.1.0 No README data
+16 verbose readDependencies using package.json deps
+17 silly resolved []
+18 info build /srv/dev/t3inf/repo/20141013003927/themes/roots
+19 verbose linkStuff [ false,
+19 verbose linkStuff   false,
+19 verbose linkStuff   false,
+19 verbose linkStuff   '/srv/dev/t3inf/repo/20141013003927/themes' ]
+20 info linkStuff WordPlay-Theme@
+21 verbose linkBins WordPlay-Theme@
+22 verbose linkMans WordPlay-Theme@
+23 verbose rebuildBundles WordPlay-Theme@
+24 verbose rebuildBundles [ '.bin',
+24 verbose rebuildBundles   'bower',
+24 verbose rebuildBundles   'browser-sync',
+24 verbose rebuildBundles   'gulp',
+24 verbose rebuildBundles   'gulp-concat',
+24 verbose rebuildBundles   'gulp-csso',
+24 verbose rebuildBundles   'gulp-less',
+24 verbose rebuildBundles   'gulp-minify-css',
+24 verbose rebuildBundles   'gulp-rename',
+24 verbose rebuildBundles   'gulp-sourcemaps',
+24 verbose rebuildBundles   'gulp-uglify',
+24 verbose rebuildBundles   'gulp-watch' ]
+25 verbose rebuild bundle /srv/dev/t3inf/repo/20141013003927/themes/roots/node_modules/bower
+26 info build /srv/dev/t3inf/repo/20141013003927/themes/roots/node_modules/bower
+27 info preinstall bower@1.3.12
+28 verbose linkStuff [ false,
+28 verbose linkStuff   false,
+28 verbose linkStuff   false,
+28 verbose linkStuff   '/srv/dev/t3inf/repo/20141013003927/themes/roots/node_modules' ]
+29 info linkStuff bower@1.3.12
+30 warn prefer global bower@1.3.12 should be installed with -g
+31 verbose linkBins bower@1.3.12
+32 verbose link bins [ { bower: 'bin/bower' },
+32 verbose link bins   '/srv/dev/t3inf/repo/20141013003927/themes/roots/node_modules/.bin',
+32 verbose link bins   false ]
+33 verbose linkMans bower@1.3.12
+34 verbose rebuildBundles bower@1.3.12
+35 verbose rebuildBundles [ '.bin',
+35 verbose rebuildBundles   'abbrev',
+35 verbose rebuildBundles   'archy',
+35 verbose rebuildBundles   'bower-config',
+35 verbose rebuildBundles   'bower-endpoint-parser',
+35 verbose rebuildBundles   'bower-json',
+35 verbose rebuildBundles   'bower-logger',
+35 verbose rebuildBundles   'bower-registry-client',
+35 verbose rebuildBundles   'cardinal',
+35 verbose rebuildBundles   'chalk',
+35 verbose rebuildBundles   'chmodr',
+35 verbose rebuildBundles   'decompress-zip',
+35 verbose rebuildBundles   'fstream',
+35 verbose rebuildBundles   'fstream-ignore',
+35 verbose rebuildBundles   'glob',
+35 verbose rebuildBundles   'graceful-fs',
+35 verbose rebuildBundles   'handlebars',
+35 verbose rebuildBundles   'inquirer',
+35 verbose rebuildBundles   'insight',
+35 verbose rebuildBundles   'is-root',
+35 verbose rebuildBundles   'junk',
+35 verbose rebuildBundles   'lockfile',
+35 verbose rebuildBundles   'lru-cache',
+35 verbose rebuildBundles   'mkdirp',
+35 verbose rebuildBundles   'mout',
+35 verbose rebuildBundles   'nopt',
+35 verbose rebuildBundles   'opn',
+35 verbose rebuildBundles   'osenv',
+35 verbose rebuildBundles   'p-throttler',
+35 verbose rebuildBundles   'promptly',
+35 verbose rebuildBundles   'q',
+35 verbose rebuildBundles   'request',
+35 verbose rebuildBundles   'request-progress',
+35 verbose rebuildBundles   'retry',
+35 verbose rebuildBundles   'rimraf',
+35 verbose rebuildBundles   'semver',
+35 verbose rebuildBundles   'shell-quote',
+35 verbose rebuildBundles   'stringify-object',
+35 verbose rebuildBundles   'tar-fs',
+35 verbose rebuildBundles   'tmp',
+35 verbose rebuildBundles   'update-notifier',
+35 verbose rebuildBundles   'which' ]
+36 info install bower@1.3.12
+37 info postinstall bower@1.3.12
+38 verbose rebuild bundle /srv/dev/t3inf/repo/20141013003927/themes/roots/node_modules/browser-sync
+39 info build /srv/dev/t3inf/repo/20141013003927/themes/roots/node_modules/browser-sync
+40 info preinstall browser-sync@1.5.7
+41 verbose linkStuff [ false,
+41 verbose linkStuff   false,
+41 verbose linkStuff   false,
+41 verbose linkStuff   '/srv/dev/t3inf/repo/20141013003927/themes/roots/node_modules' ]
+42 info linkStuff browser-sync@1.5.7
+43 verbose linkBins browser-sync@1.5.7
+44 verbose link bins [ { 'browser-sync': './bin/browser-sync' },
+44 verbose link bins   '/srv/dev/t3inf/repo/20141013003927/themes/roots/node_modules/.bin',
+44 verbose link bins   false ]
+45 verbose linkMans browser-sync@1.5.7
+46 verbose rebuildBundles browser-sync@1.5.7
+47 error Error: ENOENT, chmod '/srv/dev/t3inf/repo/20141013003927/themes/roots/node_modules/browser-sync/bin/browser-sync'
+48 error If you need help, you may report this log at:
+48 error     <http://github.com/isaacs/npm/issues>
+48 error or email it to:
+48 error     <npm-@googlegroups.com>
+49 error System Linux 3.14.4-031404-generic
+50 error command "/usr/bin/nodejs" "/usr/bin/npm" "install"
+51 error cwd /srv/dev/t3inf/repo/20141013003927/themes/roots
+52 error node -v v0.10.25
+53 error npm -v 1.3.10
+54 error path /srv/dev/t3inf/repo/20141013003927/themes/roots/node_modules/browser-sync/bin/browser-sync
+55 error code ENOENT
+56 error errno 34
+57 verbose exit [ 34, true ]
