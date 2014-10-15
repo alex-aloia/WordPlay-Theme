@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "bower-files": "^2.0.0",
-    "browser-sync": "^1.5.8"
+    "browser-sync": "^1.5.8",
+    "gulp-jshint": "^1.8.5"
   }
 }

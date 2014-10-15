@@ -2,6 +2,7 @@ var theme_name = 'roots';
 
 var gulp = require('gulp');
 var mainBowerFiles = require('main-bower-files');
+var jshint = require('gulp-jshint');
 var watch = require('gulp-watch');
 var less = require('gulp-less');
 var minifyCSS = require('gulp-minify-css');
@@ -86,16 +87,24 @@ gulp.task('dev_js-head', function() {
 
 gulp.task('dev_js-foot', function() {
     gulp.src(js_foot)
-//        .pipe(sourcemaps.init())
+        .pipe(sourcemaps.init())
         .pipe(concat('js-foot.js'))
-//        .pipe(sourcemaps.write())
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('themes/' + theme_name + '/assets/js'))
+});
+
+
+gulp.task('jshint', function () {
+    return gulp.src(['src/js/**/*.js'])
+        .pipe(jshint())
+        .pipe(jshint.reporter('default'));
 });
 
 
 gulp.task('bower', function() {
     return gulp.src(mainBowerFiles(/* options */), { base: 'vendor/bower' })
         .pipe(concat('main.min.js'))
+        .pipe(jshint())
         .pipe(gulp.dest('themes/' + theme_name + '/assets/js'))
 });
 
@@ -106,13 +115,15 @@ gulp.task('bower', function() {
 // Dev
 gulp.task('watch', ['browser-sync'], function() {
     // Watch PHP files
-    //gulp.watch('./themes' + theme_name + '/**/*.php', reload);
+    gulp.watch('./themes' + theme_name + '/**/*.php', reload);
     // Watch less files
     gulp.watch('src/less/**/*.less', ['less_dev', browserSync.reload]);
+    // Watch scripts
+    gulp.watch('src/js/**/*.js', ['dev_js-foot', browserSync.reload]);
 });
 
 // Default task to be run with `gulp`
-gulp.task('dev', ['less_dev', 'dev_js-head', 'dev_js-foot', 'watch', 'browser-sync']);
+gulp.task('dev', ['less_dev', 'dev_js-head', 'dev_js-foot', 'jshint', 'watch', 'browser-sync']);
 
 // Build
 gulp.task('default', ['less','scripts']);
