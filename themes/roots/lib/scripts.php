@@ -22,8 +22,9 @@ function roots_scripts() {
   if (WP_ENV === 'dev') {
     $assets = array(
       'css'       => '/assets/css/main.css',
-      'js'        => '/assets/js/scripts.js',
-      #'modernizr' => '/assets/vendor/modernizr/modernizr.js',
+      'js-head'        => '/assets/js/js-head.js',
+      'js-foot'        => '/assets/js/js-foot.js',
+    // 'modernizr' => '/assets/vendor/modernizr/modernizr.js',
       'jquery'    => '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js'
     );
   } else {
@@ -31,8 +32,9 @@ function roots_scripts() {
     $assets     = json_decode($get_assets, true);
     $assets     = array(
       'css'       => '/assets/css/main.min.css' . $assets['assets/css/main.min.css'],
-      'js'        => '/assets/js/scripts.min.js' . $assets['assets/js/scripts.min.js'],
-    #  'modernizr' => '/assets/js/vendor/modernizr.min.js',
+      'js-head'        => '/assets/js/js-head.min.js' . $assets['assets/js/js-head.min.js'],
+      'js-foot'        => '/assets/js/js-foot.min.js' . $assets['assets/js/js-foot.min.js'],
+    //  'modernizr' => '/assets/js/vendor/modernizr.min.js',
       'jquery'    => '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'
     );
   }
@@ -54,9 +56,13 @@ function roots_scripts() {
     wp_enqueue_script('comment-reply');
   }
 
-  #wp_enqueue_script('modernizr', get_template_directory_uri() . $assets['modernizr'], array(), null, false);
+  //wp_enqueue_script('modernizr', get_template_directory_uri() . $assets['modernizr'], array(), null, false);
   wp_enqueue_script('jquery');
-  wp_enqueue_script('roots_js', get_template_directory_uri() . $assets['js'], array(), null, true);
+
+  // scripts in header
+  wp_enqueue_script('js-head', get_template_directory_uri() . $assets['js-head'], array(), null, false); // false indicates scripts in header
+  // scripts in footer
+  wp_enqueue_script('js-foot', get_template_directory_uri() . $assets['js-foot'], array(), null, true); // true indicates scripts in footer
 }
 add_action('wp_enqueue_scripts', 'roots_scripts', 100);
 
