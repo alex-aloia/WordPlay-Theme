@@ -6,9 +6,6 @@
     "type": "git",
     "url": "git://github.com/tripl3inf/WordPlay-Theme.git"
   },
-  "scripts": { 
-    "preinstall": "lockdown" 
-  },
   "dependencies": {
     "bower": "^1.3.12",
     "gulp": "^3.8.8",
