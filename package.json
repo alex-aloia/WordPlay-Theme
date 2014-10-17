@@ -16,12 +16,17 @@
     "gulp-rename": "^1.2.0",
     "gulp-sourcemaps": "^1.2.4",
     "gulp-uglify": "^1.0.1",
-    "gulp-watch": "^1.1.0",
     "main-bower-files": "^2.1.0"
   },
   "devDependencies": {
     "bower-files": "^2.0.0",
     "browser-sync": "^1.5.8",
+    "lockdown": "0.0.6"
+  },
+  "devDependencies": {
+    "browser-sync": "^1.5.8",
+    "gulp-plumber": "^0.6.6",
+    "gulp-watch": "^1.1.0"
     "gulp-jshint": "^1.8.5"
   }
 }
