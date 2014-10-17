@@ -23,8 +23,5 @@
     "browser-sync": "^1.5.8",
     "gulp-plumber": "^0.6.6",
     "gulp-watch": "^1.1.0"
-  },
-  "scripts": {
-    "preinstall": "lockdown"
   }
 }
