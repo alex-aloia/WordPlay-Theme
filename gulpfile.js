@@ -1,7 +1,7 @@
 var theme_name = 'roots';
 
 var gulp = require('gulp');
-var mainBowerFiles = require('main-bower-files');
+//var mainBowerFiles = require('main-bower-files');
 var jshint = require('gulp-jshint');
 var watch = require('gulp-watch');
 var less = require('gulp-less');
