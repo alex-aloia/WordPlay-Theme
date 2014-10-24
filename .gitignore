@@ -7,8 +7,7 @@ mu-plugins/*
 **node_modules**
 *.log
 themes/roots/assets/vendor/*
-themes/roots/assets/css/main.css.map
-themes/roots/assets/css/*main*.css
-themes/roots/assets/js/*scripts*.js
+themes/roots/assets/css/*
+themes/roots/assets/js/*
 themes/roots/assets/js/vendor/modernizr.min.js
 themes/roots/assets/manifest.json

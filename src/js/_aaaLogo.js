@@ -64,7 +64,7 @@ $(document).ready(function() {
             dispatch.on("start", show() );
 
         }
-       //aaaLogo();
+       aaaLogo();
 
 
         var t3i_logo = d3.select("#t3i_logo")
