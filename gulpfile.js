@@ -4,6 +4,7 @@ var gulp = require('gulp');
 //var mainBowerFiles = require('main-bower-files');
 var jshint = require('gulp-jshint');
 var watch = require('gulp-watch');
+var copy = require('gulp-copy');
 var less = require('gulp-less');
 var minifyCSS = require('gulp-minify-css');
 var sourcemaps = require('gulp-sourcemaps');
@@ -19,6 +20,16 @@ gulp.task('browser-sync', function() {
         proxy: "dev.t3inf.com"
     });
 });
+
+/*
+ * copy src images
+ */
+gulp.task('img-copy', function() {
+  gulp.src('src/svg/*.svg')
+ .pipe(gulp.dest('./themes/' + theme_name + '/assets/svg'));
+});
+
+
 
 /*
  * Less / CSS
@@ -47,12 +58,15 @@ gulp.task('less', function () {
  */
 
 var js_head = [
-    'vendor/bower/greensock/src/uncompressed/TweenMax.js',
-    'vendor/bower/svg.js/dist/svg.js'
+    //'vendor/bower/svg.js/dist/svg.js',
+    //'vendor/bower/svg.parser.js/svg.parser.js',
+    //'vendor/bower/svg.import.js/svg.import.js'
 ];
 
 
 var js_foot = [
+    'vendor/bower/greensock/src/uncompressed/TweenMax.js',
+    'vendor/bower/d3/d3.js',
     'vendor/bower/bootstrap/js/transition.js',
     'vendor/bower/bootstrap/js/alert.js',
     'vendor/bower/bootstrap/js/button.js',
@@ -122,15 +136,17 @@ gulp.task('bower', function() {
 // Dev
 gulp.task('watch', ['browser-sync'], function() {
     // Watch PHP files
-    gulp.watch('./themes' + theme_name + '/**/*.php', reload);
+    gulp.watch('themes/' + theme_name + '/**/*.php', browserSync.reload);
     // Watch less files
     gulp.watch('src/less/**/*.less', ['less_dev', browserSync.reload]);
     // Watch scripts
     gulp.watch('src/js/**/*.js', ['dev_js-foot', browserSync.reload]);
+    // Watch imgs
+    gulp.watch('src/svg/**/*', ['img-copy', browserSync.reload]);
 });
 
 // Default task to be run with `gulp`
-gulp.task('dev', ['less_dev', 'dev_js-head', 'dev_js-foot', 'jshint', 'watch', 'browser-sync']);
+gulp.task('dev', ['img-copy','less_dev', 'dev_js-foot', 'jshint', 'watch', 'browser-sync']);
 
 // Build
 gulp.task('default', ['less','js-head', 'js-foot']);
