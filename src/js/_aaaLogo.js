@@ -17,15 +17,26 @@ var animPath = function (path, time, delay) {
 };
 
 $(document).ready(function() {
-    d3.xml("content/themes/roots/assets/svg/aaaLogo-for_SVG.svg", "image/svg+xml", function (xml) {
-        var importedNode = document.importNode(xml.documentElement, true);
-        document.body.appendChild(importedNode);
-        d3.select("#aaaLogo_wrap").node().appendChild(importedNode);
+    //d3.xml("content/themes/roots/assets/svg/aaaLogo-for_SVG.svg", "image/svg+xml", function (xml) {
+    //    var importedNode = document.importNode(xml.documentElement, true);
+    //    document.body.appendChild(importedNode);
+    //    d3.select("#aaaLogo_wrap").node().appendChild(importedNode);
 
-        function aaaLogo() {
-            var logo = d3.select("#logo_alex");
+//        var loadSVG = function(file, container){
+//            d3.xml( file, "image/svg+xml", function (xml) {
+//                var importedNode = document.importNode(xml.documentElement, true);
+//                document.body.appendChild(importedNode);
+//                d3.select(container).node().appendChild(importedNode);
+//            });
+//        };
 
-            var logoTL = new TimelineLite({paused:true});
+//        loadSVG("content/themes/roots/assets/svg/aaaLogo-for_SVG.svg", "#aaaLogo_wrap");
+
+
+        function animate_aaaLogo() {
+            var logo = d3.select("#logo_alex")
+                logoTL = new TimelineLite({paused:true});
+//            .attr("transform", "translate(750, 20) scale(.5)")
 
             logoTL.from(a1_1, 0.7, {x: '-=80', y: '+=140', autoAlpha:0, ease:Power2.easeIn})
             .from(a1_2, 0.4, {x: '-=80', y: '-=140', ease:Power1.easeInOut}, '-=0.05')
@@ -54,33 +65,19 @@ $(document).ready(function() {
             .from(a3_1_1, 0.4, {x: '+=90', autoAlpha:0, ease:Power2.easeInOut}, 'a3-=0.6')
             .from(a3_2_1, 0.2, {x: '-=70', y: '+=119'})
             .from(a3_2_2, 0.6, {x: '-70', y: '-=119', ease:Power4.easeOut});
-
             var dispatch = d3.dispatch("start");
             function show() {
                 logo.style('display','block');
                 logoTL.play();
-
             }
             dispatch.on("start", show() );
 
         }
-       aaaLogo();
+
+    animate_aaaLogo();
 
 
-        var t3i_logo = d3.select("#t3i_logo")
-            .attr("transform", "translate(100,100)")
-            //.attr("viewBox", "0 0 800 800")
-            .attr("width", "100%")
-            .attr("height", "100%");
-            //.attr("preserveAspectRatio", "none");
-
-
-
-
-
-
-
-    });
+//    });
 });
 
 
