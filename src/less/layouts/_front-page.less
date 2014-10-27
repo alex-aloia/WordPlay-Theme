@@ -14,7 +14,6 @@ html, body {
 //  radial-gradient(hsla(0, 0%, 7%, 0.7), hsla(0, 0%, 7%, 0)) 50px 50px,
 //  linear-gradient(45deg, hsla(0, 0%, 0%, 0) 49%, hsla(0, 0%, 0%, 1) 50%, hsla(0, 0%, 0%, 0) 70%) 0 0,
 //  linear-gradient(-45deg, hsla(0, 0%, 0%, 0) 49%, hsla(0, 0%, 0%, 1) 50%, hsla(0, 0%, 0%, 0) 70%) 0 0;
-  background-color: #000;
 //  background-size: 100px 100px;
 
 
@@ -25,29 +24,17 @@ html, body {
 
 #t3iLogo {
   display: block;
-  width: 90%;
-  height: 90%;
-  left: 5%;
-  top: 5%;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
   text-align: center;
   position: fixed;
   margin: auto;
-  z-index: 0;
+  z-index: -9;
 }
 
 
-#aaaLogo_wrap {
-  position: absolute;
-  right: 25px;
-  top: 18px;
-
-  p {
-    color: #666;
-    font-size: 18px;
-    float: left;
-    margin: 0;
-  }
-}
 
 
 
@@ -55,7 +42,7 @@ html, body {
 
 .footPanel {
   width: 100%;
-  height: 100px;
+  height: 60px;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -74,14 +61,14 @@ html, body {
     .leftPanel {
       flex-basis: 320px;
       height: 100%;
-      //background: blue;
+      background: url(../svg/footer_piece_left.svg) no-repeat;
     }
 
     .centerPanel {
       flex: 1;
       height: 7px;
       overflow: hidden;
-      //background: orange;
+      background: url(../svg/footer_piece_center.svg) no-repeat;
       bottom: 0;
       flex-wrap: wrap-reverse;
       align-self: flex-end;
@@ -90,26 +77,37 @@ html, body {
     .rightPanel {
       flex-basis: 320px;
       height: 100%;
-      //background: red;
+      background: url(../svg/footer_piece_right.svg) no-repeat;
       right: 0;
-      //    position: absolute;
     }
   }
 
   .content {
     width: 100%;
-    background: #000;
-    height: 100px;
-//      background:
-//  linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
-//  linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
-//  linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
-//  linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
-//  linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
-//  linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
-//  background-color: #111;
-//  background-size: 20px 20px;
-    
+    background: #000 url(../svg/footer_piece_content.svg) repeat-x;
+    height: 60px;
+
+    #aaaLogo_wrap {
+      position: absolute;
+      right: 10px;
+      top: 6px;
+      width: 300px;
+
+      #aaaLogo_sml {
+        width: 225px;
+      }
+
+      p {
+        color: #555;
+        font-size: 13px;
+        float: left;
+        margin: 12px 2px 0 0;
+        font-style: italic;
+        font-weight: bold;
+        font-family: 'Source Sans Pro', sans-serif;
+      }
+    }
+
     bg {
       position: fixed;
     }

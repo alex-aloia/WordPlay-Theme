@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  xml:space="preserve" width="320" height="14">
+  <defs>
+    <filter id="shadow2-outer" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="2"/>
+      <feOffset dx="0.1" dy="-0.1" result="blur"/>
+      <feFlood flood-color="rgb(255, 255, 255)" flood-opacity="1"/>
+      <feComposite in2="blur" operator="in" result="colorShadow"/>
+      <feComposite in="SourceGraphic" in2="colorShadow" operator="over"/>
+    </filter>
+  </defs>
+  <path id="bezier37" fill="rgb(0, 0, 0)"
+        d="M 320,15 L 0,15 0,13 20,13 25,7 228,7 235,1 320,1 320,15 Z M 320,15"/>
+  <path id="bezier" stroke="rgb(85, 85, 85)" stroke-width="1" stroke-miterlimit="10" fill="none"
+        filter="url(#shadow2-outer)" d="M 0,12.15 L 19.95,12 24.95,7 227.95,7 234.95,1 319.95,1"/>
+</svg>
+
