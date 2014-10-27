@@ -58,13 +58,31 @@ html, body {
     position: absolute;
     top: -10px;
 
-    .leftPanel {
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
       flex-basis: 320px;
-      height: 100%;
-      background: url(../svg/footer_piece_left.svg) no-repeat;
+      height: 20px;
+      background: #000 url(../svg/footer_piece_left.svg) no-repeat;
+      width: 320px;
+      background-position: 0 1px;
     }
 
-    .centerPanel {
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      right: 0;
+      flex-basis: 320px;
+      height: 20px;
+      background: #000 url(../svg/footer_piece_right.svg) no-repeat;
+      width: 320px;
+      background-position: 0 1px;
+    }
+
+    .centerSection {
       flex: 1;
       height: 7px;
       overflow: hidden;
@@ -74,12 +92,6 @@ html, body {
       align-self: flex-end;
     }
 
-    .rightPanel {
-      flex-basis: 320px;
-      height: 100%;
-      background: url(../svg/footer_piece_right.svg) no-repeat;
-      right: 0;
-    }
   }
 
   .content {

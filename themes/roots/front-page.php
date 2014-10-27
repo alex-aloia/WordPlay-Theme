@@ -192,9 +192,7 @@
 
 <div class="footPanel">
 <div class="topSection">
-  <div class="leftPanel"></div>
-  <div class="centerPanel"></div>
-  <div class="rightPanel"></div>
+  <div class="centerSection"></div>
 </div>
 
 <div class="content">
