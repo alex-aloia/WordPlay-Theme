@@ -24,5 +24,9 @@
     "gulp-watch": "^1.1.0",
     "lockdown": "0.0.6"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "gulp-plumber": "https://registry.npmjs.org/gulp-plumber/-/gulp-plumber-0.6.6.tgz",
+    "gulp-svg-symbols": "^0.3.1",
+    "gulp-svgo": "^0.1.1"
+  }
 }

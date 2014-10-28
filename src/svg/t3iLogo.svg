@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="267" height="154"  xml:space="preserve">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+ viewbox="0 0 267 154" width="267" height="154"  xml:space="preserve">
     <g id="t3i_logo">
         <path id="bezier" stroke="rgb(9, 30, 29)" stroke-width="3" stroke-linecap="round" stroke-linejoin="bevel" stroke-miterlimit="10" fill="none" d="M 175.6,50.44 L 151.78,85.12 128.94,118.2 C 128.94,118.2 128.19,123.18 126.64,129.3 125.1,135.34 122.79,142.48 119.39,151.22 119.34,151.34 119.29,151.47 119.24,151.6 L 170.65,77.2 C 168.75,65 171.9,53.21 181.48,42.85 199.52,23.36 229.94,22.17 249.44,40.21 268.93,58.24 270.12,88.67 252.08,108.16 252.08,108.16 231.67,135.74 194.56,122.54 147.55,104.4 148.77,57.62 157.4,34.48 L 115.82,93.8" />
         <path id="bezier2" stroke="rgb(9, 30, 29)" stroke-width="3" stroke-linecap="round" stroke-linejoin="bevel" stroke-miterlimit="10" fill="none" d="M 92.4,103.06 L 116.23,68.38 139.06,35.3 C 139.06,35.3 139.81,30.32 141.37,24.2 142.9,18.16 145.21,11.02 148.61,2.28 148.66,2.16 148.71,2.03 148.76,1.91 L 97.35,76.31 C 99.25,88.5 96.1,100.29 86.52,110.65 68.48,130.14 38.06,131.33 18.57,113.29 -0.93,95.26 -2.12,64.83 15.92,45.34 15.92,45.34 36.33,17.76 73.44,30.96 120.46,49.1 119.23,95.89 110.6,119.03 L 152.18,59.71" />
