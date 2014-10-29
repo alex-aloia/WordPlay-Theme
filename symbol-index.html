@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="cache-control" content="max-age=0"/>
+    <meta http-equiv="cache-control" content="no-cache"/>
+    <meta http-equiv="expires" content="0"/>
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT"/>
+    <meta http-equiv="pragma" content="no-cache"/>
+    <title>Icon kit preview | gulp-svg-sprites</title>
+    <link href="css/sprite.css" rel="stylesheet" type="text/css" media="all"/>
+    <style type="text/css">@CHARSET "UTF-8";
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        padding: 0;
+        margin: 0;
+        color: #666;
+        background: #fafafa;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1em;
+        line-height: 1.4
+    }
+
+    header {
+        display: block;
+        padding: 3em 3em 2em 3em;
+        background-color: #fff
+    }
+
+    header p {
+        margin: 0 0 0 0;
+    }
+
+    nav {
+        font-size: .7em;
+        display: block;
+        width: 100%;
+        margin: 0 0 2em 0
+    }
+
+    nav a {
+        display: inline-block;
+        text-decoration: none;
+        margin-left: 2em;
+        color: #0f7595;
+        white-space: nowrap
+    }
+
+    nav a:hover {
+        text-decoration: underline
+    }
+
+    nav a.current {
+        font-weight: bold;
+        text-decoration: underline;
+        color: #666
+    }
+
+    section {
+        border-top: 1px solid #eee;
+        padding: 2em 3em 0 3em
+    }
+
+    ul {
+        margin: 0;
+        padding: 0
+    }
+
+    .icon-boxes li {
+        display: inline-block;
+        background-color: #fff;
+        position: relative;
+        margin: 0 2em 2em 0;
+        vertical-align: top;
+        border: 1px solid #ccc;
+        padding: 1em 1em 1em 1em;
+        cursor: default
+    }
+
+    .icon-box {
+        margin: 0;
+        width: 144px;
+        height: 144px;
+        position: relative;
+        background: #ccc url(data:image/gif;base64,R0lGODlhDAAMAIAAAMzMzP///yH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjEgNjQuMTQwOTQ5LCAyMDEwLzEyLzA3LTEwOjU3OjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozQjk4OTI0MUY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozQjk4OTI0MkY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjNCOTg5MjNGRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjNCOTg5MjQwRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAAAwADAAAAhaEH6mHmmzcgzJAUG/NVGrfOZ8YLlABADs=) top left repeat;
+        border: 1px solid #ccc;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center
+    }
+    .icon-box.inverted {
+        background: black;
+    }
+
+    .icon {
+        display: inline;
+        display: inline-block
+    }
+
+    .snippet-popover {
+        position: absolute;
+        display: none;
+        opacity: 0;
+        bottom: 0;
+        left: 0;
+        background: white;
+        border: 1px solid #ccc;
+        padding: 16px;
+        z-index: 1;
+        transition: all .3s;
+    }
+    .snippet-popover.active {
+        display: block;
+        opacity: 1;
+    }
+
+    pre {
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        margin: 0;
+        padding: 5px 0;
+        font-size: 1em;
+        font-weight: normal;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    h4 {
+        margin: 0;
+    }
+
+    footer {
+        display: block;
+        margin: 0;
+        padding: 0 3em 3em 3em
+    }
+
+    footer p {
+        margin: 0;
+        font-size: .7em
+    }
+
+    footer a {
+        color: #0f7595;
+        margin-left: 0
+    }
+    </style>
+
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0" height="0" style="position:absolute">
+
+    <symbol id="aaaLogo-for_SVG" viewBox="0 0 775 170">
+        <g><g><g><mask id="aab"><path fill="#fff" d="M647 123s-7.83 11.78-11.4 17.95h90.3c-3.9-6.4-7.2-12-11-18.2L647 123zm0 0"/></mask><mask id="aaa"><path fill="#fff" d="M773.4 141.05c-22.8-39.9-46-79.7-68.6-119.1-23.1 39.8-46.3 79.5-69.2 119l22.4.05 13.79-24.09c10.77-18.57 21.14-36.4 32.01-55.06 15.6 27.3 30.6 53.3 45.5 79.2h24.1zm0 0"/></mask><g mask="url(#aaa)" fill="#535353"><path d="M704 21s-45.6 80.45-68.5 119.95l32.8-18.2C680.3 102.05 716 42 716 42l-12-21zm0 0"/><path d="M773.4 141.05c-22.8-39.9-68.6-119.1-68.6-119.1l-1 39.9s30.6 53.3 45.5 79.2h24.1zm0 0"/></g><path fill="#535353" d="M635 141l91.9-.05c-3.9-6.4-7.2-12-11-18.2l-46.71.24L646 123l-11 18zm0 0" mask="url(#aab)"/></g><g><mask id="aac"><path fill="#fff" d="M494.6 50.4c23 39 45.5 78.3 68.5 117.9 22.7-39.7 44.8-78.9 67.3-117.9H494.6zm33.4 19h69.3c-11.8 21-21.95 39.94-34.05 61.24-12.2-21.2-23.35-40.24-35.25-61.24zm0 0"/></mask><g mask="url(#aac)" fill="#535353"><path d="M563.1 169.3c-3.56-6.13-7.11-13.26-10.65-19.37l10.75-19.39.05.1c12.1-21.3 22.25-40.24 34.05-61.24h-.2l10.53-19h23.77c-22.5 39-45.6 79.2-68.3 118.9zm0 0"/><path d="M620 69H505c-3.73-6.38-7.25-12.64-11-19h138c-3.67 6.36-12 19-12 19zm0 0"/><path d="M529.53 72.38c11.48 20.22 22.3 38.73 34.12 59.26l.11-.2 10.76 18.55c-3.66 6.43-7.33 12.86-11.02 19.31-23-39.6-45.5-78.9-68.5-117.9h22.36l12.17 20.98zm0 0"/></g></g><g><mask id="aae"><path fill="#fff" d="M672.4 47.8h-26.2c-17.6 31-35 61.9-52.7 93.2h26.2c17.3-30.7 34.8-61.6 52.7-93.2zm0 0"/></mask><mask id="aad"><path fill="#fff" d="M687.1 21.6h-26.2c-1.9 3.7-4.7 9-6.8 13H680c1.8-3.3 4.7-8.7 7.1-13zm0 0"/></mask><path fill="#535353" d="M687.1 21.6h-26.2c-1.9 3.7-4.7 9-6.8 13H680c1.8-3.3 4.7-8.7 7.1-13zm0 0" mask="url(#aad)"/><path fill="#535353" d="M672.4 47.8h-26.2c-17.6 31-35 61.9-52.7 93.2h26.2c17.3-30.7 34.8-61.6 52.7-93.2zm0 0" mask="url(#aae)"/></g><g><mask id="aaf"><path fill="#fff" d="M532.1 140.95c-22.9-40-45.3-79.2-67.5-118.1h-26.2c22.7 39.8 45.1 79 67.5 118.1h26.2zm0 0"/></mask><path fill="#535353" d="M532.1 140.95c-22.9-40-45.3-79.2-67.5-118.1h-26.2c22.7 39.8 45.1 79 67.5 118.1h26.2zm0 0" mask="url(#aaf)"/></g><g><mask id="aah"><path fill="#fff" d="M409 1s-40.52 71-68.6 120.08l-.91 1.6L350 141h7c15.18-26.48 43.01-74.71 50.57-87.82L423 26 409 1zm0 0"/></mask><mask id="aag"><path fill="#fff" d="M383.1 140.85c36.1.1 71 .1 107.2.1-27.2-46.8-53.8-92.7-80.9-139.4-23.51 41.02-69.73 122.37-69.73 122.37L350 141l5.8-.05c17.7-30.8 35.4-61.6 53.7-93.5 14.2 24.6 27.6 47.6 41.5 71.6h-54.9c-4.3 7.2-8.5 14.2-13 21.8zm0 0"/></mask><g mask="url(#aag)" fill="#535353"><path d="M490.8 140.9C463.8 94.3 409 1 409 1v46l40.05 68.96L464 141l26.8-.1zm0 0"/><path d="M396 119c-4.3 7.2-8.8 14.5-13.2 21.9l108.2.1-39-22h-56zm0 0"/></g><path fill="#535353" d="M409 1s-40.52 71-68.6 120.08l-.91 1.6L350 141h7c15.18-26.48 43.01-74.71 50.57-87.82L423 26 409 1zm0 0" mask="url(#aah)"/></g></g><g><g><clipPath id="aai"><path fill="#fff" d="M316.81 89.8l-12.98-22.48S296.4 54.75 293 48.95h-25.8c8 14 23.63 40.83 23.63 40.83l13 22.47s11.87 19.8 16.97 28.7h18l7.2.05c-7.7-13.1-29.19-51.2-29.19-51.2zm0 0"/></clipPath><path fill="#535353" d="M316.81 89.8l-12.98-22.48S296.4 54.75 293 48.95h-25.8c8 14 23.63 40.83 23.63 40.83l13 22.47s11.87 19.8 16.97 28.7h18l7.2.05c-7.7-13.1-29.19-51.2-29.19-51.2zm0 0" clip-path="url(#aai)"/><mask id="aaj"><path fill="#fff" d="M316.81 89.8s25.89-44.95 39.29-68.05h-25.9c-9 15.1-26.37 45.57-26.37 45.57l-13 22.46s-28.63 50.47-43.13 76.07h25.5c10-17.2 30.63-53.6 30.63-53.6l12.98-22.45zm0 0"/></mask><path fill="#535353" d="M316.81 89.8s25.89-44.95 39.29-68.05h-25.9c-9 15.1-26.37 45.57-26.37 45.57l-13 22.46s-28.63 50.47-43.13 76.07h25.5c10-17.2 30.63-53.6 30.63-53.6l12.98-22.45zm0 0" mask="url(#aaj)"/></g><g><mask id="aal"><path fill="#fff" d="M222.92 105.96c-.59 1.06-2.32 4.98-2.92 6.04l-12-18c.44-.8 2.7-4.06 3.13-4.83 3.63-6.6 6.82-12.43 10.24-18.57L176 71c.22.37-12-20-12-20l90.07-.4c-10.48 19.47-20.7 36.97-31.15 55.36zm0 0"/></mask><mask id="aak"><path fill="#fff" d="M255.17 92.6c-7 13-14.1 24.6-21.8 37.9-4.4-7.5-11.9-20.2-11.9-20.2L186 51l-21.03-.4c22.9 40 45.4 78.2 68.4 117.7 14.7-25.7 29.16-49.7 43.66-75.7h-21.86zm0 0"/></mask><g mask="url(#aak)" fill="#535353"><path d="M255.17 92.6c-7 13-25.17 42.4-25.17 42.4v39s33.5-55 48-81l-22.83-.4zm0 0"/><path d="M233.37 130.5l-11.9-20.2L197 69l-34-20c22.9 40 70.37 119.3 70.37 119.3v-37.8zm0 0"/></g><g mask="url(#aal)" fill="#535353"><path d="M219 114l36.83-63.83-23.15.13L208 94l11 20zm0 0"/><path d="M221 71s-23.18-.31-23 0l-35-21h93l-35 21zm0 0"/></g></g><g><mask id="aam"><path fill="#fff" d="M109.15 22.75c22.8 39.8 45.2 79.2 67.5 118.2h26.2c-22.8-39.8-45.2-79.2-67.5-118.2h-26.2zm0 0"/></mask><path fill="#535353" d="M109.15 22.75c22.8 39.8 45.2 79.2 67.5 118.2h26.2c-22.8-39.8-45.2-79.2-67.5-118.2h-26.2zm0 0" mask="url(#aam)"/></g><g><mask id="aan"><path fill="#fff" d="M68.48 118.42c-4.3 7.2-9.28 15.08-13.68 22.48h107c-27-46.6-53.6-92.4-80.7-139.2-26.9 46.9-53.3 92.9-80 139.5h27.2c17.6-30.7 34.85-60.37 53.15-92.27 14.2 24.5 26.68 45.56 40.58 69.46-19 0-35.55.03-53.55.03zm0 0"/></mask><g mask="url(#aan)" fill="#535353"><path d="M81.1 1.7s-53.3 92.9-80 139.5h27.2C42.9 115.73 69.86 69 78.62 53.83 80.42 50.71 95 25 95 25L81.1 1.7zm0 0"/><path d="M161.8 140.9C134.8 94.3 81 1 81 1v47l54 93 26.8-.1zm0 0"/><path d="M68 118c-4.3 7.2-8.8 15.5-13.2 22.9l108.2.1-39-23H68zm0 0"/></g></g></g></g>
+    </symbol>
+
+    <symbol id="t3iLogo" viewBox="">
+        <g stroke="#091e1d" stroke-width="3" stroke-linecap="round" stroke-linejoin="bevel" stroke-miterlimit="10" fill="none"><path d="M175.6 50.44l-23.82 34.68-22.84 33.08s-.75 4.98-2.3 11.1c-1.54 6.04-3.85 13.18-7.25 21.92-.05.12-.1.25-.15.38l51.41-74.4c-1.9-12.2 1.25-23.99 10.83-34.35 18.04-19.49 48.46-20.68 67.96-2.64 19.49 18.03 20.68 48.46 2.64 67.95 0 0-20.41 27.58-57.52 14.38-47.01-18.14-45.79-64.92-37.16-88.06L115.82 93.8"/><path d="M92.4 103.06l23.83-34.68 22.83-33.08s.75-4.98 2.31-11.1c1.53-6.04 3.84-13.18 7.24-21.92.05-.12.1-.25.15-.37l-51.41 74.4c1.9 12.19-1.25 23.98-10.83 34.34-18.04 19.49-48.46 20.68-67.95 2.64-19.5-18.03-20.69-48.46-2.65-67.95 0 0 20.41-27.58 57.52-14.38 47.02 18.14 45.79 64.93 37.16 88.07l41.58-59.32"/></g>
+    </symbol>
+
+    <symbol id="tripl3infinity_logo" viewBox="0 0 714 184">
+        <g stroke="#000" stroke-width="2" fill="none"><path d="M34.23-275.396v13.92h15.12v8.04H34.23v31.318c0 7.2 2.04 11.28 7.92 11.28 2.88 0 4.56-.24 6.12-.72l.48 8.04c-2.04.72-5.28 1.44-9.36 1.44-4.92 0-8.88-1.68-11.4-4.44-2.88-3.24-4.08-8.4-4.08-15.24v-31.678h-9v-8.04h9v-10.8l10.32-3.12zM59.23-243.357c0-6.84-.12-12.72-.48-18.12h9.238l.48 11.52h.36c2.64-7.8 9.12-12.718 16.2-12.718 1.08 0 1.92.12 2.88.24v9.96c-1.08-.24-2.16-.24-3.6-.24-7.44 0-12.72 5.52-14.16 13.438-.24 1.44-.36 3.24-.36 4.92v30.958h-10.56v-39.957zM108.708-277.795c0 3.6-2.52 6.48-6.72 6.48-3.84 0-6.36-2.88-6.36-6.48s2.64-6.6 6.6-6.6c3.84 0 6.48 2.88 6.48 6.6zm-11.76 74.397v-58.078h10.56v58.078h-10.56zM118.027-242.517c0-7.44-.24-13.44-.48-18.96h9.36l.6 9.96h.24c4.2-7.08 11.158-11.16 20.638-11.16 14.16 0 24.72 11.88 24.72 29.4 0 20.878-12.84 31.198-26.52 31.198-7.68 0-14.4-3.36-17.88-9.12h-.24v31.56h-10.438v-62.877zm10.44 15.48c0 1.56.12 3 .48 4.32 1.92 7.32 8.28 12.358 15.84 12.358 11.16 0 17.638-9.118 17.638-22.438 0-11.52-6.12-21.48-17.28-21.48-7.2 0-14.04 5.04-15.958 12.96-.36 1.32-.72 2.88-.72 4.2v10.08zM181.306-288.595h10.56v85.196h-10.56v-85.195zM272.683-277.795c0 3.6-2.52 6.48-6.72 6.48-3.84 0-6.36-2.88-6.36-6.48s2.64-6.6 6.6-6.6c3.84 0 6.48 2.88 6.48 6.6zm-11.76 74.397v-58.078h10.56v58.078h-10.56zM282.002-245.757c0-6.12-.12-10.92-.48-15.72h9.36l.6 9.6h.24c2.88-5.4 9.6-10.798 19.198-10.798 8.04 0 20.52 4.8 20.52 24.72v34.558h-10.56v-33.48c0-9.36-3.48-17.158-13.44-17.158-6.84 0-12.24 4.92-14.16 10.8-.48 1.32-.72 3.12-.72 4.92v34.917H282v-42.36zM344.682-203.398v-50.038h-8.04v-8.04h8.04v-3.24c0-15.24 9-25.2 25.318-25.2 5.4 0 11.76 1.68 14.76 3.84l-3 8.04c-2.64-1.8-7.08-3.36-12.24-3.36-11.16 0-14.398 7.8-14.398 17.04v2.88h33.72v58.08h-10.56v-50.04h-23.16v50.04h-10.44zM399.36-245.757c0-6.12-.12-10.92-.48-15.72h9.36l.6 9.6h.24c2.88-5.4 9.6-10.798 19.2-10.798 8.04 0 20.52 4.8 20.52 24.72v34.558h-10.56v-33.48c0-9.36-3.48-17.158-13.44-17.158-6.84 0-12.24 4.92-14.16 10.8-.478 1.32-.72 3.12-.72 4.92v34.917h-10.56v-42.36zM470.72-277.795c0 3.6-2.52 6.48-6.72 6.48-3.84 0-6.36-2.88-6.36-6.48s2.642-6.6 6.6-6.6c3.84 0 6.48 2.88 6.48 6.6zm-11.76 74.397v-58.078h10.56v58.078h-10.56zM497.76-275.396v13.92h15.12v8.04h-15.12v31.318c0 7.2 2.04 11.28 7.92 11.28 2.88 0 4.56-.24 6.12-.72l.48 8.04c-2.04.72-5.28 1.44-9.36 1.44-4.92 0-8.88-1.68-11.4-4.44-2.88-3.24-4.08-8.4-4.08-15.24v-31.678h-9v-8.04h9v-10.8l10.32-3.12zM531.678-261.476l12.6 34.32c1.44 3.84 2.88 8.398 3.84 11.878h.24c1.08-3.48 2.28-7.92 3.72-12.12l11.52-34.08h11.16l-15.84 41.4c-7.56 19.918-12.72 29.998-19.92 36.357-5.28 4.44-10.32 6.24-12.96 6.718l-2.64-8.76c2.64-.84 6.12-2.52 9.24-5.16 2.88-2.28 6.36-6.36 8.88-11.76.48-1.08.84-1.92.84-2.52 0-.6-.24-1.44-.84-2.76l-21.36-53.517h11.52z"/><text transform="translate(195.603 -196.223)" font-family="'MyriadPro-Regular'" font-size="120">3</text></g><path fill="#14F214" d="M28.175 25.024v17.278h18.767v9.98H28.175v38.876c0 8.938 2.532 14.002 9.83 14.002 3.576 0 5.66-.298 7.597-.893l.597 9.98c-2.535.895-6.556 1.788-11.622 1.788-6.105 0-11.02-2.086-14.148-5.512-3.575-4.022-5.065-10.428-5.065-18.92V52.282H4.195v-9.978h11.168V28.896l12.812-3.872z"/><path fill="#14F214" d="M59.208 64.795c0-8.49-.148-15.79-.596-22.492H70.08l.597 14.3h.446C74.4 46.92 82.445 40.815 91.23 40.815c1.342 0 2.384.148 3.577.298v12.362c-1.34-.297-2.68-.297-4.47-.297-9.235 0-15.788 6.852-17.576 16.683-.298 1.788-.445 4.022-.445 6.107v38.43H59.208V64.795z"/><path fill="#14F214" d="M120.625 22.047c0 4.468-3.127 8.043-8.34 8.043-4.767 0-7.894-3.575-7.894-8.043 0-4.47 3.278-8.193 8.194-8.193 4.766 0 8.04 3.574 8.04 8.193zm-14.595 92.35V42.302h13.108v72.094H106.03z"/><path fill="#14F214" d="M132.195 65.838c0-9.235-.3-16.682-.596-23.535h11.616l.744 12.363h.3c5.214-8.788 13.85-13.852 25.62-13.852 17.576 0 30.683 14.746 30.683 36.494 0 25.918-15.938 38.728-32.918 38.728-9.534 0-17.874-4.17-22.194-11.32h-.297v39.175h-12.96l.002-78.052zm12.96 19.215c0 1.936.147 3.725.595 5.36 2.383 9.087 10.28 15.345 19.662 15.345 13.852 0 21.896-11.32 21.896-27.855 0-14.3-7.596-26.664-21.45-26.664-8.937 0-17.427 6.257-19.81 16.086-.446 1.638-.893 3.575-.893 5.214v12.513z"/><path fill="#14F214" d="M209 8.64h13.107v105.757H209V8.64z"/><path fill="#14F214" d="M335.03 22.047c0 4.468-3.13 8.043-8.343 8.043-4.767 0-7.895-3.575-7.895-8.043 0-4.47 3.277-8.193 8.193-8.193 4.767 0 8.044 3.574 8.044 8.193zm-14.598 92.35V42.302h13.107v72.094H320.43z"/><path fill="#14F214" d="M346.598 61.816c0-7.597-.148-13.555-.596-19.514h11.616l.746 11.917h.3c3.574-6.703 11.914-13.406 23.83-13.406 9.98 0 25.472 5.957 25.472 30.684v42.898h-13.108V72.838c0-11.618-4.318-21.3-16.682-21.3-8.49 0-15.193 6.106-17.578 13.405-.596 1.64-.893 3.873-.893 6.107v43.344h-13.107V61.816z"/><path fill="#14F214" d="M424.402 114.396V52.28h-9.98v-9.978h9.98V38.28c0-18.917 11.172-31.28 31.43-31.28 6.703 0 14.597 2.086 18.32 4.768l-3.724 9.98c-3.276-2.235-8.788-4.172-15.192-4.172-13.854 0-17.875 9.682-17.875 21.152v3.574h41.856v72.094H466.11V52.283h-28.75v62.113h-12.958z"/><path fill="#14F214" d="M492.28 61.816c0-7.597-.15-13.555-.6-19.514h11.62l.744 11.917h.3c3.575-6.703 11.914-13.406 23.83-13.406 9.98 0 25.47 5.957 25.47 30.684v42.898h-13.107V72.838c0-11.618-4.318-21.3-16.682-21.3-8.49 0-15.193 6.106-17.576 13.405-.597 1.64-.894 3.873-.894 6.107v43.344H492.28V61.816z"/><path fill="#14F214" d="M580.858 22.047c0 4.468-3.13 8.043-8.34 8.043-4.768 0-7.897-3.575-7.897-8.043 0-4.47 3.28-8.193 8.193-8.193 4.767 0 8.045 3.574 8.045 8.193zm-14.596 92.35V42.302h13.106v72.094h-13.106z"/><path fill="#14F214" d="M614.424 25.024v17.278h18.766v9.98h-18.766v38.876c0 8.938 2.53 14.002 9.828 14.002 3.576 0 5.66-.298 7.598-.893l.596 9.98c-2.533.895-6.555 1.788-11.62 1.788-6.106 0-11.022-2.086-14.147-5.512-3.58-4.022-5.067-10.428-5.067-18.92V52.282h-11.17v-9.978h11.17V28.896l12.81-3.872z"/><path fill="#14F214" d="M656.527 42.303l15.64 42.602c1.786 4.768 3.575 10.426 4.767 14.746h.3c1.337-4.32 2.83-9.83 4.614-15.042l14.3-42.305H710l-19.662 51.39c-9.385 24.726-15.787 37.24-24.727 45.134-6.552 5.51-12.808 7.744-16.085 8.34l-3.277-10.873c3.277-1.043 7.596-3.13 11.47-6.404 3.575-2.83 7.894-7.895 11.022-14.598.598-1.34 1.043-2.383 1.043-3.128 0-.743-.297-1.786-1.043-3.425l-26.512-66.435h14.3v-.002z"/><path stroke="#14F214" stroke-width="14" stroke-miterlimit="10" fill="none" d="M512.835 414.2h68.087l-40.853 36.314"/><text transform="translate(355 150)" fill="#14F214" font-family="'Optima-Bold'" font-size="28">Design &amp; DevOps</text><path fill="none" d="M41.125 395h894v76h-894z"/><text transform="translate(41.125 449.863)" font-family="'Roboto-Regular'" font-size="72">tripl3infinity</text><path stroke="#14F214" stroke-width="14" stroke-linejoin="bevel" stroke-miterlimit="10" d="M-327.667 579c0 20.25 16.416 36.667 36.667 36.667s36.667-16.417 36.667-36.667-16.416-36.667-36.667-36.667l-12.93 4.18 47.852-36.312h-75.087" fill="none"/><path fill="#14F214" d="M-532.825 481.024v17.278h18.767v9.98h-18.767v38.876c0 8.938 2.532 14.002 9.83 14.002 3.576 0 5.66-.298 7.597-.893l.597 9.98c-2.535.895-6.556 1.788-11.622 1.788-6.105 0-11.02-2.086-14.148-5.512-3.575-4.022-5.065-10.428-5.065-18.92V508.28h-11.17v-9.98h11.17v-13.405l12.81-3.87z"/><path fill="#14F214" d="M-501.792 520.795c0-8.49-.148-15.79-.596-22.492h11.47l.596 14.3h.446c3.277-9.682 11.322-15.788 20.108-15.788 1.34 0 2.383.148 3.576.298v12.362c-1.34-.297-2.68-.297-4.47-.297-9.235 0-15.788 6.852-17.576 16.683-.3 1.788-.446 4.022-.446 6.107v38.43h-13.107l-.002-49.602z"/><path fill="#14F214" d="M-440.375 478.047c0 4.468-3.127 8.043-8.34 8.043-4.767 0-7.894-3.575-7.894-8.043 0-4.47 3.278-8.193 8.194-8.193 4.766 0 8.04 3.574 8.04 8.193zm-14.595 92.35V498.3h13.108v72.094h-13.108z"/><path fill="#14F214" d="M-428.805 521.838c0-9.235-.3-16.682-.596-23.535h11.616l.744 12.363h.3c5.214-8.788 13.85-13.852 25.62-13.852 17.576 0 30.683 14.746 30.683 36.494 0 25.918-15.938 38.728-32.918 38.728-9.534 0-17.874-4.17-22.194-11.32h-.297v39.175h-12.96l.002-78.052zm12.96 19.215c0 1.936.147 3.725.595 5.36 2.383 9.087 10.28 15.345 19.662 15.345 13.852 0 21.896-11.32 21.896-27.855 0-14.3-7.596-26.664-21.45-26.664-8.937 0-17.427 6.257-19.81 16.086-.446 1.638-.893 3.575-.893 5.214v12.513z"/><path fill="#14F214" d="M-352 464.64h13.107v105.757H-352V464.64z"/><path fill="#14F214" d="M-225.97 478.047c0 4.468-3.13 8.043-8.343 8.043-4.767 0-7.895-3.575-7.895-8.043 0-4.47 3.277-8.193 8.193-8.193 4.767 0 8.044 3.574 8.044 8.193zm-14.598 92.35V498.3h13.107v72.094h-13.108z"/><path fill="#14F214" d="M-214.402 517.816c0-7.597-.148-13.555-.596-19.514h11.616l.746 11.917h.3c3.574-6.703 11.914-13.406 23.83-13.406 9.98 0 25.472 5.957 25.472 30.684v42.898h-13.108v-41.56c0-11.617-4.318-21.3-16.682-21.3-8.49 0-15.193 6.107-17.578 13.406-.596 1.64-.893 3.873-.893 6.107v43.343h-13.107v-52.577z"/><path fill="#14F214" d="M-136.598 570.396V508.28h-9.98v-9.978h9.98v-4.022c0-18.917 11.172-31.28 31.43-31.28 6.703 0 14.597 2.086 18.32 4.768l-3.724 9.98c-3.276-2.235-8.788-4.172-15.192-4.172-13.854 0-17.875 9.682-17.875 21.152v3.574h41.856v72.094H-94.89v-62.113h-28.75v62.113h-12.958z"/><path fill="#14F214" d="M-68.72 517.816c0-7.597-.15-13.555-.6-19.514h11.62l.744 11.917h.3c3.575-6.703 11.914-13.406 23.83-13.406 9.98 0 25.47 5.957 25.47 30.684v42.898h-13.107v-41.56c0-11.617-4.318-21.3-16.682-21.3-8.49 0-15.193 6.107-17.576 13.406-.597 1.64-.894 3.873-.894 6.107v43.343H-68.72v-52.577z"/><path fill="#14F214" d="M19.858 478.047c0 4.468-3.13 8.043-8.34 8.043-4.768 0-7.897-3.575-7.897-8.043 0-4.47 3.28-8.193 8.193-8.193 4.767 0 8.045 3.574 8.045 8.193zm-14.596 92.35V498.3h13.106v72.094H5.262z"/><path fill="#14F214" d="M53.424 481.024v17.278H72.19v9.98H53.424v38.876c0 8.938 2.53 14.002 9.828 14.002 3.576 0 5.66-.298 7.598-.893l.596 9.98c-2.533.895-6.555 1.788-11.62 1.788-6.106 0-11.022-2.086-14.147-5.512-3.58-4.022-5.067-10.428-5.067-18.92V508.28h-11.17v-9.98h11.17v-13.405l12.81-3.87z"/><path fill="#14F214" d="M95.527 498.303l15.64 42.602c1.786 4.768 3.575 10.426 4.767 14.746h.3c1.337-4.32 2.83-9.83 4.614-15.042l14.3-42.305H149l-19.662 51.39c-9.385 24.726-15.787 37.24-24.727 45.134-6.552 5.51-12.808 7.744-16.085 8.34l-3.277-10.873c3.277-1.043 7.596-3.13 11.47-6.404 3.575-2.83 7.894-7.895 11.022-14.598.598-1.34 1.043-2.383 1.043-3.128 0-.743-.297-1.786-1.043-3.425l-26.512-66.435h14.3v-.002z"/><text transform="translate(-223 608)" fill="#14F214" font-family="'Optima-Bold'" font-size="32">Design &amp; DevOps</text><path stroke="#14F214" stroke-width="14" stroke-miterlimit="10" d="M229.835 51.2h68.087L257.07 87.513s15.954-.664 29.263 6.153c11.953 6.122 21.455 18.72 20.667 35.833.26 24.022-19.476 43.5-43.5 43.5-14.408 0-27.18-7.006-35.097-17.796" fill="none"/><path stroke="#14F214" stroke-width="14" stroke-linejoin="bevel" stroke-miterlimit="10" d="M516.833 485.5c0 20.25 16.416 36.667 36.667 36.667s36.667-16.417 36.667-36.667-16.416-36.667-36.667-36.667l-12.93 4.18" fill="none"/>
+    </symbol>
+</svg>
+<header>
+    <h1 id="logo">Gulp SVG Sprites <small>(3 icons in &lt;symbol&gt; mode)</small></h1>
+    <h4>Files Generated:</h4>
+    <ol>
+        <li><a href="inline-symbols.svg.php">inline-symbols.svg.php</a></li>
+    </ol>
+    <h4>Usage:</h4>
+    <ol>
+        <li>
+            Include the <strong>contents</strong> of the <a href="inline-symbols.svg.php">SVG file</a> just after the opening <code>&lt;body&gt;</code> tag.
+        </li>
+        <li>
+            Paste one of the snippets anywhere into your website.
+        </li>
+    </ol>
+
+</header>
+<section>
+    <ul class="icon-boxes">
+        
+        <li title="aaaLogo-for_SVG">
+            <div class="icon-box" id="icon-box-aaaLogo-for_SVG">
+                <svg class="icon">
+                    <use xlink:href="#aaaLogo-for_SVG" />
+                </svg>
+            </div>
+            <h2>aaaLogo-for_SVG</h2>
+            <button onclick="showPopover('snippet-aaaLogo-for_SVG')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-aaaLogo-for_SVG')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-aaaLogo-for_SVG">
+                <pre><code>&lt;svg class=&quot;icon&quot;&gt;&lt;use xlink:href=&quot;#aaaLogo-for_SVG&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+        
+        <li title="t3iLogo">
+            <div class="icon-box" id="icon-box-t3iLogo">
+                <svg class="icon">
+                    <use xlink:href="#t3iLogo" />
+                </svg>
+            </div>
+            <h2>t3iLogo</h2>
+            <button onclick="showPopover('snippet-t3iLogo')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-t3iLogo')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-t3iLogo">
+                <pre><code>&lt;svg class=&quot;icon&quot;&gt;&lt;use xlink:href=&quot;#t3iLogo&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+        
+        <li title="tripl3infinity_logo">
+            <div class="icon-box" id="icon-box-tripl3infinity_logo">
+                <svg class="icon">
+                    <use xlink:href="#tripl3infinity_logo" />
+                </svg>
+            </div>
+            <h2>tripl3infinity_logo</h2>
+            <button onclick="showPopover('snippet-tripl3infinity_logo')">Show Snippet</button>
+            <br/>
+            <button onclick="invertBackground('icon-box-tripl3infinity_logo')">Invert Background</button>
+            <div class="snippet-popover" id="snippet-tripl3infinity_logo">
+                <pre><code>&lt;svg class=&quot;icon&quot;&gt;&lt;use xlink:href=&quot;#tripl3infinity_logo&quot;&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+                <button onclick="hidePopover()">Close</button>
+            </div>
+        </li>
+        
+    </ul>
+</section>
+<footer>
+    <p>Generated by <a href="https://github.com/shakyshane/gulp-svg-sprites">Gulp Svg Sprites</a> - Preview page courtesy of <a href="http://iconizr.com" target="_blank">iconizr</a>.</p>
+</footer>
+<script type="text/javascript">
+    var openSnippet;
+    function showPopover(id) {
+        openSnippet = document.getElementById(id);
+        openSnippet.classList.add("active");
+    }
+    function hidePopover() {
+
+        openSnippet.classList.remove("active");
+    }
+    function invertBackground(id) {
+        var elem = document.getElementById(id);
+        elem.classList.toggle("inverted");
+    }
+</script>
+</body>
+</html>

@@ -1,8 +1,12 @@
+
+
+
+
 html, body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
+//  width: 100%;
+//  height: 100%;
+//  margin: 0;
+//  padding: 0;
 
 //  background: radial-gradient(hsl(0, 0%, 13%) 4%, hsl(0, 0%, 9%) 9%, hsla(0, 0%, 10%, 0) 9%) 0 0,
 //  radial-gradient(hsl(0, 0%, 13%) 4%, hsl(0, 0%, 9%) 8%, hsla(0, 0%, 10%, 0) 10%) 50px 50px,
@@ -22,6 +26,20 @@ html, body {
   
 }
 
+
+
+.wrap {
+  //.container-fluid();
+}
+
+.footer_piece_left:before {
+  background-position: 0em 0em;
+  width: 32em;
+  height: 1.4em;
+}
+
+
+
 #t3iLogo {
   display: block;
   width: 100%;
@@ -35,18 +53,18 @@ html, body {
 }
 
 
-
-
-
-
-
-.footPanel {
+footer {
+//    .container-fluid();
+//  .make-md-column(12);
   width: 100%;
+  //
+  //.make-row();
   height: 60px;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
-  min-width: 800px;
+  //min-width: 800px;
+  //background: #000 url(../svg/footer_piece_content.svg) repeat-x;
 
   .topSection {
     width: 100%;
@@ -65,7 +83,7 @@ html, body {
       left: 0;
       flex-basis: 320px;
       height: 20px;
-      background: #000 url(../svg/footer_piece_left.svg) no-repeat;
+      //background: #000 url(../svg/footer_piece_left.svg) no-repeat;
       width: 320px;
       background-position: 0 1px;
     }
@@ -77,7 +95,7 @@ html, body {
       right: 0;
       flex-basis: 320px;
       height: 20px;
-      background: #000 url(../svg/footer_piece_right.svg) no-repeat;
+      //background: #000 url(../svg/footer_piece_right.svg) no-repeat;
       width: 320px;
       background-position: 0 1px;
     }
@@ -86,7 +104,7 @@ html, body {
       flex: 1;
       height: 7px;
       overflow: hidden;
-      background: url(../svg/footer_piece_center.svg) no-repeat;
+      //background: url(../svg/footer_piece_center.svg) no-repeat;
       bottom: 0;
       flex-wrap: wrap-reverse;
       align-self: flex-end;
@@ -94,16 +112,19 @@ html, body {
 
   }
 
-  .content {
-    width: 100%;
-    background: #000 url(../svg/footer_piece_content.svg) repeat-x;
-    height: 60px;
+  nav {
+    //.make-sm-column(12);
+
+.make-sm-column-offset(2);
+    //width: 100%;
+    //height: 60px;
 
     #aaaLogo_wrap {
-      position: absolute;
-      right: 10px;
-      top: 6px;
-      width: 300px;
+//      position: absolute;
+//      right: 10px;
+//      width: 300px;
+      margin:1em 6% 0 0;
+      position: relative;
 
       #aaaLogo_sml {
         width: 225px;
@@ -116,7 +137,6 @@ html, body {
         margin: 12px 2px 0 0;
         font-style: italic;
         font-weight: bold;
-        font-family: 'Source Sans Pro', sans-serif;
       }
     }
 

@@ -29,26 +29,57 @@ gulp.task('browser-sync', function () {
 /*
  * svg min & sprite
  */
-gulp.task('sprites', function () {
-    return gulp.src('src/svg/*.svg')
+var sprite_config = {
+    templates: {
+        css: require("fs").readFileSync("./src/less/sprite-template.less", "utf-8")
+    },
+    common: "sprite",
+    cssFile: "../../less/svg-sprite.less",
+    svgPath: "../img/%f",
+    pngPath: "../img/%f",
+    svg: {
+        sprite: "spritesheet.svg"
+    },
+    preview: {
+        sprite: "/sprite-index.html"
+    }
+};
+
+gulp.task('svg-sprite', function () {
+    return gulp.src('src/svg/sprites/*.svg')
         .pipe(plumber())
-        .pipe(svgSprite({
-            mode: "symbols",
-            svg: {
-                symbols: "inline-symbols.svg.php"
-            }
-        }))
-        .pipe(gulp.dest('./themes/' + theme_name + '/assets/svg'));
+        .pipe(svgSprite(sprite_config))
+        .pipe(gulp.dest('./themes/' + theme_name + '/assets/img'));
 });
+
+
+var symbol_config = {
+    mode: "symbols",
+    svg: {
+        symbols: "inline-symbols.svg.php"
+    },
+    preview: {
+        symbols: "/symbol-index.html"
+    }
+};
+
+gulp.task('svg-symbol', function () {
+    return gulp.src('src/svg/symbols/*.svg')
+        .pipe(plumber())
+        .pipe(svgSprite(symbol_config))
+        .pipe(gulp.dest('./themes/' + theme_name + '/assets/img'));
+});
+
+
 
 
 /*
  * copy src images
  */
-gulp.task('img-copy', function () {
-    gulp.src('src/svg/*.svg')
-        .pipe(gulp.dest('./themes/' + theme_name + '/assets'));
-});
+//gulp.task('img-copy', function () {
+//    gulp.src('src/svg/processed/*.svg')
+//        .pipe(gulp.dest('./themes/' + theme_name + '/assets/img'));
+//});
 
 
 /*
@@ -165,7 +196,7 @@ gulp.task('watch', ['browser-sync'], function () {
 });
 
 // Default task to be run with `gulp`
-gulp.task('dev', ['img-copy', 'less_dev', 'dev_js-foot', 'jshint', 'watch', 'browser-sync']);
+gulp.task('dev', ['less_dev', 'dev_js-foot', 'jshint', 'watch', 'browser-sync']);
 
 // Build
 gulp.task('default', ['less', 'js-head', 'js-foot']);
