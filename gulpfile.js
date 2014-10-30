@@ -55,6 +55,7 @@ gulp.task('svg-sprite', function () {
 
 var symbol_config = {
     mode: "symbols",
+    common: "symbol",
     svg: {
         symbols: "inline-symbols.svg.php"
     },

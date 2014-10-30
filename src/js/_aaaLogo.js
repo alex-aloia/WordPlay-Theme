@@ -32,9 +32,14 @@ $(document).ready(function() {
 
 //        loadSVG("content/themes/roots/assets/svg/aaaLogo-for_SVG.svg", "#aaaLogo_wrap");
 
+  //  var letters = d3.select("#letters");
+  //  letters.attr({fill:'red'});
+//d3.select("body").append("svg").append(letters);
+
+    //d3.select("#aaaLogo").select("mask").select("path").attr({fill:'white'});
 
         function animate_aaaLogo() {
-            var logo = d3.select("#logo_alex")
+            var logo = d3.select("#aaaLogo")
                 logoTL = new TimelineLite({paused:true});
 //            .attr("transform", "translate(750, 20) scale(.5)")
 
@@ -74,7 +79,7 @@ $(document).ready(function() {
 
         }
 
-    animate_aaaLogo();
+  //  animate_aaaLogo();
 
 
 //    });
