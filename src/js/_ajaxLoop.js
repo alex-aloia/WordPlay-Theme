@@ -1,41 +1,51 @@
 // ajaxLoop.js
 jQuery(function($){
-/*    var page = 1;
-     var loading = true;
-     var $window = $(window);
-     var $content = $('#single-post-container');
-
-     var load_posts = function(){
-     $.ajax({
-     type       : 'GET',
-     data       : {numPosts : 1, pageNumber: page},
-     dataType   : 'html',
-     url        : 'http://www.dev.t3inf.com/content/themes/roots/loopHandler.php',
-     beforeSend : function(){
-     },
-     success    : function(data){
-     $data = $(data);
-     $data.hide();
-     $content.append($data);
-     $data.fadeIn(500);
-     },
-     error     : function(jqXHR, textStatus, errorThrown) {
-     alert(jqXHR + " :: " + textStatus + " :: " + errorThrown);
-     }
-     });
-     }
-*/
-
- //var load_posts = function(){
-
- //}
- //    load_posts();
 
 
+    $(".layer").click(function(e) {
+        e.preventDefault();
+        // We'll pass this variable to the PHP function example_ajax_request
+        //var postID = $(this).attr("id");
 
+        // This does the ajax request
+        var ajax_request = $.ajax({
+            type: "POST",
+            dataType : "json",
+            url: ajax_handler.ajaxurl,
+            data: {
+                action: 'example_ajax_request',
+                postID : $(this).attr("id"),
+                postCommentNonce : ajax_handler.postCommentNonce
+            },
 
+            beforeSend: function(){
+                loader = "<h1 id='loading'>LOADING</h1>";
+                $('#ajax-response').append(loader);
+//                return loader;
+            },
 
+            success: function (response) {
+                var test2 = '' + response.copy + '</p>';
+                //loader = $('#loading');
+                //$('#ajax-response').remove(loader).append(response);
+                //$('#ajax-response').remove(loader);
+                    //.append(test);
+              //  response = $(response);
+//                response.hide();
+                $('#ajax-response').empty();
+                var img = "<img src='" + response.url + "' />";
+                $('#ajax-response').append(img);
+                $('#ajax-response').append(test2);
+//                response.show();
+                //console.log('response =' + response);
+            },
 
+            error: function (errorThrown) {
+                console.log('error =' + errorThrown);
+            }
+        });
+
+    });
 
 
 

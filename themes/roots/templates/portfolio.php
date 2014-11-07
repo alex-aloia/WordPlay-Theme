@@ -39,6 +39,7 @@ Template Name: Portfolio Template
           $loop->the_post();
 //          $media_URL  =  wp_get_attachment_metadata($post_id, 'port_img');
 //          $data_depth = get_post_meta( $post->ID, 'port_dd' ); // port_dd = data depth
+          $description = get_post_meta( $post->ID, 'port_description' ); // port_dd = data depth
           ?>
           <li>
 <!--          <li data-depth="--><?php //echo $data_depth[0]; ?><!--" class="layer">-->
@@ -46,6 +47,7 @@ Template Name: Portfolio Template
                 <a href="<?php echo the_permalink(); ?>" class='layer' id="<?php echo the_ID(); ?>">
                   <?php the_post_thumbnail('port_thumb_med'); ?>
                 </a>
+<!--              <p>--><?php //echo $description[0]; ?><!--</p>-->
           </li>
           <?php
         endwhile;
@@ -54,7 +56,8 @@ Template Name: Portfolio Template
   </div>
    <h1 data-depth="0.10">dfjksdfkshdfghsdfgsdfgkh</h1>
       <h2 data-depth="0.10">dfjksdfkshdfghsdfgsdfgkh</h2>
-   <div id="ajax-response"></div>
+   <div id="ajax-response">
+   </div>
 <?php endwhile; ?>
 
 

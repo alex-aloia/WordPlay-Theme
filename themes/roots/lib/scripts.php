@@ -78,13 +78,14 @@ function roots_scripts() {
   // scripts in header
   wp_enqueue_script('js-head', get_template_directory_uri() . $assets['js-head'], array(), null, false); // false indicates scripts in header
   // scripts in footer
-  wp_enqueue_script('js-foot', get_template_directory_uri() . $assets['js-foot'], array(), null, true); // true indicates scripts in footer
+  //wp_enqueue_script('js-foot', get_template_directory_uri() . $assets['js-foot'], array(), null, true); // true
+  // indicates scripts in footer
 
 
-  wp_enqueue_script( 'my-ajax-request', get_template_directory_uri().'/assets/js/ajax.js', 'jquery', true);
-  //wp_localize_script( 'my-ajax-request', 'MyAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+  //wp_enqueue_script( 'my-ajax-request', get_template_directory_uri().'/assets/js/ajax.js', 'jquery', true);
+  wp_enqueue_script( 'js-foot', get_template_directory_uri() . $assets['js-foot'], array(), null, true);
 
-  wp_localize_script( 'my-ajax-request', 'ajax_handler', array(
+  wp_localize_script( 'js-foot', 'ajax_handler', array(
       // URL to wp-admin/admin-ajax.php to process the request
       'ajaxurl'          => admin_url( 'admin-ajax.php' ),
 
@@ -120,12 +121,18 @@ function example_ajax_request() {
       $postID = $_POST['postID'];
   //      $post_id = $_REQUEST['post_id'];
 
-//  $vote_count = get_post_meta($_REQUEST["postID"], "votes", true);
+  $copy = get_post_meta($postID, 'port_description', true);
   $url = wp_get_attachment_url( get_post_thumbnail_id($postID) );
+
+  $result['copy'] = $copy;
+  $result['url'] = $url;
+
       // generate the response
       header( "Content-Type: application/json" );
       //echo 'Post ID = ' . $postID;
-      echo json_encode($url);
+      //echo json_encode($copy);
+      echo json_encode($result);
+
       //echo json_encode('Nonse = ' . $nonce);
 //  echo json_encode( 'Post ID = ' . $postID->post_title );
 
