@@ -54,11 +54,12 @@ function roots_display_sidebar() {
      * Any of these page templates that return true won't show the sidebar
      */
     array(
-      'template-custom.php'
+      'template-custom.php',
+      'templates/portfolio.php'
     )
   );
 
-  return apply_filters('roots/display_sidebar', $sidebar_config->display);
+  //return apply_filters('roots/display_sidebar', $sidebar_config->display);
 }
 
 /**
@@ -69,3 +70,7 @@ function roots_display_sidebar() {
  * Default: 1140px is the default Bootstrap container width.
  */
 if (!isset($content_width)) { $content_width = 1140; }
+
+
+
+

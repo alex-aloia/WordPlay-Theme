@@ -9,7 +9,7 @@
 
   <?php
     do_action('get_header');
-    get_template_part('templates/header');
+    //get_template_part('templates/header');
   ?>
 
   <div class="wrap container" role="document">
@@ -28,6 +28,8 @@
   <?php get_template_part('templates/footer'); ?>
 
   <?php wp_footer(); ?>
+
+<div id='bgOverlay'></div>
 
 </body>
 </html>

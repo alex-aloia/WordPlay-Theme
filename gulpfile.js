@@ -118,6 +118,8 @@ var js_head = [
 var js_foot = [
     'vendor/bower/greensock/src/uncompressed/TweenMax.js',
     'vendor/bower/d3/d3.js',
+    'vendor/bower/jparallax/js/jquery.event.frame.js',
+    'vendor/bower/jparallax/js/jquery.parallax.js',
     'vendor/bower/bootstrap/js/transition.js',
     'vendor/bower/bootstrap/js/alert.js',
     'vendor/bower/bootstrap/js/button.js',

@@ -15,5 +15,6 @@
   <?php get_template_part('templates/footer'); ?>
 
   <?php wp_footer(); ?>
+<!--<div id="bgOverlay"></div>-->
 </body>
 </html>

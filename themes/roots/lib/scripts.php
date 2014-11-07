@@ -14,6 +14,22 @@
  * - An ID has been defined in config.php
  * - You're not logged in as an administrator
  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function roots_scripts() {
   /**
    * The build task in Grunt renames production assets with a hash
@@ -63,8 +79,108 @@ function roots_scripts() {
   wp_enqueue_script('js-head', get_template_directory_uri() . $assets['js-head'], array(), null, false); // false indicates scripts in header
   // scripts in footer
   wp_enqueue_script('js-foot', get_template_directory_uri() . $assets['js-foot'], array(), null, true); // true indicates scripts in footer
+
+
+  wp_enqueue_script( 'my-ajax-request', get_template_directory_uri().'/assets/js/ajax.js', 'jquery', true);
+  //wp_localize_script( 'my-ajax-request', 'MyAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+
+  wp_localize_script( 'my-ajax-request', 'ajax_handler', array(
+      // URL to wp-admin/admin-ajax.php to process the request
+      'ajaxurl'          => admin_url( 'admin-ajax.php' ),
+
+      // generate a nonce with a unique ID "myajax-post-comment-nonce"
+      // so that you can check it later when an AJAX request is sent
+      'postCommentNonce' => wp_create_nonce( 'myajax-post-comment-nonce' )
+    )
+  );
+
 }
 add_action('wp_enqueue_scripts', 'roots_scripts', 100);
+
+
+
+function example_ajax_request() {
+
+  $nonce = $_POST['postCommentNonce'];
+
+  // check to see if the submitted nonce matches with the
+  // generated nonce we created earlier
+ if ( ! wp_verify_nonce( $nonce, 'myajax-post-comment-nonce' ) )
+    die ( 'Busted!');
+
+//  if (!wp_verify_nonce($nonce, 'myajax-post-comment-nonce'))
+//    exit('Busted !');
+
+    // ignore the request if the current user doesn't have
+    // sufficient permissions
+//    if ( current_user_can( 'edit_posts' ) ) {
+
+
+      // get the submitted parameters
+      $postID = $_POST['postID'];
+  //      $post_id = $_REQUEST['post_id'];
+
+//  $vote_count = get_post_meta($_REQUEST["postID"], "votes", true);
+  $url = wp_get_attachment_url( get_post_thumbnail_id($postID) );
+      // generate the response
+      header( "Content-Type: application/json" );
+      //echo 'Post ID = ' . $postID;
+      echo json_encode($url);
+      //echo json_encode('Nonse = ' . $nonce);
+//  echo json_encode( 'Post ID = ' . $postID->post_title );
+
+      // response output
+  //    echo json_encode($post_id);
+//      echo 'nonce = ' . $nonce;
+ //   }
+
+ // else {
+ //   echo 'no access';
+ // }
+
+    // IMPORTANT: don't forget to "exit"
+    exit;
+}
+
+
+
+
+
+//function example_ajax_request() {
+//
+//  // The $_REQUEST contains all the data sent via ajax
+//  if ( isset($_REQUEST) ) {
+//
+//    $post_id = $_REQUEST['post_id'];
+//    $nonce = $_REQUEST['postCommentNonce'];
+//
+//    // Let's take the data that was sent and do something with it
+//    if ( $post_id > 0 ) {
+//      echo $nonce;
+//    }
+//
+//    // If you're debugging, it might be useful to see what was sent in the $_REQUEST
+//    // print_r($_REQUEST);
+//
+//  }
+//
+//  // Always die in functions echoing ajax content
+//  die();
+//}
+
+add_action( 'wp_ajax_example_ajax_request', 'example_ajax_request' );
+
+// If you wanted to also use the function for non-logged in users (in a theme for example)
+ add_action( 'wp_ajax_nopriv_example_ajax_request', 'example_ajax_request' );
+
+
+
+
+
+
+
+
+
 
 // http://wordpress.stackexchange.com/a/12450
 function roots_jquery_local_fallback($src, $handle = null) {

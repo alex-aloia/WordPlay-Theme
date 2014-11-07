@@ -1,18 +1,34 @@
 <?php
 /**
- * What Page? Site Front Page
- * Only landing content needed; page header template part dropped.
+ *  Site Front Page
  */
-?>
 
-<?php //get_template_part('templates/content', 'front-page'); ?>
 
-<?php
-  while (have_posts()) : the_post();
-  //get_template_part('templates/content', get_post_format());
-  get_template_part('assets/img/inline', 'symbols.svg');
-  endwhile;
-?>
+ while ( have_posts() ) : the_post();
+  $args = array( 'post_type' => 'cpt_portfolio', 'posts_per_page' => -1 );
+  $loop = new WP_Query( $args );
+  ?>
+
+  <div class="content">
+    <article class="entry-content">
+        <?php
+        while ( $loop->have_posts() ) :
+          $loop->the_post();
+          //$img = wp_get_attachment_image_src( $media_URL, 'port_thumb_med');
+          ?>
+
+
+          <?php
+        endwhile;
+        ?>
+    </article>
+  </div>
+<?php endwhile; ?>
+
+
+
+
+
 
 
 
