@@ -7,6 +7,11 @@ jQuery(function($){
         // We'll pass this variable to the PHP function example_ajax_request
         //var postID = $(this).attr("id");
 
+        var init = function(list){
+            TweenLite.to( list, 1, {autoAlpha:1});
+            console.log(list);
+        }
+
         // This does the ajax request
         var ajax_request = $.ajax({
             type: "POST",
@@ -26,7 +31,11 @@ jQuery(function($){
 
             success: function (response) {
                 if ( response.success === true ) {
-                    var test2 = response.html ;
+                    var html = $(response.html);
+                    var items = html.children('li');
+
+                    init(html);
+
                     //loader = $('#loading');
                     //$('#ajax-response').remove(loader).append(response);
                     //$('#ajax-response').remove(loader);
@@ -36,7 +45,7 @@ jQuery(function($){
                     $('#wrap_porfolio').empty();
                     //var img = "<img src='" + response.url + "' />";
                     //$('#ajax-response').append(img);
-                    $('#wrap_porfolio').append(test2);
+                    $('#wrap_porfolio').append(html);
     //                response.show();
                     //console.log('response =' + response);
                 }

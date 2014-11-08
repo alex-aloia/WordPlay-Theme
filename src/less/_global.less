@@ -1,6 +1,6 @@
 body {
 //  background: #111;
-//  background: #000;
+  background: #000;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -9,6 +9,16 @@ body {
   display: block;
 }
 
+#bgOverlay {
+  background: #000;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  display: none;
+}
 
 
 // Basics of a navbar
@@ -68,10 +78,6 @@ body {
 @navbar-inverse-toggle-icon-bar-bg:         #fff;
 @navbar-inverse-toggle-border-color:        #333;
 
-
-//== Navs
-//
-//##
 
 //=== Shared nav styles
 @nav-link-padding:                          10px 15px;

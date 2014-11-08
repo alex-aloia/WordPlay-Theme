@@ -10,7 +10,7 @@
       ?>
   </nav>
   <a id="aaaLogo_footer" class="aaaLogo_wrap" href="#">
-    <p class="pwdby">powered by:</p>
+    <p>powered by:</p>
     <svg id="aaaLogo" class=""><use xlink:href="#aaaLogo"></use></svg>
   </a>
 

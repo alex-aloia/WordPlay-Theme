@@ -1,11 +1,12 @@
-var theme_name = 'roots';
+var theme_name = 'roots',
+   assets = './themes/' + theme_name + '/assets/';
 
 var gulp = require('gulp'),
 //var mainBowerFiles = require('main-bower-files'),
     jshint = require('gulp-jshint'),
     watch = require('gulp-watch'),
     copy = require('gulp-copy'),
-    less = require('gulp-less'),
+    //less = require('gulp-less'),
     minifyCSS = require('gulp-minify-css'),
     sourcemaps = require('gulp-sourcemaps'),
     concat = require('gulp-concat'),
@@ -14,7 +15,8 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync'),
     plumber = require('gulp-plumber'),
     phantomjs = require('phantomjs'),
-    svgSprite = require("gulp-svg-sprites");
+    svgSprite = require("gulp-svg-sprites"),
+    less = require('gulp-less-sourcemap');
 
     reload = browserSync.reload;
 
@@ -86,18 +88,39 @@ gulp.task('svg-symbol', function () {
 /*
  * Less / CSS
  */
+
+var path = require('path');
+
+gulp.task('less_dev', function () {
+    gulp.src('./src/less/main.less')
+        .pipe(less({
+//            generateSourceMap: true, // default true
+            sourceMaps: true,
+            paths: [ path.join(__dirname) ]
+        }))
+        .pipe(gulp.dest(assets + '/css'));
+});
+
+
+/*
 gulp.task('less_dev', function () {
     gulp.src('src/less/main.less')
         .pipe(sourcemaps.init())
         .pipe(less())
-        .pipe(minifyCSS({keepBreaks: true, debug: true}))
+//        .pipe(minifyCSS({keepBreaks: true, debug: true}))
+//        .pipe(sourcemaps.write('./'))
+//        .pipe(sourcemaps.write({includeContent: false, sourceRoot: '../../../src/less'}))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('./themes/' + theme_name + '/assets/css'));
 });
+*/
 
 gulp.task('less', function () {
     gulp.src('src/less/main.less')
-        .pipe(less())
+        .pipe(less({
+            generateSourceMap: false,
+            paths: [ path.join(__dirname) ]
+        }))
         .pipe(minifyCSS({keepBreaks: false, debug: false}))
         .pipe(rename('main.min.css'))
         .pipe(gulp.dest('./themes/' + theme_name + '/assets/css'));

@@ -7,6 +7,7 @@
  while ( have_posts() ) : the_post();
   $args = array( 'post_type' => 'cpt_portfolio', 'posts_per_page' => -1 );
   $loop = new WP_Query( $args );
+  get_template_part('assets/img/inline', 'symbols.svg');
   ?>
 
   <div class="content">
@@ -16,7 +17,6 @@
           $loop->the_post();
           //$img = wp_get_attachment_image_src( $media_URL, 'port_thumb_med');
           ?>
-
 
           <?php
         endwhile;
