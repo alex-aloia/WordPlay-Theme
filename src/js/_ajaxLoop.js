@@ -2,7 +2,7 @@
 jQuery(function($){
 
 
-    $(".layer").click(function(e) {
+    $(".menu-work").click(function(e) {
         e.preventDefault();
         // We'll pass this variable to the PHP function example_ajax_request
         //var postID = $(this).attr("id");
@@ -13,31 +13,33 @@ jQuery(function($){
             dataType : "json",
             url: ajax_handler.ajaxurl,
             data: {
-                action: 'example_ajax_request',
-                postID : $(this).attr("id"),
+                action: 'portfolio_page_request',
+                //postID : 63,
                 postCommentNonce : ajax_handler.postCommentNonce
             },
 
             beforeSend: function(){
                 loader = "<h1 id='loading'>LOADING</h1>";
-                $('#ajax-response').append(loader);
+                $('#wrap_portfolio').append(loader);
 //                return loader;
             },
 
             success: function (response) {
-                var test2 = '' + response.copy + '</p>';
-                //loader = $('#loading');
-                //$('#ajax-response').remove(loader).append(response);
-                //$('#ajax-response').remove(loader);
-                    //.append(test);
-              //  response = $(response);
-//                response.hide();
-                $('#ajax-response').empty();
-                var img = "<img src='" + response.url + "' />";
-                $('#ajax-response').append(img);
-                $('#ajax-response').append(test2);
-//                response.show();
-                //console.log('response =' + response);
+                if ( response.success === true ) {
+                    var test2 = response.html ;
+                    //loader = $('#loading');
+                    //$('#ajax-response').remove(loader).append(response);
+                    //$('#ajax-response').remove(loader);
+                        //.append(test);
+                  //  response = $(response);
+    //                response.hide();
+                    $('#wrap_porfolio').empty();
+                    //var img = "<img src='" + response.url + "' />";
+                    //$('#ajax-response').append(img);
+                    $('#wrap_porfolio').append(test2);
+    //                response.show();
+                    //console.log('response =' + response);
+                }
             },
 
             error: function (errorThrown) {

@@ -22,6 +22,7 @@
         endwhile;
         ?>
     </article>
+    <div id="wrap_porfolio">
   </div>
 <?php endwhile; ?>
 

@@ -82,7 +82,7 @@ function roots_scripts() {
   // indicates scripts in footer
 
 
-  //wp_enqueue_script( 'my-ajax-request', get_template_directory_uri().'/assets/js/ajax.js', 'jquery', true);
+  //wp_enqueue_script( 'js-foot', get_template_directory_uri().'/assets/js/ajax.js', 'jquery', true);
   wp_enqueue_script( 'js-foot', get_template_directory_uri() . $assets['js-foot'], array(), null, true);
 
   wp_localize_script( 'js-foot', 'ajax_handler', array(
@@ -97,93 +97,6 @@ function roots_scripts() {
 
 }
 add_action('wp_enqueue_scripts', 'roots_scripts', 100);
-
-
-
-function example_ajax_request() {
-
-  $nonce = $_POST['postCommentNonce'];
-
-  // check to see if the submitted nonce matches with the
-  // generated nonce we created earlier
- if ( ! wp_verify_nonce( $nonce, 'myajax-post-comment-nonce' ) )
-    die ( 'Busted!');
-
-//  if (!wp_verify_nonce($nonce, 'myajax-post-comment-nonce'))
-//    exit('Busted !');
-
-    // ignore the request if the current user doesn't have
-    // sufficient permissions
-//    if ( current_user_can( 'edit_posts' ) ) {
-
-
-      // get the submitted parameters
-      $postID = $_POST['postID'];
-  //      $post_id = $_REQUEST['post_id'];
-
-  $copy = get_post_meta($postID, 'port_description', true);
-  $url = wp_get_attachment_url( get_post_thumbnail_id($postID) );
-
-  $result['copy'] = $copy;
-  $result['url'] = $url;
-
-      // generate the response
-      header( "Content-Type: application/json" );
-      //echo 'Post ID = ' . $postID;
-      //echo json_encode($copy);
-      echo json_encode($result);
-
-      //echo json_encode('Nonse = ' . $nonce);
-//  echo json_encode( 'Post ID = ' . $postID->post_title );
-
-      // response output
-  //    echo json_encode($post_id);
-//      echo 'nonce = ' . $nonce;
- //   }
-
- // else {
- //   echo 'no access';
- // }
-
-    // IMPORTANT: don't forget to "exit"
-    exit;
-}
-
-
-
-
-
-//function example_ajax_request() {
-//
-//  // The $_REQUEST contains all the data sent via ajax
-//  if ( isset($_REQUEST) ) {
-//
-//    $post_id = $_REQUEST['post_id'];
-//    $nonce = $_REQUEST['postCommentNonce'];
-//
-//    // Let's take the data that was sent and do something with it
-//    if ( $post_id > 0 ) {
-//      echo $nonce;
-//    }
-//
-//    // If you're debugging, it might be useful to see what was sent in the $_REQUEST
-//    // print_r($_REQUEST);
-//
-//  }
-//
-//  // Always die in functions echoing ajax content
-//  die();
-//}
-
-add_action( 'wp_ajax_example_ajax_request', 'example_ajax_request' );
-
-// If you wanted to also use the function for non-logged in users (in a theme for example)
- add_action( 'wp_ajax_nopriv_example_ajax_request', 'example_ajax_request' );
-
-
-
-
-
 
 
 
