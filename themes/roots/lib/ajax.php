@@ -28,11 +28,12 @@ function portfolio_page_request() {
   foreach( $port_items as $post ) :  setup_postdata($post);
     $postID = get_the_ID();
     $permalink = get_permalink( $postID );
+    //$port_imgW = get_post_meta( $postID, 'port_imgW' );
     $thumb = wp_get_attachment_url( get_post_thumbnail_id($postID) );
 
     $html .= '<li>
                 <a href="'.$permalink.'">
-                    <img src="'.$thumb.'" />
+                    <img src="'.$thumb.'"  />
                 </a>
               </li>';
   endforeach;

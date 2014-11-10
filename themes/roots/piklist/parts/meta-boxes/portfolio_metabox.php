@@ -38,11 +38,11 @@ piklist('field', array(
 
 piklist( 'field', array(
   'type'        => 'text',
-  'field'       => 'port_dd',
-  'label'       => 'Data-depth attribute for parallax',
-  'description' => 'Data-depth attribute for parallax -- decimal btwn 0 and 1',
-  'columns'     => 1,
-  'value'       => '0',
+  'field'       => 'port_imgW',
+  'label'       => 'Max Img Display Width',
+  'description' => 'Max width for portfolio featured image',
+  'columns'     => 2,
+//  'value'       => '0',
   'attributes'  => array(
   'class' => 'text'
 )
