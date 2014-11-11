@@ -13,14 +13,14 @@
     "vendor/bower"
   ],
   "dependencies": {
-    "jquery": "1.11.1",
-    "bootstrap": "3.2.0",
     "respond": "1.4.2",
-    "svg.js": "~1.0.1",
-    "greensock": "~1.13.2",
-    "svg.parser.js": "~0.1.0",
-    "svg.import.js": "~1.0.1",
     "d3": "~3.4.13",
-    "jparallax": "~2.0.3"
+    "greensock": "~1.14.2",
+    "bootstrap": "~3.3.0",
+    "jquery-contentsize": "git@github.com:gilmoreorless/jquery-contentsize.git"
+  },
+  "resolutions": {
+    "bootstrap": "~3.3.0",
+    "greensock": "~1.14.2"
   }
 }

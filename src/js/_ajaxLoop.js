@@ -2,14 +2,61 @@
 jQuery(function($){
 
 
+    $.fn.hoverEffect = function(event) {
+	    return this.filter('#portfolio ul li').each(function() {
+            var $element = $(this).find('img'),
+                hoverTL = new TimelineLite({paused:true});
+                hoverTL.to( $element, 1, {y:'+=100px'});
+            $element.mouseover(function(){
+                console.info('over');
+                hoverTL.play();
+            });
+            $element.mouseleave(function(){
+                hoverTL.reverse();
+                console.info('out');
+            });
+        })
+    };
+    //            $("#portfolio ul li img").hover(
+    //    function(){$(this).removeClass("greyscale") },
+    //    function(){$(this).addClass("greyscale");}
+    //);
+
+
+
     $(".menu-work").click(function(e) {
         e.preventDefault();
-        // We'll pass this variable to the PHP function example_ajax_request
-        //var postID = $(this).attr("id");
 
-        var init = function(list){
-            TweenLite.to( list, 1, {autoAlpha:1});
-            console.log(list);
+        var animate_open = function(e, portfolio){
+            var $portfolio = $('#portfolio ul'),
+                $children = $portfolio.children('li'),
+                $items_totalWidth = $portfolio.contentWidth() + 200,
+                port_TL = new TimelineLite({onComplete:handleMouse});
+
+            $portfolio.css({width: $items_totalWidth});
+            port_TL.staggerTo($children, 0.3, {autoAlpha:1},0.2);
+
+
+            var winW = $(this).width();
+            console.log('window width = ' + winW );
+            console.log('items total width = ' + $items_totalWidth );
+
+            $('#portfolio ul li').hoverEffect();
+
+             function handleMouse(){
+            $('body').mousemove( function(event){
+                var xPos = event.pageX,
+                    widthDiff = ($items_totalWidth / winW) - 1,
+                    movement = -xPos*widthDiff;
+                $portfolio.css({marginLeft: movement });
+
+              //  console.info('mouse posX = ' + xPos );
+              //  console.info('width diff ratio = ' + widthDiff );
+            });
+            }
+
+
+
         }
 
         // This does the ajax request
@@ -25,29 +72,19 @@ jQuery(function($){
 
             beforeSend: function(){
                 loader = "<h1 id='loading'>LOADING</h1>";
-                $('#wrap_portfolio').append(loader);
-//                return loader;
+                $('#portfolio').append(loader);
             },
 
             success: function (response) {
                 if ( response.success === true ) {
-                    var html = $(response.html);
-                    var items = html.children('li');
+                   var $portfolio_wrap = $('#portfolio'),
+                        $portfolio = $(response.html),
+                        $port_item = $portfolio.children('li');
 
-                    init(html);
-
-                    //loader = $('#loading');
-                    //$('#ajax-response').remove(loader).append(response);
-                    //$('#ajax-response').remove(loader);
-                        //.append(test);
-                  //  response = $(response);
-    //                response.hide();
-                    $('#wrap_porfolio').empty();
-                    //var img = "<img src='" + response.url + "' />";
-                    //$('#ajax-response').append(img);
-                    $('#wrap_porfolio').append(html);
-    //                response.show();
-                    //console.log('response =' + response);
+                    $portfolio_wrap.empty();
+                    $portfolio_wrap.append($portfolio);
+                    animate_open($portfolio);
+                    console.info($portfolio);
                 }
             },
 
@@ -57,9 +94,6 @@ jQuery(function($){
         });
 
     });
-
-
-
 
 
 

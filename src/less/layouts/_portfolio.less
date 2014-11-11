@@ -1,25 +1,95 @@
-//#wrap_portfolio {
-  .portfolio {
+#portfolio {
+  width: 100%;
+  > ul {
     list-style: none;
     position: absolute;
-    visibility: hidden;
+//    visibility: hidden;
+//    opacity: 0;
     top: 35%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0 100px;
+    width: 999999px; // !important -- must be set to high arbitrary value
+    display: block;
 
     > li {
-      max-width: 300px;
+      //max-width: 300px;
       display: inline-block;
       margin: 0 25px;
+      visibility: hidden;
+      opacity: 0;
 
       > a {
         > img {
           width: 100%;
-
+          height: 100%;
         }
       }
     }
   }
+}
+
+
+.greyscale {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+.color {
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+
+
+//
+//#NO-test-list {
+//  width:100%;
+//
+//  li {
+//    border:1px solid #fff;
+//    color:#666;
+//    float:left;
+//    font-weight:bold;
+//    font-size:3em;
+//    height:65px;
+//    list-style:none;
+//    padding:20px 0 0 0;
+//    margin:0 50px 0 0;
+//    text-align:center;
+//    width:300px;
+//    background: blue;
+//  }
+//
 //}
 
 
+.scroll-container {
+  position: relative; /**/
+  overflow: hidden;
+  background: #ccc;
+  margin: 0 5px;
+  width: 100%;
+  height: 142px; /**/
 
+  > ul {
+    white-space: nowrap;
+    text-align: center;
+    position: absolute; /**/
+    padding: 0 100px;
+
+    > li {
+      display: inline-block;
+      width: 200px;
+      padding: 5px;
+      margin: 0 25px;
+      background: blue;
+      border: 1px solid #ccc;
+      border: 1px solid rgba(0, 0, 0, 0.3);
+      height: 120px;
+      -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
 

@@ -1,23 +1,30 @@
 $(document).ready(function () {
 
-    // Declare parallax on layers
-    //jQuery('#wrap_port').parallax({
-    //    mouseport: jQuery("#wrap_port"),
-    //    yparallax: '50%',
-    //    yorigin: 0.5
-    //});
+//    $('#test-list').scrollingCarousel();
 
-
-    //$('body').parallax({
-    //    calibrateX: true,
-    //    calibrateY: true,
-    //    invertX: false,
-    //    limitX: false,
-    //    scalarX: 10,
-    //    scalarY: 10,
-    //    frictionX: 1,
-    //    frictionY: 1
+    //var $wrap    = $(".scroll-container"),
+    //    $container    = $(".scroll-container > ul"),
+    //    wrapW    = $wrap.outerWidth(),
+    //    wrapSW   = $wrap[0].scrollWidth,
+    //    wDiff  = (wrapSW/wrapW)-1,  // widths difference ratio
+    //    mPadd  = 10,  // Mousemove Padding
+    //    damp   = 50,  // Mousemove response softness
+    //    mousePosX     = 0,   // Real mouse position
+    //    mousePosX_mod    = 0,   // Modified mouse position
+    //    posX   = 0,
+    //    mmAA   = wrapW-(mPadd*2), // The mousemove available area
+    //    mmAAr  = (wrapW/mmAA);    // get available mousemove fidderence ratio
+    //
+    //$wrap.mousemove(function(e) {
+    //    mousePosX = e.pageX - this.offsetLeft;
+    //    mousePosX_mod = Math.min( Math.max(0, mousePosX-mPadd), mmAA ) * mmAAr;
     //});
+    //
+    //setInterval(function(){
+    //    posX += (mousePosX_mod - posX) / damp; // zeno's paradox equation "catching delay"
+    //    $container.css({marginLeft: -posX*wDiff });
+    //}, 10);
+
 
 });
 

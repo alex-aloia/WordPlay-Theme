@@ -21,20 +21,27 @@ function portfolio_page_request() {
     'post_type' => 'cpt_portfolio'
   );
 
+  $thumb_total_width = "";
+
   $html = "";
-  $html .= "<ul class='portfolio'>";
+  $html .= "<ul>";
 
   $port_items = get_posts( $args );
   foreach( $port_items as $post ) :  setup_postdata($post);
     $postID = get_the_ID();
     $permalink = get_permalink( $postID );
-    //$port_imgW = get_post_meta( $postID, 'port_imgW' );
+    $port_imgW = get_post_meta( $postID, 'port_imgW' );
     $thumb = wp_get_attachment_url( get_post_thumbnail_id($postID) );
 
-    $html .= '<li>
-                <a href="'.$permalink.'">
-                    <img src="'.$thumb.'"  />
-                </a>
+    if ( !empty($port_imgW) ) {
+      $html .= '<li style="width:'.$port_imgW[0].'px;" >';
+    }
+    else {
+      $html .= '<li>';
+    }
+      $html .='<a href="'.$permalink.'">
+              <img src="'.$thumb.'" class="greyscale"  />
+              </a>
               </li>';
   endforeach;
 

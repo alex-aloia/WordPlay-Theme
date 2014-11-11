@@ -155,6 +155,7 @@ var js_foot = [
     'vendor/bower/bootstrap/js/scrollspy.js',
     'vendor/bower/bootstrap/js/tab.js',
     'vendor/bower/bootstrap/js/affix.js',
+    'vendor/bower/jquery-contentsize/jquery.contentsize.js',
     'src/js/_*.js'
 ];
 
