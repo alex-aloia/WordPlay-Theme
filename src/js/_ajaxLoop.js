@@ -1,7 +1,7 @@
 // ajaxLoop.js
 jQuery(function($){
 
-
+/*
     $.fn.hoverEffect = function(event) {
 	    return this.filter('#portfolio ul li').each(function() {
             var $element = $(this).find('img'),
@@ -17,11 +17,7 @@ jQuery(function($){
             });
         })
     };
-    //            $("#portfolio ul li img").hover(
-    //    function(){$(this).removeClass("greyscale") },
-    //    function(){$(this).addClass("greyscale");}
-    //);
-
+*/
 
 
     $(".menu-work").click(function(e) {
@@ -76,20 +72,28 @@ jQuery(function($){
             },
 
             success: function (response) {
-                if ( response.success === true ) {
-                   var $portfolio_wrap = $('#portfolio'),
-                        $portfolio = $(response.html),
-                        $port_item = $portfolio.children('li');
+                if ( response.success ) {
+                   //var $portfolio_wrap = $('#portfolio'),
+                   //     $portfolio = $(response.html),
+                   //     $port_item = $portfolio.children('li');
 
-                    $portfolio_wrap.empty();
-                    $portfolio_wrap.append($portfolio);
-                    animate_open($portfolio);
-                    console.info($portfolio);
+                    //$portfolio_wrap.empty();
+                    //$portfolio_wrap.append($portfolio);
+                    //animate_open($portfolio);
+                    //var obj = $.parseJSON(response.data );
+                    console.info('response = ' + response.data[0].img );
+                    /*
+                    var returnedObjects = eval(response);
+                    var i = 0;
+                    for (i = 0; i < returnedObjects.length; i++){
+                        console.log('Time: ' + returnedObjects[i]);
+                    }
+                    */
                 }
             },
 
-            error: function (errorThrown) {
-                console.log('error =' + errorThrown);
+            error: function (response) {
+                console.log('error =' + response.error);
             }
         });
 
