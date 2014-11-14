@@ -26,7 +26,6 @@ Template Name: Portfolio Template
                 <a href="<?php echo the_permalink(); ?>" class='layer' id="<?php echo the_ID(); ?>">
                   <?php the_post_thumbnail('port_thumb_med'); ?>
                 </a>
-              <p><?php echo $description[0]; ?></p>
           </li>
           <?php
         endwhile;

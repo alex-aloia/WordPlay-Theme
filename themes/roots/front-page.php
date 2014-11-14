@@ -11,25 +11,7 @@
   ?>
 
   <div class="content">
-    <h1 id="click" style="color:#aaff00;font-size:30px;">click</h1>
-
-<!--    <div class="scroll-container">-->
-<!--      <ul>-->
-<!--        <li href="#" rel="group" class="fancybox thumb"><img src="http://placehold.it/120x120&text=1" width="120" height="120" /></li>-->
-<!--        <li href="#" rel="group" class="fancybox thumb"><img src="http://placehold.it/120x120&text=2" width="120" height="120" /></li>-->
-<!--        <li href="#" rel="group" class="fancybox thumb"><img src="http://placehold.it/120x120&text=3" width="120" height="120" /></li>-->
-<!--        <li href="#" rel="group" class="fancybox thumb"><img src="http://placehold.it/120x120&text=4" width="120" height="120" /></li>-->
-<!--        <li href="#" rel="group" class="fancybox thumb"><img src="http://placehold.it/120x120&text=5" width="120" height="120" /></li>-->
-<!--        <li href="#" rel="group" class="fancybox thumb"><img src="http://placehold.it/120x120&text=6" width="120" height="120" /></li>-->
-<!--        <li href="#" rel="group" class="fancybox thumb"><img src="http://placehold.it/120x120&text=7" width="120" height="120" /></li>-->
-<!--        <li href="#" rel="group" class="fancybox thumb"><img src="http://placehold.it/120x120&text=8" width="120" height="120" /></li>-->
-<!--        <li href="#" rel="group" class="fancybox thumb"><img src="http://placehold.it/120x120&text=9" width="120" height="120" /></li>-->
-<!--        <li href="#" rel="group" class="fancybox thumb"><img src="http://placehold.it/120x120&text=10" width="120" height="120" /></li>-->
-<!--        <li href="#" rel="group" class="fancybox thumb"><img src="http://placehold.it/120x120&text=11" width="120" height="120" /></li>-->
-<!--        <li href="#" rel="group" class="fancybox thumb"><img src="http://placehold.it/120x120&text=12" width="120" height="120" /></li>-->
-<!--      </ul>-->
-<!--    </div>-->
-
+    <svg id="aaaLogo" class=""><use xlink:href="#aaaLogo"></use></svg>
     <article class="entry-content">
         <?php
         while ( $loop->have_posts() ) :

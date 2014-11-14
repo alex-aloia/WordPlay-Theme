@@ -23,15 +23,20 @@ function portfolio_page_request() {
     $postTitle = sanitize_text_field($post->post_title);
     $postContent = sanitize_text_field($post->post_content);
     $thumb = sanitize_text_field( wp_get_attachment_url( get_post_thumbnail_id($post->ID) ));
+    $thumb_w = get_post_meta( $post->ID, 'port_imgW' );
+    $width = sanitize_text_field( $thumb_w[0] );
 
     $response = array(
-      'ID' => $postID,
-      'title' => $postTitle,
-      'content' => $postContent,
-      'img' => $thumb
+     // 'ID' => $postID,
+     // 'title' => $postTitle,
+     // 'content' => $postContent,
+      'img' => $thumb,
+      'img_w' => $width
     );
     array_push($responses, $response);
   }
+
+  header("content-type: application/json");
 
   if ( $responses ){
     wp_send_json_success($responses);

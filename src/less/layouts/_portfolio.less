@@ -1,23 +1,24 @@
 #portfolio {
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
+
   > ul {
     list-style: none;
     position: absolute;
 //    visibility: hidden;
 //    opacity: 0;
-    top: 35%;
     overflow: hidden;
     margin: 0;
-    padding: 0 100px;
-    width: 999999px; // !important -- must be set to high arbitrary value
+    padding: 0;
+//    width: 999999px; // !important -- must be set to high arbitrary value
     display: block;
+    text-align: center;
 
     > li {
-      max-width: 120px;
       display: inline-block;
-      margin: 0 25px;
-      visibility: hidden;
-      opacity: 0;
+      margin: 4em;
+//      visibility: hidden;
+//      opacity: 0;
 
       > a {
         > img {
@@ -29,6 +30,9 @@
   }
 }
 
+p {
+  color: red;
+}
 
 .greyscale {
   -webkit-filter: grayscale(100%);

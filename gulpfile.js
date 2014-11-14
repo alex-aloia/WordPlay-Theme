@@ -6,7 +6,7 @@ var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
     watch = require('gulp-watch'),
     copy = require('gulp-copy'),
-    //less = require('gulp-less'),
+    less = require('gulp-less'),
     minifyCSS = require('gulp-minify-css'),
     sourcemaps = require('gulp-sourcemaps'),
     concat = require('gulp-concat'),
@@ -16,7 +16,7 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     phantomjs = require('phantomjs'),
     svgSprite = require("gulp-svg-sprites"),
-    less = require('gulp-less-sourcemap');
+    //less = require('gulp-less-sourcemap');
 
     reload = browserSync.reload;
 
@@ -102,19 +102,17 @@ gulp.task('less_dev', function () {
 });
 
 
-/*
 gulp.task('less_dev', function () {
     gulp.src('src/less/main.less')
         .pipe(sourcemaps.init())
         .pipe(less())
 //        .pipe(minifyCSS({keepBreaks: true, debug: true}))
-//        .pipe(sourcemaps.write('./'))
-//        .pipe(sourcemaps.write({includeContent: false, sourceRoot: '../../../src/less'}))
-        .pipe(sourcemaps.write())
+        .pipe(sourcemaps.write({includeContent: true}))
+//        .pipe(sourcemaps.write())
         .pipe(gulp.dest('./themes/' + theme_name + '/assets/css'));
 });
-*/
 
+/*
 gulp.task('less', function () {
     gulp.src('src/less/main.less')
         .pipe(less({
@@ -125,7 +123,7 @@ gulp.task('less', function () {
         .pipe(rename('main.min.css'))
         .pipe(gulp.dest('./themes/' + theme_name + '/assets/css'));
 });
-
+ */
 
 /*
  * javascript
@@ -141,8 +139,8 @@ var js_head = [
 var js_foot = [
     'vendor/bower/greensock/src/uncompressed/TweenMax.js',
     'vendor/bower/d3/d3.js',
-    'vendor/bower/jparallax/js/jquery.event.frame.js',
-    'vendor/bower/jparallax/js/jquery.parallax.js',
+    'vendor/bower/jquery-contentsize/jquery.contentsize.js',
+    'vendor/bower/jquery.shapeshift/core/jquery.shapeshift.js',
     'vendor/bower/bootstrap/js/transition.js',
     'vendor/bower/bootstrap/js/alert.js',
     'vendor/bower/bootstrap/js/button.js',
@@ -155,7 +153,6 @@ var js_foot = [
     'vendor/bower/bootstrap/js/scrollspy.js',
     'vendor/bower/bootstrap/js/tab.js',
     'vendor/bower/bootstrap/js/affix.js',
-    'vendor/bower/jquery-contentsize/jquery.contentsize.js',
     'src/js/_*.js'
 ];
 
