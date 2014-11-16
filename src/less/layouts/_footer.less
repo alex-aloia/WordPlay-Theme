@@ -1,7 +1,7 @@
-footer {
+                                                                                                                                                              footer {
   .container-fluid();
   width: 100%;
-  height: 72px;
+  height: 68px;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -20,7 +20,7 @@ footer {
     //flex-basis: 32em;
     flex-basis: 50%;
     width: 50%;
-    height: 30px;
+    height: 26px;
     vertical-align:middle;
     display: inline-flex;
   }
@@ -40,13 +40,48 @@ footer {
   nav {
     width: 68%;
     margin: 0 auto;
+
+    #menu-footer-nav li a:after {
+      background-position: 0em 0em;
+      display: inline-block;
+      font-family: FontAwesome;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: normal;
+      line-height: 1;
+      font-size-adjust: none;
+      font-stretch: normal;
+      -moz-font-feature-settings: normal;
+      -moz-font-language-override: normal;
+      font-size: inherit;
+      text-rendering: auto;
+      -moz-osx-font-smoothing: grayscale;
+      font-size: 1.8em;
+      position: relative;
+      top: 0.15em;
+      left: 0.25em;
+    }
+
+    #menu-footer-nav li.menu-work a:after {
+      content: "\f085";
+    }
+
+    #menu-footer-nav li.menu-home a:after {
+      content: "\f015";
+    }
+    #menu-footer-nav li.menu-about-me a:after {
+      content: "\f183";
+    }
+
+
+
   }
 
 
   #aaaLogo_footer {
     position: absolute;
     right: 7em;
-    top: 2em;
+    top: 1.6em;
     z-index: 99;
     //width: 300px;
 
@@ -59,9 +94,9 @@ footer {
 
     p {
       color: #555;
-      font-size: 12px;
+      font-size: 1em;
       float: left;
-      margin: .75em -0.5em 0 0;
+      margin: 1em -0.25em 0 0;
       font-style: italic;
       font-weight: bold;
     }

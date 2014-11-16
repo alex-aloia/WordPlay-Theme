@@ -11,7 +11,7 @@
   ?>
 
   <div class="content">
-    <svg id="aaaLogo" class=""><use xlink:href="#aaaLogo"></use></svg>
+    <svg class="icon"><use xlink:href="#tripl3infinityLogo"></use></svg>
     <article class="entry-content">
         <?php
         while ( $loop->have_posts() ) :

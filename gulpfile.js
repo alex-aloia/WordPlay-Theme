@@ -16,6 +16,8 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     phantomjs = require('phantomjs'),
     svgSprite = require("gulp-svg-sprites"),
+    iconfont = require('gulp-iconfont'),
+    consolidate = require('gulp-consolidate'),
     //less = require('gulp-less-sourcemap');
 
     reload = browserSync.reload;
@@ -28,6 +30,25 @@ gulp.task('browser-sync', function () {
 });
 
 
+gulp.task('Iconfont', function(){
+    gulp.src(['src/svg/sprites/*.svg'])
+        .pipe(iconfont({ fontName: 't3i-font' }))
+        .on('codepoints', function(codepoints, options) {
+            gulp.src('templates/myfont.css')
+                .pipe(consolidate('lodash', {
+                    glyphs: codepoints,
+                    fontName: 't3i-icons', // required
+                    fontPath: '../fonts/',
+                    className: 's'
+                }))
+                .pipe(gulp.dest('www/css/'));
+        })
+        .pipe(gulp.dest(assets + 'font'));
+});
+
+
+
+
 /*
  * svg min & sprite
  */
@@ -36,7 +57,7 @@ var sprite_config = {
         css: require("fs").readFileSync("./src/less/sprite-template.less", "utf-8")
     },
     common: "sprite",
-    cssFile: "../../less/svg-sprite.less",
+    cssFile: "src/less/svg-sprite.css",
     svgPath: "../img/%f",
     pngPath: "../img/%f",
     svg: {

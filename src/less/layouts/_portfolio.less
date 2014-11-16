@@ -33,6 +33,38 @@
 p {
   color: red;
 }
+svg {
+  fill: #aaff00;
+}
+
+
+
+
+
+.sprite {
+  font-size: 10px;
+}
+
+.sprite:before {
+  content:' ';
+  vertical-align:middle;
+  display: inline-block;
+  background-image: url("../img/spritesheet.svg");
+  background-repeat: no-repeat;
+  background-size: 60em 60em;
+}
+
+.no-svg .sprite:before {
+  background-image: url("../img/spritesheet.png");
+}
+
+.github:before {
+}
+
+
+
+
+
 
 .greyscale {
   -webkit-filter: grayscale(100%);
