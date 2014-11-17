@@ -1,24 +1,57 @@
 body {
-//  background: #111;
-  background: #000;
-  
-  font-family: 'Roboto', sans-serif;
-}
 
-#under_dev_splash {
-  margin: 0 auto;
-  display: block;
-}
+  svg.logo {
+    fill: @brand-primary;
+  }
 
-#bgOverlay {
-  background: #000;
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  display: none;
+
+  .contact-fixed {
+    color: @brand-primary;
+    position: fixed;
+    right: 0;
+    top: 45%;
+//    /* Safari */
+//    -webkit-transform: rotate(-90deg);
+//    /* Firefox */
+//    -moz-transform: rotate(-90deg);
+//    /* IE */
+//    -ms-transform: rotate(-90deg);
+//    /* Opera */
+//    -o-transform: rotate(-90deg);
+//    /* Internet Explorer */
+//    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+    > a {
+      font-size: 1em;
+      padding-right: 10px;
+      
+      &:after {
+        .icon-envelope();
+        font-size: 1.2em;
+        content: "\f003";
+
+        background-position: 0em 0em;
+        display: inline-block;
+        font-family: FontAwesome;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: normal;
+        line-height: 1;
+        font-size-adjust: none;
+        font-stretch: normal;
+        -moz-font-feature-settings: normal;
+        -moz-font-language-override: normal;
+        font-size: inherit;
+        text-rendering: auto;
+        -moz-osx-font-smoothing: grayscale;
+        font-size: 1.75em;
+        position: relative;
+      }
+
+    }
+  }
+
+
 }
 
 

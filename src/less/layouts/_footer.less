@@ -1,4 +1,4 @@
-                                                                                                                                                              footer {
+footer {
   .container-fluid();
   width: 100%;
   height: 68px;
@@ -21,11 +21,9 @@
     flex-basis: 50%;
     width: 50%;
     height: 26px;
-    vertical-align:middle;
+    vertical-align: middle;
     display: inline-flex;
   }
-
-
 
   &:before {
     left: 0;
@@ -37,71 +35,84 @@
     background-position: right -28px;
   }
 
-  nav {
-    width: 68%;
-    margin: 0 auto;
+  nav.navbar-fixed-bottom {
+    width: 90%;
+    height: 40px;
+    margin: 0 auto 5px;
 
-    #menu-footer-nav li a:after {
-      background-position: 0em 0em;
-      display: inline-block;
-      font-family: FontAwesome;
-      font-style: normal;
-      font-variant: normal;
-      font-weight: normal;
-      line-height: 1;
-      font-size-adjust: none;
-      font-stretch: normal;
-      -moz-font-feature-settings: normal;
-      -moz-font-language-override: normal;
-      font-size: inherit;
-      text-rendering: auto;
-      -moz-osx-font-smoothing: grayscale;
-      font-size: 1.8em;
-      position: relative;
-      top: 0.15em;
-      left: 0.25em;
-    }
+    ul#menu-footer-nav {
+      position: absolute;
+      left: 1.5em;
+      bottom: 5px;
 
-    #menu-footer-nav li.menu-work a:after {
-      content: "\f085";
-    }
+      li a {
+        color: #555;
+        font-weight: bold;
+        padding: 0 2.5em 0 0;
 
-    #menu-footer-nav li.menu-home a:after {
-      content: "\f015";
-    }
-    #menu-footer-nav li.menu-about-me a:after {
-      content: "\f183";
-    }
+        &:before {
+          color: @brand-primary;
+          background-position: 0em 0em;
+          display: inline-block;
+          font-family: FontAwesome;
+          font-style: normal;
+          font-variant: normal;
+          font-weight: normal;
+          line-height: 1;
+          font-size-adjust: none;
+          font-stretch: normal;
+          -moz-font-feature-settings: normal;
+          -moz-font-language-override: normal;
+          font-size: inherit;
+          text-rendering: auto;
+          -moz-osx-font-smoothing: grayscale;
+          font-size: 1.75em;
+          position: relative;
+          top: 0.12em;
+          left: -0.3em;
+        }
+        &:hover {
+          color: @brand-info;
+        }
+      }
+      li.menu-work a:before {
+        content: "\f085";
+      }
 
+      li.menu-home a:before {
+        content: "\f015";
+      }
+      li.menu-about a:before {
+        content: "\f183";
+      }
+    }
 
 
   }
 
-
   #aaaLogo_footer {
     position: absolute;
-    right: 7em;
-    top: 1.6em;
+    right: 0;
+    bottom: -0.6em;
     z-index: 99;
     //width: 300px;
 
     > svg {
       height: 3em;
-      width: 15em;
-      fill: #99ff00;
+      width: 14em;
       //stroke-width: 2em;
     }
 
     p {
       color: #555;
-      font-size: 1em;
-      float: left;
-      margin: 1em -0.25em 0 0;
+      font-size: 0.8em;
       font-style: italic;
-      font-weight: bold;
+      font-weight: normal;
+      left: -5em;
+      bottom: 6px;
+      position: absolute;
     }
   }
-
 
 }
 

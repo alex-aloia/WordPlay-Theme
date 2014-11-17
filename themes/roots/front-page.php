@@ -11,7 +11,7 @@
   ?>
 
   <div class="content">
-    <svg class="icon"><use xlink:href="#tripl3infinityLogo"></use></svg>
+<i class="fa fa-gears"></i>
     <article class="entry-content">
         <?php
         while ( $loop->have_posts() ) :

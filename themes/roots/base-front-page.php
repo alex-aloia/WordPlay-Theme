@@ -5,7 +5,11 @@
  */
 ?>
 
-<?php get_template_part('templates/head'); ?>
+<?php get_template_part('templates/head');
+do_action('get_header');
+get_template_part('templates/header');
+?>
+
 <body <?php body_class(); ?>>
 
 

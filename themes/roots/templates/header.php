@@ -1,4 +1,5 @@
-<header class="banner navbar navbar-default navbar-static-top" role="banner">
+<header class="banner" role="banner">
+  <!-- navbar navbar-default navbar-static-top
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -18,4 +19,7 @@
       ?>
     </nav>
   </div>
+  -->
+
+  <svg class="logo tripl3infLogo"><use xlink:href="#tripl3infinityLogo"></use></svg>
 </header>

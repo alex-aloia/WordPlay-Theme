@@ -1,0 +1,355 @@
+/* FONT PATH
+ * -------------------------- */
+
+//@import "../../vendor/bower/font-awesome/less/font-awesome.less";          // General styling
+
+
+/*  Font Awesome
+    the iconic font designed for use with Twitter Bootstrap
+    -------------------------------------------------------
+    The full suite of pictographic icons, examples, and documentation
+    can be found at: http://fortawesome.github.com/Font-Awesome/
+
+    License
+    -------------------------------------------------------
+    The Font Awesome webfont, CSS, and LESS files are licensed under CC BY 3.0:
+    http://creativecommons.org/licenses/by/3.0/ A mention of
+    'Font Awesome - http://fortawesome.github.com/Font-Awesome' in human-readable
+    source code is considered acceptable attribution (most common on the web).
+    If human readable source code is not available to the end user, a mention in
+    an 'About' or 'Credits' screen is considered acceptable (most common in desktop
+    or mobile software).
+
+    Contact
+    -------------------------------------------------------
+    Email: dave@davegandy.com
+    Twitter: http://twitter.com/fortaweso_me
+    Work: Lead Product Designer @ http://kyruus.com
+
+    */
+
+@fontAwesomePath: '../font';
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('@{fontAwesomePath}/fontawesome-webfont.eot');
+  src: url('@{fontAwesomePath}/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
+  url('@{fontAwesomePath}/fontawesome-webfont.woff') format('woff'),
+  url('@{fontAwesomePath}/fontawesome-webfont.ttf') format('truetype'),
+  url('@{fontAwesomePath}/fontawesome-webfont.svg#FontAwesome') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*  Font Awesome styles
+    ------------------------------------------------------- */
+.icon() {
+  &:before {
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    text-decoration: inherit;
+    // TODO: Check if the following line causes any trouble. (it was applied only for icons inside buttons)
+    line-height: .9em;
+  }
+}
+
+[class^="icon"]:before,
+[class*=" icon"]:before {
+  .icon;
+}
+
+a [class^="icon"],
+a [class*=" icon"] {
+  display: inline-block;
+  text-decoration: inherit;
+}
+
+/* makes the font 33% larger relative to the icon container */
+.icon-large() {
+  &:before {
+    vertical-align: middle;
+    font-size: 4/3em;
+  }
+}
+
+.btn, .nav-tabs {
+  [class^="icon"],
+  [class*=" icon"] {
+    /* keeps button heights with and without icons the same */
+    line-height: .9em;
+  }
+}
+
+/****************************************************/
+/* This is where the trouble begins
+/****************************************************/
+
+
+li {
+  [class^="icon"],
+  [class*=" icon"] {
+    display: inline-block;
+    width: 1.25em;
+    text-align: center;
+  }
+  /* Why there are two identical selectors here? */
+.icon-large:before,
+.icon-large:before {
+  /* 1.5 increased font size for icon-large * 1.25 width */
+  width: 1.5*1.25em;
+}
+}
+
+ul.icons {
+  list-style-type: none;
+  margin-left: 2em;
+  text-indent: -.8em;
+
+  li {
+    [class^="icon"],
+    [class*=" icon"] {
+      width: .8em;
+    }
+    .icon-large:before,
+    .icon-large:before {
+      /* 1.5 increased font size for icon-large * 1.25 width */
+      vertical-align: initial;
+      //      width: 1.5*1.25em;
+    }
+  }
+}
+
+/****************************************************/
+/* Trouble ends here */
+/****************************************************/
+
+/*  Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
+    readers do not read off random characters that represent icons */
+.icon-glass()                { .icon; &:before { content: "\f000"; }}
+.icon-music()                { .icon; &:before { content: "\f001"; }}
+.icon-search()               { .icon; &:before { content: "\f002"; }}
+.icon-envelope()             { .icon; &:before { content: "\f003"; }}
+.icon-heart()                { .icon; &:before { content: "\f004"; }}
+.icon-star()                 { .icon; &:before { content: "\f005"; }}
+.icon-star-empty()           { .icon; &:before { content: "\f006"; }}
+.icon-user()                 { .icon; &:before { content: "\f007"; }}
+.icon-film()                 { .icon; &:before { content: "\f008"; }}
+.icon-th-large()             { .icon; &:before { content: "\f009"; }}
+.icon-th()                   { .icon; &:before { content: "\f00a"; }}
+.icon-th-list()              { .icon; &:before { content: "\f00b"; }}
+.icon-ok()                   { .icon; &:before { content: "\f00c"; }}
+.icon-remove()               { .icon; &:before { content: "\f00d"; }}
+.icon-zoom-in()              { .icon; &:before { content: "\f00e"; }}
+
+.icon-zoom-out()             { .icon; &:before { content: "\f010"; }}
+.icon-off()                  { .icon; &:before { content: "\f011"; }}
+.icon-signal()               { .icon; &:before { content: "\f012"; }}
+.icon-cog()                  { .icon; &:before { content: "\f013"; }}
+.icon-trash()                { .icon; &:before { content: "\f014"; }}
+.icon-home()                 { .icon; &:before { content: "\f015"; }}
+.icon-file()                 { .icon; &:before { content: "\f016"; }}
+.icon-time()                 { .icon; &:before { content: "\f017"; }}
+.icon-road()                 { .icon; &:before { content: "\f018"; }}
+.icon-download-alt()         { .icon; &:before { content: "\f019"; }}
+.icon-download()             { .icon; &:before { content: "\f01a"; }}
+.icon-upload()               { .icon; &:before { content: "\f01b"; }}
+.icon-inbox()                { .icon; &:before { content: "\f01c"; }}
+.icon-play-circle()          { .icon; &:before { content: "\f01d"; }}
+.icon-repeat()               { .icon; &:before { content: "\f01e"; }}
+
+/* \f020 doesn't work in Safari. all shifted one down */
+.icon-refresh()              { .icon; &:before { content: "\f021"; }}
+.icon-list-alt()             { .icon; &:before { content: "\f022"; }}
+.icon-lock()                 { .icon; &:before { content: "\f023"; }}
+.icon-flag()                 { .icon; &:before { content: "\f024"; }}
+.icon-headphones()           { .icon; &:before { content: "\f025"; }}
+.icon-volume-off()           { .icon; &:before { content: "\f026"; }}
+.icon-volume-down()          { .icon; &:before { content: "\f027"; }}
+.icon-volume-up()            { .icon; &:before { content: "\f028"; }}
+.icon-qrcode()               { .icon; &:before { content: "\f029"; }}
+.icon-barcode()              { .icon; &:before { content: "\f02a"; }}
+.icon-tag()                  { .icon; &:before { content: "\f02b"; }}
+.icon-tags()                 { .icon; &:before { content: "\f02c"; }}
+.icon-book()                 { .icon; &:before { content: "\f02d"; }}
+.icon-bookmark()             { .icon; &:before { content: "\f02e"; }}
+.icon-print()                { .icon; &:before { content: "\f02f"; }}
+
+.icon-camera()               { .icon; &:before { content: "\f030"; }}
+.icon-font()                 { .icon; &:before { content: "\f031"; }}
+.icon-bold()                 { .icon; &:before { content: "\f032"; }}
+.icon-italic()               { .icon; &:before { content: "\f033"; }}
+.icon-text-height()          { .icon; &:before { content: "\f034"; }}
+.icon-text-width()           { .icon; &:before { content: "\f035"; }}
+.icon-align-left()           { .icon; &:before { content: "\f036"; }}
+.icon-align-center()         { .icon; &:before { content: "\f037"; }}
+.icon-align-right()          { .icon; &:before { content: "\f038"; }}
+.icon-align-justify()        { .icon; &:before { content: "\f039"; }}
+.icon-list()                 { .icon; &:before { content: "\f03a"; }}
+.icon-indent-left()          { .icon; &:before { content: "\f03b"; }}
+.icon-indent-right()         { .icon; &:before { content: "\f03c"; }}
+.icon-facetime-video()       { .icon; &:before { content: "\f03d"; }}
+.icon-picture()              { .icon; &:before { content: "\f03e"; }}
+
+.icon-pencil()               { .icon; &:before { content: "\f040"; }}
+.icon-map-marker()           { .icon; &:before { content: "\f041"; }}
+.icon-adjust()               { .icon; &:before { content: "\f042"; }}
+.icon-tint()                 { .icon; &:before { content: "\f043"; }}
+.icon-edit()                 { .icon; &:before { content: "\f044"; }}
+.icon-share()                { .icon; &:before { content: "\f045"; }}
+.icon-check()                { .icon; &:before { content: "\f046"; }}
+.icon-move()                 { .icon; &:before { content: "\f047"; }}
+.icon-step-backward()        { .icon; &:before { content: "\f048"; }}
+.icon-fast-backward()        { .icon; &:before { content: "\f049"; }}
+.icon-backward()             { .icon; &:before { content: "\f04a"; }}
+.icon-play()                 { .icon; &:before { content: "\f04b"; }}
+.icon-pause()                { .icon; &:before { content: "\f04c"; }}
+.icon-stop()                 { .icon; &:before { content: "\f04d"; }}
+.icon-forward()              { .icon; &:before { content: "\f04e"; }}
+
+.icon-fast-forward()         { .icon; &:before { content: "\f050"; }}
+.icon-step-forward()         { .icon; &:before { content: "\f051"; }}
+.icon-eject()                { .icon; &:before { content: "\f052"; }}
+.icon-chevron-left()         { .icon; &:before { content: "\f053"; }}
+.icon-chevron-right()        { .icon; &:before { content: "\f054"; }}
+.icon-plus-sign()            { .icon; &:before { content: "\f055"; }}
+.icon-minus-sign()           { .icon; &:before { content: "\f056"; }}
+.icon-remove-sign()          { .icon; &:before { content: "\f057"; }}
+.icon-ok-sign()              { .icon; &:before { content: "\f058"; }}
+.icon-question-sign()        { .icon; &:before { content: "\f059"; }}
+.icon-info-sign()            { .icon; &:before { content: "\f05a"; }}
+.icon-screenshot()           { .icon; &:before { content: "\f05b"; }}
+.icon-remove-circle()        { .icon; &:before { content: "\f05c"; }}
+.icon-ok-circle()            { .icon; &:before { content: "\f05d"; }}
+.icon-ban-circle()           { .icon; &:before { content: "\f05e"; }}
+
+.icon-arrow-left()           { .icon; &:before { content: "\f060"; }}
+.icon-arrow-right()          { .icon; &:before { content: "\f061"; }}
+.icon-arrow-up()             { .icon; &:before { content: "\f062"; }}
+.icon-arrow-down()           { .icon; &:before { content: "\f063"; }}
+.icon-share-alt()            { .icon; &:before { content: "\f064"; }}
+.icon-resize-full()          { .icon; &:before { content: "\f065"; }}
+.icon-resize-small()         { .icon; &:before { content: "\f066"; }}
+.icon-plus()                 { .icon; &:before { content: "\f067"; }}
+.icon-minus()                { .icon; &:before { content: "\f068"; }}
+.icon-asterisk()             { .icon; &:before { content: "\f069"; }}
+.icon-exclamation-sign()     { .icon; &:before { content: "\f06a"; }}
+.icon-gift()                 { .icon; &:before { content: "\f06b"; }}
+.icon-leaf()                 { .icon; &:before { content: "\f06c"; }}
+.icon-fire()                 { .icon; &:before { content: "\f06d"; }}
+.icon-eye-open()             { .icon; &:before { content: "\f06e"; }}
+
+.icon-eye-close()            { .icon; &:before { content: "\f070"; }}
+.icon-warning-sign()         { .icon; &:before { content: "\f071"; }}
+.icon-plane()                { .icon; &:before { content: "\f072"; }}
+.icon-calendar()             { .icon; &:before { content: "\f073"; }}
+.icon-random()               { .icon; &:before { content: "\f074"; }}
+.icon-comment()              { .icon; &:before { content: "\f075"; }}
+.icon-magnet()               { .icon; &:before { content: "\f076"; }}
+.icon-chevron-up()           { .icon; &:before { content: "\f077"; }}
+.icon-chevron-down()         { .icon; &:before { content: "\f078"; }}
+.icon-retweet()              { .icon; &:before { content: "\f079"; }}
+.icon-shopping-cart()        { .icon; &:before { content: "\f07a"; }}
+.icon-folder-close()         { .icon; &:before { content: "\f07b"; }}
+.icon-folder-open()          { .icon; &:before { content: "\f07c"; }}
+.icon-resize-vertical()      { .icon; &:before { content: "\f07d"; }}
+.icon-resize-horizontal()    { .icon; &:before { content: "\f07e"; }}
+
+.icon-bar-chart()            { .icon; &:before { content: "\f080"; }}
+.icon-twitter-sign()         { .icon; &:before { content: "\f081"; }}
+.icon-facebook-sign()        { .icon; &:before { content: "\f082"; }}
+.icon-camera-retro()         { .icon; &:before { content: "\f083"; }}
+.icon-key()                  { .icon; &:before { content: "\f084"; }}
+.icon-cogs()                 { .icon; &:before { content: "\f085"; }}
+.icon-comments()             { .icon; &:before { content: "\f086"; }}
+.icon-thumbs-up()            { .icon; &:before { content: "\f087"; }}
+.icon-thumbs-down()          { .icon; &:before { content: "\f088"; }}
+.icon-star-half()            { .icon; &:before { content: "\f089"; }}
+.icon-heart-empty()          { .icon; &:before { content: "\f08a"; }}
+.icon-signout()              { .icon; &:before { content: "\f08b"; }}
+.icon-linkedin-sign()        { .icon; &:before { content: "\f08c"; }}
+.icon-pushpin()              { .icon; &:before { content: "\f08d"; }}
+.icon-external-link()        { .icon; &:before { content: "\f08e"; }}
+
+.icon-signin()               { .icon; &:before { content: "\f090"; }}
+.icon-trophy()               { .icon; &:before { content: "\f091"; }}
+.icon-github-sign()          { .icon; &:before { content: "\f092"; }}
+.icon-upload-alt()           { .icon; &:before { content: "\f093"; }}
+.icon-lemon()                { .icon; &:before { content: "\f094"; }}
+.icon-phone()                { .icon; &:before { content: "\f095"; }}
+.icon-check-empty()          { .icon; &:before { content: "\f096"; }}
+.icon-bookmark-empty()       { .icon; &:before { content: "\f097"; }}
+.icon-phone-sign()           { .icon; &:before { content: "\f098"; }}
+.icon-twitter()              { .icon; &:before { content: "\f099"; }}
+.icon-facebook()             { .icon; &:before { content: "\f09a"; }}
+.icon-github()               { .icon; &:before { content: "\f09b"; }}
+.icon-unlock()               { .icon; &:before { content: "\f09c"; }}
+.icon-credit-card()          { .icon; &:before { content: "\f09d"; }}
+.icon-rss()                  { .icon; &:before { content: "\f09e"; }}
+
+.icon-hdd()                  { .icon; &:before { content: "\f0a0"; }}
+.icon-bullhorn()             { .icon; &:before { content: "\f0a1"; }}
+.icon-bell()                 { .icon; &:before { content: "\f0a2"; }}
+.icon-certificate()          { .icon; &:before { content: "\f0a3"; }}
+.icon-hand-right()           { .icon; &:before { content: "\f0a4"; }}
+.icon-hand-left()            { .icon; &:before { content: "\f0a5"; }}
+.icon-hand-up()              { .icon; &:before { content: "\f0a6"; }}
+.icon-hand-down()            { .icon; &:before { content: "\f0a7"; }}
+.icon-circle-arrow-left()    { .icon; &:before { content: "\f0a8"; }}
+.icon-circle-arrow-right()   { .icon; &:before { content: "\f0a9"; }}
+.icon-circle-arrow-up()      { .icon; &:before { content: "\f0aa"; }}
+.icon-circle-arrow-down()    { .icon; &:before { content: "\f0ab"; }}
+.icon-globe()                { .icon; &:before { content: "\f0ac"; }}
+.icon-wrench()               { .icon; &:before { content: "\f0ad"; }}
+.icon-tasks()                { .icon; &:before { content: "\f0ae"; }}
+
+.icon-filter()               { .icon; &:before { content: "\f0b0"; }}
+.icon-briefcase()            { .icon; &:before { content: "\f0b1"; }}
+.icon-fullscreen()           { .icon; &:before { content: "\f0b2"; }}
+
+.icon-group()                { .icon; &:before { content: "\f0c0"; }}
+.icon-link()                 { .icon; &:before { content: "\f0c1"; }}
+.icon-cloud()                { .icon; &:before { content: "\f0c2"; }}
+.icon-beaker()               { .icon; &:before { content: "\f0c3"; }}
+.icon-cut()                  { .icon; &:before { content: "\f0c4"; }}
+.icon-copy()                 { .icon; &:before { content: "\f0c5"; }}
+.icon-paper-clip()           { .icon; &:before { content: "\f0c6"; }}
+.icon-save()                 { .icon; &:before { content: "\f0c7"; }}
+.icon-sign-blank()           { .icon; &:before { content: "\f0c8"; }}
+.icon-reorder()              { .icon; &:before { content: "\f0c9"; }}
+.icon-list-ul()              { .icon; &:before { content: "\f0ca"; }}
+.icon-list-ol()              { .icon; &:before { content: "\f0cb"; }}
+.icon-strikethrough()        { .icon; &:before { content: "\f0cc"; }}
+.icon-underline()            { .icon; &:before { content: "\f0cd"; }}
+.icon-table()                { .icon; &:before { content: "\f0ce"; }}
+
+.icon-magic()                { .icon; &:before { content: "\f0d0"; }}
+.icon-truck()                { .icon; &:before { content: "\f0d1"; }}
+.icon-pinterest()            { .icon; &:before { content: "\f0d2"; }}
+.icon-pinterest-sign()       { .icon; &:before { content: "\f0d3"; }}
+.icon-google-plus-sign()     { .icon; &:before { content: "\f0d4"; }}
+.icon-google-plus()          { .icon; &:before { content: "\f0d5"; }}
+.icon-money()                { .icon; &:before { content: "\f0d6"; }}
+.icon-caret-down()           { .icon; &:before { content: "\f0d7"; }}
+.icon-caret-up()             { .icon; &:before { content: "\f0d8"; }}
+.icon-caret-left()           { .icon; &:before { content: "\f0d9"; }}
+.icon-caret-right()          { .icon; &:before { content: "\f0da"; }}
+.icon-columns()              { .icon; &:before { content: "\f0db"; }}
+.icon-sort()                 { .icon; &:before { content: "\f0dc"; }}
+.icon-sort-down()            { .icon; &:before { content: "\f0dd"; }}
+.icon-sort-up()              { .icon; &:before { content: "\f0de"; }}
+
+.icon-envelope-alt()         { .icon; &:before { content: "\f0e0"; }}
+.icon-linkedin()             { .icon; &:before { content: "\f0e1"; }}
+.icon-undo()                 { .icon; &:before { content: "\f0e2"; }}
+.icon-legal()                { .icon; &:before { content: "\f0e3"; }}
+.icon-dashboard()            { .icon; &:before { content: "\f0e4"; }}
+.icon-comment-alt()          { .icon; &:before { content: "\f0e5"; }}
+.icon-comments-alt()         { .icon; &:before { content: "\f0e6"; }}
+.icon-bolt()                 { .icon; &:before { content: "\f0e7"; }}
+.icon-sitemap()              { .icon; &:before { content: "\f0e8"; }}
+.icon-umbrella()             { .icon; &:before { content: "\f0e9"; }}
+.icon-paste()                { .icon; &:before { content: "\f0ea"; }}
+
+.icon-user-md()              { .icon; &:before { content: "\f200"; }}

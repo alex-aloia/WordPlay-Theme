@@ -18,7 +18,8 @@
     "greensock": "~1.14.2",
     "bootstrap": "~3.3.0",
     "jquery-contentsize": "git@github.com:gilmoreorless/jquery-contentsize.git",
-    "jquery.shapeshift": "~2.0.0"
+    "jquery.shapeshift": "~2.0.0",
+    "font-awesome": "~4.2.0"
   },
   "resolutions": {
     "bootstrap": "~3.3.0",

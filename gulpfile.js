@@ -112,6 +112,7 @@ gulp.task('svg-symbol', function () {
 
 var path = require('path');
 
+/*
 gulp.task('less_dev', function () {
     gulp.src('./src/less/main.less')
         .pipe(less({
@@ -121,7 +122,7 @@ gulp.task('less_dev', function () {
         }))
         .pipe(gulp.dest(assets + '/css'));
 });
-
+*/
 
 gulp.task('less_dev', function () {
     gulp.src('src/less/main.less')
