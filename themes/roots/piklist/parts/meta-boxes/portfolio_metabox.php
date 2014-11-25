@@ -50,6 +50,19 @@ piklist( 'field', array(
 
 
 piklist( 'field', array(
+  'type'        => 'text',
+  'field'       => 'port_thumbCol',
+  'label'       => 'Thumbnail Column Span',
+  'description' => 'Number of columns the thumbnail image will span',
+  'columns'     => 2,
+  'value'       => 2,
+  'attributes'  => array(
+  'class' => 'text'
+)
+) );
+
+
+piklist( 'field', array(
   //'type'        => 'textarea',
   'type'        => 'editor',
   'field'       => 'port_description',

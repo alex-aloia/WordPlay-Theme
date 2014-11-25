@@ -1,9 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
     ],
-    "hash": "17a2b2df09569ce4b9ee911acef9b579",
+    "hash": "81a8c51c39d6dc45896255c5e4c2cccd",
     "packages": [
         {
             "name": "composer/installers",
@@ -162,15 +163,15 @@
         },
         {
             "name": "wpackagist-plugin/piklist",
-            "version": "0.9.4.17",
+            "version": "0.9.4.19",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/piklist/",
-                "reference": "tags/0.9.4.17"
+                "reference": "tags/0.9.4.19"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/piklist.0.9.4.17.zip",
+                "url": "http://downloads.wordpress.org/plugin/piklist.0.9.4.19.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -182,6 +183,29 @@
             },
             "type": "wordpress-plugin",
             "homepage": "http://wordpress.org/plugins/piklist/"
+        },
+        {
+            "name": "wpackagist-plugin/simple-page-ordering",
+            "version": "2.2.3",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/simple-page-ordering/",
+                "reference": "tags/2.2.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://downloads.wordpress.org/plugin/simple-page-ordering.2.2.3.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "replace": {
+                "wpackagist/simple-page-ordering": "self.version"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "http://wordpress.org/plugins/simple-page-ordering/"
         },
         {
             "name": "wpackagist-plugin/wp-slimstat",
@@ -278,17 +302,12 @@
             "homepage": "http://wordpress.org/plugins/wordpress-importer/"
         }
     ],
-    "aliases": [
-
-    ],
+    "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [
-
-    ],
+    "stability-flags": [],
+    "prefer-stable": false,
     "platform": {
         "php": ">=5.3.0"
     },
-    "platform-dev": [
-
-    ]
+    "platform-dev": []
 }

@@ -21,5 +21,6 @@
   </div>
   -->
 
-  <svg class="logo tripl3infLogo"><use xlink:href="#tripl3infinityLogo"></use></svg>
+
+  <svg class="logo main tripl3infLogo"><use xlink:href="#tripl3infinityLogo"></use></svg>
 </header>

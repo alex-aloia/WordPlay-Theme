@@ -20,6 +20,7 @@ function custom_post_types( $post_types ) {
       'title'           => __( 'Item Title' ),
       'public'          => true,
       'has_archive'     => true,
+      'hierarchical'    => true,
       'rewrite'         => array(
         'slug' => 'cpt_portfolio'
       ),
@@ -29,7 +30,8 @@ function custom_post_types( $post_types ) {
         'thumbnail',
         'video',
         'author',
-        'revisions'
+        'revisions',
+        'page-attributes'
       ),
       'hide_meta_box'   => array(
         'slug',
