@@ -8,10 +8,14 @@ while (have_posts()) : the_post();
     get_template_part('assets/img/inline', 'symbols.svg');
 endwhile;
 ?>
+<h1 id="test_btn">BTN</h1>
+
+<div id="portfolio"></div>
+
 
 <div class="content container-fluid">
     <article class="entry-content row">
-        <div id="portfolio"></div>
+
     </article>
 </div>
 

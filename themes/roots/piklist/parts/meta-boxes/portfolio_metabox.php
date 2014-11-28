@@ -51,11 +51,10 @@ piklist( 'field', array(
 
 piklist( 'field', array(
   'type'        => 'text',
-  'field'       => 'port_thumbCol',
-  'label'       => 'Thumbnail Column Span',
-  'description' => 'Number of columns the thumbnail image will span',
+  'field'       => 'port_thumbW',
+  'label'       => 'Thumbnail Width',
   'columns'     => 2,
-  'value'       => 2,
+  'value'       => 200,
   'attributes'  => array(
   'class' => 'text'
 )

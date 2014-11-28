@@ -147,57 +147,38 @@ gulp.task('less', function () {
 });
  */
 
+
 /*
  * javascript
  */
 
-var js_head = [
-    //'vendor/bower/svg.js/dist/svg.js',
-    //'vendor/bower/svg.parser.js/svg.parser.js',
-    //'vendor/bower/svg.import.js/svg.import.js'
-];
-
-
 var js_foot = [
     'vendor/bower/greensock/src/uncompressed/TweenMax.js',
     'vendor/bower/d3/d3.js',
-    'vendor/bower/jquery-contentsize/jquery.contentsize.js',
-    'vendor/bower/jquery.shapeshift/core/jquery.shapeshift.js',
+//  'vendor/bower/jquery-contentsize/jquery.contentsize.js',
+    'vendor/bower/jlayout/lib/jquery.sizes.js',
+    'vendor/bower/jlayout/lib/jlayout.flow.js',
+    'vendor/bower/jlayout/lib/jquery.jlayout.js',
     'vendor/bower/bootstrap/js/transition.js',
     'vendor/bower/bootstrap/js/alert.js',
     'vendor/bower/bootstrap/js/button.js',
-    'vendor/bower/bootstrap/js/carousel.js',
+//  'vendor/bower/bootstrap/js/carousel.js',
     'vendor/bower/bootstrap/js/collapse.js',
     'vendor/bower/bootstrap/js/dropdown.js',
     'vendor/bower/bootstrap/js/modal.js',
     'vendor/bower/bootstrap/js/tooltip.js',
     'vendor/bower/bootstrap/js/popover.js',
-    'vendor/bower/bootstrap/js/scrollspy.js',
-    'vendor/bower/bootstrap/js/tab.js',
-    'vendor/bower/bootstrap/js/affix.js',
+//  'vendor/bower/bootstrap/js/scrollspy.js',
+//  'vendor/bower/bootstrap/js/tab.js',
+//  'vendor/bower/bootstrap/js/affix.js',
     'src/js/_*.js'
 ];
 
-gulp.task('js-head', function () {
-    gulp.src(js_head)
-        .pipe(concat('js-head.min.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest('themes/' + theme_name + '/assets/js'))
-});
 
 gulp.task('js-foot', function () {
     gulp.src(js_head)
         .pipe(concat('js-foot.min.js'))
         .pipe(uglify())
-        .pipe(gulp.dest('themes/' + theme_name + '/assets/js'))
-});
-
-
-gulp.task('dev_js-head', function () {
-    gulp.src(js_head)
-        .pipe(sourcemaps.init())
-        .pipe(concat('js-head.js'))
-        .pipe(sourcemaps.write())
         .pipe(gulp.dest('themes/' + theme_name + '/assets/js'))
 });
 
@@ -244,5 +225,3 @@ gulp.task('watch', ['browser-sync'], function () {
 // Default task to be run with `gulp`
 gulp.task('dev', ['less_dev', 'dev_js-foot', 'jshint', 'watch', 'browser-sync']);
 
-// Build
-gulp.task('default', ['less', 'js-head', 'js-foot']);
