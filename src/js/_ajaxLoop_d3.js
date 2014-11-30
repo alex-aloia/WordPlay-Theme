@@ -37,6 +37,7 @@ jQuery(function ($) {
                 }
             });
         }
+
     });
 
 
@@ -73,18 +74,18 @@ jQuery(function ($) {
                 });
 
         var container = $('#portfolio ul'),
-            layout = function() {
-            container.layout({
-                type: 'flow',
-                alignment: 'center',
-                resize: false,
-                hgap: 50,
-                vgap: 50,
-                items: li[0]
-            });
-            scrollH = container.prop('scrollHeight');
-            container.parent().height(scrollH + 125);
-        }
+            layout = function () {
+                container.layout({
+                    type: 'flow',
+                    alignment: 'center',
+                    resize: false,
+                    hgap: 50,
+                    vgap: 50,
+                    items: li[0]
+                });
+                scrollH = container.prop('scrollHeight');
+                container.parent().height(scrollH + 125);
+            }
 
         layout();
 
@@ -94,51 +95,59 @@ jQuery(function ($) {
 
         var portTL = new TimelineLite({paused: true}),
             t3iLogo = d3.select('.main.tripl3infLogo');
-        portTL.to( t3iLogo, 1, {autoAlpha: 0});
-        portTL.staggerTo( li[0], 0.75, {autoAlpha: 1, ease: Expo.easeIn}, 0.15, 'stage1');
-        portTL.staggerFrom( li[0], 0.75, {y:'-=200px',ease: Expo.easeIn}, 0.15, 'stage1');
-        portTL.staggerTo( filter[0], 0.2, {attr: {"values": 1}}, 0.15);
-        portTL.staggerTo( filter[0], 0.2, {attr: {"values": 0}}, 0.15);
+        portTL.to(t3iLogo, 1, {autoAlpha: 0});
+        portTL.staggerTo(li[0], 0.75, {autoAlpha: 1, ease: Expo.easeIn}, 0.15, 'stage1');
+        portTL.staggerFrom(li[0], 0.75, {y: '-=200px', ease: Expo.easeIn}, 0.15, 'stage1');
+        //portTL.staggerTo(filter[0], 0.2, {attr: {"values": 1}}, 0.15);
+        //portTL.staggerTo(filter[0], 0.2, {attr: {"values": 0}}, 0.15);
         portTL.play();
 
         li.on('mouseover', function (d, i) {
             TweenLite.to(filter[0][i], 0.3, {attr: {"values": 1}, ease: Linear.easeNone});
         })
-            .on('mouseout', function (d, i) {
-                TweenLite.to(filter[0][i], 0.3, {attr: {"values": 0}, ease: Linear.easeNone});
-            })
-            .on('click', function (d, i, e) {
-                var $this = d3.select(this)
+        .on('mouseout', function (d, i) {
+            TweenLite.to(filter[0][i], 0.3, {attr: {"values": 0}, ease: Linear.easeNone});
+        })
+        .on('click', function (d, i, e) {
+            // spatial calculations
+            var $this = d3.select(this),
                 domEl = li[0][i],
-                    winH = $(window).height(),
-                    centerH = (winH / 2),
-                    winW = $(window).width(),
-                    centerW = (winW / 2),
-                    itemW = $(domEl).width(),
-                    itemH = $(domEl).height(),
-                    offset = $(domEl).position(),
-                    offsetX = offset.left,
-                    offsetY = offset.top,
-                    posX = (winW - offsetX);
+                winH = $(window).height(),
+                centerH = (winH / 2),
+                winW = $(window).width(),
+                centerW = (winW / 2),
+                thumbW = $(domEl).width(),
+                thumbH = $(domEl).height(),
+                imgW = d.img_w,
+                imgH = (thumbH / thumbW) * imgW,
+                topOffset = ((winH - imgH) / 2) - 100, // 50px top margin
+                posX = centerW - imgW,
+                info = d.content;
 
-                console.log('li= ' + li[0][i].clientWidth);
+            $this.on('mouseout', null);
+            $this.on('click', null);
+            $this.append('div').attr('class', 'portInfo').html(info);
+            li[0].splice(i, 1);
+            portTL.staggerTo(li[0], 0.75, {autoAlpha: 0, y:'+=200px'}, 0.15);
+            portTL.set($('#portfolio'), {height: winH, overflow: 'hidden'});
+            //portTL.set(li, 0.8, {display: 'none'});
+            //portTL.set($this, {position: 'absolute'});
+            //portTL.to( $this, 1, {top:centerH});
+            portTL.to($this, 0.75, {left: posX, top: topOffset, width: imgW});
 
-                $this.on('mouseout', null);
-                li[0].splice(i, 1);
-                portTL.staggerTo(li[0], 0.8, {autoAlpha: 0}, 0.15);
-                //portTL.set(li, 0.8, {display: 'none'});
-                //portTL.set($this, {position: 'absolute'});
-                //portTL.to( $this, 1, {top:centerH});
-                portTL.to($this, 1, {left: posX});
-                //portTL.to( item, 1, {width: d.img_w,left:centerW});
-                console.log('win W = ' + winW);
-                console.log('win H = ' + winH);
-                console.log('center W = ' + centerW);
-                console.log('offset W = ' + offsetX);
-                console.log('item W = ' + itemW);
-                console.log('item H = ' + posX);
-            });
-
+            /*
+            console.info('img max width = ' + d.img_w);
+            console.info('port margin = ' + portMargin);
+            console.log('window height = ' + winH);
+            console.log('img height = ' + thumbH);
+            console.log('img width = ' + imgW);
+            console.log('img height = ' + imgH);
+            console.log('img top offset = ' + topOffset);
+            console.log('center W = ' + centerW);
+            console.log('item W = ' + thumbW);
+            console.log('item H = ' + posX);
+            */
+        });
     }
 
 

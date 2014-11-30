@@ -8,32 +8,7 @@ footer {
   min-width: 800px;
   padding: 0;
   background: #000 url(../img/bg_black-stripe.svg) repeat-x;
-
-  display: inline-flex;
-
-  &:before,
-  &:after {
-    content: '';
-    //background: #000 url(../img/footer_panel_piece.svg) no-repeat;
-    display: block;
-    //position: absolute;
-    //flex-basis: 32em;
-    flex-basis: 50%;
-    width: 50%;
-    height: 26px;
-    vertical-align: middle;
-    display: inline-flex;
-  }
-
-  &:before {
-    left: 0;
-  }
-
-  &:after {
-    z-index: 9;
-    right: 0;
-    background-position: right -28px;
-  }
+  display: block;
 
   nav.navbar-fixed-bottom {
     width: 90%;
@@ -47,7 +22,7 @@ footer {
 
       li a {
         color: #555;
-        font-weight: bold;
+        //font-weight: bold;
         padding: 0 2.5em 0 0;
 
         &:before {
