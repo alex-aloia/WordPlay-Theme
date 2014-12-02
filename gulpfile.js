@@ -88,8 +88,8 @@ var symbol_config = {
 };
 
 gulp.task('svg-symbol', function () {
-    return gulp.src('src/svg/symbols/*.svg')
-        .pipe(plumber())
+    return gulp.src('./src/svg/symbols/*.svg')
+//        .pipe(plumber())
         .pipe(svgSprite(symbol_config))
         .pipe(gulp.dest('./themes/' + theme_name + '/assets/img'));
 });
@@ -218,8 +218,6 @@ gulp.task('watch', ['browser-sync'], function () {
     gulp.watch('src/less/**/*.less', ['less_dev', browserSync.reload]);
     // Watch scripts
     gulp.watch('src/js/**/*.js', ['dev_js-foot', browserSync.reload]);
-    // Watch imgs
-    gulp.watch('src/svg/**/*', ['img-copy', browserSync.reload]);
 });
 
 // Default task to be run with `gulp`
