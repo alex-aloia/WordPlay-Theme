@@ -1,35 +1,35 @@
 {
-  "name": "WordPlay-Theme",
-  "author": "Alex Aloia <tripl3infinity@gmail.com>",
-  "homepage": "http://t3inf.com",
+  "name": "t3i_roots",
+  "version": "0.5.0",
+  "description": "node dependz",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
-    "url": "git://github.com/tripl3inf/WordPlay-Theme.git"
+    "url": "https://github.com/tripl3inf/WordPlay-Theme.git"
   },
+  "author": "Alex Aloia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tripl3inf/WordPlay-Theme/issues"
+  },
+  "homepage": "https://github.com/tripl3inf/WordPlay-Theme",
   "dependencies": {
     "bower": "^1.3.12",
-    "bower-files": "^2.0.0",
-    "browser-sync": "^1.5.8",
-    "gulp": "^3.8.8",
-    "gulp-concat": "^2.4.1",
-    "gulp-consolidate": "^0.1.2",
+    "browser-sync": "^1.7.2",
+    "gulp": "^3.8.10",
+    "gulp-concat": "^2.4.2",
     "gulp-copy": "0.0.2",
-    "gulp-csso": "^0.2.9",
-    "gulp-jshint": "^1.8.5",
+    "gulp-jshint": "^1.9.0",
     "gulp-less": "^1.3.6",
-    "gulp-less-sourcemap": "^1.3.3",
-    "gulp-minify-css": "^0.3.10",
+    "gulp-minify-css": "^0.3.11",
     "gulp-plumber": "^0.6.6",
     "gulp-rename": "^1.2.0",
-    "gulp-sourcemaps": "^1.2.4",
+    "gulp-sourcemaps": "^1.2.8",
+    "gulp-svg-sprites": "^1.1.0",
     "gulp-uglify": "^1.0.1",
-    "gulp-watch": "^1.1.0",
-    "lockdown": "0.0.6"
-  },
-  "devDependencies": {
-    "gulp-iconfont": "^0.2.1",
-    "gulp-plumber": "https://registry.npmjs.org/gulp-plumber/-/gulp-plumber-0.6.6.tgz",
-    "gulp-svg-symbols": "^0.3.1",
-    "gulp-svgo": "^0.1.1"
+    "gulp-watch": "^3.0.0"
   }
 }

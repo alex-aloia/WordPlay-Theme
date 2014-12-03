@@ -14,11 +14,7 @@ var gulp = require('gulp'),
     rename = require("gulp-rename"),
     browserSync = require('browser-sync'),
     plumber = require('gulp-plumber'),
-    phantomjs = require('phantomjs'),
     svgSprite = require("gulp-svg-sprites"),
-    iconfont = require('gulp-iconfont'),
-    consolidate = require('gulp-consolidate'),
-    //less = require('gulp-less-sourcemap');
 
     reload = browserSync.reload;
 
@@ -28,25 +24,6 @@ gulp.task('browser-sync', function () {
         ghostMode: true
     });
 });
-
-
-gulp.task('Iconfont', function(){
-    gulp.src(['src/svg/sprites/*.svg'])
-        .pipe(iconfont({ fontName: 't3i-font' }))
-        .on('codepoints', function(codepoints, options) {
-            gulp.src('templates/myfont.css')
-                .pipe(consolidate('lodash', {
-                    glyphs: codepoints,
-                    fontName: 't3i-icons', // required
-                    fontPath: '../fonts/',
-                    className: 's'
-                }))
-                .pipe(gulp.dest('www/css/'));
-        })
-        .pipe(gulp.dest(assets + 'font'));
-});
-
-
 
 
 /*
@@ -94,16 +71,6 @@ gulp.task('svg-symbol', function () {
         .pipe(gulp.dest('./themes/' + theme_name + '/assets/img'));
 });
 
-
-
-
-/*
- * copy src images
- */
-//gulp.task('img-copy', function () {
-//    gulp.src('src/svg/processed/*.svg')
-//        .pipe(gulp.dest('./themes/' + theme_name + '/assets/img'));
-//});
 
 
 /*
@@ -199,13 +166,10 @@ gulp.task('jshint', function () {
 });
 
 
-gulp.task('bower', function () {
-    return gulp.src(mainBowerFiles(/* options */), {base: 'vendor/bower'})
-        .pipe(concat('main.min.js'))
-        .pipe(jshint())
-        .pipe(gulp.dest('themes/' + theme_name + '/assets/js'))
-});
 
+
+
+  
 /*
  * TASK LIST
  */
