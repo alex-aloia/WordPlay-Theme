@@ -4,20 +4,20 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "81a8c51c39d6dc45896255c5e4c2cccd",
+    "hash": "76777265793d4e74252bedc4629cb4cf",
     "packages": [
         {
             "name": "composer/installers",
-            "version": "v1.0.18",
+            "version": "v1.0.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "74fb0a7a1a23696d9c8cc2fba5903f6711cdd067"
+                "reference": "89d77bfbee79e16653f7162c86e602cc188471db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/74fb0a7a1a23696d9c8cc2fba5903f6711cdd067",
-                "reference": "74fb0a7a1a23696d9c8cc2fba5903f6711cdd067",
+                "url": "https://api.github.com/repos/composer/installers/zipball/89d77bfbee79e16653f7162c86e602cc188471db",
+                "reference": "89d77bfbee79e16653f7162c86e602cc188471db",
                 "shasum": ""
             },
             "replace": {
@@ -59,6 +59,7 @@
                 "Hurad",
                 "MODX Evo",
                 "OXID",
+                "Thelia",
                 "WolfCMS",
                 "agl",
                 "annotatecms",
@@ -68,9 +69,11 @@
                 "codeigniter",
                 "concrete5",
                 "croogo",
+                "dokuwiki",
                 "drupal",
                 "elgg",
                 "fuelphp",
+                "grav",
                 "installer",
                 "joomla",
                 "kohana",
@@ -94,7 +97,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2014-08-18 20:00:12"
+            "time": "2014-11-29 01:29:17"
         },
         {
             "name": "fancyguy/webroot-installer",
@@ -140,15 +143,15 @@
         },
         {
             "name": "wpackagist-plugin/clean-and-simple-contact-form-by-meg-nicholas",
-            "version": "4.3.4",
+            "version": "4.4.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/clean-and-simple-contact-form-by-meg-nicholas/",
-                "reference": "tags/4.3.4"
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/clean-and-simple-contact-form-by-meg-nicholas.4.3.4.zip",
+                "url": "http://downloads.wordpress.org/plugin/clean-and-simple-contact-form-by-meg-nicholas.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -163,15 +166,15 @@
         },
         {
             "name": "wpackagist-plugin/piklist",
-            "version": "0.9.4.19",
+            "version": "0.9.4.21",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/piklist/",
-                "reference": "tags/0.9.4.19"
+                "reference": "tags/0.9.4.21"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/piklist.0.9.4.19.zip",
+                "url": "http://downloads.wordpress.org/plugin/piklist.0.9.4.21.zip",
                 "reference": null,
                 "shasum": null
             },
