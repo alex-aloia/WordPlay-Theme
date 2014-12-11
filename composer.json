@@ -1,16 +1,12 @@
 {
-    "name": "ten10",
+    "name": "WordPlay Theme",
     "description": "Custom WordPress Theme",
-
     "repositories": [
         {
             "type": "composer",
             "url": "http://wpackagist.org"
         }
-
     ],
-
-
 
     "require": {
         "php": ">=5.3.0",
@@ -20,7 +16,6 @@
         "wpackagist-plugin/piklist": "*",
         "wpackagist-plugin/wp-slimstat": "3.7.2",
         "wpackagist-plugin/simple-page-ordering": "*"
-
     },
 
     "require-dev" : {
@@ -31,8 +26,6 @@
 
     "autoload": {
     },
-
-
 
     "extra": {
         "webroot-dir": "../wordpress",
