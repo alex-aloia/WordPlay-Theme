@@ -16,8 +16,4 @@
 </footer>
 
 
-<aside class="contact-fixed">
-  <a href="#"></a>
-</aside>
-
 

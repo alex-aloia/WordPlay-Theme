@@ -218,8 +218,6 @@ gulp.task('watch', ['browser-sync'], function () {
     gulp.watch('src/less/**/*.less', ['less_dev', browserSync.reload]);
     // Watch scripts
     gulp.watch('src/js/**/*.js', ['dev_js-foot', browserSync.reload]);
-    // Watch imgs
-    gulp.watch('src/svg/**/*', ['img-copy', browserSync.reload]);
 });
 
 // Default task to be run with `gulp`
