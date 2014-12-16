@@ -1,17 +1,49 @@
 // ajaxLoop.js
 jQuery(function ($) {
 
-    satWaves = d3.selectAll('#satWaves path');
+    var contactSatellite = function(){
+        contactBTN = d3.select('#contact_BTN'),
+            satellite = d3.select('#satellite'),
+            satWaves = d3.selectAll('#satWaves path'),
+            iconGrp = d3.selectAll('#satIconGrp g')
 
-    var satTL = new TimelineMax({repeat:-1})
-        .set(satWaves, {autoAlpha: 0})
-        .staggerTo(satWaves[0], 1, {autoAlpha:0.8}, 1);
 
-//        .to(satWaves[0][0], 1, {autoAlpha:1})
-//        .to(satWaves[1], 1, {autoAlpha:1})
-//        .to(satWaves[2], 1, {autoAlpha:1});
+        var waveTL = new TimelineMax({repeat:-1})
+            .set(satWaves, {autoAlpha: 0})
+            .staggerTo(satWaves[0], 3, {autoAlpha:0.8}, 1.5)
+            .to(satWaves[0], 2, {autoAlpha:0});
 
-console.info(satWaves);
+        iconTL = new TimelineMax({paused:true})
+            .set( iconGrp[0], {transformOrigin: '50% 50%'})
+            .from(iconGrp[0][0], 0.8, {scale:0,autoAlpha:0}, 's1')
+            .from(iconGrp[0][0], 0.6, {x:25, y:-100}, 's1')
+
+            .from(iconGrp[0][1], 0.8, {scale:0,autoAlpha:0}, 's2-=0.6')
+            .from(iconGrp[0][1], 0.6, {x:100, y:-100}, 's2-=0.75')
+
+            .from(iconGrp[0][2], 0.8, {scale:0,autoAlpha:0}, 's3-=0.6')
+            .from(iconGrp[0][2], 0.6, {x:100, y:-25}, 's3-=0.6');
+
+
+        $('#contact_BTN').mouseenter( function(){
+            iconTL.play();
+        });
+
+        $('#contact_BTN').mouseleave( function(){
+            iconTL.reverse(0);
+        });
+
+        $('#satIconGrp g').mouseenter(function(e){
+            TweenLite.to(e.target, 0.5, {fill:'green'});
+        });
+
+        $('#satIconGrp g').mouseleave(function(e){
+            TweenLite.to(e.target, 0.5, {fill:'#11099E'});
+        });
+    }
+
+    contactSatellite()
+
 
 
 
@@ -137,7 +169,6 @@ console.info(satWaves);
                 portTL.staggerTo(li[0], 0.75, {autoAlpha: 0, y:'+=200px'}, 0.15);
                 portTL.set($('#portfolio'), {height: winH, overflow: 'hidden'});
                 portTL.to($this, 0.75, {left: '50%', top: '50%', xPercent: -50, yPercent: -50, width: imgW, x: leftOffset});
-
             });
     };
 

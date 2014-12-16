@@ -20,56 +20,42 @@
 
 body {
 
+  #contact_BTN {
+    height: 200px;
+    width: 200px;
+    overflow: hidden;
+    position: absolute;
+    right: 25px;
+    top: 40px;
+
+    #satelliteContainer {
+      fill: #14cc19;
+      height: 100%;
+      width: 100%;
+      display: block;
+      stroke: none;
+      #satWaves {
+        stroke: #11099E;
+        fill: none;
+        stroke-width: 5px;
+      }
+      #satIconGrp g {
+        position: absolute;
+        fill: #11099E;
+        display: block;
+        background: #fff;
+        -webkit-transform: scale(1.5);
+      }
+    }
+  }
+
+
+
   svg.logo {
     fill: @brand-primary;
   }
 
 
-  .contact-fixed {
-    color: @brand-primary;
-    position: fixed;
-    right: 0;
-    top: 45%;
-//    /* Safari */
-//    -webkit-transform: rotate(-90deg);
-//    /* Firefox */
-//    -moz-transform: rotate(-90deg);
-//    /* IE */
-//    -ms-transform: rotate(-90deg);
-//    /* Opera */
-//    -o-transform: rotate(-90deg);
-//    /* Internet Explorer */
-//    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-
-    > a {
-      font-size: 1em;
-      padding-right: 10px;
-      
-      &:after {
-        .icon-envelope();
-        font-size: 1.2em;
-        content: "\f003";
-
-        background-position: 0em 0em;
-        display: inline-block;
-        font-family: FontAwesome;
-        font-style: normal;
-        font-variant: normal;
-        font-weight: normal;
-        line-height: 1;
-        font-size-adjust: none;
-        font-stretch: normal;
-        -moz-font-feature-settings: normal;
-        -moz-font-language-override: normal;
-        font-size: inherit;
-        text-rendering: auto;
-        -moz-osx-font-smoothing: grayscale;
-        font-size: 1.75em;
-        position: relative;
-      }
-
-    }
-  }
 
 
 }
