@@ -8,8 +8,7 @@
   <![endif]-->
 
   <?php
-    do_action('get_header');
-    //get_template_part('templates/header');
+    get_template_part('templates/header');
   ?>
 
   <div class="wrap container" role="document">

@@ -19,35 +19,57 @@
 
 
 body {
+  overflow: none;
 
   #contact_BTN {
-    height: 200px;
-    width: 200px;
-    overflow: hidden;
-    position: absolute;
-    right: 25px;
-    top: 40px;
+    height: 150px;
+    width: 150px;
+    position: fixed;
+    right: 50px;
+    top: 25px;
+
+    .icons {
+
+      i {
+        color: #666;
+        font-size: 3em;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        &:first-child {
+          padding-right: 10px;
+        }
+        &:nth-child(2) {
+          font-size: 4em;
+        }
+      }
+    }
 
     #satelliteContainer {
-      fill: #14cc19;
+      fill: #14cc14;
       height: 100%;
       width: 100%;
       display: block;
       stroke: none;
       #satWaves {
-        stroke: #11099E;
+        stroke: #666;
         fill: none;
         stroke-width: 5px;
       }
-      #satIconGrp g {
-        position: absolute;
-        fill: #11099E;
-        display: block;
-        background: #fff;
-        -webkit-transform: scale(1.5);
-      }
     }
   }
+
+
+  #contactContainer {
+    width: 40%;
+    margin: 2% auto 0 auto;
+    min-width: 250px;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+
+
 
 
 
