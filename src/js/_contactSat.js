@@ -64,7 +64,7 @@ jQuery(function ($) {
             });
 
         icons.on( "mouseenter", function(d, i){
-            TweenLite.to(this, 0.5, {color:'#14cc14'});
+            TweenLite.to(this, 0.5, {color:'#aaff00'});
         })
             .on( "mouseleave", function(d, i){
                 TweenLite.to(this, 0.5, {color:'#666'});
@@ -73,7 +73,7 @@ jQuery(function ($) {
 
         satTL = new TimelineMax({repeat:-1, repeatDelay:0, yoyo:true})
             .set(contactBTN, {rotation: -33, transformOrigin:"100% 0%"})
-            .to(contactBTN, 15, {rotation:-15, x:-20, y:-10, ease:Sine.easeInOut}, 's1');
+            .to(contactBTN, 15, {rotation:-15, x:-10, y:-15, ease:Sine.easeInOut}, 's1');
         //.to(contactBTN, 10, {bezier:{type:"soft", curviness:1, values:[{x:0, y:50}, {x:50, y:0}]}, ease:Sine.easeInOut }, 's1')
 
 
