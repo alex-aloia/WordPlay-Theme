@@ -5,7 +5,6 @@ var gulp = require('gulp'),
 //var mainBowerFiles = require('main-bower-files'),
     jshint = require('gulp-jshint'),
     watch = require('gulp-watch'),
-    copy = require('gulp-copy'),
     less = require('gulp-less'),
     minifyCSS = require('gulp-minify-css'),
     sourcemaps = require('gulp-sourcemaps'),
@@ -14,11 +13,9 @@ var gulp = require('gulp'),
     rename = require("gulp-rename"),
     browserSync = require('browser-sync'),
     plumber = require('gulp-plumber'),
-    phantomjs = require('phantomjs'),
+    //phantomjs = require('phantomjs'),
     svgSprite = require("gulp-svg-sprites"),
-    iconfont = require('gulp-iconfont'),
-    consolidate = require('gulp-consolidate'),
-    //less = require('gulp-less-sourcemap');
+    //consolidate = require('gulp-consolidate'),
 
     reload = browserSync.reload;
 
@@ -30,21 +27,6 @@ gulp.task('browser-sync', function () {
 });
 
 
-gulp.task('Iconfont', function(){
-    gulp.src(['src/svg/sprites/*.svg'])
-        .pipe(iconfont({ fontName: 't3i-font' }))
-        .on('codepoints', function(codepoints, options) {
-            gulp.src('templates/myfont.css')
-                .pipe(consolidate('lodash', {
-                    glyphs: codepoints,
-                    fontName: 't3i-icons', // required
-                    fontPath: '../fonts/',
-                    className: 's'
-                }))
-                .pipe(gulp.dest('www/css/'));
-        })
-        .pipe(gulp.dest(assets + 'font'));
-});
 
 
 
@@ -134,7 +116,7 @@ gulp.task('less_dev', function () {
         .pipe(gulp.dest('./themes/' + theme_name + '/assets/css'));
 });
 
-/*
+
 gulp.task('less', function () {
     gulp.src('src/less/main.less')
         .pipe(less({
@@ -145,7 +127,6 @@ gulp.task('less', function () {
         .pipe(rename('main.min.css'))
         .pipe(gulp.dest('./themes/' + theme_name + '/assets/css'));
 });
- */
 
 
 /*
