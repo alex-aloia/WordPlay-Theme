@@ -8,4 +8,4 @@ uploads/*
 **node_modules**
 *.log
 
-themes/roots/assets/*
+#themes/roots/assets/*

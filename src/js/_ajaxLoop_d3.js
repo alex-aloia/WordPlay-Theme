@@ -19,7 +19,8 @@ jQuery(function ($) {
                     postCommentNonce: ajax_handler.postCommentNonce
                 },
                 beforeSend: function () {
-                    loaderTL.play();
+                    logoTL.play();
+                    //loaderTL.play();
                 },
                 success: function (response) {
                     if (response.success) {
@@ -97,7 +98,7 @@ jQuery(function ($) {
         portTL.staggerFrom(li[0], 0.75, {autoAlpha:0, y: '-=200px', ease: Expo.easeIn}, 0.15, 'stage1');
 
         layout();
-        loaderTL.repeat(0);
+        //loaderTL.repeat(0);
         portTL.play();
 
         li.on('mouseover', function (d, i) {
