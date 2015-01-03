@@ -156,15 +156,15 @@ var js_foot = [
 ];
 
 
-gulp.task('js-foot', function () {
-    gulp.src(js_head)
+gulp.task('js', function () {
+    gulp.src(js_foot)
         .pipe(concat('js-foot.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('themes/' + theme_name + '/assets/js'))
 });
 
 
-gulp.task('dev_js-foot', function () {
+gulp.task('dev_js', function () {
     gulp.src(js_foot)
         .pipe(sourcemaps.init())
         .pipe(concat('js-foot.js'))
@@ -198,9 +198,10 @@ gulp.task('watch', ['browser-sync'], function () {
     // Watch less files
     gulp.watch('src/less/**/*.less', ['less_dev', browserSync.reload]);
     // Watch scripts
-    gulp.watch('src/js/**/*.js', ['dev_js-foot', browserSync.reload]);
+    gulp.watch('src/js/**/*.js', ['dev_js', browserSync.reload]);
 });
 
 // Default task to be run with `gulp`
-gulp.task('dev', ['less_dev', 'dev_js-foot', 'jshint', 'watch', 'browser-sync']);
+gulp.task('dev', ['less_dev', 'dev_js', 'jshint', 'watch', 'browser-sync']);
+gulp.task('default', ['less', 'js']);
 
