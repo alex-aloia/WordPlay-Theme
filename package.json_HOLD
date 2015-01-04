@@ -1,5 +1,5 @@
 {
-  "name": "20150104042609",
+  "name": "WordPlay",
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
@@ -10,24 +10,26 @@
     "type": "git",
     "url": "https://github.com/tripl3inf/WordPlay-Theme.git"
   },
-  "author": "",
+  "author": "Alex Aloia",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/tripl3inf/WordPlay-Theme/issues"
   },
   "homepage": "https://github.com/tripl3inf/WordPlay-Theme",
   "dependencies": {
-    "browser-sync": "^1.8.3",
     "gulp": "^3.8.10",
     "gulp-concat": "^2.4.3",
     "gulp-jshint": "^1.9.0",
     "gulp-less": "^2.0.1",
     "gulp-minify-css": "^0.3.11",
-    "gulp-plumber": "^0.6.6",
     "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^1.0.2"
+  },
+  "devDependencies": {
+    "browser-sync": "^1.8.2",
+    "gulp-plumber": "^0.6.6",
     "gulp-sourcemaps": "^1.3.0",
     "gulp-svg-sprites": "^1.1.1",
-    "gulp-uglify": "^1.0.2",
     "gulp-watch": "^3.0.0"
   }
 }
