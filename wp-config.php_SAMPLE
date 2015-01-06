@@ -1,0 +1,68 @@
+<?php
+
+
+/* -------------------------->*/
+// DEBUG OPTIONS
+define( 'WP_DEBUG', true );
+define( 'WP_DEBUG_LOG', true );
+define( 'WP_DEBUG_DISPLAY', false );
+define('SAVEQUERIES', true);
+/*< -------------------------- */
+
+
+/* -----------> ENVIRONMENT <---------------*/
+define('WP_ENV', 'dev');
+
+
+/* ---------------------------------------------------------------------------------------------------------------->
+  Depending on your server configuration, you may find WordPress fails to find your content (themes and plugins).
+  This is due to how your server returns `$_SERVER['DOCUMENT_ROOT']`. If this issue affects you, try swapping
+  for the `dirname(__FILE__)` method below.
+ <---------------------------------------------------------------------------------------------------------------- */
+
+define('WP_HOME','http://dev.t3inf.com');
+define('WP_SITEURL','http://dev.t3inf.com/wordpress');
+
+
+//define('WP_CONTENT_DIR', realpath($_SERVER['DOCUMENT_ROOT'] . '/content'));
+define( 'WP_CONTENT_DIR', dirname(__FILE__) . '/content' );
+define('WP_CONTENT_URL', 'http://dev.t3inf.com/content');
+
+define( 'WP_PLUGIN_DIR', dirname(__FILE__) . '/content/vendor/plugins' );
+define( 'WP_PLUGIN_URL', 'http://dev.t3inf.com/content/vendor/plugins');
+
+define('DB_NAME', 'dev_t3inf');
+define('DB_USER', 'tripl3inf');
+define('DB_PASSWORD', 'tripl3World!');
+
+define('DB_HOST', 'localhost');
+define('DB_CHARSET', 'utf8');
+define('DB_COLLATE', '');
+define('WPLANG', '');
+$table_prefix  = 'wp_';
+
+// SALTS GO HERE
+define('AUTH_KEY',         '>{Mi[<mg)c2][!<D2q}-6O9f3<!Z[:P9V%uX}M4GdV)M|$ejsdhRPv&|xKGm9-GE');
+define('SECURE_AUTH_KEY',  'uFoIXRRBDPzjv7c+7`Jp5hg]Uyz8L:NcL`08(Oh^el>,%DB`M)2}9^Z#]JW#:u<B');
+define('LOGGED_IN_KEY',    '978c-EtkG43W9=ry}-yL*};$DF+,M-nD^g*TO6_x2,-^odpHJOIF8ELW/Oj/uNG=');
+define('NONCE_KEY',        'L:zf|PB3h#*S]~}hR|v}C24|Xod|]E1^N[ejwR&j0@Yoo-`6mxX<U* $=(!g@94D');
+define('AUTH_SALT',        'Ssp*Lz$ZL4%AW`KL,QS7Z{U&VS2uM13kQTMl8pV@Jq ^kR+a&EL|[:g4LJ}/|Ga<');
+define('SECURE_AUTH_SALT', 'n+FiKREbkMbI5VI`Z6QXjW4>%VC,P|{>^-zPyF*dUF7$|A)aH6Odx3}V;Uz~-=V<');
+define('LOGGED_IN_SALT',   '6Imb]f9NM. @v1t/VRD0+zjfY.A!jVbaV|3[^OrPWzJ|~OMQs94nyaMSq+4RQQ-@');
+define('NONCE_SALT',       'LiMH_Sa<m</rH,7+_-;3Z2wJfQm?Hg>`|[ l1I5[b,-T&fjE/d<v-^ c+ U- Fxo');
+
+
+
+if ( !defined('ABSPATH') )
+	define('ABSPATH', dirname(__FILE__) . '/');
+require_once(ABSPATH . 'wp-settings.php');
+
+define( 'AUTOMATIC_UPDATER_DISABLED', true );
+
+
+
+
+
+
+
+

@@ -1,21 +1,28 @@
 {
-  "name": "roots",
-  "version": "7.0.1",
-  "homepage": "http://roots.io",
+  "name": "WordPlay-Theme",
+  "version": "0.1.0",
+  "homepage": "http://t3inf.com",
   "authors": [
-    "Ben Word <ben@benword.com>"
+    "Alex Aloia <tripl3infinity@gmail.com>"
   ],
   "license": "MIT",
   "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
-    "assets/vendor"
+    "vendor/bower"
   ],
   "dependencies": {
-    "modernizr": "2.8.2",
-    "jquery": "1.11.1",
-    "bootstrap": "3.2.0",
-    "respond": "1.4.2"
+    "respond": "1.4.2",
+    "d3": "~3.4.13",
+    "greensock": "~1.14.2",
+    "bootstrap": "~3.3.0",
+    "jquery-contentsize": "git@github.com:gilmoreorless/jquery-contentsize.git",
+    "font-awesome": "~4.2.0",
+    "jlayout": "git@github.com:bramstein/jlayout.git"
+  },
+  "resolutions": {
+    "bootstrap": "~3.3.0",
+    "greensock": "~1.14.2"
   }
 }

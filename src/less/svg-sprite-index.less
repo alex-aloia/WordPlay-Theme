@@ -1,0 +1,41 @@
+.sprite {
+    font-size: 10px;
+}
+
+.sprite:before {
+    content:' ';
+    vertical-align:middle;
+    display: inline-block;
+    background-image: url("./themes/roots/assets/img/spritesheet.svg");
+    background-repeat: no-repeat;
+    background-size: 32em 14.8em;
+}
+
+.no-svg .sprite:before {
+    background-image: url("./themes/roots/assets/img/spritesheet.png");
+}
+
+.footer_piece_center:before {
+    background-position: 0em 0em;
+    width: 10em;
+    height: 2em;
+}
+
+.footer_piece_content:before {
+    background-position: 0em -2em;
+    width: 10em;
+    height: 10em;
+}
+
+.footer_piece_left:before {
+    background-position: 0em -12em;
+    width: 32em;
+    height: 1.4em;
+}
+
+.footer_piece_right:before {
+    background-position: 0em -13.4em;
+    width: 32em;
+    height: 1.4em;
+}
+

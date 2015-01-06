@@ -1,0 +1,92 @@
+body {
+  overflow: auto;
+}
+
+#portfolio {
+  width: 100%;
+  margin: 0;
+  position: relative;
+
+  > ul {
+    list-style: none;
+    height: 90%;
+//    position: absolute;
+    margin: 50px 0 0 0;
+    padding: 0;
+    display: block;
+//    text-align: center;
+    //min-height: 2000px;
+
+    > li {
+      display: block;
+      margin: 0;
+      padding: 0;
+      //min-height: 400px;
+//      float: none !important;
+      position: absolute;
+      //visibility: hidden;
+      //opacity: 0;
+      svg {
+        width: 1px;
+        height: 1px;
+        position: absolute;
+      }
+      > img {
+        width: 100%;
+      }
+      .portInfo {
+        float: right;
+      }
+    }
+//    li.col-1 {
+//      .make-lg-column(1);
+//      .make-md-column(1);
+//      .make-sm-column(1);
+//      .make-xs-column(1);
+//    }
+//    li.col-2 {
+//      .make-lg-column(2);
+//      .make-md-column(2);
+//      .make-sm-column(2);
+//      .make-xs-column(2);
+//    }
+//    li.col-3 {
+//      .make-lg-column(3);
+//      .make-md-column(3);
+//      .make-sm-column(3);
+//      .make-xs-column(3);
+//    }
+//    li.col-4 {
+//      .make-lg-column(4);
+//      .make-md-column(4);
+//      .make-sm-column(4);
+//      .make-xs-column(4);
+//    }
+  }
+}
+
+
+.tripl3infLogo {
+  //   opacity: 0;
+}
+
+
+#triLoader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin: -125px 0 0 -125px;
+  overflow: hidden;
+
+  #triLoaderPieces {
+    position: absolute;
+    fill: #aaff00;
+    stroke: #aaff00;
+  }
+
+  #triLoaderMask {
+    fill: #fff;
+  }
+}
+
+

@@ -1,0 +1,150 @@
+/*
+* Media queries
+*/
+// add extra class for extra small
+@screen-xxs-max: 480px;
+// add extra class for max width
+@screen-lg-max: 999999999px;
+
+@xxs: ~'(max-width: @{screen-xxs-max})';
+// small devices only
+@sm-all: ~'(min-width: 0) and (max-width: @{screen-sm-max})';
+//You then call it without brackets such as:  //@media @xs { ... }
+
+//@xxs: ~'(max-width: @{screen-xxs-max})';
+@xs: ~'(min-width: @{screen-xs-min}) and (max-width: @{screen-lg-min})';
+@sm: ~'(min-width: @{screen-sm-min}) and (max-width: @{screen-lg-min})';
+@md: ~'(min-width: @{screen-md-min}) and (max-width: @{screen-lg-max})';
+@lg: ~'(min-width: @{screen-lg-min})';
+
+
+body {
+  overflow: none;
+
+  #contact_BTN {
+    height: 150px;
+    width: 150px;
+    position: fixed;
+    right: 50px;
+    top: 10px;
+    z-index: 999;
+
+    .icons {
+
+      i {
+        color: #666;
+        font-size: 3em;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        &:first-child {
+          padding-right: 10px;
+        }
+        &:nth-child(2) {
+          font-size: 4em;
+        }
+      }
+    }
+
+    #satelliteContainer {
+      fill: @brand-primary;
+      height: 100%;
+      width: 100%;
+      display: block;
+      stroke: none;
+      #satWaves {
+        stroke: #666;
+        fill: none;
+        stroke-width: 5px;
+      }
+    }
+  }
+
+
+  #contactContainer {
+    width: 40%;
+    margin: 2% auto 0 auto;
+    min-width: 250px;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+
+
+
+
+
+  svg.logo {
+    fill: @brand-primary;
+  }
+
+
+
+
+
+
+
+    #tripl3infLogo {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      fill: none;
+      stroke-width: 4px;
+      width: 600px;
+      margin: -150px 0 0 -300px;
+      display: block;
+
+      #infSymMasks {
+        fill: #fff;
+        stroke: none;
+      }
+
+      #letters path {
+        opacity:0;
+        visibility: hidden;
+      }
+      #infSym {
+        #infSymPaths path {
+          stroke: #aaff00;
+          opacity:0;
+          visibility: hidden;
+        }
+
+        #infSymWhole path {
+          fill: #aaff00;
+          stroke: none;
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+      #desanddev {
+        path {
+          opacity: 0;
+          visibility: hidden;
+          fill: #666;
+        }
+      }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
