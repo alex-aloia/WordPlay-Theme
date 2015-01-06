@@ -202,6 +202,7 @@ gulp.task('watch', ['browser-sync'], function () {
 });
 
 // Default task to be run with `gulp`
-gulp.task('dev', ['less_dev', 'dev_js', 'jshint', 'watch', 'browser-sync']);
+gulp.task('dev', ['less_dev', 'dev_js']);
+gulp.task('dev_watch', ['less_dev', 'dev_js', 'jshint', 'watch', 'browser-sync']);
 gulp.task('default', ['less', 'js']);
 
