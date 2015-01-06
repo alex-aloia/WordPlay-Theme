@@ -117,7 +117,7 @@ gulp.task('less_dev', function () {
 });
 
 
-gulp.task('browser-sync', function () {
+gulp.task('less', function () {
     gulp.src('src/less/main.less')
         .pipe(less({
             generateSourceMap: false,
@@ -127,8 +127,8 @@ gulp.task('browser-sync', function () {
         .pipe(rename('main.min.css'))
         .pipe(gulp.dest('./themes/' + theme_name + '/assets/css'));
 });
-   var files = [
-      'assets/less/**/*.less',
+
+
 /*
  * javascript
  */
@@ -152,17 +152,17 @@ var js_foot = [
 //  'vendor/bower/bootstrap/js/scrollspy.js',
 //  'vendor/bower/bootstrap/js/tab.js',
 //  'vendor/bower/bootstrap/js/affix.js',
-      'assets/js/**/*.js'
-   ];
+    'src/js/_*.js'
+];
 
-   browserSync.init(files, {
+
 gulp.task('js', function () {
     gulp.src(js_foot)
         .pipe(concat('js-foot.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('themes/' + theme_name + '/assets/js'))
 });
-      proxy: "dev.t3inf.dev"
+
 
 gulp.task('dev_js', function () {
     gulp.src(js_foot)
@@ -170,7 +170,7 @@ gulp.task('dev_js', function () {
         .pipe(concat('js-foot.js'))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('themes/' + theme_name + '/assets/js'))
-   });
+});
 
 
 gulp.task('jshint', function () {
@@ -186,17 +186,17 @@ gulp.task('bower', function () {
         .pipe(jshint())
         .pipe(gulp.dest('themes/' + theme_name + '/assets/js'))
 });
-// Watch files for changes
+
 /*
  * TASK LIST
  */
 
 // Dev
-gulp.task('watch', ['browser-sync'], function() {
+gulp.task('watch', ['browser-sync'], function () {
     // Watch PHP files
     gulp.watch('themes/' + theme_name + '/**/*.php', browserSync.reload);
     // Watch less files
-    gulp.watch('assets/less/**/*.less', ['less']);
+    gulp.watch('src/less/**/*.less', ['less_dev', browserSync.reload]);
     // Watch scripts
     gulp.watch('src/js/**/*.js', ['dev_js', browserSync.reload]);
 });
@@ -204,5 +204,5 @@ gulp.task('watch', ['browser-sync'], function() {
 // Default task to be run with `gulp`
 gulp.task('dev', ['less_dev', 'dev_js']);
 gulp.task('dev_watch', ['less_dev', 'dev_js', 'jshint', 'watch', 'browser-sync']);
-gulp.task('default', ['less', 'watch', 'browser-sync']);
+gulp.task('default', ['less', 'js']);
 
