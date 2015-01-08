@@ -21,9 +21,9 @@ var gulp = require('gulp'),
 
 
 
-/**********************************************
- ***************** TASKS **********************
- **********************************************/
+/**********************************************************
+ *********************** TASKS ****************************
+ **********************************************************/
 
 /*
  * Browser-Sync
@@ -40,7 +40,7 @@ gulp.task('browser-sync', function () {
  * Fonts
  */
 gulp.task('copy-fonts', function () {
-  return gulp.src('./vendor/bower/font-awesome/fonts/**/*.{ttf, woff, eot, otf, svg}')
+  return gulp.src('./vendor/bower/font-awesome/fonts/**/*.{ttf,woff,eot,otf,svg}')
     .pipe(gulp.dest('./themes/' + theme_name + '/assets/fonts/'));
 });
 
@@ -49,7 +49,7 @@ gulp.task('copy-fonts', function () {
  * copy src images
  */
 gulp.task('copy-imgs', function () {
-  return gulp.src('./src/img/**/*')
+  return gulp.src('./src/img/**/*.{jpg,png,svg}')
     .pipe(gulp.dest('./themes/' + theme_name + '/assets/img'));
 });
 
