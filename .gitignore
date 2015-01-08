@@ -1,9 +1,10 @@
 node_modules
-plugins/*
 vendor/*
-mu-plugins/*
-uploads/*
-themes/**/assets/*
+themes/**/assets/css/*
+themes/**/assets/images/*
+themes/**/assets/svg/*
+themes/**/assets/js/*
+themes/**/assets/fonts/*
 sprite-index.html
 symbol-index.html
 
