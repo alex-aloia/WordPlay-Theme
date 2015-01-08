@@ -1,10 +1,10 @@
 node_modules
-vendor/*
-themes/**/assets/css/*
-themes/**/assets/images/*
-themes/**/assets/svg/*
-themes/**/assets/js/*
-themes/**/assets/fonts/*
+vendor/**
+themes/**/assets/css/**
+themes/**/assets/images/**
+themes/**/assets/svg/**
+themes/**/assets/js/**
+themes/**/assets/fonts/**
 sprite-index.html
 symbol-index.html
 
