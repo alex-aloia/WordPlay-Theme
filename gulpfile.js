@@ -1,5 +1,5 @@
-var theme_name = 'custom',
-   assets = './themes/' + theme_name + '/assets/';
+var theme_name = 'custom';
+
 
 var gulp = require('gulp'),
 //var mainBowerFiles = require('main-bower-files'),
@@ -15,10 +15,19 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     //phantomjs = require('phantomjs'),
     svgSprite = require("gulp-svg-sprites"),
+    copy = require("gulp-copy"),
     //consolidate = require('gulp-consolidate'),
-
     reload = browserSync.reload;
 
+
+
+/**********************************************
+ ***************** TASKS **********************
+ **********************************************/
+
+/*
+ * Browser-Sync
+ */
 gulp.task('browser-sync', function () {
     browserSync({
         proxy: "dev.t3inf.com",
@@ -27,8 +36,22 @@ gulp.task('browser-sync', function () {
 });
 
 
+/*
+ * Fonts
+ */
+gulp.task('copy-fonts', function () {
+  return gulp.src('./vendor/bower/font-awesome/fonts/**/*.{ttf, woff, eot, otf, svg}')
+    .pipe(gulp.dest('./themes/' + theme_name + '/assets/fonts/'));
+});
 
 
+/*
+ * copy src images
+ */
+gulp.task('copy-imgs', function () {
+  return gulp.src('./src/img/**/*')
+    .pipe(gulp.dest('./themes/' + theme_name + '/assets/img'));
+});
 
 
 /*
@@ -75,17 +98,6 @@ gulp.task('svg-symbol', function () {
         .pipe(svgSprite(symbol_config))
         .pipe(gulp.dest('./themes/' + theme_name + '/assets/img'));
 });
-
-
-
-
-/*
- * copy src images
- */
-//gulp.task('img-copy', function () {
-//    gulp.src('src/svg/processed/*.svg')
-//        .pipe(gulp.dest('./themes/' + theme_name + '/assets/img'));
-//});
 
 
 /*
@@ -202,7 +214,7 @@ gulp.task('watch', ['browser-sync'], function () {
 });
 
 // Default task to be run with `gulp`
-gulp.task('dev', ['less_dev', 'dev_js']);
-gulp.task('dev_watch', ['less_dev', 'dev_js', 'jshint', 'watch', 'browser-sync']);
-gulp.task('default', ['less', 'js']);
+gulp.task('dev', ['copy-imgs', 'copy-fonts', 'less_dev', 'dev_js']);
+gulp.task('dev_watch', ['copy-imgs', 'copy-fonts', 'less_dev', 'dev_js', 'jshint', 'watch', 'browser-sync']);
+gulp.task('default', ['copy-imgs', 'copy-fonts', 'less', 'js']);
 

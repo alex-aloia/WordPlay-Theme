@@ -20,6 +20,7 @@
     "browser-sync": "^1.8.3",
     "gulp": "^3.8.10",
     "gulp-concat": "^2.4.3",
+    "gulp-copy": "0.0.2",
     "gulp-jshint": "^1.9.0",
     "gulp-less": "^2.0.1",
     "gulp-minify-css": "^0.3.11",
