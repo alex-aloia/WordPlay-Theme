@@ -17,7 +17,7 @@ var animPath = function (path, time, delay) {
 };
 
 $(document).ready(function() {
-    //d3.xml("content/themes/roots/assets/svg/aaaLogo-for_SVG.svg", "image/svg+xml", function (xml) {
+    //d3.xml("content/themes/custom/assets/svg/aaaLogo-for_SVG.svg", "image/svg+xml", function (xml) {
     //    var importedNode = document.importNode(xml.documentElement, true);
     //    document.body.appendChild(importedNode);
     //    d3.select("#aaaLogo_wrap").node().appendChild(importedNode);
@@ -30,7 +30,7 @@ $(document).ready(function() {
 //            });
 //        };
 
-//        loadSVG("content/themes/roots/assets/svg/aaaLogo-for_SVG.svg", "#aaaLogo_wrap");
+//        loadSVG("content/themes/custom/assets/svg/aaaLogo-for_SVG.svg", "#aaaLogo_wrap");
 
   //  var letters = d3.select("#letters");
   //  letters.attr({fill:'red'});

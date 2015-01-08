@@ -1,4 +1,4 @@
-var theme_name = 'roots',
+var theme_name = 'custom',
    assets = './themes/' + theme_name + '/assets/';
 
 var gulp = require('gulp'),

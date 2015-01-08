@@ -42,7 +42,7 @@ $(document).ready(function () {
 
 
      var draw = SVG('canvas').size(500, 500);
-     image = draw.image('/content/themes/roots/assets/img/volcomposter_lrg.jpg');
+     image = draw.image('/content/themes/custom/assets/img/volcomposter_lrg.jpg');
 
      var hueRotate;
      image.filter(function(add) {
