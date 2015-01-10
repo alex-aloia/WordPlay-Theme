@@ -152,6 +152,7 @@ var js_foot = [
     'vendor/bower/jlayout/lib/jquery.sizes.js',
     'vendor/bower/jlayout/lib/jlayout.flow.js',
     'vendor/bower/jlayout/lib/jquery.jlayout.js',
+    'vendor/bower/jquery.center.js/src/jquery.center.js',
     'vendor/bower/bootstrap/js/transition.js',
     'vendor/bower/bootstrap/js/alert.js',
     'vendor/bower/bootstrap/js/button.js',
@@ -215,6 +216,8 @@ gulp.task('watch', ['browser-sync'], function () {
 
 // Default task to be run with `gulp`
 gulp.task('dev', ['copy-imgs', 'copy-fonts', 'less_dev', 'dev_js']);
-gulp.task('dev_watch', ['copy-imgs', 'copy-fonts', 'less_dev', 'dev_js', 'jshint', 'watch', 'browser-sync']);
+gulp.task('dev-build', ['copy-imgs', 'copy-fonts', 'less_dev', 'dev_js', 'jshint', 'watch', 'browser-sync']);
+gulp.task('dev-watch', ['less_dev', 'dev_js', 'watch', 'browser-sync']);
+gulp.task('dev-less', ['less_dev','watch', 'browser-sync']);
 gulp.task('default', ['copy-imgs', 'copy-fonts', 'less', 'js']);
 

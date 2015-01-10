@@ -1,5 +1,8 @@
 jQuery(function ($) {
 
+
+$('#tripl3infLogo').center()
+
     var animateLogo = function(){
         var tripl3Logo = d3.select('#tripl3infLogo'),
             letters = tripl3Logo.selectAll('#letters path'),
@@ -24,6 +27,7 @@ jQuery(function ($) {
                 .attr('mode', 'normal'),
             infSymWhole = d3.selectAll('#infSymWhole path')
                 .attr('filter', "url('#glow')");
+
 
         logoTL = new TimelineMax({paused:true})
 
