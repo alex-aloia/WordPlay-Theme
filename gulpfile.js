@@ -17,6 +17,7 @@ var gulp = require('gulp'),
     svgSprite = require("gulp-svg-sprites"),
     copy = require("gulp-copy"),
     //consolidate = require('gulp-consolidate'),
+    svgmin = require('gulp-svgmin'),
     reload = browserSync.reload;
 
 
@@ -57,6 +58,24 @@ gulp.task('copy-imgs', function () {
 /*
  * svg min & sprite
  */
+
+gulp.task('svg-min', function() {
+  return gulp.src('./src/svg/symbols/*.svg')
+    .pipe(svgmin({
+    }))
+    .pipe(svgmin({
+      plugins: [{
+        removeDoctype: true
+      }, {
+        removeComments: false
+      }, {
+        cleanupEnableBackground: true
+      }]
+    }))
+    .pipe(gulp.dest('./src/svg/processed'));
+});
+
+
 var sprite_config = {
     templates: {
         css: require("fs").readFileSync("./src/less/sprite-template.less", "utf-8")
@@ -106,17 +125,6 @@ gulp.task('svg-symbol', function () {
 
 var path = require('path');
 
-/*
-gulp.task('less_dev', function () {
-    gulp.src('./src/less/main.less')
-        .pipe(less({
-//            generateSourceMap: true, // default true
-            sourceMaps: true,
-            paths: [ path.join(__dirname) ]
-        }))
-        .pipe(gulp.dest(assets + '/css'));
-});
-*/
 
 gulp.task('less_dev', function () {
     gulp.src('src/less/main.less')

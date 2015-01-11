@@ -1,7 +1,7 @@
 node_modules
 vendor/**
 themes/**/assets/css/**
-themes/**/assets/images/**
+themes/**/assets/img/**
 themes/**/assets/svg/**
 themes/**/assets/js/**
 themes/**/assets/fonts/**
