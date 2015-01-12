@@ -62,15 +62,15 @@ gulp.task('copy-imgs', function () {
 gulp.task('svg-min', function() {
   return gulp.src('./src/svg/symbols/*.svg')
     .pipe(svgmin({
-    }))
-    .pipe(svgmin({
-      plugins: [{
-        removeDoctype: true
-      }, {
-        removeComments: false
-      }, {
-        cleanupEnableBackground: true
-      }]
+      plugins: [
+        {removeDoctype: false},
+        {removeComments: true},
+        {cleanupEnableBackground: true},
+        {cleanupIDs: false},
+        {removeHiddenElems: false},
+        {collapseGroups: false}
+
+      ]
     }))
     .pipe(gulp.dest('./src/svg/processed'));
 });
@@ -224,7 +224,7 @@ gulp.task('watch', ['browser-sync'], function () {
 
 // Default task to be run with `gulp`
 gulp.task('dev', ['copy-imgs', 'copy-fonts', 'less_dev', 'dev_js']);
-gulp.task('dev-build', ['copy-imgs', 'copy-fonts', 'less_dev', 'dev_js', 'jshint', 'watch', 'browser-sync']);
+gulp.task('dev-build', ['copy-imgs', 'copy-fonts', 'svg-symbol', 'less_dev', 'dev_js', 'jshint', 'watch', 'browser-sync']);
 gulp.task('dev-watch', ['less_dev', 'dev_js', 'watch', 'browser-sync']);
 gulp.task('dev-less', ['less_dev','watch', 'browser-sync']);
 gulp.task('default', ['copy-imgs', 'copy-fonts', 'less', 'js']);

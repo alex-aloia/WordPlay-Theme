@@ -1,10 +1,10 @@
 jQuery(function ($) {
 
 
-$('#tripl3infLogo').center()
+$('#intro_tripl3infLogo_wrap').center()
 
     var animateLogo = function(){
-        var tripl3Logo = d3.select('#tripl3infLogo'),
+        var tripl3Logo = d3.select('#intro_tripl3infLogo'),
             letters = tripl3Logo.selectAll('#letters path'),
             dd_letters = tripl3Logo.selectAll('#desanddev path'),
             infSym = tripl3Logo.select('#infSym'),
@@ -47,7 +47,7 @@ $('#tripl3infLogo').center()
             .addLabel('infSym', '-=3')
             .staggerTo(infPath[0], 0.8, {autoAlpha:1, strokeDashoffset: 0, ease:Sine.easeIn}, 0.25, 'infSym')
             .to(infSymWhole, 0.1, {autoAlpha:1}, 'infSym+=1.2')
-            .to(blur, 1, {attr:{stdDeviation:10}}, 'infSym+=1.3')
+            .to(blur, 1, {attr:{stdDeviation:7}}, 'infSym+=1.3')
             .staggerTo(dd_letters[0], 1, {autoAlpha:1, ease:Sine.easeIn}, 0.1, '-=2')
             //.staggerTo(dd_letters[0], 0.8, {fill: '#aaff00'}, 0.15, '+=0.5')
             .addPause()
