@@ -1,0 +1,43 @@
+header {
+  position: absolute;
+  width: 100%;
+  top: 40%;
+  margin: 0;
+
+  #main_menu {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    width: 800px;
+    min-width: 800px;
+
+    > ul {
+      float: right;
+      position: relative;
+      left: -50%; /* or right 50% */
+      text-align: center;
+      > li {
+        position: relative;
+        left: 50%;
+        float: left;
+        height: 150px;
+        width: 150px;
+        margin: 0 3em;
+        a {
+          padding: 0;
+          line-height: 150px;
+        }
+      }
+    }
+  }
+}
+
+.nav_circle {
+  width: 150px;
+
+  position: absolute;
+  left: 0;
+  stroke: #222;
+    stroke-width: 3;
+}

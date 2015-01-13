@@ -43,18 +43,19 @@ $('#intro_tripl3infLogo_wrap').center()
 
         logoTL.staggerTo(letters[0], 0.8, {autoAlpha:1, strokeDashoffset: 0, ease:Sine.easeIn}, 0.25)
             //.set(dd_letters[0], {transformOrigin:"50% 50%"})
-            .staggerTo(letters[0], 0.8, {fill:'#aaff00', ease:Sine.easeIn}, 0.25, '-=3')
+            //.staggerTo(letters[0], 0.8, {fill:'#aaff00', ease:Sine.easeIn}, 0.25, '-=3')
             .addLabel('infSym', '-=3')
             .staggerTo(infPath[0], 0.8, {autoAlpha:1, strokeDashoffset: 0, ease:Sine.easeIn}, 0.25, 'infSym')
             .to(infSymWhole, 0.1, {autoAlpha:1}, 'infSym+=1.2')
             .to(blur, 1, {attr:{stdDeviation:7}}, 'infSym+=1.3')
             .staggerTo(dd_letters[0], 1, {autoAlpha:1, ease:Sine.easeIn}, 0.1, '-=2')
             //.staggerTo(dd_letters[0], 0.8, {fill: '#aaff00'}, 0.15, '+=0.5')
-            .addPause()
+            //.addPause()
             .addLabel('fadeOut')
             .staggerTo(letters[0], 0.8, {autoAlpha:0, ease:Sine.easeOut}, 0.25, 'fadeOut')
             .to(infSym, 0.8, {autoAlpha:0, ease:Sine.easeOut}, 'fadeOut+=1.1')
             .staggerTo(dd_letters[0], 1.5, {autoAlpha:0}, 0.1, 'fadeOut+=0.6')
+            .set( $('#intro_tripl3infLogo_wrap'), {display:'none'});
 
         logoTL.play()
 

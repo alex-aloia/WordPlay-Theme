@@ -19,10 +19,7 @@
 
 
 body {
-  overflow: none;
-
-
-
+  overflow: hidden;
 
   #contactContainer {
     width: 40%;
@@ -33,13 +30,29 @@ body {
   }
 
 
+  #triLoader {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin: -125px 0 0 -125px;
+    overflow: hidden;
 
+    #triLoaderPieces {
+      position: absolute;
+      fill: #aaff00;
+      stroke: #aaff00;
+    }
 
-
-
-  svg.logo {
-    fill: @brand-primary;
+    #triLoaderMask {
+      fill: #fff;
+    }
   }
+
+
+
+
+
 
 
 
