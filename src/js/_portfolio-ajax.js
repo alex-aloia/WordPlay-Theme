@@ -1,8 +1,7 @@
 // ajaxLoop.js
 jQuery(function ($) {
 
-    $(".menu-work").click(function (e) {
-
+    $(".menu-featured-work").click(function (e) {
         e.preventDefault();
         ajaxInProg = false;
         if (ajaxInProg === true) {
