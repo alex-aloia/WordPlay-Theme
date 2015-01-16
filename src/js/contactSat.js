@@ -55,7 +55,6 @@ jQuery(function ($) {
 
         contactBTN.on("mouseenter", function() {
             iconTL.play()
-
             waveTL.stop('openedUp');
         })
             .on("mouseleave", function(){
@@ -76,61 +75,57 @@ jQuery(function ($) {
             .to(contactBTN, 15, {rotation:-15, x:-10, y:-15, ease:Sine.easeInOut}, 's1');
         //.to(contactBTN, 10, {bezier:{type:"soft", curviness:1, values:[{x:0, y:50}, {x:50, y:0}]}, ease:Sine.easeInOut }, 's1')
 
-
-    }
-
-    contactSatellite()
-
-
-    $("#contact_BTN .fa-envelope-o").click(function (e) {
+      $("#contact_BTN .fa-envelope-o").click(function (e) {
 
         e.preventDefault();
         ajaxInProg = false;
         if (ajaxInProg === true) {
-            return;
+          return;
         }
         else {
-            // This does the ajax request
-            var ajax_request = $.ajax({
-                type: "POST",
-                dataType: "json",
-                url: ajax_handler.ajaxurl,
-                data: {
-                    action: 'contact_page_request',
-                    postCommentNonce: ajax_handler.postCommentNonce
-                },
-                beforeSend: function () {
-                    loaderTL.play();
-                },
-                success: function (response) {
-                    if (response.success) {
-                    $('body').append('<div id="contactContainer">');
-                        ajaxInProg = true;
-                        console.log(response.data[0]);
-                        getContactPage(response.data);
-                    }
-                },
-                complete: function () {
-                    ajaxInProg = false;
-                },
-                error: function (response) {
-                    console.log('error =' + response.error);
-                }
-            });
+          // This does the ajax request
+          var ajax_request = $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: ajax_handler.ajaxurl,
+            data: {
+              action: 'contact_page_request',
+              postCommentNonce: ajax_handler.postCommentNonce
+            },
+            beforeSend: function () {
+              loaderTL.play();
+            },
+            success: function (response) {
+              if (response.success) {
+                $('body').append('<div id="contactContainer">');
+                ajaxInProg = true;
+                console.log(response.data[0]);
+                getContactPage(response.data);
+              }
+            },
+            complete: function () {
+              ajaxInProg = false;
+            },
+            error: function (response) {
+              console.log('error =' + response.error);
+            }
+          });
         }
 
-    });
+      });
 
 
-    var getContactPage = function (jsonObj) {
+      var getContactPage = function (jsonObj) {
 //        alert(jsonObj);
         $('#contactContainer').append(jsonObj);
         TweenLite.to( $('#contactContainer'), 1, {autoAlpha:1});
 
 
-    };
+      };
 
+    }
 
+   // contactSatellite()
 
 
 

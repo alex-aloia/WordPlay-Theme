@@ -1,9 +1,8 @@
-jQuery(function ($) {
-
-
-$('#intro_tripl3infLogo_wrap').center()
-
-    var animateLogo = function(){
+/*
+* LOGO ANIMATION -- tripl3inf
+ */
+    var animateLogo_tripl3inf = function(){
+      $('#intro_tripl3infLogo_wrap').center()
         var tripl3Logo = d3.select('#intro_tripl3infLogo'),
             letters = tripl3Logo.selectAll('#letters path'),
             dd_letters = tripl3Logo.selectAll('#desanddev path'),
@@ -29,19 +28,19 @@ $('#intro_tripl3infLogo_wrap').center()
                 .attr('filter', "url('#glow')");
 
 
-        logoTL = new TimelineMax({paused:true})
+        logo_tripl3infTL = new TimelineMax()
 
         letters.each(function (d, i) {
             var pathLength = this.getTotalLength();
-            logoTL.add(TweenLite.set(this, {strokeDasharray: pathLength, strokeDashoffset: pathLength}));
+            logo_tripl3infTL.add(TweenLite.set(this, {strokeDasharray: pathLength, strokeDashoffset: pathLength}));
         });
 
         infPath.each(function (d, i) {
             var pathLength = this.getTotalLength();
-            logoTL.add(TweenLite.set(this, {strokeDasharray: pathLength, strokeDashoffset: pathLength}));
+            logo_tripl3infTL.add(TweenLite.set(this, {strokeDasharray: pathLength, strokeDashoffset: pathLength}));
         });
 
-        logoTL.staggerTo(letters[0], 0.8, {autoAlpha:1, strokeDashoffset: 0, ease:Sine.easeIn}, 0.25)
+        logo_tripl3infTL.staggerTo(letters[0], 0.8, {autoAlpha:1, strokeDashoffset: 0, ease:Sine.easeIn}, 0.25)
             //.set(dd_letters[0], {transformOrigin:"50% 50%"})
             //.staggerTo(letters[0], 0.8, {fill:'#aaff00', ease:Sine.easeIn}, 0.25, '-=3')
             .addLabel('infSym', '-=3')
@@ -57,9 +56,8 @@ $('#intro_tripl3infLogo_wrap').center()
             .staggerTo(dd_letters[0], 1.5, {autoAlpha:0}, 0.1, 'fadeOut+=0.6')
             .set( $('#intro_tripl3infLogo_wrap'), {display:'none'});
 
-        logoTL.play()
+        //logo_tripl3infTL.play()
+      return logo_tripl3infTL;
 
     }
 
-    animateLogo();
-});

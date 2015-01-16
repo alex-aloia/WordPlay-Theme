@@ -8,10 +8,10 @@
         wp_nav_menu(array('theme_location' => 'footer_navigation', 'menu_class' => 'nav navbar-nav '));
       endif;
       ?>
-    <a id="aaaLogo_footer" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-      <p>powered by:</p>
-      <svg class="logo aaaLogo"><use xlink:href="#aaaLogo-flat"></use></svg>
-    </a>
+<!--    <a id="aaaLogo_footer" href="--><?php //echo esc_url( home_url( '/' ) ); ?><!--">-->
+<!--      <p>powered by:</p>-->
+<!--      <svg class="logo aaaLogo"><use xlink:href="#aaaLogo-flat"></use></svg>-->
+<!--    </a>-->
   </nav>
 </footer>
 

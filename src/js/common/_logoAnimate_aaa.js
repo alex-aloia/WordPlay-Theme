@@ -1,8 +1,5 @@
 
-
-$(document).ready(function() {
-
-  var animateLogo = function () {
+  var animateLogo_aaa = function(){
     var maskPath = [
         //A1
         'M 33.85,54.71 C 31.98,57.85 29.81,61.3 27.89,64.54 L 74.5,64.54 C 62.74,44.16 51.15,24.13 39.35,3.67 27.63,24.17 16.13,44.29 4.5,64.67 L 16.35,64.67 C 24.02,51.24 31.53,38.27 39.5,24.32 45.69,35.03 51.12,44.24 57.18,54.69 48.9,54.69 41.69,54.71 33.85,54.71 Z M 33.85,54.71',
@@ -92,14 +89,14 @@ $(document).ready(function() {
 
     $('#intro_aaaLogo').center()
 
-    loaderTL = new TimelineMax({repeat: 0})
+    logo_aaaTl = new TimelineMax({})
 
     paths.each(function (d, i) {
       var pathLength = this.getTotalLength();
-      loaderTL.add(TweenLite.set(this, {strokeDasharray: pathLength, strokeDashoffset: pathLength}))
+      logo_aaaTl.add(TweenLite.set(this, {strokeDasharray: pathLength, strokeDashoffset: pathLength}))
     })
 
-    loaderTL
+    logo_aaaTl
       .set(paths[0], {autoAlpha: 0})
       .set(paths[0][3], {autoAlpha: 1})
       .set(paths[0][9], {autoAlpha: 1})
@@ -127,14 +124,17 @@ $(document).ready(function() {
       .to(paths[0][11], 1, {strokeDashoffset: 0, ease:Power3.easeOut}, '3.6')
       //A3
       .to(paths[0][12], 1, {autoAlpha: 1, strokeDashoffset: 0, ease:Power3.easeOut}, '3.8')
-    //loaderTL.to(paths[0], 1, {stroke:'#666'});
-    //.to(aaaLogo, 2, {autoAlpha: 0}, '-=0.25')
+      .staggerTo(paths[0], 0.6, {autoAlpha:0}, 0.15, '-=0.1')
+      .set( $('#intro_aaaLogo'), {display:'none'});
+
+    //.to(aaaLogo, 2, {autoAlpha: 0}
+
+    return logo_aaaTl;
 
   }
 
-  animateLogo()
+  //animateLogo()
 
-});
 
 
 

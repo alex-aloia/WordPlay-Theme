@@ -173,7 +173,8 @@ var js_foot = [
 //  'vendor/bower/bootstrap/js/scrollspy.js',
 //  'vendor/bower/bootstrap/js/tab.js',
 //  'vendor/bower/bootstrap/js/affix.js',
-    'src/js/_*.js'
+    'src/js/common/_*.js',
+    'src/js/_main.js'
 ];
 
 

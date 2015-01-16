@@ -1,6 +1,6 @@
 
 svg.logo {
-  fill: @brand-primary;
+  //fill: @brand-primary;
 }
 
 
@@ -51,6 +51,9 @@ svg.logo {
 
 
   #contact_BTN {
+
+    display: none;
+
 //    height: 125px;
 //    width: 125px;
     width: 8%;
@@ -93,13 +96,6 @@ svg.logo {
 
 
 
-
-
-
-body {
-  background: #000;
-}
-
 #intro_aaaLogo {
   //position: absolute;
   display: block;
@@ -113,7 +109,75 @@ body {
     stroke: #aaff00;
   }
 
-  /*  #aaaLogoMask {
-      fill: #fff;
-    }*/
 }
+
+
+
+
+
+
+
+
+//#triLoader {
+//  position: absolute;
+//  top: 50%;
+//  left: 50%;
+//  margin: -250px 0 0 -250px;
+//  /*  overflow: hidden;*/
+//
+//  #triLoaderPieces {
+//    /*    position: absolute;*/
+//    fill: #aaff00;
+//    stroke: #aaff00;
+//  }
+//
+//  #triLoaderMask {
+//    /*    fill: #fff;*/
+//  }
+//}
+
+  #triLoader {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin: -125px 0 0 -125px;
+    overflow: hidden;
+
+    #triLoaderPieces {
+      position: absolute;
+      fill: #aaff00;
+      stroke: #aaff00;
+    }
+
+    #triLoaderMask {
+      fill: #fff;
+    }
+  }
+
+
+
+
+.container_pwrdBy {
+  width: 600px;
+  text-align: center;
+  font-size: 4em;
+  font-style: italic;
+
+  p {
+    display: inline-block;
+//    visibility: hidden;
+//    opacity: 0;
+
+    &:first-child {
+      margin-right: 20px;
+    }
+  }
+}
+
+
+
+
+
+
+
