@@ -4,16 +4,21 @@ svg.logo {
 }
 
 
+#intro_tripl3infLogo_wrap {
+  width: 600px;
+}
+
+
+
 .tripl3infLogo {
   fill: none;
-  stroke-width: 4px;
-  width: 450px;
+  stroke-width: 3px;
+  width: 100%;
   display: block;
 
   .logo g path {
     opacity:0;
     visibility: hidden;
-
   }
 
   #infSymMasks {
@@ -21,15 +26,14 @@ svg.logo {
     stroke: none;
   }
 
-  #letters path {
-
-  }
-
   #infSym {
-    #infSymPaths path {
+    #infSymPaths {
+      path {
       stroke: #aaff00;
-      opacity:0;
+      stroke-width: 15px;
+      opacity: 0;
       visibility: hidden;
+      }
     }
 
     #infSymWhole path {

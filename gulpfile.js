@@ -32,7 +32,8 @@ var gulp = require('gulp'),
 gulp.task('browser-sync', function () {
     browserSync({
         proxy: "dev.t3inf.com",
-        ghostMode: true
+        ghostMode: false,
+        open: false
     });
 });
 
@@ -63,14 +64,44 @@ gulp.task('svg-min', function() {
   return gulp.src('./src/svg/symbols/*.svg')
     .pipe(svgmin({
       plugins: [
-        {removeDoctype: false},
+        {prettyPrint: true},
+        {removeDoctype: true},
+        {removeXMLProcInst: true},
         {removeComments: true},
+        {removeMetadata: true},
+        {removeEditorsNSData: false},
+        {cleanupAttrs: true},
+        {convertStyleToAttrs: false},
+        {removeRasterImages: false},
+        {cleanupNumericValues: false},
+        {cleanupListOfValues: false},
+        {convertColors: false},
+        {removeUnknownsAndDefaults: false},
+        {removeNonInheritableGroupAttrs: true},
+        {removeUselessStrokeAndFill: false},
+        {removeViewBox: false},
         {cleanupEnableBackground: true},
+        {removeHiddenElems: true},
+        {removeEmptyText: false},
+        {convertShapeToPath: true},
+        {moveElemsAttrsToGroup: true},
+        {moveGroupAttrsToElems: false},
+        {collapseGroups: false},
+        {convertPathData: false},
+        {convertTransform: true},
+        {removeEmptyAttrs: true},
+        {removeEmptyContainers: true},
+        {mergePaths: false},
         {cleanupIDs: false},
-        {removeHiddenElems: false},
-        {collapseGroups: false}
-
-      ]
+        {removeUnusedNS: true},
+        {transformsWithOnePath: false},
+        {sortAttrs: true},
+        {removeTitle: true},
+        {removeDesc: true}
+      ],
+      js2svg: {
+        pretty: true
+      }
     }))
     .pipe(gulp.dest('./src/svg/processed'));
 });

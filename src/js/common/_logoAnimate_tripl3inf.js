@@ -40,7 +40,8 @@
             logo_tripl3infTL.add(TweenLite.set(this, {strokeDasharray: pathLength, strokeDashoffset: pathLength}));
         });
 
-        logo_tripl3infTL.staggerTo(letters[0], 0.8, {autoAlpha:1, strokeDashoffset: 0, ease:Sine.easeIn}, 0.25)
+        logo_tripl3infTL
+            .staggerTo(letters[0], 0.8, {autoAlpha:1, strokeDashoffset: 0, ease:Sine.easeIn}, 0.25)
             //.set(dd_letters[0], {transformOrigin:"50% 50%"})
             //.staggerTo(letters[0], 0.8, {fill:'#aaff00', ease:Sine.easeIn}, 0.25, '-=3')
             .addLabel('infSym', '-=3')
