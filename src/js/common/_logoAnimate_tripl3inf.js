@@ -54,7 +54,7 @@
             .addLabel('fadeOut')
             .staggerTo(letters[0], 0.8, {autoAlpha:0, ease:Sine.easeOut}, 0.25, 'fadeOut')
             .to(infSym, 0.8, {autoAlpha:0, ease:Sine.easeOut}, 'fadeOut+=1.1')
-            .staggerTo(dd_letters[0], 1.5, {autoAlpha:0}, 0.1, 'fadeOut+=0.6')
+            .staggerTo(dd_letters[0], 1.5, {autoAlpha:0}, 0.1, 'fadeOut+=2')
             .set( $('#intro_tripl3infLogo_wrap'), {display:'none'});
 
         //logo_tripl3infTL.play()
