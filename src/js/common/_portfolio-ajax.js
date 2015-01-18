@@ -1,44 +1,47 @@
 // ajaxLoop.js
-jQuery(function ($) {
 
-    $(".menu-featured-work").click(function (e) {
-        e.preventDefault();
-        ajaxInProg = false;
-        if (ajaxInProg === true) {
-            return;
-        }
-        else {
-            // This does the ajax request
-            var ajax_request = $.ajax({
-                type: "POST",
-                dataType: "json",
-                url: ajax_handler.ajaxurl,
-                data: {
-                    action: 'portfolio_page_request',
-                    postCommentNonce: ajax_handler.postCommentNonce
-                },
-                beforeSend: function () {
-                    logoTL.play();
-                    //loaderTL.play();
-                },
-                success: function (response) {
-                    if (response.success) {
-                        $('#portfolio').empty();
-                        ajaxInProg = true;
-                        //console.log(response.data[0]);
-                        createSVGimgs(response.data);
+    var initPortfolio = function(){
+        //$(".menu-featured-work").click(function (e) {
+         //   e.preventDefault();
+
+            ajaxInProg = false;
+            if (ajaxInProg === true) {
+                return;
+            }
+            else {
+                // This does the ajax request
+                var ajax_request = $.ajax({
+                    type: "POST",
+                    dataType: "json",
+                    url: ajax_handler.ajaxurl,
+                    data: {
+                        action: 'portfolio_page_request',
+                        postCommentNonce: ajax_handler.postCommentNonce
+                    },
+                    beforeSend: function () {
+                        //logoTL.play();
+                        //loaderTL.play();
+                    },
+                    success: function (response) {
+                        if (response.success) {
+
+                            $('#portfolio').empty();
+                            ajaxInProg = true;
+                            //console.log(response.data[0]);
+                            createSVGimgs(response.data);
+                        }
+                    },
+                    complete: function () {
+                        ajaxInProg = false;
+                    },
+                    error: function (response) {
+                        console.log('error =' + response.error);
                     }
-                },
-                complete: function () {
-                    ajaxInProg = false;
-                },
-                error: function (response) {
-                    console.log('error =' + response.error);
-                }
-            });
-        }
+                });
+            }
 
-    });
+        //});
+    }
 
 
     var createSVGimgs = function (jsonObj) {
@@ -127,4 +130,3 @@ jQuery(function ($) {
     };
 
 
-});

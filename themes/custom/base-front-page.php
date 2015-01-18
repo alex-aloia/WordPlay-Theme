@@ -18,6 +18,28 @@
   <?php get_template_part('templates/footer'); ?>
 
   <?php wp_footer(); ?>
+
+  <script type="text/javascript">
+
+      jQuery(function ($) {
+          $(window).load(function() {
+              var mainTL = new TimelineLite();
+
+              mainTL.add(animateLogo_tripl3inf());
+              mainTL.add(animate_pwrdBy(), 6.8);
+              mainTL.add(animateLogo_aaa(), 9.5);
+              mainTL.add(initMainMenu());
+
+          });
+      });
+
+  </script>
+
 <!--<div id="bgOverlay"></div>-->
+
+
+
+
+
 </body>
 </html>
