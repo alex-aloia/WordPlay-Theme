@@ -26,8 +26,8 @@ var initMainMenu = function () {
             .attr('class', 'circ1');
 
     mainMenuTL = new TimelineMax()
-        .set(link[0], {autoAlpha: 0})
-        .staggerTo(link[0], 2.5, {autoAlpha: 1}, 0.3)
+        .set(menuItem[0], {autoAlpha: 0})
+        .staggerTo(menuItem[0], 2.5, {autoAlpha: 1}, 0.3)
 
     nav_circle.each(function (d, i) {
         var pathLength = this.getTotalLength();
@@ -48,32 +48,49 @@ var initMainMenu = function () {
         TweenLite.to(link[0][i], 0.8, {color: '#333'}, 's1')
     })
 
-    link.on('click', function (d, i){
+    menuItem.on('click', function (d, i){
         d3.event.preventDefault();
-        //var link = d3.select(this),
-        var link = this,
-            linkParent = menuItem[0].splice(i, 1)
-            href = link.href;
-
-        var loadLink = function(href){
-            //window.location.href = href;
-            var page = href.split("/")[3];
-
-            if(page == 'featured-work'){
-                initPortfolio()
-            }
-
-        }
-
-
-        mainMenuTL.staggerTo(menuItem[0], 0.5, {autoAlpha: 0}, 0.25)
-            .to(linkParent, 0.5, {autoAlpha:0, onComplete:loadLink(href)}, '-=0.25')
-
+        var li = menuItem[0][i];
+        closeMenu(li)
     })
 
+    var closeMenu = function(current){
+        var link = d3.select(current).select('a').node().href.split('/')[3];
+        var siblings = $(current).siblings()
+
+        var gotoLink = function() {
+            if (link != null) {
+                if (link == 'featured-work') {
+                    //closeMenu(menuItem[0][0])
+                    initPortfolio()
+                }
+                else {
+                    window.location.href = link;
+                }
+            }
+        }
+
+        mainMenuTL.staggerTo(siblings, 1, {autoAlpha:0}, 0.25)
+            .to(current, 1, {autoAlpha:0}, '-=0.7')
+            .set(menuItem[0], {display:'none', onComplete:gotoLink()})
+
+    }
+
+    var openMenu = function(current){
+        mainMenuTL.set(menuItem[0], {display:'inline-block'})
+            .staggerTo(menuItem[0], 1, {autoAlpha:1}, 0.25)
+    }
+
+    //var test_btn = d3.select('body').append('span').attr('id', 'testBtn').html('fade out').on('click', function(){
+    //    closeMenu(menuItem[0][0])
+    //});
+    //var test_btn2 = d3.select('body').append('span').attr('id', 'testBtn2').html('fade in').on('click', function() {
+    //    openMenu()
+    //});
 
     return mainMenuTL;
 
 }
+
 
 

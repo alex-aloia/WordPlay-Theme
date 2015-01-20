@@ -2,9 +2,9 @@
 * LOGO ANIMATION -- tripl3inf
  */
     var animateLogo_tripl3inf = function(){
-      $('#intro_tripl3infLogo_wrap').center()
 
-        var tripl3Logo = d3.select('#intro_tripl3infLogo'),
+        var container = d3.select('#intro_tripl3infLogo_wrap'),
+            tripl3Logo = d3.select('#intro_tripl3infLogo'),
             letters = tripl3Logo.selectAll('#letters path'),
             dd_letters = tripl3Logo.selectAll('#desanddev path'),
             infSym = tripl3Logo.select('#infSym'),
@@ -28,6 +28,7 @@
             infSymWhole = d3.selectAll('#infSymWhole path')
                 .attr('filter', "url('#glow')");
 
+        $('#intro_tripl3infLogo_wrap').center()
 
         logo_tripl3infTL = new TimelineMax()
 
@@ -42,6 +43,7 @@
         });
 
         logo_tripl3infTL
+            .set(container, {display:'block'})
             .staggerTo(letters[0], 0.8, {autoAlpha:1, strokeDashoffset: 0, ease:Sine.easeIn}, 0.25)
             //.set(dd_letters[0], {transformOrigin:"50% 50%"})
             //.staggerTo(letters[0], 0.8, {fill:'#aaff00', ease:Sine.easeIn}, 0.25, '-=3')
