@@ -24,10 +24,11 @@
       jQuery(function ($) {
           $(window).load(function() {
               var mainTL = new TimelineLite();
+//              mainTL.add(animate_pwrdBy(), 0);
 
-              mainTL.add(animateLogo_tripl3inf());
-              mainTL.add(animate_pwrdBy(), 6.8);
-              mainTL.add(animateLogo_aaa(), 9.5);
+//              mainTL.add(animateLogo_tripl3inf());
+//              mainTL.add(animate_pwrdBy(), 6.5);
+//              mainTL.add(animateLogo_aaa(), 9);
               mainTL.add(initMainMenu());
 
           });
@@ -35,7 +36,6 @@
 
   </script>
 
-<!--<div id="bgOverlay"></div>-->
 
 
 

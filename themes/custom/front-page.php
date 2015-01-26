@@ -8,14 +8,13 @@ while (have_posts()) : the_post();
 endwhile;
 ?>
 
-<div id="portfolio"></div>
 
 
-<div class="content container-fluid">
-    <article class="entry-content row">
-
-    </article>
-</div>
+<!--<div class="content container-fluid">-->
+<!--    <article class="entry-content row">-->
+<!---->
+<!--    </article>-->
+<!--</div>-->
 
 
 

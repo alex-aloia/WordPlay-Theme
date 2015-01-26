@@ -60,6 +60,15 @@ piklist( 'field', array(
 )
 ) );
 
+piklist( 'field', array(
+  'type'        => 'text',
+  'field'       => 'ext_link',
+  'label'       => 'External Link',
+  'columns'     => 12,
+  'attributes'  => array(
+  'class' => 'text'
+)
+) );
 
 piklist( 'field', array(
   //'type'        => 'textarea',

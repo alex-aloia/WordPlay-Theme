@@ -37,15 +37,14 @@ var initMainMenu = function () {
     // hover event
     menuItem.on("mouseenter", function (d, i) {
         var target = nav_circle[i][0];
-        TweenLite.to( target, 1, {strokeDashoffset: 0, ease: Sine.easeInOut})
-        TweenLite.to(link[0][i], 0.8, {color: '#aaff00'})
+        hoverTL = new TimelineLite()
+        .to( target, 0.25, {autoAlpha:1})
+            .to( target, 1, {strokeDashoffset: 0, ease: Sine.easeInOut})
+        .to(link[0][i], 0.5, {color: '#aaff00'}, 0.2)
     })
 
     menuItem.on("mouseleave", function (d, i) {
-        var target = nav_circle[i][0]
-            pathLength = target.getTotalLength();
-        TweenLite.to(target, 1, {strokeDashoffset: 1208, ease: Sine.easeInOut})
-        TweenLite.to(link[0][i], 0.8, {color: '#333'}, 's1')
+            hoverTL.reverse();
     })
 
     menuItem.on('click', function (d, i){
@@ -54,7 +53,7 @@ var initMainMenu = function () {
         closeMenu(li)
     })
 
-    var closeMenu = function(current){
+    closeMenu = function(current){
         var link = d3.select(current).select('a').node().href.split('/')[3];
         var siblings = $(current).siblings()
 
@@ -76,17 +75,11 @@ var initMainMenu = function () {
 
     }
 
-    var openMenu = function(current){
+    openMenu = function(){
         mainMenuTL.set(menuItem[0], {display:'inline-block'})
             .staggerTo(menuItem[0], 1, {autoAlpha:1}, 0.25)
     }
 
-    //var test_btn = d3.select('body').append('span').attr('id', 'testBtn').html('fade out').on('click', function(){
-    //    closeMenu(menuItem[0][0])
-    //});
-    //var test_btn2 = d3.select('body').append('span').attr('id', 'testBtn2').html('fade in').on('click', function() {
-    //    openMenu()
-    //});
 
     return mainMenuTL;
 

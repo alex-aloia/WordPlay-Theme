@@ -27,7 +27,7 @@ get_template_part('assets/img/inline', 'symbols.svg');
 
   <nav id="main_menu" class="" role="navigation">
     <?php
-    if (has_nav_menu('primary_navigation')) :
+    if ( is_front_page() && has_nav_menu('primary_navigation')) :
       wp_nav_menu(array(
         'theme_location' => 'primary_navigation',
         'walker' => new Roots_Nav_Walker(),

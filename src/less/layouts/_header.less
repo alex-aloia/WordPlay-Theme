@@ -1,13 +1,13 @@
 header {
-//  position: absolute;
   width: 100%;
   //top: 40%;
   margin: auto;
+  z-index: 2;
 
   #main_menu {
     display: block;
     margin: 0 auto;
-    position: relative;
+    position: absolute;
     text-align: center;
     //width: 80%;
 
@@ -25,16 +25,19 @@ header {
         height: 150px;
         margin: 20px 40px;
         display: inline-block;
-//        visibility: hidden;
-//        opacity: 0;
+        visibility: hidden;
+        opacity: 0;
 
         a {
           .vert-center;
-
+          outline: 0;
           text-align: center;
           padding: 0;
           color: @gray;
           font-size: 1.2em;
+          &:hover {
+            cursor: pointer;
+          }
         }
         svg.nav_circle {
           width: 100%;
@@ -43,8 +46,8 @@ header {
           left: 0;
 
           path {
-//            visibility: hidden;
-//            opacity: 0;
+            //           visibility: hidden;
+            //            opacity: 0;
             stroke: #222;
             stroke-width: 3;
           }
