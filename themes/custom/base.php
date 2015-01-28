@@ -31,4 +31,15 @@
 <div id='bgOverlay'></div>
 
 </body>
+
+<script type="text/javascript">
+  jQuery(function ($) {
+    $(window).load(function() {
+      TweenLite.to( $('.wrap'), 1, {autoAlpha:1})
+    });
+  });
+</script>
+
+
+
 </html>

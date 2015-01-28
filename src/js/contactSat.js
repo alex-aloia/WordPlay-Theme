@@ -79,6 +79,7 @@ jQuery(function ($) {
 
         e.preventDefault();
         ajaxInProg = false;
+
         if (ajaxInProg === true) {
           return;
         }
@@ -119,8 +120,6 @@ jQuery(function ($) {
 //        alert(jsonObj);
         $('#contactContainer').append(jsonObj);
         TweenLite.to( $('#contactContainer'), 1, {autoAlpha:1});
-
-
       };
 
     }

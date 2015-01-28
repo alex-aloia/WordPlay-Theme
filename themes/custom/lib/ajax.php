@@ -29,6 +29,7 @@ function portfolio_page_request()
     $thumb = wp_get_attachment_image_src($thumb_id, 'full');
     //$thumb = sanitize_text_field( wp_get_attachment_url( get_post_thumbnail_id($postID) ));
 
+				$thumb_sml = wp_get_attachment_thumb_url($thumb_id);
 
     $imgW = get_post_meta($post->ID, 'port_imgW');
     $imgW = sanitize_text_field($imgW[0]);
@@ -42,7 +43,7 @@ function portfolio_page_request()
       'ID' => $thumb_id,
       'title' => $postTitle,
       'content' => $info,
-
+						'thumb_url' => $thumb_sml,
       'img_url' => $thumb[0],
       'img_w' =>  $thumb[1],
       'img_h' =>  $thumb[2],
@@ -79,7 +80,7 @@ function contact_page_request()
   global $wp_query;
   global $post;
 
-  $wp_query = new WP_Query('page_id=136');
+  $wp_query = new WP_Query('page_id=14');
 
 //$response = 'test';
 

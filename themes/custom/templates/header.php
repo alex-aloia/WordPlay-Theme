@@ -4,6 +4,13 @@ get_template_part('assets/img/inline', 'symbols.svg');
 
 <header class="banner" role="banner">
 
+
+
+  <svg class="symbol tripl3infinityLogo_v2"><use xlink:href="#tripl3infinityLogo_v2"></use></svg>
+
+
+
+
   <div id='contact_BTN'>
     <svg id="satelliteContainer" x="0px" y="0px" width="200" height="200" viewBox="38.75 0 140.25 138.25">
       <g id="satellite">

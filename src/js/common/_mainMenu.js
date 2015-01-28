@@ -59,10 +59,13 @@ var initMainMenu = function () {
 
         var gotoLink = function() {
             if (link != null) {
-                if (link == 'featured-work') {
+                if (link === 'featured-work') {
                     //closeMenu(menuItem[0][0])
                     initPortfolio()
                 }
+                //else if ( link === 'contact'){
+                //  loadContactForm()
+                //}
                 else {
                     window.location.href = link;
                 }
@@ -71,7 +74,8 @@ var initMainMenu = function () {
 
         mainMenuTL.staggerTo(siblings, 1, {autoAlpha:0}, 0.25)
             .to(current, 1, {autoAlpha:0}, '-=0.7')
-            .set(menuItem[0], {display:'none', onComplete:gotoLink()})
+            .set(menuItem[0], {display:'none'})
+            .call( gotoLink, [], '+=1' )
 
     }
 

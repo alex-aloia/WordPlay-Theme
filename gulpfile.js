@@ -119,7 +119,7 @@ var sprite_config = {
         sprite: "spritesheet.svg"
     },
     preview: {
-        sprite: "/sprite-index.html"
+        sprite: "sprite-index.html"
     }
 };
 
@@ -138,7 +138,7 @@ var symbol_config = {
         symbols: "inline-symbols.svg.php"
     },
     preview: {
-        symbols: "/symbol-index.html"
+        symbols: "symbol-index.html"
     }
 };
 

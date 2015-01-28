@@ -103,7 +103,7 @@ var createSVGimgs = function (jsonObj) {
     img = link.append("img"),
     imgAttributes = img
       .attr("src", function (d) {
-        return d.img_url;
+        return d.thumb_url;
       })
       .style('filter', function (d, i) {
         return 'url(#filter_' + i + ')';
