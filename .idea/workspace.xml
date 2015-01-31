@@ -2,27 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e716e0e6-c787-4f5b-a249-e358404e5edc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/img/bckrnd.jpg" afterPath="$PROJECT_DIR$/src/img/bckrnd.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/img/bckrnd2.jpg" afterPath="$PROJECT_DIR$/src/img/bckrnd2.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/img/bckrnd2_btm.jpg" afterPath="$PROJECT_DIR$/src/img/bckrnd2_btm.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/img/bckrnd_new.jpg" afterPath="$PROJECT_DIR$/src/img/bckrnd_new.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/img/spaceBG.jpg" afterPath="$PROJECT_DIR$/src/img/spaceBG.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/portfloio images/FIXED/exported/tm-mobile-screenshot.jpg" afterPath="$PROJECT_DIR$/src/portfloio images/FIXED/exported/tm-mobile-screenshot.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/portfloio images/FIXED/tm-mobile-screenshot.psd" afterPath="$PROJECT_DIR$/src/portfloio images/FIXED/tm-mobile-screenshot.psd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/portfloio images/FIXED/tm-mobile-screenshot" afterPath="$PROJECT_DIR$/src/portfloio images/FIXED/tm-mobile-screenshot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/portfloio images/FIXED/exported/tm-trading-tools-screenshot.jpg" afterPath="$PROJECT_DIR$/src/portfloio images/FIXED/exported/tm-trading-tools-screenshot.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/portfloio images/tradeMONSTER | Traders Tools | Tools for Traders 2015-01-18 05-38-06.png" afterPath="$PROJECT_DIR$/src/portfloio images/tradeMONSTER | Traders Tools | Tools for Traders 2015-01-18 05-38-06.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/portfloio images/tradeMonster_screenshot_tradingTools.jpg" afterPath="$PROJECT_DIR$/src/portfloio images/tradeMonster_screenshot_tradingTools.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/less/components/_forms.less" afterPath="$PROJECT_DIR$/src/less/components/_forms.less" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/bckrnd.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/bckrnd2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/bckrnd2_btm.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/bckrnd_new.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/bg_black-stripe.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/js/contactSat.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/less/layouts/_footer.less" afterPath="$PROJECT_DIR$/src/less/layouts/_footer.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/less/_global.less" afterPath="$PROJECT_DIR$/src/less/_global.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/common/_mainMenu.js" afterPath="$PROJECT_DIR$/src/js/common/_mainMenu.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/less/layouts/_portfolio.less" afterPath="$PROJECT_DIR$/src/less/layouts/_portfolio.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/custom/lib/ajax.php" afterPath="$PROJECT_DIR$/themes/custom/lib/ajax.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/contactSat.js" afterPath="$PROJECT_DIR$/src/js/contactSat.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/content_node_modules.xml" afterPath="$PROJECT_DIR$/.idea/libraries/content_node_modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/less/layouts/_header.less" afterPath="$PROJECT_DIR$/src/less/layouts/_header.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/common/_portfolio-ajax.js" afterPath="$PROJECT_DIR$/src/js/common/_portfolio-ajax.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/less/_svg.less" afterPath="$PROJECT_DIR$/src/less/_svg.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/custom/base-front-page.php" afterPath="$PROJECT_DIR$/themes/custom/base-front-page.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/custom/templates/footer.php" afterPath="$PROJECT_DIR$/themes/custom/templates/footer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/custom/front-page.php" afterPath="$PROJECT_DIR$/themes/custom/front-page.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/custom/templates/header.php" afterPath="$PROJECT_DIR$/themes/custom/templates/header.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/less/main.less" afterPath="$PROJECT_DIR$/src/less/main.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/svg/processed/tripl3infinityLogo_v2.svg" afterPath="$PROJECT_DIR$/src/svg/processed/tripl3infinityLogo_v2.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/svg/symbols/tripl3infinityLogo_v2.svg" afterPath="$PROJECT_DIR$/src/svg/symbols/tripl3infinityLogo_v2.svg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="content.iws" />
@@ -55,83 +53,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="_main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/_main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
-              <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_portfolio-ajax.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="_portfolio-ajax.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/common/_portfolio-ajax.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="3870">
+            <state vertical-scroll-proportion="-0.030456852" vertical-offset="216" max-vertical-offset="3870">
               <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base-front-page.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/themes/custom/base-front-page.php">
+      <file leaf-file-name="_mainMenu.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/common/_mainMenu.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.5555556" vertical-offset="300" max-vertical-offset="864">
-              <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_portfolio.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/less/layouts/_portfolio.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.0" vertical-offset="0" max-vertical-offset="1026">
-              <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_contact-ajax.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/common/_contact-ajax.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="417" max-vertical-offset="1008">
-              <caret line="44" column="27" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_contact.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/less/layouts/_contact.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.6666665" vertical-offset="0" max-vertical-offset="342">
-              <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_forms.less" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/less/components/_forms.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9361702" vertical-offset="282" max-vertical-offset="936">
-              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_variables.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/less/_variables.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-118.666664" vertical-offset="0" max-vertical-offset="3312">
-              <caret line="178" column="0" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="648" max-vertical-offset="1782">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -157,7 +93,6 @@
         <option value="$PROJECT_DIR$/themes/roots/piklist/parts/meta-boxes/portfolio_metabox.php" />
         <option value="$USER_HOME$/Downloads/jlayout-master/examples/flowlayout.html" />
         <option value="$PROJECT_DIR$/src/less/layouts/_front-page.less" />
-        <option value="$PROJECT_DIR$/src/less/layouts/_footer.less" />
         <option value="$PROJECT_DIR$/themes/roots/lib/ajax.php" />
         <option value="$PROJECT_DIR$/vendor/bower/jlayout/lib/jlayout.flow.js" />
         <option value="$PROJECT_DIR$/themes/roots/front-page.php" />
@@ -169,13 +104,15 @@
         <option value="$PROJECT_DIR$/src/js/_aaaLogoAnimation.js" />
         <option value="$PROJECT_DIR$/src/js/_main.js" />
         <option value="$PROJECT_DIR$/src/js/common/_Animate_powrdBy.js" />
-        <option value="$PROJECT_DIR$/themes/custom/base-front-page.php" />
         <option value="$PROJECT_DIR$/src/less/layouts/_portfolio.less" />
         <option value="$PROJECT_DIR$/src/js/common/_portfolio-ajax.js" />
         <option value="$PROJECT_DIR$/src/js/common/_contact-ajax.js" />
         <option value="$PROJECT_DIR$/src/less/layouts/_contact.less" />
-        <option value="$PROJECT_DIR$/src/less/_global.less" />
         <option value="$PROJECT_DIR$/src/less/components/_forms.less" />
+        <option value="$PROJECT_DIR$/themes/custom/base-front-page.php" />
+        <option value="$PROJECT_DIR$/src/less/layouts/_footer.less" />
+        <option value="$PROJECT_DIR$/src/less/_global.less" />
+        <option value="$PROJECT_DIR$/themes/custom/front-page.php" />
       </list>
     </option>
   </component>
@@ -224,7 +161,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -240,6 +176,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="content" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="content" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="content" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="custom" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -321,6 +275,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -329,7 +284,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="global&#9;FILE&#9;file:///mnt/dev/dev/t3inf/repo/content/src/less/_global.less&#10;bas&#9;FILE&#9;file:///mnt/dev/dev/t3inf/repo/content/themes/custom/base-front-page.php&#10;head&#9;FILE&#9;file:///mnt/srv/dev/t3inf/content/themes/roots/templates/header.php&#10;gulpfile&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/gulpfile.js&#10;_front-pa&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/src/less/layouts/_front-page.less&#10;_foot&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/src/less/layouts/_footer.less&#10;gulp&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/gulpfile.js&#10;_aja&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/src/js/_ajaxLoop_d3.js&#10;scripts&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/themes/roots/lib/scripts.php&#10;footer.less&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/src/less/layouts/_footer.less&#10;ajax.php&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/themes/roots/lib/ajax.php&#10;ajax.ph&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/plugins/clean-and-simple-contact-form-by-meg-nicholas/ajax.php&#10;front&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/themes/roots/front-page.php&#10;_por&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/src/less/layouts/_portfolio.less&#10;_varia&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/src/less/_variables.less&#10;header.php&#9;FILE&#9;file:///mnt/srv/dev/t3inf/content/themes/roots/templates/header.php&#10;_port&#9;FILE&#9;file:///mnt/srv/dev/t3inf/content/src/less/layouts/_portfolio.less&#10;_glob&#9;FILE&#9;file:///Users/tripl3inf/Desktop/MBP-Server/dev/t3inf/content/src/less/_global.less" />
+    <property name="SearchEverywhereHistoryKey" value="menu&#9;FILE&#9;file:///mnt/dev/dev/t3inf/repo/content/src/js/common/_mainMenu.js&#10;glo&#9;FILE&#9;file:///mnt/dev/dev/t3inf/repo/content/src/less/_global.less&#10;_foot&#9;FILE&#9;file:///mnt/dev/dev/t3inf/repo/content/src/less/layouts/_footer.less&#10;global&#9;FILE&#9;file:///mnt/dev/dev/t3inf/repo/content/src/less/_global.less&#10;bas&#9;FILE&#9;file:///mnt/dev/dev/t3inf/repo/content/themes/custom/base-front-page.php&#10;head&#9;FILE&#9;file:///mnt/srv/dev/t3inf/content/themes/roots/templates/header.php&#10;gulpfile&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/gulpfile.js&#10;_front-pa&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/src/less/layouts/_front-page.less&#10;gulp&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/gulpfile.js&#10;_aja&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/src/js/_ajaxLoop_d3.js&#10;scripts&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/themes/roots/lib/scripts.php&#10;footer.less&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/src/less/layouts/_footer.less&#10;ajax.php&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/themes/roots/lib/ajax.php&#10;ajax.ph&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/plugins/clean-and-simple-contact-form-by-meg-nicholas/ajax.php&#10;front&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/themes/roots/front-page.php&#10;_por&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/src/less/layouts/_portfolio.less&#10;_varia&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/src/less/_variables.less&#10;header.php&#9;FILE&#9;file:///mnt/srv/dev/t3inf/content/themes/roots/templates/header.php&#10;_port&#9;FILE&#9;file:///mnt/srv/dev/t3inf/content/src/less/layouts/_portfolio.less&#10;_glob&#9;FILE&#9;file:///Users/tripl3inf/Desktop/MBP-Server/dev/t3inf/content/src/less/_global.less" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="false" />
@@ -382,6 +337,7 @@
       <node-options />
       <gulpfile />
       <tasks />
+      <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
       <method />
@@ -413,7 +369,7 @@
     <option name="totallyTimeSpent" value="14546000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1366" height="741" extended-state="0" />
+    <frame x="0" y="0" width="1366" height="741" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -427,7 +383,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22230652" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22230652" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="CSS-X-Fire" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32765958" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -502,36 +458,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/less/_global.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="1368">
-          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/less/layouts/_portfolio.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1206" max-vertical-offset="1314">
-          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="738" max-vertical-offset="4842">
           <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
-          <folding>
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="[...]" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -540,7 +470,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="432">
           <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -565,16 +495,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="684" max-vertical-offset="4284">
           <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
-          <folding>
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="[...]" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -583,7 +503,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="432">
           <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -600,16 +520,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="684" max-vertical-offset="4284">
           <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
-          <folding>
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="[...]" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -618,7 +528,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="432">
           <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -635,16 +545,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="666" max-vertical-offset="4266">
           <caret line="31" column="31" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
-          <folding>
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="[...]" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -653,7 +553,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -677,16 +577,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4266">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="[...]" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -815,13 +705,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/less/layouts/_footer.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.0769231" vertical-offset="0" max-vertical-offset="2480">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/bower/jlayout/examples/examples.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.62657505" vertical-offset="1487" max-vertical-offset="6120">
@@ -868,89 +751,111 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.18274112" vertical-offset="738" max-vertical-offset="4842">
           <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
-          <folding>
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="/*...*/" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="[...]" />
-            <marker date="1421472711000" expanded="true" signature="-1:-1" placeholder="[...]" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/_main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="450">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
           <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/custom/base-front-page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.5555556" vertical-offset="300" max-vertical-offset="864">
-          <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/less/_global.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.60638297" vertical-offset="216" max-vertical-offset="1314">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/common/_contact-ajax.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="417" max-vertical-offset="1008">
-          <caret line="44" column="27" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/less/layouts/_contact.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.6666665" vertical-offset="0" max-vertical-offset="342">
-          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1044">
+          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding>
+            <marker date="1422398167000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1422398167000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/less/_variables.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-118.666664" vertical-offset="0" max-vertical-offset="3312">
+        <state vertical-scroll-proportion="5.2021275" vertical-offset="270" max-vertical-offset="3312">
           <caret line="178" column="0" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/less/components/_forms.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="810" max-vertical-offset="936">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/common/_portfolio-ajax.js">
+    <entry file="file://$PROJECT_DIR$/themes/custom/base-front-page.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3870">
-          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.15957446" vertical-offset="738" max-vertical-offset="1602">
+          <caret line="46" column="24" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/less/layouts/_portfolio.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.0" vertical-offset="0" max-vertical-offset="1026">
+        <state vertical-scroll-proportion="0.0" vertical-offset="378" max-vertical-offset="1026">
           <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/less/components/_forms.less">
+    <entry file="file://$PROJECT_DIR$/themes/custom/front-page.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9361702" vertical-offset="282" max-vertical-offset="936">
-          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.032667875" vertical-offset="1530" max-vertical-offset="2106">
+          <caret line="86" column="16" selection-start-line="86" selection-start-column="13" selection-end-line="86" selection-end-column="17" />
+          <folding>
+            <element signature="e#6#33#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/less/layouts/_footer.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="2106">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/less/layouts/_contact.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25531915" vertical-offset="0" max-vertical-offset="564">
+          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/less/_global.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.29401088" vertical-offset="1044" max-vertical-offset="1944">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding>
+            <marker date="1422592834000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1422592834000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1422592834000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/common/_mainMenu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1782">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/common/_portfolio-ajax.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.030456852" vertical-offset="216" max-vertical-offset="3870">
+          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
           <folding />
         </state>
       </provider>

@@ -18,6 +18,8 @@ var gulp = require('gulp'),
     copy = require("gulp-copy"),
     //consolidate = require('gulp-consolidate'),
     svgmin = require('gulp-svgmin'),
+    gulpif = require('gulp-if'),
+    sprite = require('css-sprite').stream,
     reload = browserSync.reload;
 
 
@@ -45,6 +47,27 @@ gulp.task('copy-fonts', function () {
   return gulp.src('./vendor/bower/font-awesome/fonts/**/*.{ttf,woff,eot,otf,svg}')
     .pipe(gulp.dest('./themes/' + theme_name + '/assets/fonts/'));
 });
+
+
+/*
+ * CSS Sprites
+ */
+
+// jpg
+gulp.task('css-sprites-jpg', function () {
+  return gulp.src('./src/img/sprites/*.jpg')
+    .pipe(sprite({
+      name: 'sprite',
+      style: '_sprite-jpg.less',
+      cssPath: './img',
+      processor: 'less',
+      format: 'jpg'
+    }))
+    .pipe(gulpif('*.jpg', gulp.dest('./src/img/sprites_processed/'), gulp.dest('./src/less/sprites/')))
+});
+
+
+
 
 
 /*

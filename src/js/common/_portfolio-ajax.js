@@ -1,14 +1,22 @@
 // Portfolio AJAX
 
+// bind data obj to doc to track status of ajax/detail mode
+$.data(document, 'ajax_status', {'active':false, 'detail_mode': false} );
+
+
+var portTL = new TimelineLite({paused: true});
+
+
 var initPortfolio = function () {
 
-  $.data(document.body, "port_status", 'close');
+  var ajax_status = $.data(document, "ajax_status");
 
-  ajaxInProg = false;
-  if (ajaxInProg === true) {
+  if (ajax_status.active) {
     return;
   }
-  else {
+
+  ajax_status.active = true;
+
     // This does the ajax request
     var ajax_request = $.ajax({
       type: "POST",
@@ -23,26 +31,25 @@ var initPortfolio = function () {
       },
       success: function (response) {
         if (response.success) {
-
           $('#portfolio').empty();
-          ajaxInProg = true;
           createSVGimgs(response.data);
         }
       },
-      complete: function () {
-        ajaxInProg = false;
-      },
+      //complete: function () {},
       error: function (response) {
         console.log('error =' + response.error);
       }
     });
-  }
 }
 
-var loadPortfolioDetail = function (d) {
-  jQuery.data(document.body, "port_status", 'open');
 
-  var url = d.img_url,
+var loadPortfolioDetail = function (d) {
+
+ // $.data(document, "ajax_status", {'detail_mode': true});
+  var detail_mode = $.data(document, "ajax_status").detail_mode;
+
+  var detailTL = new TimelineLite(),
+    url = d.img_url,
     w = d.img_w,
     h = d.img_h,
     win_w = document.documentElement.clientWidth,
@@ -51,8 +58,11 @@ var loadPortfolioDetail = function (d) {
     calc_h = null;
 
   var detailBox = $('<div>').addClass('portDetailBox'),
-    img = $('<img>').attr('src', url);
+    img = $('<img>').attr('src', url),
+    closeBtn = $('<i class="detailBtn fa fa-times-circle-o">');
+
   detailBox.append(img);
+  detailBox.append(closeBtn);
   $('body').append(detailBox);
 
   if (h > w && h > win_h) {
@@ -68,12 +78,38 @@ var loadPortfolioDetail = function (d) {
 
   }
 
-  TweenLite.to(detailBox, 1, {autoAlpha: 1});
   detailBox.center();
+  var closeDetail = function(){
+    detail_mode === false;
+    portTL.play('port_open')
+  }
+
+  detailTL.to(detailBox, 0.6, {autoAlpha: 1})
+    .to(closeBtn, 1, {autoAlpha: 1});
+
+  closeBtn.hover( function(){
+      TweenLite.to(this, 1, {color:'#af0'});
+  },
+    function(){
+      TweenLite.to(this, 1, {color:'#666'});
+    }
+  )
+    .click(function(){
+      detailTL.to($('.portDetailBox'), 0.6, {autoAlpha: 0, onComplete:closeDetail})
+    })
 
 }
 
+
+
+
+
+
 var createSVGimgs = function (jsonObj) {
+
+  //$.data(document, "ajax_status", {'detail_mode': false});
+  var detail_mode = $.data(document, "ajax_status").detail_mode;
+
   var container = d3.select('body').append('div').attr('id', 'portfolio'),
     list = container.append("ul"),
     li = list.selectAll("li")
@@ -103,14 +139,15 @@ var createSVGimgs = function (jsonObj) {
     img = link.append("img"),
     imgAttributes = img
       .attr("src", function (d) {
-        return d.thumb_url;
+        return d.img_url;
       })
       .style('filter', function (d, i) {
         return 'url(#filter_' + i + ')';
       })
       .style('-webkit-filter', function (d, i) {
         return 'url(#filter_' + i + ')';
-      })
+      }),
+    closeBtn = d3.select('body').append('i').attr('id', 'portCloseBtn').attr('class', ' fa fa-chevron-left');
 
   var portItems = $('#portfolio ul'),
     layout = function () {
@@ -126,27 +163,22 @@ var createSVGimgs = function (jsonObj) {
       portItems.parent().height(scrollH);
     };
 
-
   $(window).resize(function () {
     layout();
   });
 
-  var portTL = new TimelineLite({paused: true, autoRemoveChildren: true}),
-    t3iLogo = d3.select('.main.tripl3infLogo');
-
-  portTL.to(t3iLogo, 1, {autoAlpha: 0});
-
-  portTL.staggerFrom(li[0], 0.75, {y: '-=200px', ease: Expo.easeIn}, 0.15, 0)
-    .staggerTo(li[0], 0.75, {autoAlpha: 1, ease: Expo.easeIn}, 0.15, 0)
-
   layout();
-  portTL.play();
 
-  var backBtn = $('#portCloseBtn');
-  if (!backBtn.length) {
-    createBackBtn();
-  }
-
+  portTL
+    .set( container, {'z-index':'9'})
+    .add('port_open')
+    .staggerFrom(li[0], 0.75, {y: '-=200px', ease: Expo.easeIn}, 0.15, 's1')
+    .staggerTo(li[0], 0.75, {autoAlpha: 1, ease: Expo.easeIn}, 0.15, 's1')
+    .to(closeBtn, 1, {autoAlpha:1})
+    .addPause('port_close')
+    .staggerTo(li[0], 0.75, {y: '+=300px', ease: Circ.easeOut}, 0.15, 'end')
+    .staggerTo(li[0], 0.75, {autoAlpha: 0, ease: Sine.easeOut}, 0.15, 'end')
+    .set( container, {'z-index':'-9'});
 
   // Event handlers
   li.on('mouseover', function (d, i) {
@@ -158,52 +190,69 @@ var createSVGimgs = function (jsonObj) {
     })
 
     .on('click', function (d) {
-      portTL.staggerTo(li[0], 0.4, {autoAlpha: 0}, 0.3, 0)
-        .staggerTo(li[0], 0.6, {y: '+=200px'}, 0.1, 0)
+      //if(detail_mode === true){
+      //  return;
+      //}
+      //detail_mode === true;
+
+      portTL.play('port_close')
+        .to(closeBtn, 1, {autoAlpha:0})
         .call(loadPortfolioDetail, [d]);
 
     });
+
+  closeBtn.on('click', function () {
+    portTL.play('port_close')
+      .to(this, 1, {autoAlpha:0}, '-=1')
+      .call(openMenu)
+  })
+    .on('mouseover', function(){
+      TweenLite.to(this, 0.6, {color: '#aaff00', scale:1.1})
+    })
+    .on('mouseout', function(){
+      TweenLite.to(this, 0.6, {color: '#666', scale:1})
+    })
 };
 
 
-// Create Back/Exit Button
-var createBackBtn = function () {
-  closeBtn = d3.select('body').append('i').attr('id', 'portCloseBtn').attr('class', ' fa fa-chevron-left');
-  closeBtnTL = new TimelineMax()
-    .to(closeBtn, 2, {autoAlpha: 1})
+//Create Back/Exit Button
+//function createBackBtn() {
+//
+//  var detail_mode = $.data(document, "ajax_status").detail_mode;
+//
+//  var closeBtnTL = new TimelineMax()
+//    .to(closeBtn, 2, {autoAlpha: 1})
+//
+//  //closeBtn.on('mouseover', function () {
+//  //  TweenLite.to(this, 0.5, {color: '#aaff00'})
+//  //})
+//  //
+//  //closeBtn.on('mouseout', function () {
+//  //  TweenLite.to(this, 0.5, {color: '#666'})
+//  //})
+//
+//  closeBtn.on('click', function () {
+//
+//    if (detail_mode === false ) {
+//      console.log('portfolio close')
+//      closeBtnTL.to(closeBtn, 1, {autoAlpha: 0})
+//      portTL.play('port_close');
+//      openMenu();
+//    }
+//    else {
+//      console.log('portfolio open')
+//      var regenPortfolio = function () {
+//        detail_status === false;
+//        portTL.play('port_open')
+//      }
+//      closeBtnTL.to($('.portDetailBox'), 1, {autoAlpha: 0, onComplete: regenPortfolio()})
+//    }
+//  })
+//
+//}
 
-  closeBtn.on('mouseover', function () {
-    TweenLite.to(this, 0.5, {color: '#aaff00'})
-  })
 
-  closeBtn.on('mouseout', function () {
-    TweenLite.to(this, 0.5, {color: '#666'})
-  })
 
-  closeBtn.on('click', function () {
-    var portStat = jQuery.data(document.body, "port_status");
-
-    if (portStat === 'close') {
-      console.log('portfolio close')
-      var regenMenu = function () {
-        $('#portfolio').remove()
-        $('#portCloseBtn').remove()
-        openMenu();
-      }
-      closeBtnTL.to(closeBtn, 1, {autoAlpha: 0})
-        .to($('#portfolio'), 2, {autoAlpha: 0, onComplete: regenMenu()}, 1)
-    }
-    else {
-      console.log('portfolio open')
-      var regenPortfolio = function () {
-        $('#portfolio').remove()
-        initPortfolio()
-      }
-      closeBtnTL.to($('.portDetailBox'), 1, {autoAlpha: 0, onComplete: regenPortfolio()})
-    }
-  })
-
-}
 
 
 

@@ -18,9 +18,11 @@
   "homepage": "https://github.com/tripl3inf/WordPlay-Theme",
   "dependencies": {
     "browser-sync": "^1.8.3",
+    "css-sprite": "^0.9.0",
     "gulp": "^3.8.10",
     "gulp-concat": "^2.4.3",
     "gulp-copy": "0.0.2",
+    "gulp-if": "^1.2.5",
     "gulp-jshint": "^1.9.0",
     "gulp-less": "^2.0.1",
     "gulp-minify-css": "^0.3.11",
@@ -28,8 +30,8 @@
     "gulp-rename": "^1.2.0",
     "gulp-sourcemaps": "^1.3.0",
     "gulp-svg-sprites": "^1.1.1",
+    "gulp-svgmin": "^1.0.0",
     "gulp-uglify": "^1.0.2",
-    "gulp-watch": "^3.0.0",
-    "gulp-svgmin": "^1.0.0"
+    "gulp-watch": "^3.0.0"
   }
 }

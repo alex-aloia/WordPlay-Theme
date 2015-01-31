@@ -61,7 +61,8 @@ var initMainMenu = function () {
             if (link != null) {
                 if (link === 'featured-work') {
                     //closeMenu(menuItem[0][0])
-                    initPortfolio()
+                    //initPortfolio()
+                    portTL.play('port_open')
                 }
                 //else if ( link === 'contact'){
                 //  loadContactForm()

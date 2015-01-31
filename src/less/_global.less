@@ -18,27 +18,41 @@
 @lg: ~'(min-width: @{screen-lg-min})';
 
 
-
-
-html {
+html, body
+{
+  height: 100%;
 }
 
+
+
 body {
-  //overflow: hidden;
-  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-image: url("../img/bckrnd2.jpg");
+  min-height: 600px;
+  background: url("../img/bg.png"),
+              url("../img/bg_rev.jpg") bottom transparent;
+  background-color: #000;
   background-repeat: repeat-x;
-  
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
   .page-header{
     border-bottom: 1px solid @gray-dark;
   }
 
-  .wrap{
+  .wrap.container {
     visibility: hidden;
     opacity: 0;
   }
-  
+
+  .wrap.frontpage {
+    position: relative;
+    visibility: visible;
+    opacity: 1;
+  }
 }
+
+body.home {
+  overflow: hidden;
+}
+
 
 
 // Vert. Center Align Text

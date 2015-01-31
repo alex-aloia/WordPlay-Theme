@@ -124,7 +124,7 @@ jQuery(function ($) {
 
     }
 
-   // contactSatellite()
+    contactSatellite()
 
 
 
