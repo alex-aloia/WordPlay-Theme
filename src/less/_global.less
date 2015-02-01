@@ -17,18 +17,16 @@
 @md: ~'(min-width: @{screen-md-min}) and (max-width: @{screen-lg-max})';
 @lg: ~'(min-width: @{screen-lg-min})';
 
-
-html, body
-{
-  height: 100%;
+html {
+  min-height: 100%;
 }
 
 
 
 body {
-  min-height: 600px;
-  background: url("../img/bg.png"),
-              url("../img/bg_rev.jpg") bottom transparent;
+  //min-height: 600px;
+  background: url("../img/bg_rev.jpg") bottom transparent;
+//              url("../img/bg_rev.jpg") bottom transparent;
   background-color: #000;
   background-repeat: repeat-x;
   font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -38,8 +36,12 @@ body {
   }
 
   .wrap.container {
+    position: relative;
     visibility: hidden;
     opacity: 0;
+    z-index: 3;
+    margin-top: 100px;
+    margin-bottom: 100px;
   }
 
   .wrap.frontpage {

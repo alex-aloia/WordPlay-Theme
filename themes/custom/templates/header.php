@@ -5,7 +5,7 @@ get_template_part('assets/img/inline', 'symbols.svg');
 <header class="banner" role="banner">
 
 
-  <a href="<?php echo esc_url(home_url('/')); ?>">
+  <a href="<?php echo esc_url(home_url('/')); ?>" class="logo">
     <svg class="symbol_tripl3infLogo">
       <use xlink:href="#tripl3infinityLogo"></use>
     </svg>

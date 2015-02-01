@@ -34,6 +34,10 @@ var initMainMenu = function () {
         TweenLite.set(this, {strokeDasharray: pathLength, strokeDashoffset: pathLength})
     });
 
+    link.on('click', function(){
+      d3.event.preventDefault();
+    })
+
     // hover event
     menuItem.on("mouseenter", function (d, i) {
         var target = nav_circle[i][0];
@@ -47,10 +51,13 @@ var initMainMenu = function () {
             hoverTL.reverse();
     })
 
-    menuItem.on('click', function (d, i){
-        d3.event.preventDefault();
+    menuItem.on('mousedown', function (d, i){
+      d3.event.preventDefault();
+
+      if( !mainMenuTL.isActive() ){
         var li = menuItem[0][i];
         closeMenu(li)
+      }
     })
 
     closeMenu = function(current){
@@ -59,9 +66,7 @@ var initMainMenu = function () {
 
         var gotoLink = function() {
             if (link != null) {
-                if (link === 'featured-work') {
-                    //closeMenu(menuItem[0][0])
-                    //initPortfolio()
+                if ( link == 'featured-work'  ) {
                     portTL.play('port_open')
                 }
                 //else if ( link === 'contact'){

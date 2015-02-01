@@ -16,6 +16,7 @@ var gulp = require('gulp'),
     //phantomjs = require('phantomjs'),
     svgSprite = require("gulp-svg-sprites"),
     copy = require("gulp-copy"),
+    autoprefixer = require('gulp-autoprefixer'),
     //consolidate = require('gulp-consolidate'),
     svgmin = require('gulp-svgmin'),
     gulpif = require('gulp-if'),
@@ -184,6 +185,7 @@ gulp.task('less_dev', function () {
     gulp.src('src/less/main.less')
         .pipe(sourcemaps.init())
         .pipe(less())
+        .pipe(autoprefixer())
 //        .pipe(minifyCSS({keepBreaks: true, debug: true}))
         .pipe(sourcemaps.write({includeContent: true}))
 //        .pipe(sourcemaps.write())
@@ -197,6 +199,7 @@ gulp.task('less', function () {
             generateSourceMap: false,
             paths: [ path.join(__dirname) ]
         }))
+        .pipe(autoprefixer())
         .pipe(minifyCSS({keepBreaks: false, debug: false}))
         .pipe(rename('main.min.css'))
         .pipe(gulp.dest('./themes/' + theme_name + '/assets/css'));
