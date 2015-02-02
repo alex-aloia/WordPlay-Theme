@@ -75,7 +75,7 @@ gulp.task('css-sprites-jpg', function () {
  * copy src images
  */
 gulp.task('copy-imgs', function () {
-  return gulp.src('./src/img/**/*.{jpg,png,svg}')
+  return gulp.src('./src/img/**/*.{jpg,png,svg,php}')
     .pipe(gulp.dest('./themes/' + theme_name + '/assets/img'));
 });
 
