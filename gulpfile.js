@@ -55,17 +55,17 @@ gulp.task('copy-fonts', function () {
  */
 
 // jpg
-gulp.task('css-sprites-jpg', function () {
-  return gulp.src('./src/img/sprites/*.jpg')
-    .pipe(sprite({
-      name: 'sprite',
-      style: '_sprite-jpg.less',
-      cssPath: './img',
-      processor: 'less',
-      format: 'jpg'
-    }))
-    .pipe(gulpif('*.jpg', gulp.dest('./src/img/sprites_processed/'), gulp.dest('./src/less/sprites/')))
-});
+//gulp.task('css-sprites-jpg', function () {
+//  return gulp.src('./src/img/sprites/*.jpg')
+//    .pipe(sprite({
+//      name: 'sprite',
+//      style: '_sprite-jpg.less',
+//      cssPath: './img',
+//      processor: 'less',
+//      format: 'jpg'
+//    }))
+//    .pipe(gulpif('*.jpg', gulp.dest('./src/img/sprites_processed/'), gulp.dest('./src/less/sprites/')))
+//});
 
 
 
@@ -131,47 +131,47 @@ gulp.task('svg-min', function() {
 });
 
 
-var sprite_config = {
-    templates: {
-        css: require("fs").readFileSync("./src/less/sprite-template.less", "utf-8")
-    },
-    common: "sprite",
-    cssFile: "src/less/svg-sprite.css",
-    svgPath: "../img/%f",
-    pngPath: "../img/%f",
-    svg: {
-        sprite: "spritesheet.svg"
-    },
-    preview: {
-        sprite: "sprite-index.html"
-    }
-};
-
-gulp.task('svg-sprite', function () {
-    return gulp.src('src/svg/sprites/*.svg')
-        .pipe(plumber())
-        .pipe(svgSprite(sprite_config))
-        .pipe(gulp.dest('./themes/' + theme_name + '/assets/img'));
-});
-
-
-var symbol_config = {
-    mode: "symbols",
-    common: "symbol",
-    svg: {
-        symbols: "inline-symbols.svg.php"
-    },
-    preview: {
-        symbols: "symbol-index.html"
-    }
-};
-
-gulp.task('svg-symbol', function () {
-    return gulp.src('src/svg/symbols/*.svg')
-        .pipe(plumber())
-        .pipe(svgSprite(symbol_config))
-        .pipe(gulp.dest('./themes/' + theme_name + '/assets/img'));
-});
+//var sprite_config = {
+//    templates: {
+//        css: require("fs").readFileSync("./src/less/sprite-template.less", "utf-8")
+//    },
+//    common: "sprite",
+//    cssFile: "src/less/svg-sprite.css",
+//    svgPath: "../img/%f",
+//    pngPath: "../img/%f",
+//    svg: {
+//        sprite: "spritesheet.svg"
+//    },
+//    preview: {
+//        sprite: "sprite-index.html"
+//    }
+//};
+//
+//gulp.task('svg-sprite', function () {
+//    return gulp.src('src/svg/sprites/*.svg')
+//        .pipe(plumber())
+//        .pipe(svgSprite(sprite_config))
+//        .pipe(gulp.dest('./themes/' + theme_name + '/assets/img'));
+//});
+//
+//
+//var symbol_config = {
+//    mode: "symbols",
+//    common: "symbol",
+//    svg: {
+//        symbols: "inline-symbols.svg.php"
+//    },
+//    preview: {
+//        symbols: "symbol-index.html"
+//    }
+//};
+//
+//gulp.task('svg-symbol', function () {
+//    return gulp.src('src/svg/symbols/*.svg')
+//        .pipe(plumber())
+//        .pipe(svgSprite(symbol_config))
+//        .pipe(gulp.dest('./themes/' + theme_name + '/assets/img'));
+//});
 
 
 /*
