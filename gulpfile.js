@@ -14,13 +14,13 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync'),
     plumber = require('gulp-plumber'),
     //phantomjs = require('phantomjs'),
-    svgSprite = require("gulp-svg-sprites"),
+    //svgSprite = require("gulp-svg-sprites"),
     copy = require("gulp-copy"),
     autoprefixer = require('gulp-autoprefixer'),
     //consolidate = require('gulp-consolidate'),
     svgmin = require('gulp-svgmin'),
     gulpif = require('gulp-if'),
-    sprite = require('css-sprite').stream,
+    //sprite = require('css-sprite').stream,
     reload = browserSync.reload;
 
 
