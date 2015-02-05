@@ -43,7 +43,7 @@ var loadPortfolioDetail = function (d) {
     w = d.img_w,
     h = d.img_h,
     win_w = document.documentElement.clientWidth - 100,
-    win_h = document.documentElement.clientHeight - 100,
+    win_h = document.documentElement.clientHeight - 150,
     calc_w = null,
     calc_h = null;
 

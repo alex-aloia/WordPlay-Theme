@@ -9,74 +9,37 @@ svg.logo {
   display: none;
 }
 
-.symbol_tripl3infLogo {
-  width: 400px;
-  position: absolute;
-  left: 25px;
-  fill: @brand-primary;
-  stroke-width: 5px;
-
-  #desanddev {
-    fill: @gray-light;
-  }
-}
 
 .home {
   .symbol_tripl3infLogo,
   #aaaLogo_footer {
-    visibility: hidden;
-    opacity: 0;
   }
 }
 
 
+.logo_tripl3inf {
+  fill: @brand-primary;
 
-
-.tripl3infLogo {
-  fill: none;
-  stroke-width: 4px;
-  width: 100%;
-  display: block;
-
-  .logo g path {
-    opacity:0;
-    visibility: hidden;
-  }
-
-  #infSymMasks {
-    fill: #fff;
-    stroke: none;
-  }
-
-  #infSym {
-    #infSymPaths {
-      path {
-      stroke: #aaff00;
-      stroke-width: 15px;
-      opacity: 0;
-      visibility: hidden;
-      }
-    }
-
-    #infSymWhole path {
-      fill: #aaff00;
-      stroke: none;
-      opacity: 0;
-      visibility: hidden;
-    }
-  }
-  #desanddev {
+  .logo-tripl3inf-defs {
     path {
-      opacity: 0;
-      visibility: hidden;
-      fill: #666;
+      fill: #fff;
     }
   }
-
+  .logo-tripl3inf-letters {
+    fill: none;
+  }
+  .logo-tripl3inf-infsymwhole {
+    .transparent();
+  }
+  .logo-tripl3inf-infsympaths {
+    stroke: @brand-primary;
+    stroke-width: 20px;
+    mask: url(#logo-tripl3inf-defs);
+  }
+  .logo-tripl3inf-desanddev path {
+    fill: @gray;
+  }
 }
-
-
-
 
 
 

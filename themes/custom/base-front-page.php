@@ -27,12 +27,13 @@ if( $_SESSION[visited] != null && $_SESSION[visited] != "" ) {
     jQuery(function ($) {
       $(window).load(function() {
         var mainTL = new TimelineLite()
-          .add( initMainMenu )
-          .call( initPortfolio )
-          .to( '.symbol_tripl3infLogo', 2, {autoAlpha:1}, 's1')
-          .from( '.symbol_tripl3infLogo', 1, {x:'-=300px'}, 's1')
-          .to( '#aaaLogo_footer', 2, {autoAlpha:1}, 's2' )
-          .from( '#aaaLogo_footer', 1, {x:'+=300px'}, 's2')
+          .add(animateLogo_tripl3inf(), 2)
+//          .add( initMainMenu )
+//          .call( initPortfolio )
+//          .to( '.symbol_tripl3infLogo', 2, {autoAlpha:1}, 's1')
+//          .from( '.symbol_tripl3infLogo', 1, {x:'-=300px'}, 's1')
+//          .to( '#aaaLogo_footer', 2, {autoAlpha:1}, 's2' )
+//          .from( '#aaaLogo_footer', 1, {x:'+=300px'}, 's2')
       });
     });
   </script>

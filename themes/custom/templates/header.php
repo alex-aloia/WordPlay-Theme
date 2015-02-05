@@ -1,13 +1,10 @@
-<?php
-get_template_part('assets/img/inline', 'symbols.svg');
-?>
 
 <header class="banner" role="banner">
 
 
   <a href="<?php echo esc_url(home_url('/')); ?>" class="logo">
     <svg class="symbol_tripl3infLogo">
-      <use xlink:href="#tripl3infinityLogo"></use>
+      <use xlink:href="#logo_tripl3inf"></use>
     </svg>
   </a>
 
@@ -40,7 +37,6 @@ get_template_part('assets/img/inline', 'symbols.svg');
         'theme_location' => 'primary_navigation',
         'walker' => new Roots_Nav_Walker(),
         'menu_class' => 'float_center nav'
-//        'before' => "<svg class='nav_circle' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg' version='1.1'><path d='M 102.16,4.01 C 154.9,4.93 196.9,48.43 195.99,101.16 195.07,153.9 151.57,195.9 98.84,194.99 82.51,194.7 67.21,190.33 53.89,182.87 24.2,166.24 4.38,134.24 5.01,97.84 5.93,45.1 49.43,3.1 102.16,4.01 L 102.18,3.01 C 48.89,2.09 4.94,44.53 4.01,97.82 3.09,151.11 45.53,195.06 98.82,195.99 152.11,196.91 196.06,154.47 196.99,101.18 197.91,47.89 155.47,3.94 102.18,3.01 L 102.16,4.01 Z M 102.16,4.01' /></svg>"
       ));
     endif;
     ?>

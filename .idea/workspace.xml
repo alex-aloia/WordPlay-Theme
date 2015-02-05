@@ -2,25 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e716e0e6-c787-4f5b-a249-e358404e5edc" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/bckrnd.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/bckrnd2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/bckrnd2_btm.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/bckrnd_new.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/img/bg_black-stripe.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/js/contactSat.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/less/layouts/_footer.less" afterPath="$PROJECT_DIR$/src/less/layouts/_footer.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/less/_global.less" afterPath="$PROJECT_DIR$/src/less/_global.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/less/layouts/_header.less" afterPath="$PROJECT_DIR$/src/less/layouts/_header.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/common/_portfolio-ajax.js" afterPath="$PROJECT_DIR$/src/js/common/_portfolio-ajax.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/less/_svg.less" afterPath="$PROJECT_DIR$/src/less/_svg.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/custom/base-front-page.php" afterPath="$PROJECT_DIR$/themes/custom/base-front-page.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/custom/templates/footer.php" afterPath="$PROJECT_DIR$/themes/custom/templates/footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/custom/front-page.php" afterPath="$PROJECT_DIR$/themes/custom/front-page.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/custom/templates/header.php" afterPath="$PROJECT_DIR$/themes/custom/templates/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/less/main.less" afterPath="$PROJECT_DIR$/src/less/main.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/svg/processed/tripl3infinityLogo_v2.svg" afterPath="$PROJECT_DIR$/src/svg/processed/tripl3infinityLogo_v2.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/less/layouts/_portfolio.less" afterPath="$PROJECT_DIR$/src/less/layouts/_portfolio.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="content.iws" />
@@ -56,8 +39,8 @@
       <file leaf-file-name="_portfolio-ajax.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/common/_portfolio-ajax.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.030456852" vertical-offset="216" max-vertical-offset="3870">
-              <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.4568528" vertical-offset="0" max-vertical-offset="3744">
+              <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -66,9 +49,17 @@
       <file leaf-file-name="_mainMenu.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/common/_mainMenu.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="648" max-vertical-offset="1782">
+            <state vertical-scroll-proportion="0.0" vertical-offset="648" max-vertical-offset="1890">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+              <folding>
+                <marker date="1422804721000" expanded="true" signature="193:3134" placeholder="{...}" />
+                <marker date="1422804721000" expanded="true" signature="1737:1910" placeholder="{...}" />
+                <marker date="1422804721000" expanded="true" signature="2111:2168" placeholder="{...}" />
+                <marker date="1422804721000" expanded="true" signature="2211:2950" placeholder="{...}" />
+                <marker date="1422804721000" expanded="true" signature="2370:2738" placeholder="{...}" />
+                <marker date="1422804721000" expanded="true" signature="2367:2728" placeholder="{...}" />
+                <marker date="1422804721000" expanded="true" signature="2419:2517" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -105,7 +96,6 @@
         <option value="$PROJECT_DIR$/src/js/_main.js" />
         <option value="$PROJECT_DIR$/src/js/common/_Animate_powrdBy.js" />
         <option value="$PROJECT_DIR$/src/less/layouts/_portfolio.less" />
-        <option value="$PROJECT_DIR$/src/js/common/_portfolio-ajax.js" />
         <option value="$PROJECT_DIR$/src/js/common/_contact-ajax.js" />
         <option value="$PROJECT_DIR$/src/less/layouts/_contact.less" />
         <option value="$PROJECT_DIR$/src/less/components/_forms.less" />
@@ -113,6 +103,7 @@
         <option value="$PROJECT_DIR$/src/less/layouts/_footer.less" />
         <option value="$PROJECT_DIR$/src/less/_global.less" />
         <option value="$PROJECT_DIR$/themes/custom/front-page.php" />
+        <option value="$PROJECT_DIR$/src/js/common/_portfolio-ajax.js" />
       </list>
     </option>
   </component>
@@ -161,6 +152,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -276,7 +268,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -369,8 +360,8 @@
     <option name="totallyTimeSpent" value="14546000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1366" height="741" extended-state="1" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1366" height="741" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -383,7 +374,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22230652" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22230652" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="CSS-X-Fire" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32765958" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -465,16 +456,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/_main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="432">
-          <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/common/_portfolio-ajax.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2448">
@@ -487,7 +468,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1206" max-vertical-offset="1314">
           <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -498,21 +478,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/_main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="432">
-          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/less/layouts/_portfolio.less">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1206" max-vertical-offset="1314">
           <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -523,21 +492,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/_main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="432">
-          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/less/layouts/_portfolio.less">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1206" max-vertical-offset="1314">
           <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -548,21 +506,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/_main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/less/layouts/_portfolio.less">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1206" max-vertical-offset="1314">
           <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -584,7 +531,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1656" max-vertical-offset="1764">
           <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -599,7 +545,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1880">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -614,7 +559,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="882" max-vertical-offset="1692">
           <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -629,7 +573,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="735" max-vertical-offset="1410">
           <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -644,7 +587,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="1692">
           <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -659,7 +601,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1620">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -754,24 +695,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/_main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
-          <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/common/_contact-ajax.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1044">
           <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding>
-            <marker date="1422398167000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1422398167000" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -786,7 +713,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="810" max-vertical-offset="936">
           <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -802,7 +728,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="378" max-vertical-offset="1026">
           <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -810,9 +735,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.032667875" vertical-offset="1530" max-vertical-offset="2106">
           <caret line="86" column="16" selection-start-line="86" selection-start-column="13" selection-end-line="86" selection-end-column="17" />
-          <folding>
-            <element signature="e#6#33#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -820,7 +742,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="2106">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -828,7 +749,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.25531915" vertical-offset="0" max-vertical-offset="564">
           <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -836,11 +756,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.29401088" vertical-offset="1044" max-vertical-offset="1944">
           <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding>
-            <marker date="1422592834000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1422592834000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1422592834000" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -848,14 +763,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1782">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1422804721000" expanded="true" signature="193:3134" placeholder="{...}" />
+            <marker date="1422804721000" expanded="true" signature="1737:1910" placeholder="{...}" />
+            <marker date="1422804721000" expanded="true" signature="2111:2168" placeholder="{...}" />
+            <marker date="1422804721000" expanded="true" signature="2211:2950" placeholder="{...}" />
+            <marker date="1422804721000" expanded="true" signature="2370:2738" placeholder="{...}" />
+            <marker date="1422804721000" expanded="true" signature="2367:2728" placeholder="{...}" />
+            <marker date="1422804721000" expanded="true" signature="2419:2517" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/common/_portfolio-ajax.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.030456852" vertical-offset="216" max-vertical-offset="3870">
-          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.4568528" vertical-offset="0" max-vertical-offset="3744">
+          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
           <folding />
         </state>
       </provider>
