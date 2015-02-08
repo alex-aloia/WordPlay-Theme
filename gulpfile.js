@@ -45,10 +45,14 @@ gulp.task('browser-sync', function () {
  * Fonts
  */
 gulp.task('copy-fonts', function () {
-  return gulp.src('./vendor/bower/font-awesome/fonts/**/*.{ttf,woff,eot,otf,svg}')
+  return gulp.src('./src/fonts/**/*.{ttf,woff,eot,otf,svg}')
     .pipe(gulp.dest('./themes/' + theme_name + '/assets/fonts/'));
 });
 
+gulp.task('copy-icon-fonts', function () {
+  return gulp.src('./vendor/bower/font-awesome/fonts/**/*.{ttf,woff,eot,otf,svg}')
+    .pipe(gulp.dest('./themes/' + theme_name + '/assets/fonts/'));
+});
 
 /*
  * CSS Sprites
@@ -230,6 +234,7 @@ var js_foot = [
 //  'vendor/bower/bootstrap/js/scrollspy.js',
 //  'vendor/bower/bootstrap/js/tab.js',
 //  'vendor/bower/bootstrap/js/affix.js',
+    'src/js/plugins/*.js',
     'src/js/common/_*.js',
     'src/js/_main.js'
 ];
@@ -272,12 +277,14 @@ gulp.task('bower', function () {
 
 // Dev
 gulp.task('watch', ['browser-sync'], function () {
-    // Watch PHP files
+    // watch PHP files
     gulp.watch('themes/' + theme_name + '/**/*.php', browserSync.reload);
-    // Watch less files
+    // watch less files
     gulp.watch('src/less/**/*.less', ['less_dev', browserSync.reload]);
-    // Watch scripts
+    // watch scripts
     gulp.watch('src/js/**/*.js', ['dev_js', browserSync.reload]);
+    // watch svg files
+    gulp.watch('src/svg/**/*.svg', ['svg-min', browserSync.reload]);
 });
 
 // Default task to be run with `gulp`
@@ -285,5 +292,5 @@ gulp.task('dev', ['copy-imgs', 'copy-fonts', 'less_dev', 'dev_js']);
 gulp.task('dev-build', ['copy-imgs', 'copy-fonts', 'svg-symbol', 'less_dev', 'dev_js', 'jshint', 'watch', 'browser-sync']);
 gulp.task('dev-watch', ['less_dev', 'dev_js', 'watch', 'browser-sync']);
 gulp.task('dev-less', ['less_dev','watch', 'browser-sync']);
-gulp.task('default', ['copy-imgs', 'copy-fonts', 'less', 'js']);
+gulp.task('default', ['copy-imgs', 'copy-fonts', 'copy-icon-fonts', 'less', 'js']);
 

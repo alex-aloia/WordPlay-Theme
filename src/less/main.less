@@ -2,6 +2,20 @@
 @import "bootstrap";
 //@import "_fontawesome";
 @import "../../vendor/bower/font-awesome/less/font-awesome.less";
+@path-fonts:    '../fonts';
+
+  @font-face {
+    font-family: 'trench';
+    src: url('@{path-fonts}/trench100free-webfont.eot');
+    src: url('@{path-fonts}/trench100free-webfont.eot?#iefix') format('embedded-opentype'),
+    url('@{path-fonts}/trench100free-webfont.woff2') format('woff2'),
+    url('@{path-fonts}/trench100free-webfont.woff') format('woff'),
+    url('@{path-fonts}/trench100free-webfont.ttf') format('truetype'),
+    url('@{path-fonts}/trench100free-webfont.svg#trenchthin') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+  }
 
 // Roots
 @import "sprites/_sprite-jpg";       // CSS/JGP sprites
