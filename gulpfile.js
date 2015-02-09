@@ -3,26 +3,25 @@ var theme_name = 'custom';
 
 var gulp = require('gulp'),
 //var mainBowerFiles = require('main-bower-files'),
-    jshint = require('gulp-jshint'),
-    watch = require('gulp-watch'),
-    less = require('gulp-less'),
-    minifyCSS = require('gulp-minify-css'),
-    sourcemaps = require('gulp-sourcemaps'),
-    concat = require('gulp-concat'),
-    uglify = require('gulp-uglify'),
-    rename = require("gulp-rename"),
-    browserSync = require('browser-sync'),
-    plumber = require('gulp-plumber'),
-    //phantomjs = require('phantomjs'),
-    //svgSprite = require("gulp-svg-sprites"),
-    copy = require("gulp-copy"),
-    autoprefixer = require('gulp-autoprefixer'),
-    //consolidate = require('gulp-consolidate'),
-    svgmin = require('gulp-svgmin'),
-    gulpif = require('gulp-if'),
-    //sprite = require('css-sprite').stream,
-    reload = browserSync.reload;
-
+  jshint = require('gulp-jshint'),
+  watch = require('gulp-watch'),
+  less = require('gulp-less'),
+  minifyCSS = require('gulp-minify-css'),
+  sourcemaps = require('gulp-sourcemaps'),
+  concat = require('gulp-concat'),
+  uglify = require('gulp-uglify'),
+  rename = require("gulp-rename"),
+  browserSync = require('browser-sync'),
+  plumber = require('gulp-plumber'),
+//phantomjs = require('phantomjs'),
+//svgSprite = require("gulp-svg-sprites"),
+  copy = require("gulp-copy"),
+  autoprefixer = require('gulp-autoprefixer'),
+//consolidate = require('gulp-consolidate'),
+  svgmin = require('gulp-svgmin'),
+  gulpif = require('gulp-if'),
+//sprite = require('css-sprite').stream,
+  reload = browserSync.reload;
 
 
 /**********************************************************
@@ -33,11 +32,11 @@ var gulp = require('gulp'),
  * Browser-Sync
  */
 gulp.task('browser-sync', function () {
-    browserSync({
-        proxy: "dev.t3inf.com",
-        ghostMode: false,
-        open: false
-    });
+  browserSync({
+    proxy: "dev.t3inf.com",
+    ghostMode: false,
+    open: false
+  });
 });
 
 
@@ -72,9 +71,6 @@ gulp.task('copy-icon-fonts', function () {
 //});
 
 
-
-
-
 /*
  * copy src images
  */
@@ -88,7 +84,7 @@ gulp.task('copy-imgs', function () {
  * svg min & sprite
  */
 
-gulp.task('svg-min', function() {
+gulp.task('svg-min', function () {
   return gulp.src('./src/svg/symbols/*.svg')
     .pipe(svgmin({
       plugins: [
@@ -186,27 +182,27 @@ var path = require('path');
 
 
 gulp.task('less_dev', function () {
-    gulp.src('src/less/main.less')
-        .pipe(sourcemaps.init())
-        .pipe(less())
-        .pipe(autoprefixer())
+  gulp.src('src/less/main.less')
+    .pipe(sourcemaps.init())
+    .pipe(less())
+    .pipe(autoprefixer())
 //        .pipe(minifyCSS({keepBreaks: true, debug: true}))
-        .pipe(sourcemaps.write({includeContent: true}))
+    .pipe(sourcemaps.write({includeContent: true}))
 //        .pipe(sourcemaps.write())
-        .pipe(gulp.dest('./themes/' + theme_name + '/assets/css'));
+    .pipe(gulp.dest('./themes/' + theme_name + '/assets/css'));
 });
 
 
 gulp.task('less', function () {
-    gulp.src('src/less/main.less')
-        .pipe(less({
-            generateSourceMap: false,
-            paths: [ path.join(__dirname) ]
-        }))
-        .pipe(autoprefixer())
-        .pipe(minifyCSS({keepBreaks: false, debug: false}))
-        .pipe(rename('main.min.css'))
-        .pipe(gulp.dest('./themes/' + theme_name + '/assets/css'));
+  gulp.src('src/less/main.less')
+    .pipe(less({
+      generateSourceMap: false,
+      paths: [path.join(__dirname)]
+    }))
+    .pipe(autoprefixer())
+    .pipe(minifyCSS({keepBreaks: false, debug: false}))
+    .pipe(rename('main.min.css'))
+    .pipe(gulp.dest('./themes/' + theme_name + '/assets/css'));
 });
 
 
@@ -215,60 +211,60 @@ gulp.task('less', function () {
  */
 
 var js_foot = [
-    'vendor/bower/greensock/src/uncompressed/TweenMax.js',
-    'vendor/bower/d3/d3.js',
+  'vendor/bower/greensock/src/uncompressed/TweenMax.js',
+  'vendor/bower/d3/d3.js',
 //  'vendor/bower/jquery-contentsize/jquery.contentsize.js',
-    'vendor/bower/jlayout/lib/jquery.sizes.js',
-    'vendor/bower/jlayout/lib/jlayout.flow.js',
-    'vendor/bower/jlayout/lib/jquery.jlayout.js',
-    'vendor/bower/jquery.center.js/src/jquery.center.js',
-    'vendor/bower/bootstrap/js/transition.js',
-    'vendor/bower/bootstrap/js/alert.js',
-    'vendor/bower/bootstrap/js/button.js',
+  'vendor/bower/jlayout/lib/jquery.sizes.js',
+  'vendor/bower/jlayout/lib/jlayout.flow.js',
+  'vendor/bower/jlayout/lib/jquery.jlayout.js',
+  'vendor/bower/jquery.center.js/src/jquery.center.js',
+  'vendor/bower/bootstrap/js/transition.js',
+  'vendor/bower/bootstrap/js/alert.js',
+  'vendor/bower/bootstrap/js/button.js',
 //  'vendor/bower/bootstrap/js/carousel.js',
-    'vendor/bower/bootstrap/js/collapse.js',
-    'vendor/bower/bootstrap/js/dropdown.js',
-    'vendor/bower/bootstrap/js/modal.js',
-    'vendor/bower/bootstrap/js/tooltip.js',
-    'vendor/bower/bootstrap/js/popover.js',
+  'vendor/bower/bootstrap/js/collapse.js',
+  'vendor/bower/bootstrap/js/dropdown.js',
+  'vendor/bower/bootstrap/js/modal.js',
+  'vendor/bower/bootstrap/js/tooltip.js',
+  'vendor/bower/bootstrap/js/popover.js',
 //  'vendor/bower/bootstrap/js/scrollspy.js',
 //  'vendor/bower/bootstrap/js/tab.js',
 //  'vendor/bower/bootstrap/js/affix.js',
-    'src/js/plugins/*.js',
-    'src/js/common/_*.js',
-    'src/js/_main.js'
+  'src/js/plugins/*.js',
+  'src/js/common/_*.js',
+  'src/js/_main.js'
 ];
 
 
 gulp.task('js', function () {
-    gulp.src(js_foot)
-        .pipe(concat('js-foot.min.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest('themes/' + theme_name + '/assets/js'))
+  gulp.src(js_foot)
+    .pipe(concat('js-foot.min.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('themes/' + theme_name + '/assets/js'))
 });
 
 
 gulp.task('dev_js', function () {
-    gulp.src(js_foot)
-        .pipe(sourcemaps.init())
-        .pipe(concat('js-foot.js'))
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest('themes/' + theme_name + '/assets/js'))
+  gulp.src(js_foot)
+    .pipe(sourcemaps.init())
+    .pipe(concat('js-foot.js'))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('themes/' + theme_name + '/assets/js'))
 });
 
 
 gulp.task('jshint', function () {
-    return gulp.src(['src/js/**/*.js'])
-        .pipe(jshint())
-        .pipe(jshint.reporter('default'));
+  return gulp.src(['src/js/**/*.js'])
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'));
 });
 
 
 gulp.task('bower', function () {
-    return gulp.src(mainBowerFiles(/* options */), {base: 'vendor/bower'})
-        .pipe(concat('main.min.js'))
-        .pipe(jshint())
-        .pipe(gulp.dest('themes/' + theme_name + '/assets/js'))
+  return gulp.src(mainBowerFiles(/* options */), {base: 'vendor/bower'})
+    .pipe(concat('main.min.js'))
+    .pipe(jshint())
+    .pipe(gulp.dest('themes/' + theme_name + '/assets/js'))
 });
 
 /*
@@ -277,20 +273,22 @@ gulp.task('bower', function () {
 
 // Dev
 gulp.task('watch', ['browser-sync'], function () {
-    // watch PHP files
-    gulp.watch('themes/' + theme_name + '/**/*.php', browserSync.reload);
-    // watch less files
-    gulp.watch('src/less/**/*.less', ['less_dev', browserSync.reload]);
-    // watch scripts
-    gulp.watch('src/js/**/*.js', ['dev_js', browserSync.reload]);
-    // watch svg files
-    gulp.watch('src/svg/**/*.svg', ['svg-min', browserSync.reload]);
+  // watch PHP files
+  gulp.watch('themes/' + theme_name + '/**/*.php', browserSync.reload);
+  // watch less files
+  gulp.watch('src/less/**/*.less', ['less_dev', browserSync.reload]);
+  // watch scripts
+  gulp.watch('src/js/**/*.js', ['dev_js', browserSync.reload]);
+  // watch svg files
+  gulp.watch('src/svg/**/*.svg', ['svg-min', browserSync.reload]);
+  // watch img files
+  gulp.watch('src/img/**/*', ['copy-imgs', browserSync.reload]);
 });
 
 // Default task to be run with `gulp`
 gulp.task('dev', ['copy-imgs', 'copy-fonts', 'less_dev', 'dev_js']);
 gulp.task('dev-build', ['copy-imgs', 'copy-fonts', 'svg-symbol', 'less_dev', 'dev_js', 'jshint', 'watch', 'browser-sync']);
 gulp.task('dev-watch', ['less_dev', 'dev_js', 'watch', 'browser-sync']);
-gulp.task('dev-less', ['less_dev','watch', 'browser-sync']);
+gulp.task('dev-less', ['less_dev', 'watch', 'browser-sync']);
 gulp.task('default', ['copy-imgs', 'copy-fonts', 'copy-icon-fonts', 'less', 'js']);
 

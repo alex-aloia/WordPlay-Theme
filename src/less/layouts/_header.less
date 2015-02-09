@@ -46,6 +46,7 @@ header {
 
         a {
           .vert-center;
+          z-index: 99;
           position: absolute;
           top: 0;
           width: 100%;
@@ -63,7 +64,7 @@ header {
         }
 
         .hud {
-          stroke: #9A40FF;
+          //stroke: #9A40FF;
           stroke-width: 1.75px;
 
           .hud1-center,
@@ -74,10 +75,27 @@ header {
           .hud1-center{
             stroke-width: 3px;
           }
+          .btnBG {
+            transform: translate(50px, 10px);
+          }
         }
 
+
       }
+
     }
+  }
+}
+
+.menu-contact{
+  .btnBG {
+    transform: translate(65px, 0px) !important;
+  }
+}
+
+.menu-about{
+  .btnBG {
+    transform: translate(0, 0px) !important;
   }
 }
 

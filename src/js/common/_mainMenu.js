@@ -10,6 +10,10 @@ var initMainMenu = function () {
     link = mainMenu.selectAll('a'),
     circlePath = menuItem.selectAll('.hud1-center'),
     ring = menuItem.selectAll('.hud1-ring1'),
+    svg = menuItem.select('svg'),
+    btnBG = svg.append('use').attr('class', 'btnBG').attr('xlink:href', function(d,i){
+      return '#btnBG_' + i;
+    }),
     mainMenuTL = new TimelineMax()
       .set(ring, {transformOrigin: "50% 50%"})
       .set(menuItem[0], {autoAlpha: 0})

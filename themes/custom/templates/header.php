@@ -1,11 +1,14 @@
 <header class="banner" role="banner">
 
 
-  <a href="<?php echo esc_url(home_url('/')); ?>" class="logo">
+  <a href="<?php echo esc_url(home_url('/')); ?>" id="header_logo" class="logo">
     <svg class="symbol_tripl3infLogo">
       <use xlink:href="#logo_tripl3inf"></use>
     </svg>
   </a>
+
+
+
 
 
   <div id='contact_BTN'>

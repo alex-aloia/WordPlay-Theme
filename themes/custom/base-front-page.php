@@ -54,8 +54,8 @@ else {
           .add(animateLogo_aaa(), 9)
           .add(initMainMenu())
           .call( initPortfolio )
-          .to( '.symbol_tripl3infLogo', 2, {autoAlpha:1}, 's1')
-          .from( '.symbol_tripl3infLogo', 1, {x:'-=300px'}, 's1')
+          .to( 'header .logo', 2, {autoAlpha:1}, 's1')
+          .from( 'header .logo', 1, {x:'-=300px'}, 's1')
           .to( '#aaaLogo_footer', 2, {autoAlpha:1}, 's2' )
           .from( '#aaaLogo_footer', 1, {x:'+=300px'}, 's2')
       });
