@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width">
 
   <?php
-      get_template_part('assets/img/inline', 'symbols.svg');
+      //get_template_part('assets/img/inline', 'symbols.svg');
       wp_head();
   ?>
 

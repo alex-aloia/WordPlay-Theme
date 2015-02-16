@@ -15,6 +15,7 @@
         "wpackagist-plugin/clean-and-simple-contact-form-by-meg-nicholas": "*",
         "wpackagist-plugin/piklist": "*",
         "wpackagist-plugin/wp-slimstat": "*",
+        "wpackagist-plugin/svg-support": "*",
         "wpackagist-plugin/simple-page-ordering": "*"
     },
 

@@ -28,9 +28,6 @@ header {
     text-align: center;
     //width: 80%;
 
-    @media @md {
-      //min-width: 800px;
-    }
 
     > ul {
       //float: right;
@@ -38,11 +35,13 @@ header {
       //left: -50%; /* or right 50% */
       > li {
         position: relative;
-        width: 250px;
-        height: 250px;
-        margin: 20px 10px;
+        width: 350px;
+//        height: 250px;
+        //margin: 20px 10px;
         display: inline-block;
-        .transparent();
+        opacity: 1;
+        visibility: visible;
+        //.transparent();
 
         a {
           .vert-center;
@@ -55,6 +54,7 @@ header {
           text-transform: uppercase;
           padding: 0;
           color: @gray-light;
+          font-family: orbitron;
           text-shadow: 0 2px 5px #663399;
           font-size: 1.5em;
           font-weight: bold;

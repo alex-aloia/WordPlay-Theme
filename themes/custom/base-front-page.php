@@ -5,6 +5,7 @@
  */
 session_start();
 
+
  get_template_part('templates/head');
  get_template_part('templates/header');
 ?>
@@ -30,10 +31,10 @@ if( $_SESSION[visited] != null && $_SESSION[visited] != "" ) {
          // .add(animateLogo_tripl3inf(), 2)
           .add( initMainMenu )
           .call( initPortfolio )
-          .to( 'header .logo', 2, {autoAlpha:1}, 's1')
-          .from( 'header .logo', 1, {x:'-=300px'}, 's1')
-          .to( '#aaaLogo_footer', 4, {autoAlpha:1}, 's2' )
-          .from( '#aaaLogo_footer', 1, {x:'+=300px'}, 's2')
+          //.to( 'header .logo', 2, {autoAlpha:1}, 's1')
+          //.from( 'header .logo', 1, {x:'-=300px'}, 's1')
+          //.to( '#aaaLogo_footer', 4, {autoAlpha:1}, 's2' )
+          //.from( '#aaaLogo_footer', 1, {x:'+=300px'}, 's2')
       });
     });
   </script>
@@ -49,15 +50,15 @@ else {
     jQuery(function ($) {
       $(window).load(function() {
         var mainTL = new TimelineLite()
-          .add(animateLogo_tripl3inf())
-          .add(animate_pwrdBy(), 6.5)
-          .add(animateLogo_aaa(), 9)
-          .add(initMainMenu())
-          .call( initPortfolio )
-          .to( 'header .logo', 2, {autoAlpha:1}, 's1')
-          .from( 'header .logo', 1, {x:'-=300px'}, 's1')
-          .to( '#aaaLogo_footer', 2, {autoAlpha:1}, 's2' )
-          .from( '#aaaLogo_footer', 1, {x:'+=300px'}, 's2')
+//          .add(animateLogo_tripl3inf())
+//          .add(animate_pwrdBy(), 6.5)
+//          .add(animateLogo_aaa(), 9)
+//          .add(initMainMenu())
+//          .call( initPortfolio )
+//          .to( 'header .logo', 2, {autoAlpha:1}, 's1')
+//          .from( 'header .logo', 1, {x:'-=300px'}, 's1')
+//          .to( '#aaaLogo_footer', 2, {autoAlpha:1}, 's2' )
+//          .from( '#aaaLogo_footer', 1, {x:'+=300px'}, 's2')
       });
     });
   </script>

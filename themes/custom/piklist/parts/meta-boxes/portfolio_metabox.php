@@ -1,6 +1,6 @@
 <?php
 /*
-Title: Project Info
+Title: Portfolio
 Post Type: cpt_portfolio
 */
 

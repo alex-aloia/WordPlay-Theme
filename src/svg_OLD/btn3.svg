@@ -1340,7 +1340,7 @@
 			<stop  offset="1" style="stop-color:#2B2728"/>
 		</radialGradient>
 		
-			<circle id="center_7_" fill="url(#center_1_)" stroke="#000000" stroke-miterlimit="10" cx="115.1106" cy="107.1835" r="101.9949"/>
+			<circle id="center_4_" fill="url(#center_1_)" stroke="#000000" stroke-miterlimit="10" cx="115.1106" cy="107.1835" r="101.9949"/>
 	</g>
 </mask>
 <g mask="url(#SVGID_3_)">

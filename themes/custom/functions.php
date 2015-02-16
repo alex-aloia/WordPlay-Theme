@@ -21,7 +21,8 @@ $custom_includes = array(
   'lib/gallery.php',         // Custom [gallery] modifications
   'lib/comments.php',        // Custom comments modifications
   'lib/scripts.php',         // Scripts and stylesheets
-  'lib/ajax.php',         // Ajax handlers
+  'lib/ajax.php',            // Ajax handlers
+  'lib/type_main_menu.php',  // Main Menu
   'lib/type_portfolio.php',  // Porfolio stuff
   'lib/extras.php',          // Custom functions
 );
