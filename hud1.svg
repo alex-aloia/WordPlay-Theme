@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="hud1"  class="hud" width="372.4429px" height="344.9463px" x="0px" y="0px" version="1.1" viewBox="0 0 372.4429 344.9463" enable-background="new 0 0 372.4429 344.9463" xml:space="preserve">
-    <g class="hud_wrap">
+    <g class="wrap">
         <g class="rings">
             <g class="center">
                 <g>
@@ -114,7 +114,7 @@
         <g class="bg">
             <g class="sphere" transform="scale(200 -200) translate(1 -1)">
                 <g class="sphere-front">
-                    <g class="sphere-half" fill="#1B1F77">
+                    <g class="sphere-half">
                         <g class="meridians">
                             <path class="meridian0" d="M-0.0106,0.5992c0.0088,0.0002,0.0213-0.2049,0.0281-0.4582 s0.0051-0.4588-0.0037-0.459c0.0013,0,0.0027,0.0001,0.004,0.0001c0.0088,0.0002,0.0104,0.2057,0.0037,0.459 S0.0022,0.5995-0.0066,0.5993C-0.0079,0.5992-0.0093,0.5992-0.0106,0.5992z"/>
                             <path class="meridian1" d="M-0.0598,0.595c0.0431,0.0059,0.1055-0.1928,0.1394-0.4439 S0.1061-0.3083,0.063-0.3143c0,0,0,0-0.0001,0c0.0013,0.0002,0.0027,0.0004,0.004,0.0005 c0.0431,0.0059,0.0506,0.2143,0.0166,0.4654C0.0497,0.4026-0.0126,0.6012-0.0558,0.5955 C-0.0571,0.5954-0.0584,0.5952-0.0598,0.595z"/>
