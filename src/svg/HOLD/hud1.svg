@@ -161,13 +161,13 @@
             </defs>
             <mask id="hud1-countries_19_" width="181.3432" height="181.3378" x="109.588" y="81.3109" maskUnits="userSpaceOnUse">
                 <g filter="url(#Adobe_OpacityMaskFilter19)">
-                    <radialGradient id="SVGID_1_" cx="200.75" cy="172.1252" r="90.75" gradientUnits="userSpaceOnUse">
+                    <radialGradient id="SVGID_121_" cx="200.75" cy="172.1252" r="90.75" gradientUnits="userSpaceOnUse">
                         <stop offset="0.6847" style="stop-color:#FFFFFF"/>
                         <stop offset="0.7516" style="stop-color:#CDCDCD"/>
                         <stop offset="0.9032" style="stop-color:#525252"/>
                         <stop offset="1" style="stop-color:#000000"/>
                     </radialGradient>
-                    <circle cx="200.75" cy="172.1252" r="90.75" fill="url(#SVGID_1_)"/>
+                    <circle cx="200.75" cy="172.1252" r="90.75" fill="url(#SVGID_121_)"/>
                 </g>
             </mask>
             <g id="hud1-countries" opacity="0.5" mask="url(#hud1-countries_19_)">

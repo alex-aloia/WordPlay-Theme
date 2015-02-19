@@ -4,7 +4,7 @@
 <svg version="1.1" id="hud3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="344.9488px" height="344.9463px" viewBox="0 0 344.9488 344.9463" enable-background="new 0 0 344.9488 344.9463"
 	 xml:space="preserve">
-<g id="hud3-wrap">
+<g class="hud3-wrap">
 	<g id="hud3-rings">
 		<g id="hud3-center">
 			<g>
@@ -222,12 +222,12 @@
 	<g id="hud3-bg">
 		<defs>
 			
-				<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="97.6456" y="162.8894" width="185.4738" height="119.6823">
+				<filter id="Adobe_OpacityMaskFilter989" filterUnits="userSpaceOnUse" x="97.6456" y="162.8894" width="185.4738" height="119.6823">
 				<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
 			</filter>
 		</defs>
 		<mask maskUnits="userSpaceOnUse" x="97.6456" y="162.8894" width="185.4738" height="119.6823" id="hud3-gears_1_">
-			<g filter="url(#Adobe_OpacityMaskFilter)">
+			<g filter="url(#Adobe_OpacityMaskFilter989)">
 				<radialGradient id="center_1_" cx="173.0059" cy="171.8752" r="101.9657" gradientUnits="userSpaceOnUse">
 					<stop  offset="0" style="stop-color:#FFFFFF"/>
 					<stop  offset="0.8524" style="stop-color:#FFFFFF"/>
