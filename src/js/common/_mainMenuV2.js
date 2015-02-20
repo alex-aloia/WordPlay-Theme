@@ -8,30 +8,36 @@ var initMainMenu = function () {
   mainMenu = d3.select('#main_menu'),
     menuItem = mainMenu.selectAll('li'),
     link = mainMenu.selectAll('a'),
-    circlePath = menuItem.selectAll('.hud1-center'),
-    ring = menuItem.selectAll('.hud1-ring1'),
-    svg = menuItem.select('svg'),
+    svg = menuItem.selectAll('svg'),
+    circlePath1 = svg.selectAll('.center circle.center1'),
+    circlePath2 = svg.selectAll('.center circle.center2'),
+    ring1 = svg.selectAll('.ring1'),
     mainMenuTL = new TimelineMax()
-      .set(ring, {transformOrigin: "50% 50%"})
-      .set(menuItem[0], {autoAlpha: 0})
+      .set(ring1, {transformOrigin: "50% 50%"})
+      //.set(menuItem[0], {autoAlpha: 0})
       .staggerTo(menuItem[0], 2.5, {autoAlpha: 1}, 0.3, 'ringS1')
-      .staggerTo(ring, 2, {autoAlpha: 0.5}, 0.4, 'ringS1+=0.5')
-      .staggerTo(ring, 3, {directionalRotation: "90_cw", ease: Back.easeOut}, 0.4, 'ringS1+=1')
+      .staggerTo(ring1, 2, {autoAlpha: 0.5}, 0.4, 'ringS1+=0.5')
+      .staggerTo(ring1, 3, {directionalRotation: "90_cw", ease: Back.easeOut}, 0.4, 'ringS1+=1')
 
 
   link.on('click', function () {
     d3.event.preventDefault();
   })
 
-  TweenLite.set(circlePath, {drawSVG: 0, transform: 'rotate(90deg)', transformOrigin: "50% 50%"})
+  //TweenLite.set(circlePath1, {drawSVG: '50%'})
+  TweenLite.set(circlePath1, {drawSVG: 0, transform: 'rotate(90deg)', transformOrigin: "50% 50%"})
+  TweenLite.set(circlePath2, {drawSVG: 0, transform: 'rotate(-90deg)', transformOrigin: "50% 50%"})
 
   // hover event
   menuItem.on("mouseenter", function (d, i) {
-    targetPath = circlePath[i][0],
-      targetRing = ring[i][0],
+    targetPath = circlePath1[i][0],
+      targetPath2 = circlePath2[i][0],
+      targetRing = ring1[i][0],
     hoverTL = new TimelineLite()
-      .to(targetPath, 1, {autoAlpha: 0.8}, 0)
-      .fromTo(targetPath, 1, {drawSVG: '50% 50%'}, {drawSVG: '0 100%'}, 0)
+      .to(targetPath, 1, {autoAlpha: 0.3}, 0)
+      .to(targetPath2, 1, {autoAlpha: 0.7}, 0)
+      .fromTo(targetPath, 1, {drawSVG: '0'}, {drawSVG: '100%'}, 0)
+      .fromTo(targetPath2, 1, {drawSVG: '0'}, {drawSVG: '100%'}, 0)
       .to(targetRing, 0.7, {autoAlpha: 0.7, stroke: '#9A40FF', directionalRotation: "0_short"}, 0)
       .to(link[0][i], 0.5, {color: '#aaff00'}, 0.3)
   })

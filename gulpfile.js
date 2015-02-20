@@ -43,15 +43,15 @@ gulp.task('browser-sync', function () {
 /*
  * Fonts
  */
-gulp.task('copy-fonts', function () {
-  return gulp.src('./src/fonts/**/*.{ttf,woff,eot,otf,svg}')
-    .pipe(gulp.dest('./themes/' + theme_name + '/assets/fonts/'));
-});
+//gulp.task('copy-fonts', function () {
+//  return gulp.src('./src/fonts/**/*.{ttf,woff,eot,otf,svg}')
+//    .pipe(gulp.dest('./themes/' + theme_name + '/assets/fonts/'));
+//});
 
-gulp.task('copy-icon-fonts', function () {
-  return gulp.src('./vendor/bower/font-awesome/fonts/**/*.{ttf,woff,eot,otf,svg}')
-    .pipe(gulp.dest('./themes/' + theme_name + '/assets/fonts/'));
-});
+//gulp.task('copy-icon-fonts', function () {
+//  return gulp.src('./vendor/bower/font-awesome/fonts/**/*.{ttf,woff,eot,otf,svg}')
+//    .pipe(gulp.dest('./themes/' + theme_name + '/assets/fonts/'));
+//});
 
 /*
  * CSS Sprites

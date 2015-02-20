@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e716e0e6-c787-4f5b-a249-e358404e5edc" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/svg/processed/hud3.svg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/less/layouts/_header.less" afterPath="$PROJECT_DIR$/src/less/layouts/_header.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/common/_mainMenuV2.js" afterPath="$PROJECT_DIR$/src/js/common/_mainMenuV2.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/less/_svg.less" afterPath="$PROJECT_DIR$/src/less/_svg.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/svg/HOLD/hud3.svg" afterPath="$PROJECT_DIR$/src/svg/HOLD/hud3.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/svg/processed/hud1.svg" afterPath="$PROJECT_DIR$/src/svg/processed/hud1.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/svg/symbols/hud1.svg" afterPath="$PROJECT_DIR$/src/svg/symbols/hud1.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/svg/processed/hud2.svg" afterPath="$PROJECT_DIR$/src/svg/processed/hud2.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/svg/symbols/hud2.svg" afterPath="$PROJECT_DIR$/src/svg/symbols/hud2.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/svg/processed/hud3.svg" afterPath="$PROJECT_DIR$/src/svg/processed/hud3.svg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/svg/symbols/hud3.svg" afterPath="$PROJECT_DIR$/src/svg/symbols/hud3.svg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -197,15 +203,67 @@
     <favorites_list name="content" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.42151898">
+    <splitter split-orientation="horizontal" split-proportion="0.38291138">
       <split-first>
         <leaf>
-          <file leaf-file-name="_svg.less" pinned="false" current-in-tab="true">
+          <file leaf-file-name="_svg.less" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/less/_svg.less">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.41666666" vertical-offset="1180" max-vertical-offset="3440">
-                  <caret line="71" column="23" selection-start-line="71" selection-start-column="23" selection-end-line="71" selection-end-column="23" />
+                <state vertical-scroll-proportion="-11.538462" vertical-offset="1120" max-vertical-offset="3480">
+                  <caret line="71" column="24" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="24" />
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="gulpfile.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/gulpfile.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="3191" max-vertical-offset="6000">
+                  <caret line="187" column="0" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="hud2.svg" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/svg/processed/hud2.svg">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.06726457" vertical-offset="0" max-vertical-offset="9240">
+                  <caret line="3" column="52" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_mainMenu.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/js/_mainMenu.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="20" max-vertical-offset="1940">
+                  <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="base-front-page.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/themes/custom/base-front-page.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-32.346153" vertical-offset="339" max-vertical-offset="1540">
+                  <caret line="59" column="12" selection-start-line="59" selection-start-column="12" selection-end-line="59" selection-end-column="12" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/themes/custom/templates/header.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-6.923077" vertical-offset="0" max-vertical-offset="2300">
+                  <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#869#935#0#PHP" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -214,39 +272,21 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/themes/custom/templates/header.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0" vertical-offset="40" max-vertical-offset="2300">
-                  <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#869#935#0#PHP" expanded="true" />
-                    <marker date="1424215685000" expanded="true" signature="1301:5977" placeholder="..." />
-                    <marker date="1424215685000" expanded="true" signature="1318:1659" placeholder="..." />
-                    <marker date="1424215685000" expanded="true" signature="1355:1641" placeholder="..." />
-                    <marker date="1424215685000" expanded="true" signature="1691:5964" placeholder="..." />
-                    <marker date="1424215685000" expanded="false" signature="1742:1765" placeholder="..." />
-                    <marker date="1424215685000" expanded="true" signature="1895:5949" placeholder="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="_header.less" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/less/layouts/_header.less">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-11.538462" vertical-offset="380" max-vertical-offset="2980">
-                  <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
+                <state vertical-scroll-proportion="-15.384615" vertical-offset="460" max-vertical-offset="2760">
+                  <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="hud3_copy.svg" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/svg/HOLD/hud3_copy.svg">
+          <file leaf-file-name="_mainMenuV2.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/js/common/_mainMenuV2.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.033955857" vertical-offset="0" max-vertical-offset="9100">
-                  <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+                <state vertical-scroll-proportion="0.35359117" vertical-offset="0" max-vertical-offset="2000">
+                  <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
                   <folding />
                 </state>
               </provider>
@@ -278,7 +318,6 @@
         <option value="$PROJECT_DIR$/themes/roots/front-page.php" />
         <option value="$PROJECT_DIR$/src/js/_ajaxLoop_d3.js" />
         <option value="$PROJECT_DIR$/themes/roots/templates/header.php" />
-        <option value="$PROJECT_DIR$/gulpfile.js" />
         <option value="$PROJECT_DIR$/src/js/_introAnimation.js" />
         <option value="$PROJECT_DIR$/src/js/_aaaLogoAnimation.js" />
         <option value="$PROJECT_DIR$/src/js/_main.js" />
@@ -304,14 +343,17 @@
         <option value="$PROJECT_DIR$/themes/custom/base-front-page.php" />
         <option value="$PROJECT_DIR$/src/less/_variables.less" />
         <option value="$PROJECT_DIR$/src/less/main.less" />
-        <option value="$PROJECT_DIR$/src/less/layouts/_header.less" />
-        <option value="$PROJECT_DIR$/src/svg/HOLD/hud1.svg" />
         <option value="$PROJECT_DIR$/src/svg/HOLD/hud2.svg" />
         <option value="$PROJECT_DIR$/src/svg/HOLD/hud3.svg" />
         <option value="$PROJECT_DIR$/../../www/content/uploads/hud3.svg" />
         <option value="$PROJECT_DIR$/../../www/content/uploads/2015/hud1.svg" />
-        <option value="$PROJECT_DIR$/src/less/_svg.less" />
         <option value="$PROJECT_DIR$/src/svg/HOLD/hud3_copy.svg" />
+        <option value="$PROJECT_DIR$/src/svg/HOLD/hud1.svg" />
+        <option value="$PROJECT_DIR$/src/svg/symbols/hud1.svg" />
+        <option value="$PROJECT_DIR$/src/less/_svg.less" />
+        <option value="$PROJECT_DIR$/gulpfile.js" />
+        <option value="$PROJECT_DIR$/src/less/layouts/_header.less" />
+        <option value="$PROJECT_DIR$/src/js/common/_mainMenuV2.js" />
       </list>
     </option>
   </component>
@@ -323,12 +365,6 @@
         <tasks>
           <GulpTaskState>
             <task-name>browser-sync</task-name>
-          </GulpTaskState>
-          <GulpTaskState>
-            <task-name>copy-fonts</task-name>
-          </GulpTaskState>
-          <GulpTaskState>
-            <task-name>copy-icon-fonts</task-name>
           </GulpTaskState>
           <GulpTaskState>
             <task-name>copy-imgs</task-name>
@@ -419,6 +455,7 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="1" />
     <option name="y" value="23" />
     <option name="width" value="1920" />
     <option name="height" value="1025" />
@@ -457,7 +494,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="variab&#9;FILE&#9;file:///Users/tripl3inf/Vagrants/dev.t3inf.com/srv/dev/t3inf/repo/content/src/less/_variables.less&#10;vai&#9;FILE&#9;file:///Users/tripl3inf/Vagrants/dev.t3inf.com/srv/dev/t3inf/repo/content/vendor/plugins/piklist/parts/shared/update-available.php&#10;glo&#9;FILE&#9;file:///Users/tripl3inf/Vagrants/dev.t3inf.com/srv/dev/t3inf/repo/content/src/less/_global.less&#10;main&#9;FILE&#9;file:///Users/tripl3inf/Vagrants/dev.t3inf.com/srv/dev/t3inf/repo/content/src/less/main.less&#10;_svg&#9;FILE&#9;file:///Users/tripl3inf/Vagrants/dev.t3inf.com/srv/dev/t3inf/repo/content/src/less/_svg.less&#10;hea&#9;FILE&#9;file:///Users/tripl3inf/Vagrants/dev.t3inf.com/srv/dev/t3inf/repo/content/src/less/layouts/_header.less&#10;main.less&#9;FILE&#9;file:///Users/tripl3inf/Vagrants/dev.t3inf.com/srv/dev/t3inf/repo/content/src/less/main.less&#10;head.php&#9;FILE&#9;file:///Users/tripl3inf/Vagrants/dev.t3inf.com/srv/dev/t3inf/repo/content/themes/custom/templates/head.php&#10;header.less&#9;FILE&#9;file:///Users/tripl3inf/Vagrants/dev.t3inf.com/srv/dev/t3inf/repo/content/src/less/layouts/_header.less&#10;composer&#9;FILE&#9;file:///Users/tripl3inf/Vagrants/dev.t3inf.com/srv/dev/t3inf/repo/content/composer.json&#10;pack&#9;FILE&#9;file:///Users/tripl3inf/Vagrants/dev.t3inf.com/srv/dev/t3inf/repo/content/package.json&#10;gulp&#9;FILE&#9;file:///Users/tripl3inf/Vagrants/dev.t3inf.com/srv/dev/t3inf/repo/content/gulpfile.js&#10;header.php&#9;FILE&#9;file:///Users/tripl3inf/Vagrants/dev.t3inf.com/srv/dev/t3inf/repo/content/themes/custom/templates/header.php&#10;menu&#9;FILE&#9;file:///mnt/dev/dev/t3inf/repo/content/src/js/common/_mainMenu.js&#10;_foot&#9;FILE&#9;file:///mnt/dev/dev/t3inf/repo/content/src/less/layouts/_footer.less&#10;global&#9;FILE&#9;file:///mnt/dev/dev/t3inf/repo/content/src/less/_global.less&#10;bas&#9;FILE&#9;file:///mnt/dev/dev/t3inf/repo/content/themes/custom/base-front-page.php&#10;head&#9;FILE&#9;file:///mnt/srv/dev/t3inf/content/themes/roots/templates/header.php&#10;gulpfile&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/gulpfile.js&#10;_front-pa&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/src/less/layouts/_front-page.less&#10;_aja&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/src/js/_ajaxLoop_d3.js&#10;scripts&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/themes/roots/lib/scripts.php&#10;footer.less&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/src/less/layouts/_footer.less&#10;ajax.php&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/themes/roots/lib/ajax.php&#10;ajax.ph&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/plugins/clean-and-simple-contact-form-by-meg-nicholas/ajax.php&#10;front&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/themes/roots/front-page.php&#10;_por&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/src/less/layouts/_portfolio.less&#10;_varia&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/src/less/_variables.less&#10;_port&#9;FILE&#9;file:///mnt/srv/dev/t3inf/content/src/less/layouts/_portfolio.less&#10;_glob&#9;FILE&#9;file:///Users/tripl3inf/Desktop/MBP-Server/dev/t3inf/content/src/less/_global.less" />
+    <property name="SearchEverywhereHistoryKey" value="gulp&#9;FILE&#9;file:///Users/tripl3inf/Vagrants/dev.t3inf.com/srv/dev/t3inf/repo/content/gulpfile.js&#10;frontp&#9;FILE&#9;file:///Users/tripl3inf/Vagrants/dev.t3inf.com/srv/dev/t3inf/repo/content/themes/custom/base-front-page.php&#10;head&#9;FILE&#9;file:///Users/tripl3inf/Vagrants/dev.t3inf.com/srv/dev/t3inf/repo/content/themes/custom/templates/header.php&#10;variab&#9;FILE&#9;file:///Users/tripl3inf/Vagrants/dev.t3inf.com/srv/dev/t3inf/repo/content/src/less/_variables.less&#10;vai&#9;FILE&#9;file:///Users/tripl3inf/Vagrants/dev.t3inf.com/srv/dev/t3inf/repo/content/vendor/plugins/piklist/parts/shared/update-available.php&#10;glo&#9;FILE&#9;file:///Users/tripl3inf/Vagrants/dev.t3inf.com/srv/dev/t3inf/repo/content/src/less/_global.less&#10;main&#9;FILE&#9;file:///Users/tripl3inf/Vagrants/dev.t3inf.com/srv/dev/t3inf/repo/content/src/less/main.less&#10;_svg&#9;FILE&#9;file:///Users/tripl3inf/Vagrants/dev.t3inf.com/srv/dev/t3inf/repo/content/src/less/_svg.less&#10;hea&#9;FILE&#9;file:///Users/tripl3inf/Vagrants/dev.t3inf.com/srv/dev/t3inf/repo/content/src/less/layouts/_header.less&#10;main.less&#9;FILE&#9;file:///Users/tripl3inf/Vagrants/dev.t3inf.com/srv/dev/t3inf/repo/content/src/less/main.less&#10;head.php&#9;FILE&#9;file:///Users/tripl3inf/Vagrants/dev.t3inf.com/srv/dev/t3inf/repo/content/themes/custom/templates/head.php&#10;header.less&#9;FILE&#9;file:///Users/tripl3inf/Vagrants/dev.t3inf.com/srv/dev/t3inf/repo/content/src/less/layouts/_header.less&#10;composer&#9;FILE&#9;file:///Users/tripl3inf/Vagrants/dev.t3inf.com/srv/dev/t3inf/repo/content/composer.json&#10;pack&#9;FILE&#9;file:///Users/tripl3inf/Vagrants/dev.t3inf.com/srv/dev/t3inf/repo/content/package.json&#10;header.php&#9;FILE&#9;file:///Users/tripl3inf/Vagrants/dev.t3inf.com/srv/dev/t3inf/repo/content/themes/custom/templates/header.php&#10;menu&#9;FILE&#9;file:///mnt/dev/dev/t3inf/repo/content/src/js/common/_mainMenu.js&#10;_foot&#9;FILE&#9;file:///mnt/dev/dev/t3inf/repo/content/src/less/layouts/_footer.less&#10;global&#9;FILE&#9;file:///mnt/dev/dev/t3inf/repo/content/src/less/_global.less&#10;bas&#9;FILE&#9;file:///mnt/dev/dev/t3inf/repo/content/themes/custom/base-front-page.php&#10;gulpfile&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/gulpfile.js&#10;_front-pa&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/src/less/layouts/_front-page.less&#10;_aja&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/src/js/_ajaxLoop_d3.js&#10;scripts&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/themes/roots/lib/scripts.php&#10;footer.less&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/src/less/layouts/_footer.less&#10;ajax.php&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/themes/roots/lib/ajax.php&#10;ajax.ph&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/plugins/clean-and-simple-contact-form-by-meg-nicholas/ajax.php&#10;front&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/themes/roots/front-page.php&#10;_por&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/src/less/layouts/_portfolio.less&#10;_varia&#9;FILE&#9;file:///Volumes/NFS/srv/dev/t3inf/content/src/less/_variables.less&#10;_port&#9;FILE&#9;file:///mnt/srv/dev/t3inf/content/src/less/layouts/_portfolio.less&#10;_glob&#9;FILE&#9;file:///Users/tripl3inf/Desktop/MBP-Server/dev/t3inf/content/src/less/_global.less" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../www" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="false" />
@@ -504,11 +541,11 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
-      <method />
-    </configuration>
     <configuration default="true" type="JarApplication" factoryName="JAR Application">
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -545,6 +582,9 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
@@ -552,9 +592,6 @@
       <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
@@ -623,15 +660,18 @@
       <workItem from="1424296590093" duration="1283000" />
       <workItem from="1424299442049" duration="3737000" />
       <workItem from="1424306277205" duration="2217000" />
-      <workItem from="1424310947042" duration="570000" />
+      <workItem from="1424310947042" duration="4211000" />
+      <workItem from="1424389478269" duration="599000" />
+      <workItem from="1424392838508" duration="818000" />
+      <workItem from="1424395382811" duration="6353000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45866000" />
+    <option name="totallyTimeSpent" value="57277000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1025" extended-state="6" />
+    <frame x="1" y="23" width="1920" height="1025" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -648,13 +688,13 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17252396" sideWeight="0.4994641" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3262032" sideWeight="0.5697551" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32475883" sideWeight="0.5697551" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15867944" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Gulp" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3262032" sideWeight="0.43024495" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15867944" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32475883" sideWeight="0.43024495" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973376" sideWeight="0.4994641" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="left" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -668,22 +708,22 @@
       <window_info id="Get Gist" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="SvgViewer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960597" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960597" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="SvgViewer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960597" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="CSS-X-Fire" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32765958" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17252396" sideWeight="0.4994641" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32678387" sideWeight="0.5697551" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32475883" sideWeight="0.5697551" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -692,11 +732,11 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15867944" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Gulp" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32678387" sideWeight="0.43024495" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32475883" sideWeight="0.43024495" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973376" sideWeight="0.4994641" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="left" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Code Outline" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="left" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="ScratchPad" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Get Gist" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
@@ -726,13 +766,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/bower/jlayout/examples/jquery-ui.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.06872852" vertical-offset="0" max-vertical-offset="6640">
-          <caret line="3" column="51" selection-start-line="3" selection-start-column="51" selection-end-line="3" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/bower/jlayout/examples/content-scroll.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.13745704" vertical-offset="0" max-vertical-offset="1080">
@@ -866,13 +899,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/_mainMenu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="20" max-vertical-offset="1940">
-          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/themes/custom/functions.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5460751" vertical-offset="0" max-vertical-offset="879">
@@ -915,13 +941,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gulpfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76233184" vertical-offset="680" max-vertical-offset="6000">
-          <caret line="68" column="8" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/themes/custom/templates/head.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="480">
@@ -957,29 +976,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/themes/custom/templates/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="40" max-vertical-offset="2300">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="e#869#935#0#PHP" expanded="true" />
-            <marker date="1424215685000" expanded="true" signature="1301:5977" placeholder="..." />
-            <marker date="1424215685000" expanded="true" signature="1318:1659" placeholder="..." />
-            <marker date="1424215685000" expanded="true" signature="1355:1641" placeholder="..." />
-            <marker date="1424215685000" expanded="true" signature="1691:5964" placeholder="..." />
-            <marker date="1424215685000" expanded="false" signature="1742:1765" placeholder="..." />
-            <marker date="1424215685000" expanded="true" signature="1895:5949" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/themes/custom/base-front-page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-32.346153" vertical-offset="339" max-vertical-offset="1540">
-          <caret line="59" column="12" selection-start-line="59" selection-start-column="12" selection-end-line="59" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/plugins/piklist/parts/shared/update-available.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="907">
@@ -991,7 +987,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="920" max-vertical-offset="3400">
           <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -999,7 +994,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="959" max-vertical-offset="1920">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1010,31 +1004,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/svg/HOLD/hud1.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.034013607" vertical-offset="0" max-vertical-offset="4680">
-          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/svg/processed/hud2.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6845639" vertical-offset="2400" max-vertical-offset="9300">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/svg/symbols/hud3.svg">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="28660">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/svg/processed/hud1.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.034013607" vertical-offset="2300" max-vertical-offset="4680">
-          <caret line="116" column="44" selection-start-line="116" selection-start-column="44" selection-end-line="116" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -1073,26 +1046,92 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/less/layouts/_header.less">
+    <entry file="file://$PROJECT_DIR$/src/js/_mainMenu.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.538462" vertical-offset="380" max-vertical-offset="2980">
-          <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="20" max-vertical-offset="1940">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/svg/HOLD/hud1.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.089686096" vertical-offset="20" max-vertical-offset="4680">
+          <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/custom/base-front-page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-32.346153" vertical-offset="339" max-vertical-offset="1540">
+          <caret line="59" column="12" selection-start-line="59" selection-start-column="12" selection-end-line="59" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/custom/templates/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.923077" vertical-offset="0" max-vertical-offset="2300">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="e#869#935#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/svg/symbols/hud1.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30560273" vertical-offset="0" max-vertical-offset="11180">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/less/_svg.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41666666" vertical-offset="1180" max-vertical-offset="3440">
-          <caret line="71" column="23" selection-start-line="71" selection-start-column="23" selection-end-line="71" selection-end-column="23" />
+        <state vertical-scroll-proportion="-11.538462" vertical-offset="1120" max-vertical-offset="3480">
+          <caret line="71" column="24" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/svg/HOLD/hud3_copy.svg">
+    <entry file="file://$PROJECT_DIR$/src/svg/processed/hud1.svg">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.033955857" vertical-offset="0" max-vertical-offset="9100">
-          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.06726457" vertical-offset="20" max-vertical-offset="4620">
+          <caret line="4" column="97" selection-start-line="4" selection-start-column="97" selection-end-line="4" selection-end-column="97" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3191" max-vertical-offset="6000">
+          <caret line="187" column="0" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/svg/processed/hud2.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06726457" vertical-offset="0" max-vertical-offset="9240">
+          <caret line="3" column="52" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/less/layouts/_header.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.384615" vertical-offset="460" max-vertical-offset="2760">
+          <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/common/_mainMenuV2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35359117" vertical-offset="0" max-vertical-offset="2000">
+          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
           <folding />
         </state>
       </provider>

@@ -37,11 +37,11 @@ header {
         position: relative;
         width: 350px;
 //        height: 250px;
-        //margin: 20px 10px;
+        margin: 20px;
         display: inline-block;
         opacity: 1;
         visibility: visible;
-        //.transparent();
+        .transparent();
 
         a {
           .vert-center;
@@ -60,24 +60,13 @@ header {
           font-weight: bold;
           &:hover {
             cursor: pointer;
+            text-decoration: none;
           }
         }
 
-        .hud {
-          //stroke: #9A40FF;
-          stroke-width: 1.75px;
-
-          .hud1-center,
-            .hud1-ring1 {
-            .transparent();
-            stroke: #2900CC;
-          }
-          .hud1-center{
-            stroke-width: 3px;
-          }
-          .btnBG {
-            transform: translate(50px, 10px);
-          }
+        // link after hud1 svg
+        #hud1 + a {
+          padding-left: 50px;
         }
 
 

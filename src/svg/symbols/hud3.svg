@@ -4,17 +4,10 @@
 <svg version="1.1" id="hud3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="344.9488px" height="344.9463px" viewBox="0 0 344.9488 344.9463" enable-background="new 0 0 344.9488 344.9463"
 	 xml:space="preserve">
-<g class="hud3-wrap">
+<g id="hud3-wrap">
 	<g id="hud3-rings">
-		<g id="hud3-center">
-			<g>
-				<path fill="#1B1F77" d="M173.2244,72.4785c55.1374,0,99.9949,44.8575,99.9949,99.9949
-					c0,55.1374-44.8575,99.9949-99.9949,99.9949s-99.9949-44.8575-99.9949-99.9949
-					C73.2295,117.336,118.087,72.4785,173.2244,72.4785 M173.2244,70.4785c-56.3302,0-101.9949,45.6647-101.9949,101.9949
-					s45.6647,101.9949,101.9949,101.9949s101.9949-45.6647,101.9949-101.9949S229.5547,70.4785,173.2244,70.4785L173.2244,70.4785z"
-					/>
-			</g>
-		</g>
+		<circle id="hud3-center1" fill="none" stroke="#AAFF00" stroke-miterlimit="10" cx="173.3392" cy="172.5419" r="103.5"/>
+		<circle id="hud3-center2" fill="none" stroke="#AAFF00" stroke-miterlimit="10" cx="173.3392" cy="172.5419" r="100"/>
 		<g id="hud3-ring1" opacity="0.9">
 			<path fill="none" stroke="#9933FF" stroke-miterlimit="10" d="M116.1972,265.7833c-6.718-4.0668-12.9628-8.839-18.6332-14.212
 				l-8.4863,8.4863c6.4126,6.1088,13.495,11.5189,21.1208,16.1157L116.1972,265.7833z"/>
@@ -222,12 +215,12 @@
 	<g id="hud3-bg">
 		<defs>
 			
-				<filter id="Adobe_OpacityMaskFilter989" filterUnits="userSpaceOnUse" x="97.6456" y="162.8894" width="185.4738" height="119.6823">
+				<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="97.6456" y="162.8894" width="185.4738" height="119.6823">
 				<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
 			</filter>
 		</defs>
 		<mask maskUnits="userSpaceOnUse" x="97.6456" y="162.8894" width="185.4738" height="119.6823" id="hud3-gears_1_">
-			<g filter="url(#Adobe_OpacityMaskFilter989)">
+			<g filter="url(#Adobe_OpacityMaskFilter)">
 				<radialGradient id="center_1_" cx="173.0059" cy="171.8752" r="101.9657" gradientUnits="userSpaceOnUse">
 					<stop  offset="0" style="stop-color:#FFFFFF"/>
 					<stop  offset="0.8524" style="stop-color:#FFFFFF"/>
@@ -239,7 +232,7 @@
 					<stop  offset="1" style="stop-color:#2B2728"/>
 				</radialGradient>
 				
-					<circle id="center_8_" fill="url(#center_1_)" stroke="#000000" stroke-miterlimit="10" cx="173.2244" cy="172.4733" r="101.9949"/>
+					<circle id="center_3_" fill="url(#center_1_)" stroke="#000000" stroke-miterlimit="10" cx="173.2244" cy="172.4733" r="101.9949"/>
 			</g>
 		</mask>
 		<g id="hud3-gears" mask="url(#hud3-gears_1_)">
