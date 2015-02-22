@@ -29,7 +29,7 @@ if ($_SESSION[visited] != null && $_SESSION[visited] != "") {
 
     function init() {
       var mainTL = new TimelineLite()
-        // .add(animateLogo_tripl3inf(), 2)
+        //.add(animateLogo_tripl3inf(), 2)
         .add(initMainMenu)
         .call( initPortfolio )
       //.to( 'header .logo', 2, {autoAlpha:1}, 's1')

@@ -5,7 +5,7 @@
 
       var logo_tripl3infTL = new TimelineLite();
 
-      var container = d3.select('#intro_tripl3infLogo_wrap'),
+      var container = d3.select('.logo_tripl3inf'),
             tripl3Logo = container.selectAll('.logo-tripl3inf-wrap'),
             letters = tripl3Logo.selectAll('.logo-tripl3inf-letters path'),
             dd_letters = tripl3Logo.selectAll('.logo-tripl3inf-desanddev path'),
@@ -30,7 +30,7 @@
             infSymWhole = d3.selectAll('.logo-tripl3inf-infsymwhole')
                 .attr('filter', "url('#glow')");
 
-      $('#intro_tripl3infLogo_wrap').center();
+      //$('#intro_tripl3infLogo_wrap').center();
 
         letters.each(function (d, i) {
             var pathLength = this.getTotalLength();
@@ -52,11 +52,11 @@
             .to(blur, 1, {attr:{stdDeviation:5}}, 'infSym+=1.3')
             .staggerFrom(dd_letters[0], 0.8, {autoAlpha:0, ease:Sine.easeIn}, 0.1, '-=2')
 
-            .addLabel('fadeOut', '-=0.25')
-            .staggerTo(letters[0], 0.6, {autoAlpha:0, ease:Sine.easeOut}, 0.25, 'fadeOut')
-            .to(infSym, 0.6, {autoAlpha:0, ease:Sine.easeOut}, 'fadeOut+=1.1')
-            .staggerTo(dd_letters[0], 1.5, {autoAlpha:0}, 0.1, 'fadeOut+=2')
-            .set( container, {display:'none'});
+            //.addLabel('fadeOut', '-=0.25')
+            //.staggerTo(letters[0], 0.6, {autoAlpha:0, ease:Sine.easeOut}, 0.25, 'fadeOut')
+            //.to(infSym, 0.6, {autoAlpha:0, ease:Sine.easeOut}, 'fadeOut+=1.1')
+            //.staggerTo(dd_letters[0], 1.5, {autoAlpha:0}, 0.1, 'fadeOut+=2')
+            //.set( container, {display:'none'});
 
       return logo_tripl3infTL;
 

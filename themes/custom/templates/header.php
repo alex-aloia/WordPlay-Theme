@@ -13,10 +13,8 @@ if ( ! empty( $post ) ) {
 
 
 
-  <a href="<?php echo esc_url(home_url('/')); ?>" id="header_logo" class="logo">
-<!--    <svg class="symbol_tripl3infLogo">-->
-<!--      <use xlink:href="#logo_tripl3inf"></use>-->
-<!--    </svg>-->
+  <a href="<?php echo esc_url(home_url('/')); ?>" class="logo_tripl3inf logo">
+    <img width="1" height="1" src="http://dev.t3inf.com/content/uploads/logo_tripl3inf.svg" class="svg-inject wp-post-image" alt="hud1">
   </a>
 
 <nav id="main_menu" class="menu" role="navigation">

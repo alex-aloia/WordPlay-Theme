@@ -28,13 +28,14 @@ svg.logo {
   .logo-tripl3inf-letters {
     fill: none;
   }
-  .logo-tripl3inf-infsymwhole {
+  .logo-tripl3inf-infsymwhole path {
     .transparent();
   }
-  .logo-tripl3inf-infsympaths {
+
+  .logo-tripl3inf-infsympaths path {
     stroke: @brand-primary;
     stroke-width: 20px;
-    mask: url(#logo-tripl3inf-defs);
+    mask: url(#infMask);
   }
   .logo-tripl3inf-desanddev path {
     fill: @gray;
