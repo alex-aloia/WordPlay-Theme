@@ -94,12 +94,17 @@ svg.logo {
     fill:  @brand-primary;
     //z-index: 99;
     cursor: pointer;
+    pointer-events: visible;
 
     > g {
       .transparent();
 
+      circle {
+        fill: none;
+      }
+
       .crosshair {
-        fill: #9933FF;
+        fill: #1B1F77;
       }
     }
   }

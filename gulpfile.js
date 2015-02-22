@@ -22,6 +22,7 @@ var gulp = require('gulp'),
   gulpif = require('gulp-if'),
 //sprite = require('css-sprite').stream,
   reload = browserSync.reload;
+  cheerio = require('gulp-cheerio');
 
 
 /**********************************************************
@@ -38,6 +39,15 @@ gulp.task('browser-sync', function () {
     open: false
   });
 });
+
+
+
+
+
+
+
+
+
 
 
 /*
@@ -81,8 +91,47 @@ gulp.task('copy-imgs', function () {
 
 
 /*
- * svg min & sprite
+ *  SVG
  */
+
+// convert ids to classes
+gulp.task('id-to-class', function () {
+  return gulp
+    .src(['src/svg/processed/*.svg'])
+    .pipe(cheerio({
+      run: function ($, file) {
+
+
+        // Elements on which we want to convert ids to classes...
+        var shapesAndText = 'g,path,rect,circle,ellipse,line,polyline,polygon,altGlyph,textPath,text,tref,tspan';
+
+        // ...but don't touch any in defs/clipPath/masks tags
+        var excludeContainers = 'defs,clipPath,mask';
+
+        function inExcludedContainer(index, node) {
+          return $(node).parents(excludeContainers).length;
+        }
+
+        function convertIdToClass(index, node) {
+          var id = $(node).attr('id');
+          if (id) {
+            $(node).addClass(id);
+            $(node).removeAttr('id');
+          }
+        }
+
+        $('svg').find(shapesAndText).not(inExcludedContainer).each(convertIdToClass);
+
+      },
+
+      parserOptions: {
+        xmlMode: true
+      }
+
+    }))
+    .pipe(gulp.dest('src/svg/processed2/'));
+});
+
 
 gulp.task('svg-min', function () {
   return gulp.src('./src/svg/symbols/*.svg')

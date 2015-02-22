@@ -31,7 +31,7 @@ if ($_SESSION[visited] != null && $_SESSION[visited] != "") {
       var mainTL = new TimelineLite()
         // .add(animateLogo_tripl3inf(), 2)
         .add(initMainMenu)
-      //.call( initPortfolio )
+        .call( initPortfolio )
       //.to( 'header .logo', 2, {autoAlpha:1}, 's1')
       //.from( 'header .logo', 1, {x:'-=300px'}, 's1')
       //.to( '#aaaLogo_footer', 4, {autoAlpha:1}, 's2' )
@@ -42,9 +42,6 @@ if ($_SESSION[visited] != null && $_SESSION[visited] != "") {
       $(window).load(function () {
           init();
       });
-      //var mySVGsToInject = document.querySelectorAll('img.svg-inject');
-      // Do the injection
-      //SVGInjector(mySVGsToInject, init());
     });
   </script>
 

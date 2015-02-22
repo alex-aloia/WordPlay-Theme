@@ -13,6 +13,7 @@ var initMainMenu = function () {
     circlePath2 = svg.selectAll('.center circle.center2'),
     ring1 = svg.selectAll('.ring1'),
     btns = svg.selectAll('.buttons > g'),
+    btn_mail = svg.selectAll('.btn-mail'),
     mainMenuTL = new TimelineMax()
       .set(ring1, {transformOrigin: "50% 50%"})
       //.set(menuItem[0], {autoAlpha: 0})
@@ -57,25 +58,27 @@ var initMainMenu = function () {
     //console.info('test')
   })
 
-  btns.on("mouseenter", function (d, i) {
-    console.info('IT WORKS!!!')
-  })
+
+
 
   menuItem.on("mouseleave", function (d, i) {
     //hoverTL.reversed();
     this.animation.reverse().timeScale(1.5)
   })
 
-  menuItem.on('mousedown', function (d, i) {
+  menuItem.on('mousedown', function() {
     d3.event.preventDefault();
-
     //if (!mainMenuTL.isActive()) {
     //  var li = menuItem[0][i];
     //  closeMenu(li)
     //}
   })
 
-//  test = $('svg');
+
+
+  btn_mail.on("mousedown", function() {
+    window.location.href = 'main/contact';
+  })
 
 
   closeMenu = function (current) {
