@@ -6,8 +6,8 @@
 session_start();
 
 
- get_template_part('templates/head');
- get_template_part('templates/header');
+get_template_part('templates/head');
+get_template_part('templates/header');
 ?>
 
 <body <?php body_class(); ?>>
@@ -20,35 +20,44 @@ session_start();
 
 <?php get_template_part('templates/footer'); ?>
 
+
 <?php wp_footer();
 // check for session variable
-if( $_SESSION[visited] != null && $_SESSION[visited] != "" ) {
- ?>
+if ($_SESSION[visited] != null && $_SESSION[visited] != "") {
+  ?>
   <script type="text/javascript">
+
+    function init() {
+      var mainTL = new TimelineLite()
+        // .add(animateLogo_tripl3inf(), 2)
+        .add(initMainMenu)
+      //.call( initPortfolio )
+      //.to( 'header .logo', 2, {autoAlpha:1}, 's1')
+      //.from( 'header .logo', 1, {x:'-=300px'}, 's1')
+      //.to( '#aaaLogo_footer', 4, {autoAlpha:1}, 's2' )
+      //.from( '#aaaLogo_footer', 1, {x:'+=300px'}, 's2')
+    }
+
     jQuery(function ($) {
-      $(window).load(function() {
-        var mainTL = new TimelineLite()
-         // .add(animateLogo_tripl3inf(), 2)
-          .add( initMainMenu )
-          .call( initPortfolio )
-          //.to( 'header .logo', 2, {autoAlpha:1}, 's1')
-          //.from( 'header .logo', 1, {x:'-=300px'}, 's1')
-          //.to( '#aaaLogo_footer', 4, {autoAlpha:1}, 's2' )
-          //.from( '#aaaLogo_footer', 1, {x:'+=300px'}, 's2')
+      $(window).load(function () {
+          init();
       });
+      //var mySVGsToInject = document.querySelectorAll('img.svg-inject');
+      // Do the injection
+      //SVGInjector(mySVGsToInject, init());
     });
   </script>
 
-  <?php
+<?php
 }
 // if session variable not set, set it
 else {
-  $_SESSION["visited"] = "true";
-  ?>
+$_SESSION["visited"] = "true";
+?>
 
   <script type="text/javascript">
     jQuery(function ($) {
-      $(window).load(function() {
+      $(window).load(function () {
         var mainTL = new TimelineLite()
 //          .add(animateLogo_tripl3inf())
 //          .add(animate_pwrdBy(), 6.5)

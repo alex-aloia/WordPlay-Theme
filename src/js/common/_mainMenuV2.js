@@ -12,6 +12,7 @@ var initMainMenu = function () {
     circlePath1 = svg.selectAll('.center circle.center1'),
     circlePath2 = svg.selectAll('.center circle.center2'),
     ring1 = svg.selectAll('.ring1'),
+    btns = svg.selectAll('.buttons > g'),
     mainMenuTL = new TimelineMax()
       .set(ring1, {transformOrigin: "50% 50%"})
       //.set(menuItem[0], {autoAlpha: 0})
@@ -28,55 +29,79 @@ var initMainMenu = function () {
   TweenLite.set(circlePath1, {drawSVG: 0, transform: 'rotate(90deg)', transformOrigin: "50% 50%"})
   TweenLite.set(circlePath2, {drawSVG: 0, transform: 'rotate(-90deg)', transformOrigin: "50% 50%"})
 
-  // hover event
-  menuItem.on("mouseenter", function (d, i) {
-    targetPath = circlePath1[i][0],
+
+  menuItem.each(function (d, i) {
+    var $this = this,
+      hoverTL = new TimelineLite({paused: true}),
+      targetPath = circlePath1[i][0],
       targetPath2 = circlePath2[i][0],
-      targetRing = ring1[i][0],
-    hoverTL = new TimelineLite()
-      .to(targetPath, 1, {autoAlpha: 0.3}, 0)
+      targetRing = ring1[i][0];
+    if (i === 0) {
+      hoverTL.to(btns[0][0], .3, {x: '-=80px', autoAlpha: '1'}, 0)
+        .to(btns[0][1], .3, {x: '-=60px', y: '+=40px', autoAlpha: '1'}, 0.2)
+        .to(btns[0][2], .3, {x: '-=40px', y: '+=65px', autoAlpha: '1'}, 0.4);
+    }
+    hoverTL.to(targetPath, 1, {autoAlpha: 0.3}, 0)
       .to(targetPath2, 1, {autoAlpha: 0.7}, 0)
       .fromTo(targetPath, 1, {drawSVG: '0'}, {drawSVG: '100%'}, 0)
       .fromTo(targetPath2, 1, {drawSVG: '0'}, {drawSVG: '100%'}, 0)
       .to(targetRing, 0.7, {autoAlpha: 0.7, stroke: '#9A40FF', directionalRotation: "0_short"}, 0)
       .to(link[0][i], 0.5, {color: '#aaff00'}, 0.3)
+    $this.animation = hoverTL;
+  })
+
+
+  // hover event
+  menuItem.on("mouseenter", function (d, i) {
+    this.animation.play()
+    //console.info('test')
+  })
+
+  btns.on("mouseenter", function (d, i) {
+    console.info('IT WORKS!!!')
   })
 
   menuItem.on("mouseleave", function (d, i) {
-    hoverTL.reverse();
+    //hoverTL.reversed();
+    this.animation.reverse().timeScale(1.5)
   })
 
   menuItem.on('mousedown', function (d, i) {
     d3.event.preventDefault();
 
-    if (!mainMenuTL.isActive()) {
-      var li = menuItem[0][i];
-      closeMenu(li)
-    }
+    //if (!mainMenuTL.isActive()) {
+    //  var li = menuItem[0][i];
+    //  closeMenu(li)
+    //}
   })
+
+//  test = $('svg');
+
 
   closeMenu = function (current) {
     var link = d3.select(current).select('a').node().href.split('/')[3];
     var siblings = $(current).siblings()
 
-    var gotoLink = function () {
-      if (link != null) {
-        if (link == 'featured-work') {
-          portTL.play('port_open')
-        }
-        //else if ( link === 'contact'){
-        //  loadContactForm()
-        //}
-        else {
-          window.location.href = link;
-        }
-      }
-    }
+    /*
+     var gotoLink = function () {
+     if (link != null) {
+     if (link == 'featured-work') {
+     portTL.play('port_open')
+     }
+     //else if ( link === 'contact'){
+     //  loadContactForm()
+     //}
+     else {
+     window.location.href = link;
+     }
+     }
+     }
+     */
 
     mainMenuTL.staggerTo(siblings, 1, {autoAlpha: 0}, 0.25)
       .to(current, 1, {autoAlpha: 0}, '-=0.7')
       .set(menuItem[0], {display: 'none'})
-      .call(gotoLink, [], '+=1')
+    //.call(gotoLink, [], '+=1')
 
   }
 
@@ -84,6 +109,8 @@ var initMainMenu = function () {
     mainMenuTL.set(menuItem[0], {display: 'inline-block'})
       .staggerTo(menuItem[0], 1, {autoAlpha: 1}, 0.25)
   }
+
+
 
 
   return mainMenuTL;

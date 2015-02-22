@@ -43,30 +43,34 @@ header {
         visibility: visible;
         .transparent();
 
+
         a {
-          .vert-center;
-          z-index: 99;
-          position: absolute;
-          top: 0;
-          width: 100%;
+          .centered();
+          .transparent();
+          color: @gray-light;
+
           outline: 0;
-          text-align: center;
           text-transform: uppercase;
           padding: 0;
-          color: @gray-light;
           font-family: Orbitron;
           text-shadow: 0 2px 5px #663399;
           font-size: 1.5em;
           font-weight: bold;
+
+          //pointer-events: none;
+
           &:hover {
-            cursor: pointer;
+            //cursor: hand;
+            //cursor: default;
             text-decoration: none;
           }
+
         }
+
 
         // link after hud1 svg
         #hud1 + a {
-          padding-left: 50px;
+          margin-left: 25px;
         }
 
 
@@ -76,57 +80,3 @@ header {
   }
 }
 
-.menu-contact{
-  .btnBG {
-    transform: translate(65px, 0px) !important;
-  }
-}
-
-.menu-about{
-  .btnBG {
-    transform: translate(0, 0px) !important;
-  }
-}
-
-#contact_BTN {
-
-  //display: none;
-
-  //    height: 125px;
-  //    width: 125px;
-  width: 8%;
-  min-width: 100px;
-  position: fixed;
-  right: 50px;
-  top: 10px;
-  z-index: 999;
-
-  > svg {
-    fill: @brand-primary;
-    height: 100%;
-    width: 100%;
-    display: block;
-    stroke: none;
-    #satWaves {
-      stroke: #666;
-      fill: none;
-      stroke-width: 5px;
-    }
-  }
-
-  .icons {
-    i {
-      color: #666;
-      font-size: 3em;
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      &:first-child {
-        padding-right: 10px;
-      }
-      &:nth-child(2) {
-        font-size: 4em;
-      }
-    }
-  }
-}

@@ -61,8 +61,8 @@ svg.logo {
 
 
 
-
 .hud_wrap {
+
   .rings {
     stroke: #1B1F77;
     stroke-width: 2px;
@@ -90,15 +90,25 @@ svg.logo {
     }
 
   }
-}
+  .buttons {
+    fill:  @brand-primary;
+    //z-index: 99;
+    cursor: pointer;
 
-#hud1 {
-  .sphere {
-    opacity: .7;
+    > g {
+      .transparent();
+
+      .crosshair {
+        fill: #9933FF;
+      }
+    }
   }
 }
 
+svg:hover {
+    cursor: hand;
 
+}
 
 
 //#triLoader {
