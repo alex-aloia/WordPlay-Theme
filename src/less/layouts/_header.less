@@ -11,10 +11,10 @@ header {
 
   .logo {
     position: absolute;
-    //top: 0;
-    //left: 20px;
+    top: 65px;
+    left: 50%;
     width: 400px;
-    .centered();
+    transform: translate(-50%, -50%);
     //.transparent();
 
     svg {
@@ -22,61 +22,110 @@ header {
     }
   }
 
-  #main_menu {
-    display: block;
-    margin: 0 auto;
-    position: absolute;
-    text-align: center;
-    //width: 80%;
+}
 
 
-    > ul {
-      //float: right;
+#main_menu {
+  display: block;
+  margin: 100px auto;
+  //position: absolute;
+  text-align: center;
+  //width: 80%;
+
+  > ul {
+    position: relative;
+    padding: 0;
+    margin: 0;
+
+    > li {
       position: relative;
-      //left: -50%; /* or right 50% */
-      > li {
-        position: relative;
-        width: 350px;
-//        height: 250px;
-        margin: 20px;
-        display: inline-block;
-        opacity: 1;
-        visibility: visible;
-        .transparent();
+      //width: 350px;
+      margin: 20px;
+      display: inline-block;
+      opacity: 1;
+      visibility: visible;
+      .transparent();
+      &:first-child {
+        margin-left: -8px;
+      }
 
+      a {
+        .centered();
+        color: @gray-light;
 
-        a {
-          .centered();
-          color: @gray-light;
+        outline: 0;
+        text-transform: uppercase;
+        padding: 0;
+        font-family: Orbitron;
+        text-shadow: 0 2px 5px #663399;
+        font-size: 1.5em;
+        font-weight: bold;
 
-          outline: 0;
-          text-transform: uppercase;
-          padding: 0;
-          font-family: Orbitron;
-          text-shadow: 0 2px 5px #663399;
-          font-size: 1.5em;
-          font-weight: bold;
+        //pointer-events: none;
 
-          //pointer-events: none;
-
-          &:hover {
-            //cursor: hand;
-            cursor: default;
-            text-decoration: none;
-          }
-
+        &:hover {
+          //cursor: hand;
+          cursor: default;
+          text-decoration: none;
         }
-
-
-        // link after hud1 svg
-        #hud1 + a {
-          margin-left: 25px;
-        }
-
 
       }
 
+      .hud_wrap {
+
+        .rings {
+          stroke: #1B1F77;
+          stroke-width: 2px;
+
+          .center circle {
+            stroke: @brand-primary;
+            stroke-width: 2px;
+          }
+
+          .ring1 {
+            stroke: #9933FF;
+            opacity: .9;
+          }
+
+          .ring2 {
+            opacity: .6;
+          }
+
+          .ring3 {
+            opacity: .4;
+          }
+
+          .ring4 {
+            opacity: .2;
+          }
+
+        }
+        .buttons {
+          fill: @brand-primary;
+          //z-index: 99;
+          cursor: pointer;
+          pointer-events: visible;
+
+          > g {
+            .transparent();
+
+            circle {
+              fill: none;
+            }
+
+            .crosshair {
+              fill: #1B1F77;
+            }
+          }
+        }
+      }
+
     }
+
+    // link after hud1 svg
+    #hud1 + a {
+      margin-left: 15px;
+    }
+
   }
 }
-

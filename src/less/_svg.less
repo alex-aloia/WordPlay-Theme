@@ -3,20 +3,6 @@ svg.logo {
   //fill: @brand-primary;
 }
 
-
-#intro_tripl3infLogo_wrap {
-  width: 60%;
-  display: none;
-}
-
-
-.home {
-  .symbol_tripl3infLogo,
-  #aaaLogo_footer {
-  }
-}
-
-
 .logo_tripl3inf {
   fill: @brand-primary;
 
@@ -44,121 +30,35 @@ svg.logo {
 
 
 
-#intro_aaaLogo {
-  //position: absolute;
-  display: block;
+
+
+
+
+
+
+
+
+#triLoader {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin: -125px 0 0 -125px;
   overflow: hidden;
-  width: 60%;
 
-
-  #aaaLogoPieces {
+  #triLoaderPieces {
     position: absolute;
     fill: #aaff00;
     stroke: #aaff00;
   }
 
-}
-
-
-
-
-.hud_wrap {
-
-  .rings {
-    stroke: #1B1F77;
-    stroke-width: 2px;
-
-    .center circle {
-      stroke: @brand-primary;
-      stroke-width: 2px;
-    }
-
-    .ring1 {
-      stroke: #9933FF;
-      opacity: .9;
-    }
-
-    .ring2 {
-      opacity: .6;
-    }
-
-    .ring3 {
-      opacity: .4;
-    }
-
-    .ring4 {
-      opacity: .2;
-    }
-
-  }
-  .buttons {
-    fill:  @brand-primary;
-    //z-index: 99;
-    cursor: pointer;
-    pointer-events: visible;
-
-    > g {
-      .transparent();
-
-      circle {
-        fill: none;
-      }
-
-      .crosshair {
-        fill: #1B1F77;
-      }
-    }
+  #triLoaderMask {
+    fill: #fff;
   }
 }
-
-svg:hover {
-    cursor: hand;
-
-}
-
-
-//#triLoader {
-//  position: absolute;
-//  top: 50%;
-//  left: 50%;
-//  margin: -250px 0 0 -250px;
-//  /*  overflow: hidden;*/
-//
-//  #triLoaderPieces {
-//    /*    position: absolute;*/
-//    fill: #aaff00;
-//    stroke: #aaff00;
-//  }
-//
-//  #triLoaderMask {
-//    /*    fill: #fff;*/
-//  }
-//}
-
-  #triLoader {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin: -125px 0 0 -125px;
-    overflow: hidden;
-
-    #triLoaderPieces {
-      position: absolute;
-      fill: #aaff00;
-      stroke: #aaff00;
-    }
-
-    #triLoaderMask {
-      fill: #fff;
-    }
-  }
-
-
-
 
 .container_pwrdBy {
-//  width: 600px;
+  //  width: 600px;
   text-align: center;
   font-size: 6em;
   font-style: italic;
@@ -168,11 +68,11 @@ svg:hover {
     position: relative;
     //visibility: hidden;
     //opacity: 0;
-    -webkit-font-smoothing:antialiased;
+    -webkit-font-smoothing: antialiased;
 
-//    &:first-child {
-//      margin-right: 20px;
-//    }
+    //    &:first-child {
+    //      margin-right: 20px;
+    //    }
   }
 }
 

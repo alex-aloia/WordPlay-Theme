@@ -3,7 +3,7 @@
  */
 
 var initMainMenu = function () {
-  $('#main_menu').center()
+  //$('#main_menu').center()
 
   mainMenu = d3.select('#main_menu'),
     menuItem = mainMenu.selectAll('li'),

@@ -1,12 +1,11 @@
-
 <footer class="content-info" role="contentinfo">
   <?php //dynamic_sidebar('sidebar-footer'); ?>
 
 
-    <a id="aaaLogo_footer" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-      <p>powered by:</p>
-      <svg class="logo aaaLogo"><use xlink:href="#aaaLogo-flat"></use></svg>
-    </a>
+  <a class="logo_aaa" href="<?php echo esc_url(home_url('/')); ?>">
+    <p>powered by:</p>
+    <?php get_template_part('assets/svg/logo', 'aaa.svg'); ?>
+  </a>
 
 </footer>
 

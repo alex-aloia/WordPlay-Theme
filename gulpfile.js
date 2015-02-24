@@ -94,43 +94,6 @@ gulp.task('copy-imgs', function () {
  *  SVG
  */
 
-// convert ids to classes
-gulp.task('id-to-class', function () {
-  return gulp
-    .src(['src/svg/processed/*.svg'])
-    .pipe(cheerio({
-      run: function ($, file) {
-
-
-        // Elements on which we want to convert ids to classes...
-        var shapesAndText = 'g,path,rect,circle,ellipse,line,polyline,polygon,altGlyph,textPath,text,tref,tspan';
-
-        // ...but don't touch any in defs/clipPath/masks tags
-        var excludeContainers = 'defs,clipPath,mask';
-
-        function inExcludedContainer(index, node) {
-          return $(node).parents(excludeContainers).length;
-        }
-
-        function convertIdToClass(index, node) {
-          var id = $(node).attr('id');
-          if (id) {
-            $(node).addClass(id);
-            $(node).removeAttr('id');
-          }
-        }
-
-        $('svg').find(shapesAndText).not(inExcludedContainer).each(convertIdToClass);
-
-      },
-
-      parserOptions: {
-        xmlMode: true
-      }
-
-    }))
-    .pipe(gulp.dest('src/svg/processed2/'));
-});
 
 
 gulp.task('svg-min', function () {
@@ -176,10 +139,79 @@ gulp.task('svg-min', function () {
         pretty: true
       }
     }))
+
+    .pipe(cheerio({
+      run: function ($, file) {
+
+
+        // Elements on which we want to convert ids to classes...
+        var shapesAndText = 'g,path,rect,circle,ellipse,line,polyline,polygon,altGlyph,textPath,text,tref,tspan';
+
+        // ...but don't touch any in defs/clipPath/masks tags
+        var excludeContainers = 'defs,clipPath,mask';
+
+        function inExcludedContainer(index, node) {
+          return $(node).parents(excludeContainers).length;
+        }
+
+        function convertIdToClass(index, node) {
+          var id = $(node).attr('id');
+          if (id) {
+            $(node).addClass(id);
+            $(node).removeAttr('id');
+          }
+        }
+
+        $('svg').find(shapesAndText).not(inExcludedContainer).each(convertIdToClass);
+
+      },
+
+      parserOptions: {
+        xmlMode: true
+      }
+
+    }))
     .pipe(gulp.dest('./src/svg/processed'));
 });
 
 
+// convert ids to classes
+gulp.task('id-to-class', function () {
+  return gulp
+    .src(['src/svg/processed/*.svg'])
+    .pipe(cheerio({
+      run: function ($, file) {
+
+
+        // Elements on which we want to convert ids to classes...
+        var shapesAndText = 'g,path,rect,circle,ellipse,line,polyline,polygon,altGlyph,textPath,text,tref,tspan';
+
+        // ...but don't touch any in defs/clipPath/masks tags
+        var excludeContainers = 'defs,clipPath,mask';
+
+        function inExcludedContainer(index, node) {
+          return $(node).parents(excludeContainers).length;
+        }
+
+        function convertIdToClass(index, node) {
+          var id = $(node).attr('id');
+          if (id) {
+            $(node).addClass(id);
+            $(node).removeAttr('id');
+          }
+        }
+
+        $('svg').find(shapesAndText).not(inExcludedContainer).each(convertIdToClass);
+
+      },
+
+      parserOptions: {
+        xmlMode: true
+      }
+
+    }))
+    .pipe(gulp.dest('src/svg/processed2/'));
+});
 //var sprite_config = {
 //    templates: {
 //        css: require("fs").readFileSync("./src/less/sprite-template.less", "utf-8")
