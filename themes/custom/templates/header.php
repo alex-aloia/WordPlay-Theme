@@ -11,8 +11,7 @@ if (!empty($post)) {
 
 <header class="banner" role="banner">
   <a href="<?php echo esc_url(home_url('/')); ?>" class="logo_tripl3inf logo">
-    <img width="1" height="1" src="http://dev.t3inf.com/content/uploads/logo_tripl3inf.svg"
-         class="svg-inject wp-post-image" alt="hud1">
+    <?php get_template_part('assets/svg/logo', 'tripl3inf.svg'); ?>
   </a>
 </header>
 
@@ -24,6 +23,11 @@ if (!empty($post)) {
 
       <li>
         <?php echo get_the_post_thumbnail($post_id, 'thumbnail', array('class' => 'svg-inject')); ?>
+
+        <?php
+        //$title = the_title();
+        //get_template_part('assets/svg/nav', '"'.$title.'svg');
+        ?>
         <a href="<?php echo the_permalink(); ?>"><?php the_title() ?></a>
       </li>
 
