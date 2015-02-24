@@ -43,7 +43,7 @@
         });
 
         logo_tripl3infTL
-            .set(container, {display:'block'})
+            .set(container, {display:'block', autoAlpha: 1})
             .staggerTo(letters[0], 0.8, {autoAlpha:1, strokeDashoffset: 0, ease:Sine.easeIn}, 0.25)
             .set(dd_letters[0], {transformOrigin:"50% 50%"})
             .addLabel('infSym', '-=2.5')

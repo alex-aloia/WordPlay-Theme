@@ -16,7 +16,7 @@ header {
     width: 400px;
     transform: translate(-50%, -50%);
     margin-left: 8px;
-    //.transparent();
+    .transparent();
 
     svg {
       width: 100%;
@@ -25,13 +25,22 @@ header {
 
 }
 
-
 #main_menu {
   display: block;
-  margin: 100px auto;
-  //position: absolute;
   text-align: center;
-  //width: 80%;
+  height: 350px;
+  //.centered-fhw();
+
+  position: absolute;
+  margin: 60px auto 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  @media (min-width: @screen-lg-min) {
+  margin: auto;
+}
 
   > ul {
     position: relative;
