@@ -368,9 +368,9 @@ gulp.task('watch', ['browser-sync'], function () {
 });
 
 // Default task to be run with `gulp`
-gulp.task('dev', ['copy-imgs', 'copy-fonts', 'less_dev', 'dev_js']);
-gulp.task('dev-build', ['copy-imgs', 'copy-fonts', 'svg-symbol', 'less_dev', 'dev_js', 'jshint', 'watch', 'browser-sync']);
+gulp.task('dev', ['copy-imgs', 'less_dev', 'dev_js']);
+gulp.task('dev-build', ['copy-imgs', 'less_dev', 'dev_js', 'jshint', 'watch', 'browser-sync']);
 gulp.task('dev-watch', ['less_dev', 'dev_js', 'watch', 'browser-sync']);
 gulp.task('dev-less', ['less_dev', 'watch', 'browser-sync']);
-gulp.task('default', ['copy-imgs', 'copy-fonts', 'copy-icon-fonts', 'less', 'js']);
+gulp.task('default', ['copy-imgs', 'less', 'js']);
 
