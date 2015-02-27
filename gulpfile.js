@@ -292,7 +292,7 @@ gulp.task('less', function () {
  */
 
 var js_foot = [
-  //'node_modules/svg-injector/svg-injector.js',
+  'vendor/bower/svg-injector/svg-injector.js',
   'vendor/bower/greensock/src/uncompressed/TweenMax.js',
   'vendor/bower/d3/d3.js',
 //  'vendor/bower/jquery-contentsize/jquery.contentsize.js',

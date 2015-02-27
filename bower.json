@@ -20,7 +20,8 @@
     "jquery-contentsize": "git@github.com:gilmoreorless/jquery-contentsize.git",
     "font-awesome": "~4.2.0",
     "jlayout": "git@github.com:bramstein/jlayout.git",
-    "jquery.center.js": "~0.3.0"
+    "jquery.center.js": "~0.3.0",
+    "svg-injector": "~1.1.2"
   },
   "resolutions": {
     "bootstrap": "~3.3.0",

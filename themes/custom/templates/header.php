@@ -19,15 +19,15 @@ if (!empty($post)) {
 <nav id="main_menu" class="menu" role="navigation">
   <ul>
     <?php while ($loop->have_posts()) : $loop->the_post();
-      $post_id = get_the_ID(); ?>
-
+          $post_id = get_the_ID();
+          $dir = get_template_directory_uri();
+          $title =  get_the_title();
+          $title = strtolower($title);
+          $svg_src = $dir . '/assets/svg/nav-menu-' . $title . '.svg';
+          $svg_img = '<img src="' . $svg_src . '" class="inject">';
+      ?>
       <li>
-        <?php echo get_the_post_thumbnail($post_id, 'thumbnail', array('class' => 'svg-inject')); ?>
-
-        <?php
-        //$title = the_title();
-        //get_template_part('assets/svg/nav', '"'.$title.'svg');
-        ?>
+        <?php echo $svg_img; ?>
         <a href="<?php echo the_permalink(); ?>"><?php the_title() ?></a>
       </li>
 

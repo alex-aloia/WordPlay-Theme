@@ -31,7 +31,7 @@ if ($_SESSION[visited] != null && $_SESSION[visited] != "") {
   <script type="text/javascript">
 
     function init() {
-      var mainTL = new TimelineLite()
+      var mainTL = new TimelineLite({delay:0.5})
         .add(animateLogo_tripl3inf, 0)
         .add(initMainMenu, 1)
         .add(animateLogo_aaa, 2)
@@ -41,12 +41,21 @@ if ($_SESSION[visited] != null && $_SESSION[visited] != "") {
       //.to( '#aaaLogo_footer', 4, {autoAlpha:1}, 's2' )
       //.from( '#aaaLogo_footer', 1, {x:'+=300px'}, 's2')
     }
+    // Elements to inject
+    var mySVGsToInject = document.querySelectorAll('img.inject');
 
-    jQuery(function ($) {
-      $(window).load(function () {
+    // Do the injection
+    SVGInjector(mySVGsToInject, null, function(){
+
+      jQuery(function ($) {
+        $(window).load(function () {
           init();
+        });
       });
+
     });
+
+
   </script>
 
 <?php
