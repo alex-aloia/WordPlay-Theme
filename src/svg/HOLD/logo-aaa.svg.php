@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" version="1.1" viewBox="0 0 339.1093 80.7484" enable-background="new 0 0 339.1093 80.7484" xml:space="preserve">
-    <g class="logo_aaa">
+  <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" version="1.1" viewBox="0 0 339.1093 80.7484" enable-background="new 0 0 339.1093 80.7484" xml:space="preserve">
+    <g class="wrap">
       <defs>
         <mask id="aaa_mask_1_" width="72.9574" height="69.5648" x="0" y="0" maskUnits="userSpaceOnUse">
           <path id="a1_1_" fill="#FFFFFF" d="M31.0089,51.9952c-1.8731,3.1474-4.043,6.5937-5.959,9.83h46.6074 C59.8966,41.4483,48.3096,21.419,36.505,0.9561c-11.7178,20.5078-23.2178,40.623-34.8477,61H13.505 c7.6679-13.4238,15.1816-26.3994,23.1523-40.3486c6.1855,10.7138,11.6211,19.9228,17.6758,30.374 C46.0577,51.9805,38.8487,51.9952,31.0089,51.9952z"/>

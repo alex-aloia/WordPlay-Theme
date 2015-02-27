@@ -5,7 +5,7 @@ node_modules
 vendor/**
 themes/**/assets/css/**
 themes/**/assets/img/**
-themes/**/assets/svg/**
+themes/**/assets/svg2/**
 themes/**/assets/js/**
 themes/**/assets/fonts/**
 sprite-index.html
