@@ -7,6 +7,7 @@ var initMainMenu = function () {
 
   mainMenu = d3.select('#main_menu'),
     menuItem = mainMenu.selectAll('li'),
+    portBtn = mainMenu.select('.works'),
     link = mainMenu.selectAll('a'),
     svg = menuItem.selectAll('svg'),
     circlePath1 = svg.selectAll('.center circle.center1'),
@@ -20,11 +21,6 @@ var initMainMenu = function () {
       .staggerTo(menuItem[0], 2.5, {autoAlpha: 1}, 0.3, 'ringS1')
       .staggerTo(ring1, 2, {autoAlpha: 0.5}, 0.4, 'ringS1+=0.5')
       .staggerTo(ring1, 3, {directionalRotation: "90_cw", ease: Back.easeOut}, 0.4, 'ringS1+=1')
-
-
-  link.on('click', function () {
-    d3.event.preventDefault();
-  })
 
   //TweenLite.set(circlePath1, {drawSVG: '50%'})
   TweenLite.set(circlePath1, {drawSVG: 0, transform: 'rotate(90deg)', transformOrigin: "50% 50%"})
@@ -51,60 +47,61 @@ var initMainMenu = function () {
     $this.animation = hoverTL;
   })
 
-
-  // hover event
-  menuItem.on("mouseenter", function (d, i) {
-    this.animation.play()
-    //console.info('test')
+  link.on('click', function () {
+    d3.event.preventDefault();
   })
 
+  // hover event
+  menuItem.on("mouseenter", function () {
+    if (!mainMenuTL.isActive()) {
+      this.animation.play()
+    }
+  })
 
-
-
-  menuItem.on("mouseleave", function (d, i) {
-    //hoverTL.reversed();
+  menuItem.on("mouseleave", function () {
     this.animation.reverse().timeScale(1.5)
   })
 
-  menuItem.on('mousedown', function() {
+  menuItem.on('mousedown', function(d, i) {
     d3.event.preventDefault();
-    //if (!mainMenuTL.isActive()) {
-    //  var li = menuItem[0][i];
-    //  closeMenu(li)
-    //}
+    if (!mainMenuTL.isActive()) {
+      var current = menuItem[0][i];
+      closeMenu(current)
+
+    }
   })
 
-
-
+/*
   btn_mail.on("mousedown", function() {
     window.location.href = 'main/contact';
   })
 
+  portBtn.on("mousedown", function() {
+    portTL.play('port_open');
+  })
+*/
 
   closeMenu = function (current) {
-    var link = d3.select(current).select('a').node().href.split('/')[3];
+    var link = d3.select(current).select('a').node().href.split('/')[4];
     var siblings = $(current).siblings()
+//console.log(link)
 
-    /*
      var gotoLink = function () {
-     if (link != null) {
-     if (link == 'featured-work') {
-     portTL.play('port_open')
+//     if (link != null) {
+       if (link == 'works') {
+         portTL.play('port_open')
+       }
+       //else if ( link === 'contact'){
+       //  loadContactForm()
+       //}
      }
-     //else if ( link === 'contact'){
-     //  loadContactForm()
-     //}
-     else {
-     window.location.href = link;
-     }
-     }
-     }
-     */
 
-    mainMenuTL.staggerTo(siblings, 1, {autoAlpha: 0}, 0.25)
-      .to(current, 1, {autoAlpha: 0}, '-=0.7')
+    mainMenuTL
+      .to(current, 2, {autoAlpha: 0}, 0)
+      .staggerTo(menuItem[0], 1, {autoAlpha: 0}, 0.25)
       .set(menuItem[0], {display: 'none'})
-    //.call(gotoLink, [], '+=1')
+      .call(gotoLink)
+
 
   }
 
@@ -112,9 +109,6 @@ var initMainMenu = function () {
     mainMenuTL.set(menuItem[0], {display: 'inline-block'})
       .staggerTo(menuItem[0], 1, {autoAlpha: 1}, 0.25)
   }
-
-
-
 
   return mainMenuTL;
 

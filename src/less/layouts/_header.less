@@ -16,7 +16,7 @@ header {
     width: 400px;
     transform: translate(-50%, -50%);
     margin-left: 8px;
-    .transparent();
+    .trans();
 
     svg {
       width: 100%;
@@ -30,6 +30,7 @@ header {
   text-align: center;
   height: 350px;
   //.centered-fhw();
+  z-index: 5;
 
   position: absolute;
   margin: 60px auto 0;
@@ -54,7 +55,7 @@ header {
       display: inline-block;
       opacity: 1;
       visibility: visible;
-      .transparent();
+      .trans();
       &:first-child {
         margin-left: -8px;
       }
@@ -117,7 +118,7 @@ header {
           pointer-events: visible;
 
           > g {
-            .transparent();
+            .trans();
 
             circle {
               fill: none;

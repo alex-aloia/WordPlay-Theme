@@ -1,5 +1,31 @@
 var theme_name = 'custom';
 
+var js_foot = [
+  'vendor/bower/svg-injector/svg-injector.js',
+  'vendor/bower/imagesloaded/imagesloaded.pkgd.js',
+  'vendor/bower/greensock/src/uncompressed/TweenMax.js',
+  'vendor/bower/d3/d3.js',
+//  'vendor/bower/jquery-contentsize/jquery.contentsize.js',
+  'vendor/bower/jlayout/lib/jquery.sizes.js',
+  'vendor/bower/jlayout/lib/jlayout.flow.js',
+  'vendor/bower/jlayout/lib/jquery.jlayout.js',
+  'vendor/bower/jquery.center.js/src/jquery.center.js',
+//  'vendor/bower/bootstrap/js/transition.js',
+//  'vendor/bower/bootstrap/js/alert.js',
+//  'vendor/bower/bootstrap/js/button.js',
+//  'vendor/bower/bootstrap/js/carousel.js',
+//  'vendor/bower/bootstrap/js/collapse.js',
+//  'vendor/bower/bootstrap/js/dropdown.js',
+//  'vendor/bower/bootstrap/js/modal.js',
+//  'vendor/bower/bootstrap/js/tooltip.js',
+//  'vendor/bower/bootstrap/js/popover.js',
+//  'vendor/bower/bootstrap/js/scrollspy.js',
+//  'vendor/bower/bootstrap/js/tab.js',
+//  'vendor/bower/bootstrap/js/affix.js',
+  'src/js/plugins/*.js',
+  'src/js/common/_*.js',
+  'src/js/_main.js'
+];
 
 var gulp = require('gulp'),
 //var mainBowerFiles = require('main-bower-files'),
@@ -271,31 +297,6 @@ gulp.task('less', function () {
  * javascript
  */
 
-var js_foot = [
-  'vendor/bower/svg-injector/svg-injector.js',
-  'vendor/bower/greensock/src/uncompressed/TweenMax.js',
-  'vendor/bower/d3/d3.js',
-//  'vendor/bower/jquery-contentsize/jquery.contentsize.js',
-  'vendor/bower/jlayout/lib/jquery.sizes.js',
-  'vendor/bower/jlayout/lib/jlayout.flow.js',
-  'vendor/bower/jlayout/lib/jquery.jlayout.js',
-  'vendor/bower/jquery.center.js/src/jquery.center.js',
-//  'vendor/bower/bootstrap/js/transition.js',
-//  'vendor/bower/bootstrap/js/alert.js',
-//  'vendor/bower/bootstrap/js/button.js',
-//  'vendor/bower/bootstrap/js/carousel.js',
-//  'vendor/bower/bootstrap/js/collapse.js',
-//  'vendor/bower/bootstrap/js/dropdown.js',
-//  'vendor/bower/bootstrap/js/modal.js',
-//  'vendor/bower/bootstrap/js/tooltip.js',
-//  'vendor/bower/bootstrap/js/popover.js',
-//  'vendor/bower/bootstrap/js/scrollspy.js',
-//  'vendor/bower/bootstrap/js/tab.js',
-//  'vendor/bower/bootstrap/js/affix.js',
-  'src/js/plugins/*.js',
-  'src/js/common/_*.js',
-  'src/js/_main.js'
-];
 
 
 gulp.task('js', function () {

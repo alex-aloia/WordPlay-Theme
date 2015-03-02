@@ -26,7 +26,7 @@ if (!empty($post)) {
           $svg_src = $dir . '/assets/svg/nav-menu-' . $title . '.svg';
           $svg_img = '<img src="' . $svg_src . '" class="inject">';
       ?>
-      <li>
+      <li class="<?php echo $title; ?>">
         <?php echo $svg_img; ?>
         <a href="<?php echo the_permalink(); ?>"><?php the_title() ?></a>
       </li>

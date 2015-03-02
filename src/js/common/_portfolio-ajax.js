@@ -1,6 +1,7 @@
 // Portfolio AJAX
 
 var ajax_active = false;
+
 portTL = new TimelineMax({paused: true});
 
 var initPortfolio = function () {
@@ -25,11 +26,12 @@ var initPortfolio = function () {
     },
     success: function (response) {
       if (response.success) {
-        $('#portfolio').empty();
         createSVGimgs(response.data);
       }
     },
-    //complete: function () {},
+    complete: function (response) {
+      layout();
+    },
     error: function (response) {
       console.log('error =' + response.error);
     }
@@ -37,9 +39,21 @@ var initPortfolio = function () {
 }
 
 
+var layout = function (container) {
+  var container = $('#portfolio ul');
+  container.layout({
+    type: 'flow',
+    alignment: 'center',
+    resize: false,
+    hgap: 50,
+    vgap: 50
+//          items: li
+  });
+}
+
 var loadPortfolioDetail = function (d) {
 
-    var url = d.img_url,
+  var url = d.img_url,
     w = d.img_w,
     h = d.img_h,
     win_w = document.documentElement.clientWidth - 100,
@@ -87,7 +101,6 @@ var loadPortfolioDetail = function (d) {
   }
 }
 
-
 var createSVGimgs = function (jsonObj) {
 
   var container = d3.select('body').append('div').attr('id', 'portfolio'),
@@ -126,42 +139,11 @@ var createSVGimgs = function (jsonObj) {
       })
       .style('-webkit-filter', function (d, i) {
         return 'url(#filter_' + i + ')';
-      });
-
-  closeBtn = d3.select('body').append('i').attr('id', 'portCloseBtn').attr('class', ' fa fa-chevron-left');
-
-  var portItems = $('#portfolio ul'),
-    layout = function () {
-      portItems.layout({
-        type: 'flow',
-        alignment: 'center',
-        resize: false,
-        hgap: 50,
-        vgap: 50,
-        items: li[0]
-      });
-      scrollH = portItems.prop('scrollHeight');
-      portItems.parent().height(scrollH);
-    };
-
-  $(window).resize(function () {
-    layout();
-  });
-
-  layout();
-
-  portTL.add('port_open')
-    .set(container, {'z-index': '9'})
-    .staggerFrom(li[0], 0.75, {y: '-=200px', ease: Expo.easeIn}, 0.15, 'in')
-    .staggerTo(li[0], 0.75, {autoAlpha: 1, ease: Expo.easeIn}, 0.15, 'in')
-    .to(closeBtn, 0.5, {autoAlpha: 1}, 'in')
-    .addPause('port_close')
-    .to(closeBtn, 0.5, {autoAlpha: 0})
-    .staggerTo(li[0], 0.5, {y: '+=300px', ease: Circ.easeOut}, 0.1, 'out')
-    .staggerTo(li[0], 0.5, {autoAlpha: 0, ease: Sine.easeOut}, 0.1, 'out')
-    .set(container, {'z-index': '-9'})
+      }),
+    closeBtn = d3.select('body').append('i').attr('id', 'portCloseBtn').attr('class', ' fa fa-chevron-left');
 
   // Event handlers
+
   li.on('mouseover', function (d, i) {
     TweenLite.to(filter[0][i], 0.3, {attr: {"values": 1}, ease: Linear.easeNone});
   })
@@ -171,7 +153,7 @@ var createSVGimgs = function (jsonObj) {
     })
 
     .on('mousedown', function (d) {
-      if ( !portTL.isActive() ) {
+      if (!portTL.isActive()) {
         portTL.play('port_close')
           .eventCallback('onComplete', null)
           .eventCallback('onComplete', loadPortfolioDetail, [d]);
@@ -197,6 +179,36 @@ var createSVGimgs = function (jsonObj) {
       TweenLite.to(this, 0.6, {color: '#666', scale: 1});
     })
 
+
+
+  $(window).resize(function () {
+    layout();
+  });
+
+  var container2 = document.querySelectorAll('#portfolio');
+
+  portTL.add('port_open')
+    //.call(layout, 0)
+    .set(container2, {autoAlpha:1, 'z-index':999})
+    //.staggerFrom(li[0], 0.75, {y: '-=200px', ease: Expo.easeIn}, 0.15, 'in')
+    .staggerTo(li[0], 0.75, {autoAlpha: 1, ease: Expo.easeIn}, 0.15, 'in')
+    .to(closeBtn, 0.5, {autoAlpha: 1}, 'in')
+    .addPause('port_close')
+    .to(closeBtn, 0.5, {autoAlpha: 0})
+    .staggerTo(li[0], 0.5, {y: '+=300px', ease: Circ.easeOut}, 0.1, 'out')
+    .staggerTo(li[0], 0.5, {autoAlpha: 0, ease: Sine.easeOut}, 0.1, 'out')
+    .set(container, {'z-index': '-9'})
+
+
+
+  var imgsLoaded = imagesLoaded(list.node());
+  imgsLoaded.on('done', function (instance) {
+    layout();
+  });
+
 };
+
+
+
 
 
