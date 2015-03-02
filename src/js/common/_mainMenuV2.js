@@ -17,12 +17,10 @@ var initMainMenu = function () {
     btn_mail = svg.selectAll('.btn-mail'),
     mainMenuTL = new TimelineMax()
       .set(ring1, {transformOrigin: "50% 50%"})
-      //.set(menuItem[0], {autoAlpha: 0})
-      .staggerTo(menuItem[0], 2.5, {autoAlpha: 1}, 0.3, 'ringS1')
-      .staggerTo(ring1, 2, {autoAlpha: 0.5}, 0.4, 'ringS1+=0.5')
-      .staggerTo(ring1, 3, {directionalRotation: "90_cw", ease: Back.easeOut}, 0.4, 'ringS1+=1')
+      .staggerTo(menuItem[0], 1.5, {autoAlpha: 1}, 0.3, 'ringS1')
+//      .staggerTo(ring1, 1.5, {autoAlpha: 0.5}, 0.4, 'ringS1')
+      .staggerTo(ring1, 1.5, {directionalRotation: "90_cw", ease: Back.easeOut}, 0.3, 'ringS1')
 
-  //TweenLite.set(circlePath1, {drawSVG: '50%'})
   TweenLite.set(circlePath1, {drawSVG: 0, transform: 'rotate(90deg)', transformOrigin: "50% 50%"})
   TweenLite.set(circlePath2, {drawSVG: 0, transform: 'rotate(-90deg)', transformOrigin: "50% 50%"})
 
@@ -53,9 +51,9 @@ var initMainMenu = function () {
 
   // hover event
   menuItem.on("mouseenter", function () {
-    if (!mainMenuTL.isActive()) {
+    //if (!mainMenuTL.isActive()) {
       this.animation.play()
-    }
+    //}
   })
 
   menuItem.on("mouseleave", function () {
@@ -64,45 +62,24 @@ var initMainMenu = function () {
 
   menuItem.on('mousedown', function(d, i) {
     d3.event.preventDefault();
-    if (!mainMenuTL.isActive()) {
-      var current = menuItem[0][i];
-      closeMenu(current)
-
-    }
   })
 
-/*
   btn_mail.on("mousedown", function() {
-    window.location.href = 'main/contact';
+    closeMenu(alert('test'));
   })
 
   portBtn.on("mousedown", function() {
-    portTL.play('port_open');
+    closeMenu(portTL.play());
+    //closeMenu();
+
   })
-*/
 
-  closeMenu = function (current) {
-    var link = d3.select(current).select('a').node().href.split('/')[4];
-    var siblings = $(current).siblings()
-//console.log(link)
-
-     var gotoLink = function () {
-//     if (link != null) {
-       if (link == 'works') {
-         portTL.play('port_open')
-       }
-       //else if ( link === 'contact'){
-       //  loadContactForm()
-       //}
-     }
-
-    mainMenuTL
-      .to(current, 2, {autoAlpha: 0}, 0)
-      .staggerTo(menuItem[0], 1, {autoAlpha: 0}, 0.25)
-      .set(menuItem[0], {display: 'none'})
-      .call(gotoLink)
-
-
+  var closeMenu = function () {
+    var closeAnimation = new TweenMax.staggerTo(menuItem[0],.8, {autoAlpha: 0}, .4)
+      //.set(menuItem[0], {display: 'none'})
+      //if( callback ){
+        //closeAnimation.eventCallback('onComplete', callback)
+      //}
   }
 
   openMenu = function () {

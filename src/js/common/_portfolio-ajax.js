@@ -190,7 +190,7 @@ var createSVGimgs = function (jsonObj) {
   portTL.add('port_open')
     //.call(layout, 0)
     .set(container2, {autoAlpha:1, 'z-index':999})
-    //.staggerFrom(li[0], 0.75, {y: '-=200px', ease: Expo.easeIn}, 0.15, 'in')
+    .staggerFrom(li[0], 0.75, {y: '-=200px', ease: Circ.easeIn}, 0.15, 'in')
     .staggerTo(li[0], 0.75, {autoAlpha: 1, ease: Expo.easeIn}, 0.15, 'in')
     .to(closeBtn, 0.5, {autoAlpha: 1}, 'in')
     .addPause('port_close')
