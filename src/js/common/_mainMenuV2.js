@@ -69,22 +69,20 @@ var initMainMenu = function () {
   })
 
   portBtn.on("mousedown", function() {
-    closeMenu(portTL.play());
-    //closeMenu();
-
+    closeMenu(portOpen());
+    console.log('port btn down')
   })
 
-  var closeMenu = function () {
-    var closeAnimation = new TweenMax.staggerTo(menuItem[0],.8, {autoAlpha: 0}, .4)
-      //.set(menuItem[0], {display: 'none'})
-      //if( callback ){
-        //closeAnimation.eventCallback('onComplete', callback)
-      //}
+  closeMenu = function () {
+    var hideMenu = function(){
+      TweenLite.set(mainMenu, {display: 'none'}).delay(1);
+    }
+    var closeAnimation = new TweenMax.staggerTo(menuItem[0],.8, {autoAlpha: 0, onComplete: hideMenu}, .4);
   }
 
   openMenu = function () {
-    mainMenuTL.set(menuItem[0], {display: 'inline-block'})
-      .staggerTo(menuItem[0], 1, {autoAlpha: 1}, 0.25)
+    TweenLite.set(mainMenu, {display: 'block'})
+    var openAnimation = new TweenMax.staggerTo(menuItem[0],.8, {autoAlpha: 1}, .4);
   }
 
   return mainMenuTL;

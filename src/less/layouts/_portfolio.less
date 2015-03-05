@@ -1,6 +1,7 @@
 #portfolio {
- // display: none;
-  .trans();
+  z-index: -1;
+  // display: none;
+  // .trans();
   //width: 95%;
   //height: 90%;
   //margin: 150px auto 0;
@@ -8,23 +9,22 @@
   > ul {
     list-style: none;
     min-height: 600px;
+    height: 800px;
     width: 94%;
     margin: 100px auto;
     padding: 0;
     display: block;
-    overflow: none;
-      position: relative;
+    //  overflow: none;
+    position: relative;
     //.trans();
     //visibility: hidden;
-    z-index: -9;
-
 
     > li {
       display: inline-block;
       margin: 0;
       padding: 0;
-     .trans();
-//      position: absolute;
+      .trans();
+      position: absolute;
 
       svg {
         width: 1px;
@@ -39,15 +39,37 @@
   }
 }
 
-#portCloseBtn {
-  visibility: hidden;
-  opacity: 0;
+.port_arw,
+.port_close {
   position: fixed;
-  top: 50%;
-  left: 25px;
-  color: #666;
-  font-size: 3em;
   z-index: 999;
+}
+
+.port_arw {
+  display: none;
+  width: 200px;
+  bottom: 25px;
+  left: 25px;
+
+  .arw,
+  .arw_rev {
+    .trans();
+  }
+
+  .hover_pointer();
+}
+
+.port_close {
+  //display: none;
+  width: 60px;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 0);
+  .hover_pointer();
+
+  path {
+    //.trans();
+  }
 }
 
 .portDetailBox {
@@ -55,15 +77,6 @@
   visibility: hidden;
   opacity: 0;
 
-  .detailBtn{
-    position: absolute;
-    top: -1em;
-    left: -1em;
-    visibility: hidden;
-    opacity: 0;
-    font-size: 3em;
-    z-index: 999;
-  }
 }
 
 

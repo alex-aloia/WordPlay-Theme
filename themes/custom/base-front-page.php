@@ -21,7 +21,6 @@ get_template_part('templates/header');
 
 <?php get_template_part('templates/footer'); ?>
 
-
 <?php wp_footer(); ?>
 
   <script type="text/javascript">
@@ -31,23 +30,34 @@ get_template_part('templates/header');
       jQuery(function ($) {
         var mainTL = new TimelineLite({delay: 0.5})
          // .add(animateLogo_tripl3inf, 0)
-          .add(initMainMenu, 1)
+          .add(initMainMenu, 0)
          // .add(animateLogo_aaa, 2)
           .call( initPortfolio )
         //.to( 'header .logo', 2, {autoAlpha:1}, 's1')
         //.from( 'header .logo', 1, {x:'-=300px'}, 's1')
         //.to( '#aaaLogo_footer', 4, {autoAlpha:1}, 's2' )
         //.from( '#aaaLogo_footer', 1, {x:'+=300px'}, 's2')
+        //setTimeout(function(){ backBtn(); }, 200);
       });
-
 
 
     }
     // Elements to inject
-    var mySVGsToInject = document.querySelectorAll('img.inject');
+    var SVGsToInject = document.querySelectorAll('img.inject');
 
+    // Options
+    var injectorOptions = {
+      each: function (svg) {
+        // Callback after each SVG is injected
+        console.log('SVG injected: ' + svg.getAttribute('id'));
+      }
+    };
     // Do the injection
-    SVGInjector(mySVGsToInject, null, init());
+    SVGInjector(SVGsToInject, null, init());
+
+
+
+
 
 
   </script>
