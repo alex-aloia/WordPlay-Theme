@@ -71,8 +71,9 @@ add_action('wp_ajax_portfolio_page_request', 'portfolio_page_request');
 add_action('wp_ajax_nopriv_portfolio_page_request', 'portfolio_page_request');
 
 
-function contact_page_request()
-{
+
+/*
+function contact_page_request(){
 
   $nonce = $_POST['postCommentNonce'];
   if (!wp_verify_nonce($nonce, 'myajax-post-comment-nonce')) die ('Busted!');
@@ -108,3 +109,4 @@ function contact_page_request()
 
 add_action('wp_ajax_contact_page_request', 'contact_page_request');
 add_action('wp_ajax_nopriv_contact_page_request', 'contact_page_request');
+*/

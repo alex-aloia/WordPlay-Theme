@@ -10,13 +10,23 @@ header {
   z-index: 0;
 
   .logo {
-    position: absolute;
-    top: 65px;
-    left: 50%;
-    width: 400px;
-    transform: translate(-50%, -50%);
-    margin-left: 8px;
-    .trans();
+    display: block;
+    //min-width:200px;
+    //max-width: 350px;
+    //width: 100%;
+    //position: absolute;
+    margin: 0 auto;
+    padding: 0 20px;
+    //top: 65px;
+    //left: 50%;
+    //width: 400px;
+    //transform: translate(-50%, -50%);
+    //margin-left: 8px;
+    //.trans();
+
+    @media (min-width: @screen-md){
+      padding: 10px 20px 0 40px;
+    }
 
     svg {
       width: 100%;
@@ -48,7 +58,10 @@ header {
     padding: 0;
     margin: 0;
 
+
     > li {
+
+      display: none;
       position: relative;
       //width: 350px;
       margin: 20px;

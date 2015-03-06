@@ -65,7 +65,7 @@ var initMainMenu = function () {
   })
 
   btn_mail.on("mousedown", function() {
-    closeMenu(alert('test'));
+    contactTL.play();
   })
 
   portBtn.on("mousedown", function() {

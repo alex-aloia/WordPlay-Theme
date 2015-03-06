@@ -119,7 +119,7 @@ var loadPortfolioDetail = function (d) {
 
 var createSVGimgs = function (jsonObj) {
 
-  var container = d3.select('body').append('div').attr('id', 'portfolio'),
+  var container = d3.select('.content').append('div').attr('id', 'portfolio'),
     list = container.append("ul"),
     li = list.selectAll("li")
       .data(jsonObj)
