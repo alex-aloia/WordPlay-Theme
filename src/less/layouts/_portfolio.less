@@ -8,11 +8,11 @@
 
   > ul {
     list-style: none;
-    min-height: 600px;
-    height: 800px;
+    min-height: 800px;
+    //height: 800px;
     width: 80%;
     margin: 100px auto;
-    padding: 0;
+    padding: 0 0 200px 0;
     display: block;
     //  overflow: none;
     position: relative;
@@ -24,7 +24,11 @@
       margin: 0;
       padding: 0;
       .trans();
-      position: absolute;
+      //position: absolute;
+
+      &:last-child {
+        margin-bottom: 125px;
+      }
 
       svg {
         width: 1px;
@@ -47,9 +51,10 @@
 
 .port_arw {
   display: none;
-  width: 200px;
-  bottom: 25px;
-  left: 25px;
+  width: 150px;
+  bottom: 65px;
+  left: 50%;
+  transform: translate(-50%, 0);
 
   .arw,
   .arw_rev {
@@ -61,9 +66,10 @@
 
 .port_close {
   //display: none;
-  width: 60px;
+  width: 50px;
+  height: 50px;
   left: 50%;
-  bottom: 0;
+  bottom: 80px;
   transform: translate(-50%, 0);
   .hover_pointer();
 
@@ -76,6 +82,11 @@
   text-align: center;
   visibility: hidden;
   opacity: 0;
+  position: absolute;
+  top: 150px;
+  width: 100%;
+  z-index: -1;
+  //.centered();
 
 }
 

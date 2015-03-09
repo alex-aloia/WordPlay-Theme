@@ -2,10 +2,11 @@
  * Created by tripl3inf on 1/14/15.
  */
 
-var initMainMenu = function () {
+initMainMenu = function () {
   //$('#main_menu').center()
 
-  mainMenu = d3.select('#main_menu'),
+  var body = document.querySelector('body'),
+    mainMenu = d3.select('#main_menu'),
     menuItem = mainMenu.selectAll('li'),
     portBtn = mainMenu.select('.works'),
     link = mainMenu.selectAll('a'),
@@ -32,8 +33,8 @@ var initMainMenu = function () {
       targetPath2 = circlePath2[i][0],
       targetRing = ring1[i][0];
     if (i === 0) {
-      hoverTL.to(btns[0][0], .3, {x: '-=80px', autoAlpha: '1'}, 0)
-        .to(btns[0][1], .3, {x: '-=60px', y: '+=40px', autoAlpha: '1'}, 0.2)
+      hoverTL.to(btns[0][0], .3, {x: '-=85px', autoAlpha: '1'}, 0)
+        .to(btns[0][1], .3, {x: '-=75px', y: '+=45px', autoAlpha: '1'}, 0.2)
         .to(btns[0][2], .3, {x: '-=40px', y: '+=65px', autoAlpha: '1'}, 0.4);
     }
     hoverTL.to(targetPath, 1, {autoAlpha: 0.3}, 0)
@@ -75,12 +76,15 @@ var initMainMenu = function () {
 
   closeMenu = function () {
     var hideMenu = function(){
-      TweenLite.set(mainMenu, {display: 'none'}).delay(1);
+      TweenLite.set(mainMenu, {display: 'none'})
+      TweenLite.set($('body'), {overflow: 'scroll'});
     }
     var closeAnimation = new TweenMax.staggerTo(menuItem[0],.8, {autoAlpha: 0, onComplete: hideMenu}, .4);
   }
 
   openMenu = function () {
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+    TweenLite.set($('body'), {overflow: 'hidden'})
     TweenLite.set(mainMenu, {display: 'block'})
     var openAnimation = new TweenMax.staggerTo(menuItem[0],.8, {autoAlpha: 1}, .4);
   }

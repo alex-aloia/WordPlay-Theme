@@ -1,30 +1,34 @@
 footer {
   width: 100%;
-  height: 300px;
+  height: 150px;
   position: fixed;
   bottom: 0;
+  z-index: 0;
 
-  background: url("../img/bg_rev.png") bottom transparent;
+  background-image: url("../img/bg_rev_v2.png");
+  background-position: 0;
   background-repeat: repeat-x;
 
   .logo_aaa {
     position: absolute;
     display: block;
-    width: 200px;
+    max-width: 150px;
+    width: 100%;
     left: 50%;
     bottom: 0px;
-    width: 50%;
-    max-width: 300px;
-    min-width: 250px;
+    //width: 50%;
+    //max-width: 300px;
+    //min-width: 250px;
 
     transform: translate(-50%, 0);
 
     p {
       .trans();
-      color: @gray;
+      color: @gray-light;
       position: absolute;
-      left: -30px;
-      top: -25px;
+      left: -60px;
+      top: 0;
+      font-size: 10px;
       div.char {
         .trans();
       }
@@ -41,78 +45,12 @@ footer {
         stroke: @brand-primary;
         stroke-miterlimit: 10;
       }
-
     }
+
+    @media (min-width: @screen-sm) {
+      max-width: 200px;
+    }
+
   }
 }
-
-//footer {
-//  .container-fluid();
-//  width: 100%;
-//  height: 68px;
-//  position: fixed;
-//  bottom: 0;
-//  left: 0;
-//  min-width: 800px;
-//  padding: 0;
-//  background: #000 url(../img/bg_black-stripe.svg) repeat-x;
-//  display: block;
-//
-//  nav.navbar-fixed-bottom {
-//    width: 90%;
-//    height: 40px;
-//    margin: 0 auto 5px;
-//
-//    ul#menu-footer-nav {
-//      position: absolute;
-//      left: 1.5em;
-//      bottom: 5px;
-//
-//      li a {
-//        color: #555;
-//        //font-weight: bold;
-//        padding: 0 2.5em 0 0;
-//
-//        &:before {
-//          color: @brand-primary;
-//          background-position: 0em 0em;
-//          display: inline-block;
-//          font-family: FontAwesome;
-//          font-style: normal;
-//          font-variant: normal;
-//          font-weight: normal;
-//          line-height: 1;
-//          font-size-adjust: none;
-//          font-stretch: normal;
-//          -moz-font-feature-settings: normal;
-//          -moz-font-language-override: normal;
-//          font-size: inherit;
-//          text-rendering: auto;
-//          -moz-osx-font-smoothing: grayscale;
-//          font-size: 1.75em;
-//          position: relative;
-//          top: 0.12em;
-//          left: -0.3em;
-//        }
-//        &:hover {
-//          color: @brand-info;
-//        }
-//      }
-//      li.menu-work a:before {
-//        content: "\f085";
-//      }
-//
-//      li.menu-home a:before {
-//        content: "\f015";
-//      }
-//      li.menu-about a:before {
-//        content: "\f183";
-//      }
-//    }
-//
-//
-//  }
-//
-//
-//}
 

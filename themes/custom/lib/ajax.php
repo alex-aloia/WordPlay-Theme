@@ -26,10 +26,10 @@ function portfolio_page_request()
     $info = sanitize_text_field($info[0]);
 
     $thumb_id = get_post_thumbnail_id();
-    $thumb = wp_get_attachment_image_src($thumb_id, 'full');
+    $thumb = wp_get_attachment_image_src($thumb_id, 'large');
     //$thumb = sanitize_text_field( wp_get_attachment_url( get_post_thumbnail_id($postID) ));
 
-				$thumb_sml = wp_get_attachment_thumb_url($thumb_id);
+		$thumb_sml = wp_get_attachment_thumb_url($thumb_id);
 
     $imgW = get_post_meta($post->ID, 'port_imgW');
     $imgW = sanitize_text_field($imgW[0]);
@@ -43,12 +43,12 @@ function portfolio_page_request()
       'ID' => $thumb_id,
       'title' => $postTitle,
       'content' => $info,
-						'thumb_url' => $thumb_sml,
+			'thumb_url' => $thumb_sml,
       'img_url' => $thumb[0],
       'img_w' =>  $thumb[1],
       'img_h' =>  $thumb[2],
 
-      'img_w' => $imgW,
+      //'img_w' => $imgW,
       'thumb_w' => $thumbW,
       'ext_link' => $extLink
     );

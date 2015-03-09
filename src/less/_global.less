@@ -21,6 +21,7 @@ html {
 
 
 body {
+  overflow: hidden;
   //min-height: 600px;
 //              url("../img/bg_rev.jpg") bottom transparent;
   background-color: #000;
@@ -29,20 +30,12 @@ body {
     border-bottom: 1px solid @gray-dark;
   }
 
-  .wrap.container {
-    position: relative;
-    visibility: hidden;
-    opacity: 0;
-    //z-index: 3;
-    margin-top: 100px;
-    margin-bottom: 100px;
+  .content {
+    margin-top: 150px;
+    z-index: 5;
   }
 
-  .wrap.frontpage {
-    position: relative;
-    visibility: visible;
-    opacity: 1;
-  }
+
 }
 
 body.home {
