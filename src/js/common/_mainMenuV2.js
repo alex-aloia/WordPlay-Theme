@@ -25,6 +25,27 @@ initMainMenu = function () {
   TweenLite.set(circlePath1, {drawSVG: 0, transform: 'rotate(90deg)', transformOrigin: "50% 50%"})
   TweenLite.set(circlePath2, {drawSVG: 0, transform: 'rotate(-90deg)', transformOrigin: "50% 50%"})
 
+  var backBtn = d3.select('.port_arw'),
+    arw = backBtn.select('.arw'),
+    arwHvrTL = new TimelineLite({paused: true})
+      .to(arw, .4, {stroke: '#9933FF'})
+
+  arwTL = new TimelineLite({paused:true})
+    .set(backBtn, {display: 'block'})
+    .set(arw, {drawSVG: 0})
+    .to(arw, .8, {drawSVG: '100%', autoAlpha: .7});
+
+  backBtn.on('mouseover', function () {
+    arwHvrTL.play()
+  })
+    .on('mouseout', function () {
+      arwHvrTL.reverse()
+    })
+    .on('mousedown', function () {
+      arwTL.reverse()
+      portClose()
+      openMenu();
+    })
 
   menuItem.each(function (d, i) {
     var $this = this,
@@ -66,7 +87,8 @@ initMainMenu = function () {
   })
 
   btn_mail.on("mousedown", function() {
-    contactTL.play();
+    //contactTL.play();
+    closeMenu(loadContact());
   })
 
   portBtn.on("mousedown", function() {
@@ -74,16 +96,22 @@ initMainMenu = function () {
     console.log('port btn down')
   })
 
+
+
+
+
   closeMenu = function () {
     var hideMenu = function(){
       TweenLite.set(mainMenu, {display: 'none'})
       TweenLite.set($('body'), {overflow: 'scroll'});
+     arwTL.play();
     }
     var closeAnimation = new TweenMax.staggerTo(menuItem[0],.8, {autoAlpha: 0, onComplete: hideMenu}, .4);
   }
 
   openMenu = function () {
     document.body.scrollTop = document.documentElement.scrollTop = 0;
+    arwTL.reverse();
     TweenLite.set($('body'), {overflow: 'hidden'})
     TweenLite.set(mainMenu, {display: 'block'})
     var openAnimation = new TweenMax.staggerTo(menuItem[0],.8, {autoAlpha: 1}, .4);

@@ -5,15 +5,19 @@
 
 var loadContact = function(){
   var container = document.querySelector('#contact_container'),
-    show = function(){
-      TweenLite.set(container, {display:'block'})
-    }
+    backBtn = $('.port_arw');
 
+  contactTL = new TimelineLite()
+    .set(container, {display:'block'}, 'show')
+    .to(container, 1, {autoAlpha: 1}, '+=1')
+    .addPause('hide')
+    .to(container, 1, {autoAlpha: 0})
+    .set(container, {display:'none'}, '+=1')
 
-  contactTL = new TimelineLite({paused: true, onStart:show})
-    .call(closeMenu)
-    .to(container, 1, {autoAlpha: 1}, 1);
-
+  backBtn.on('click', function(){
+    contactTL.play('hide');
+    backBtn.off('click');
+  })
 }
 
 

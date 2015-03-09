@@ -241,6 +241,8 @@ var createSVGimgs = function (jsonObj) {
 
 
 portOpen = function () {
+  document.body.scrollTop = document.documentElement.scrollTop = 0;
+
   var portfolio = document.querySelectorAll('#portfolio'),
     li = document.querySelectorAll('#portfolio ul>li'),
     portOpenTL = new TimelineLite()
@@ -249,7 +251,9 @@ portOpen = function () {
       .set(portfolio, {autoAlpha: 1, 'z-index': 999})
       //.staggerFrom(li, 0.75, {scale: 0, ease: Circ.easeIn}, 0.15, 'in')
       .staggerTo(li, 0.8, {autoAlpha: 1, ease: Expo.easeIn}, 0.15, 'in')
-      .call(backBtnOn)
+
+  arwTL.play()
+      //.call(backBtnOn)
 //    .to(closeBtn, 0.5, {autoAlpha: 1}, 'in')
 //    .addPause('port_close')
 //    .to(closeBtn, 0.5, {autoAlpha: 0}).delay(.5)
@@ -269,29 +273,6 @@ portClose = function () {
 }
 
 
-var backBtnOn = function () {
-  var backBtn = d3.select('.port_arw'),
-    arw = backBtn.select('.arw'),
-    hvrTL = new TimelineLite({paused: true})
-      .to(arw, .4, {stroke: '#9933FF'})
-
-  arwTL = new TimelineLite()
-    .set(backBtn, {display: 'block'})
-    .set(arw, {drawSVG: 0})
-    .to(arw, .8, {drawSVG: '100%', autoAlpha: .7}),
-
-    backBtn.on('mouseover', function () {
-      hvrTL.play()
-    })
-      .on('mouseout', function () {
-        hvrTL.reverse()
-      })
-      .on('mousedown', function () {
-        arwTL.reverse()
-        portClose()
-        openMenu();
-      })
-}
 
 
 
