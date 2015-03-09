@@ -5,7 +5,7 @@
 
 var loadContact = function(){
   var container = document.querySelector('#contact_container'),
-    backBtn = $('.port_arw');
+    backBtn = $('#back_arw');
 
   contactTL = new TimelineLite()
     .set(container, {display:'block'}, 'show')

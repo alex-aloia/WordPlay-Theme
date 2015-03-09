@@ -1,6 +1,6 @@
 var animateLogo_aaa = function () {
 
-  var logo_aaaTL = new TimelineMax(),
+  logo_aaaTL = new TimelineMax(),
     logo_aaa = d3.select(".logo_aaa"),
     line = logo_aaa.selectAll('.lines path'),
     pwrd = logo_aaa.select('p'),

@@ -15,25 +15,24 @@ initMainMenu = function () {
     circlePath2 = svg.selectAll('.center circle.center2'),
     ring1 = svg.selectAll('.ring1'),
     btns = svg.selectAll('.buttons > g'),
-    btn_mail = svg.selectAll('.btn-mail'),
-    mainMenuTL = new TimelineMax()
-      .set(ring1, {transformOrigin: "50% 50%"})
-      .staggerTo(menuItem[0], 1.5, {autoAlpha: 1}, 0.3, 'ringS1')
+    btn_mail = svg.selectAll('.btn-mail');
+
+  var backBtn = d3.select('#back_arw'),
+    backBtnArw = backBtn.select('.arw'),
+    arwHvrTL = new TimelineLite({paused: true})
+      .to(backBtnArw, .4, {stroke: '#9933FF'});
+
+  TweenLite.set(backBtnArw, {drawSVG: 0});
+
+  mainMenuTL = new TimelineMax()
+    .set(ring1, {transformOrigin: "50% 50%"})
+    .staggerTo(menuItem[0], 1.5, {autoAlpha: 1}, 0.3, 'ringS1')
 //      .staggerTo(ring1, 1.5, {autoAlpha: 0.5}, 0.4, 'ringS1')
-      .staggerTo(ring1, 1.5, {directionalRotation: "90_cw", ease: Back.easeOut}, 0.3, 'ringS1')
+    .staggerTo(ring1, 1.5, {directionalRotation: "90_cw", ease: Back.easeOut}, 0.3, 'ringS1')
 
   TweenLite.set(circlePath1, {drawSVG: 0, transform: 'rotate(90deg)', transformOrigin: "50% 50%"})
   TweenLite.set(circlePath2, {drawSVG: 0, transform: 'rotate(-90deg)', transformOrigin: "50% 50%"})
 
-  var backBtn = d3.select('.port_arw'),
-    arw = backBtn.select('.arw'),
-    arwHvrTL = new TimelineLite({paused: true})
-      .to(arw, .4, {stroke: '#9933FF'})
-
-  arwTL = new TimelineLite({paused:true})
-    .set(backBtn, {display: 'block'})
-    .set(arw, {drawSVG: 0})
-    .to(arw, .8, {drawSVG: '100%', autoAlpha: .7});
 
   backBtn.on('mouseover', function () {
     arwHvrTL.play()
@@ -42,7 +41,7 @@ initMainMenu = function () {
       arwHvrTL.reverse()
     })
     .on('mousedown', function () {
-      arwTL.reverse()
+      //arwTL.reverse()
       portClose()
       openMenu();
     })
@@ -54,15 +53,15 @@ initMainMenu = function () {
       targetPath2 = circlePath2[i][0],
       targetRing = ring1[i][0];
     if (i === 0) {
-      hoverTL.to(btns[0][0], .3, {x: '-=85px', autoAlpha: '1'}, 0)
-        .to(btns[0][1], .3, {x: '-=75px', y: '+=45px', autoAlpha: '1'}, 0.2)
-        .to(btns[0][2], .3, {x: '-=40px', y: '+=65px', autoAlpha: '1'}, 0.4);
+      hoverTL.to(btns[0][0], .3, {x: '-=110px', autoAlpha: '1'}, 0)
+        .to(btns[0][1], .3, {x: '-=90px', y: '+=50px', autoAlpha: '1'}, 0.2)
+        .to(btns[0][2], .3, {x: '-=60px', y: '+=80px', autoAlpha: '1'}, 0.4);
     }
     hoverTL.to(targetPath, 1, {autoAlpha: 0.3}, 0)
       .to(targetPath2, 1, {autoAlpha: 0.7}, 0)
       .fromTo(targetPath, 1, {drawSVG: '0'}, {drawSVG: '100%'}, 0)
       .fromTo(targetPath2, 1, {drawSVG: '0'}, {drawSVG: '100%'}, 0)
-      .to(targetRing, 0.7, {autoAlpha: 0.7, stroke: '#9A40FF', directionalRotation: "0_short"}, 0)
+      .to(targetRing, 0.7, {autoAlpha: 0.9, stroke: '#9A40FF', directionalRotation: "0_short"}, 0)
       .to(link[0][i], 0.5, {color: '#aaff00'}, 0.3)
     $this.animation = hoverTL;
   })
@@ -74,7 +73,7 @@ initMainMenu = function () {
   // hover event
   menuItem.on("mouseenter", function () {
     //if (!mainMenuTL.isActive()) {
-      this.animation.play()
+    this.animation.play()
     //}
   })
 
@@ -82,39 +81,44 @@ initMainMenu = function () {
     this.animation.reverse().timeScale(1.5)
   })
 
-  menuItem.on('mousedown', function(d, i) {
+  menuItem.on('mousedown', function (d, i) {
     d3.event.preventDefault();
   })
 
-  btn_mail.on("mousedown", function() {
+  btn_mail.on("mousedown", function () {
     //contactTL.play();
     closeMenu(loadContact());
   })
 
-  portBtn.on("mousedown", function() {
+  portBtn.on("mousedown", function () {
     closeMenu(portOpen());
     console.log('port btn down')
   })
 
 
-
-
-
   closeMenu = function () {
-    var hideMenu = function(){
+    var hideMenu = function () {
+      //logo_aaaTL.reverse().timeScale(2);
       TweenLite.set(mainMenu, {display: 'none'})
       TweenLite.set($('body'), {overflow: 'scroll'});
-     arwTL.play();
     }
-    var closeAnimation = new TweenMax.staggerTo(menuItem[0],.8, {autoAlpha: 0, onComplete: hideMenu}, .4);
+    var closeMenuTL = new TimelineLite({onComplete: hideMenu})
+      .set(backBtn, {display: 'block'})
+      .add(mainMenuTL.reverse().timeScale(1.5))
+      .add(TweenLite.to(backBtnArw, .8, {drawSVG: '100%', autoAlpha: .7}));
   }
 
   openMenu = function () {
-    document.body.scrollTop = document.documentElement.scrollTop = 0;
-    arwTL.reverse();
-    TweenLite.set($('body'), {overflow: 'hidden'})
-    TweenLite.set(mainMenu, {display: 'block'})
-    var openAnimation = new TweenMax.staggerTo(menuItem[0],.8, {autoAlpha: 1}, .4);
+    var setScroll = function () {
+      document.body.scrollTop = document.documentElement.scrollTop = 0;
+    }
+
+    var openMenuTL = new TimelineLite({onStart: setScroll})
+      .add(TweenLite.to(backBtnArw, .8, {drawSVG: 0, autoAlpha: 0}))
+      .set(mainMenu, {display: 'block'})
+      .set($('body'), {overflow: 'hidden'})
+      .add(mainMenuTL.play())
+      .set(backBtn, {display: 'none'})
   }
 
   return mainMenuTL;

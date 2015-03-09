@@ -1,7 +1,6 @@
 // Portfolio AJAX
 
 ajax_active = false;
-detail_active = false;
 
 portTL = new TimelineMax({paused: true});
 
@@ -66,17 +65,18 @@ var layout = function (container) {
   });
 }
 
+
 var loadPortfolioDetail = function (d) {
-  detail_active = true;
 
+  TweenLite.to( '#back_arw .arw', .8, {drawSVG: 0, autoAlpha: 0});
 
-  arwTL.reverse()
   var detCloseBtn = d3.select('.port_close'),
     x1 = detCloseBtn.select('.port_close_x1'),
     x2 = detCloseBtn.select('.port_close_x2'),
     closeBtnHvrTL = new TimelineLite({paused: true})
       .to(x1, .4, {fill: '#9933FF'}, 'stage1')
       .to(x2, .4, {fill: '#9933FF'}, 'stage1');
+
   detCloseBtn.animation = closeBtnHvrTL;
 
   closeBtnTL = new TimelineLite()
@@ -97,24 +97,23 @@ var loadPortfolioDetail = function (d) {
     detailBox = $('<div>').addClass('portDetailBox'),
     img = $('<img>').attr('src', url),
     closeBtn = d3.select('.port_close');
-console.log('img w '+w)
-  console.log('img h '+h)
+  console.log('img w ' + w)
+  console.log('img h ' + h)
   detailBox.append(img);
   $('body').append(detailBox);
 
-  img.attr('height', h);
-  img.attr('width', w);
-/*
-  if (h > win_h) {
-    calc_h = win_h * .9;
-    img.attr('height', calc_h);
-  }
 
-  else if (w > win_w) {
-    calc_w = win_w * .9;
-    img.attr('width', calc_w);
-  }
-*/
+   if (w > win_w) {
+     //calc_h = win_h - h;
+     calc_w = win_w - w;
+     //img.attr('height', calc_h);
+     img.attr('width', calc_w);
+   }
+  else{
+     img.attr('height', h);
+     img.attr('width', w);
+   }
+
   //detailBox.center();
 
   document.body.scrollTop = document.documentElement.scrollTop = 0;
@@ -135,7 +134,7 @@ console.log('img w '+w)
   var closeDetail = function () {
     detail_active = false;
     detailBox.remove();
-    portOpen();
+    portOpen( TweenLite.to( '#back_arw .arw', .8, {drawSVG: '100%', autoAlpha:.7}));
   }
 }
 
@@ -178,10 +177,8 @@ var createSVGimgs = function (jsonObj) {
       })
       .style('-webkit-filter', function (d, i) {
         return 'url(#filter_' + i + ')';
-      });
-
-
-  var wWidth = (window.innerWidth || document.documentElement.clientWidth);
+      }),
+    winWidth = (window.innerWidth || document.documentElement.clientWidth);
 
   li.each(function (d, i) {
     var $this = this,
@@ -192,7 +189,8 @@ var createSVGimgs = function (jsonObj) {
 
     $this.animation = hoverTL;
 
-    if (wWidth < 993) {
+    // check window width: if small screen size, we will poll each image to see if its in viewport
+    if (winWidth < 993) {
       var checkViz = function () {
         var vis = isElementInViewport($this);
         if (vis) {
@@ -202,12 +200,12 @@ var createSVGimgs = function (jsonObj) {
           $this.animation.reverse();
         }
       }
+
       checkViz();
 
       $(window).scroll(function () {
         checkViz();
       })
-
     }
   })
 
@@ -219,17 +217,11 @@ var createSVGimgs = function (jsonObj) {
       this.animation.reverse();
     })
     .on('mousedown', function (d) {
-      portClose();
-      loadPortfolioDetail(d);
+      portClose(loadPortfolioDetail(d));
       //if (!portTL.isActive()) {
       //}
 
     });
-
-
-  $(window).resize(function () {
-    layout();
-  });
 
   // when all imgs are actually done loading, call the layout algorithm
   var imgsLoaded = imagesLoaded(list.node());
@@ -237,6 +229,9 @@ var createSVGimgs = function (jsonObj) {
     layout();
   });
 
+  $(window).resize(function () {
+    layout();
+  });
 };
 
 
@@ -248,12 +243,13 @@ portOpen = function () {
     portOpenTL = new TimelineLite()
       //.to('.logo_aaa', 1, {y: '+=200px'})
       .set(li, {transformOrigin: "50% 50%"})
-      .set(portfolio, {autoAlpha: 1, 'z-index': 999})
+      //.set(portfolio, {autoAlpha: 1, 'z-index': 999})
+      .set(portfolio, {autoAlpha: 1})
       //.staggerFrom(li, 0.75, {scale: 0, ease: Circ.easeIn}, 0.15, 'in')
       .staggerTo(li, 0.8, {autoAlpha: 1, ease: Expo.easeIn}, 0.15, 'in')
 
-  arwTL.play()
-      //.call(backBtnOn)
+  //arwTL.play()
+  //.call(backBtnOn)
 //    .to(closeBtn, 0.5, {autoAlpha: 1}, 'in')
 //    .addPause('port_close')
 //    .to(closeBtn, 0.5, {autoAlpha: 0}).delay(.5)
@@ -263,9 +259,7 @@ portClose = function () {
   var portfolio = document.querySelectorAll('#portfolio'),
     li = document.querySelectorAll('#portfolio ul>li'),
     portCloseTL = new TimelineLite();
-  if (detail_active = false) {
-    //portCloseTL.to('.logo_aaa', 1, {y: '-=200px'})
-  }
+
   portCloseTL
     //.staggerTo(li, 0.8, {scale: 0, ease: Expo.easeOut}, 0.1, 'out')
     .staggerTo(li, 0.8, {autoAlpha: 0, ease: Expo.easeOut}, 0.1, 'out')

@@ -7,7 +7,7 @@ header {
   height: 200px;
   //top: 40%;
   margin: auto;
-  z-index: 0;
+  z-index: 1;
 
   .logo {
     display: block;
@@ -15,7 +15,7 @@ header {
     max-width: 300px;
     //width: 100%;
     //position: absolute;
-    margin: 0 auto;
+    margin: 10px auto 0;
     padding: 0;
     //top: 65px;
     //left: 50%;
@@ -26,7 +26,6 @@ header {
 
     @media (min-width: @screen-sm) {
       max-width: 400px;
-      margin: 10px auto 0;
     }
 
     svg {
@@ -55,7 +54,7 @@ header {
 
       display: none;
       position: relative;
-      width: 165px;
+      width: 175px;
       margin: 0 auto;
       display: inline-block;
       .trans();
@@ -84,7 +83,7 @@ header {
       }
 
       @media (min-width: @screen-sm-min) {
-        width: 225px;
+        width: 275px;
 
         a {
           font-size: 16px;
@@ -92,7 +91,7 @@ header {
       }
 
       @media (min-width: @screen-md-min) {
-        width: 275px;
+        width: 325px;
 
         a {
           font-size: 18px;
@@ -100,7 +99,7 @@ header {
       }
 
       @media (min-width: @screen-lg-min) {
-        width: 325px;
+        width: 375px;
 
         a {
           font-size: 22px;
@@ -120,7 +119,8 @@ header {
 
           .ring1 {
             stroke: #9933FF;
-            opacity: .9;
+            opacity: .5;
+            z-index: 5;
           }
 
           .ring2 {
