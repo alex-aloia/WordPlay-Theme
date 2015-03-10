@@ -5,6 +5,7 @@ var js_foot = [
   'vendor/bower/imagesloaded/imagesloaded.pkgd.js',
   'vendor/bower/greensock/src/uncompressed/TweenMax.js',
   'vendor/bower/d3/d3.js',
+  'vendor/bower/hammer.js/hammer.js',
 //  'vendor/bower/jquery-contentsize/jquery.contentsize.js',
   'vendor/bower/jlayout/lib/jquery.sizes.js',
   'vendor/bower/jlayout/lib/jlayout.flow.js',

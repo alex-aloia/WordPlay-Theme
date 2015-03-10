@@ -1,16 +1,28 @@
+//*:not(input):not(textarea) {
+//  -webkit-user-select: none; /* disable selection/Copy of UIWebView */
+//  -webkit-touch-callout: none; /* disable the IOS popup when long-press on a link */
+//}
+//
+//a {
+//  -webkit-user-select: none; /* disable selection/Copy of UIWebView */
+//  -webkit-touch-callout: none; /* disable the IOS popup when long-press on a link */
+//}
+
+
 header {
   top: 0;
   width: 100%;
   position: fixed;
-
+  //border: 1px solid red;
   background: url("../img/bg.png");
-  height: 200px;
+  background-repeat: repeat no-repeat;
+  //height: 200px;
   //top: 40%;
   margin: auto;
-  z-index: 1;
+  z-index: 2;
 
   .logo {
-    display: block;
+    display: none;
     //min-width:200px;
     max-width: 300px;
     //width: 100%;
@@ -40,10 +52,11 @@ header {
 
   .centered();
   width: 100%;
-  position: fixed;
+  //position: fixed;
   display: block;
   text-align: center;
-  z-index: 5;
+  z-index: 1;
+  margin: 125px 0;
 
   > ul {
     position: relative;
@@ -54,7 +67,7 @@ header {
 
       display: none;
       position: relative;
-      width: 175px;
+      width: 225px;
       margin: 0 auto;
       display: inline-block;
       .trans();
@@ -72,7 +85,7 @@ header {
         padding: 0;
         font-family: Orbitron;
         text-shadow: 0 2px 5px #663399;
-        font-size: 14px;
+        font-size: 16px;
         font-weight: bold;
 
         &:hover {
@@ -108,14 +121,22 @@ header {
 
       .hud_wrap {
 
+        .center {
+          .center1 {
+            fill: none;
+            stroke: @brand-primary;
+            stroke-width: 3px;
+          }
+          .center2 {
+            fill: none;
+            stroke: #9933FF;
+            stroke-width: 2px;
+          }
+        }
+
         .rings {
           stroke: #1B1F77;
           stroke-width: 2px;
-
-          .center circle {
-            stroke: @brand-primary;
-            stroke-width: 2px;
-          }
 
           .ring1 {
             stroke: #9933FF;

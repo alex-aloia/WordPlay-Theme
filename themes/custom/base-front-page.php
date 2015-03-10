@@ -25,6 +25,12 @@ get_template_part('templates/header');
 
   <script type="text/javascript">
 
+    window.oncontextmenu = function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      return false;
+    };
+
     function init() {
 
       jQuery(function ($) {
