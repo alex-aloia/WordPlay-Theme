@@ -106,7 +106,6 @@ initMainMenu = function () {
 
   portBtn.on("mousedown", function () {
     closeMenu(portOpen());
-    console.log('port btn down')
   })
 
 
@@ -128,28 +127,29 @@ initMainMenu = function () {
   });
 
 
-  closeMenu = function () {
+  function closeMenu() {
+//  closeMenu = function () {
     var hideMenu = function () {
       //logo_aaaTL.reverse().timeScale(2);
       TweenLite.set(mainMenu, {display: 'none'})
       TweenLite.set($('body'), {overflow: 'scroll'});
     }
-    var closeMenuTL = new TimelineLite({onComplete: hideMenu})
+    closeMenuTL = new TimelineLite({onComplete: hideMenu})
+//      .add(logo_aaaTL.reverse().timeScale(2))
+      .add(mainMenuTL.reverse().timeScale(1.5), 0)
       .set(backBtn, {display: 'block'})
-      .add(mainMenuTL.reverse().timeScale(1.5))
+      .add(TweenLite.to(logo_aaa, 1, {y:'+=200px'}))
       .add(TweenLite.to(backBtnArw, .8, {drawSVG: '100%', autoAlpha: .7}));
   }
 
-  openMenu = function () {
-    var setScroll = function () {
-      document.body.scrollTop = document.documentElement.scrollTop = 0;
-    }
-
-    var openMenuTL = new TimelineLite({onStart: setScroll})
+  function openMenu() {
+//  openMenu = function () {
+    openMenuTL = new TimelineLite({delay:.5, onStart: set_scroll})
       .add(TweenLite.to(backBtnArw, .8, {drawSVG: 0, autoAlpha: 0}))
       .set(mainMenu, {display: 'block'})
       //.set($('body'), {overflow: 'hidden'})
       .add(mainMenuTL.play())
+      .add(TweenLite.to(logo_aaa, .6, {y:'-=200px'}))
       .set(backBtn, {display: 'none'})
   }
 

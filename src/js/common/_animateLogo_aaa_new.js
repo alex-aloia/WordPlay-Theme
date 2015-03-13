@@ -1,15 +1,15 @@
 var animateLogo_aaa = function () {
 
-  logo_aaaTL = new TimelineMax(),
-    logo_aaa = d3.select(".logo_aaa"),
-    line = logo_aaa.selectAll('.lines path'),
+  logo_aaa = d3.select(".logo_aaa")
+
+  var line = logo_aaa.selectAll('.lines path'),
     pwrd = logo_aaa.select('p'),
     split = new SplitText(pwrd, {type: "chars", charsClass: "char"});
 
-
   TweenLite.set(line, {drawSVG: 0});
-  logo_aaaTL
-    .set(pwrd, {autoAlpha: 1})
+
+  logo_aaaTL = new TimelineMax({paused:true})
+    //.set(pwrd, {autoAlpha: 1})
     .staggerTo(split.chars, 1, {autoAlpha: 1}, 0.1)
     .to(line[0][0], 1, {drawSVG: '100%', autoAlpha: 1}, 0)
     .to(line[0][1], 1, {drawSVG: '100%', autoAlpha: 1}, .4)
@@ -25,7 +25,6 @@ var animateLogo_aaa = function () {
 }
 
 
-//animateLogo_tripl3inf();
 
 
 

@@ -223,12 +223,6 @@ var createSVGimgs = function (jsonObj) {
 
     });
 
-  // when all imgs are actually done loading, call the layout algorithm
-  var imgsLoaded = imagesLoaded(list.node());
-  imgsLoaded.on('done', function (instance) {
-    layout();
-  });
-
   $(window).resize(function () {
     layout();
   });
@@ -240,19 +234,14 @@ portOpen = function () {
 
   var portfolio = document.querySelectorAll('#portfolio'),
     li = document.querySelectorAll('#portfolio ul>li'),
-    portOpenTL = new TimelineLite()
+    portOpenTL = new TimelineLite({delay:1})
+      .call(layout)
       //.to('.logo_aaa', 1, {y: '+=200px'})
       .set(li, {transformOrigin: "50% 50%"})
       //.set(portfolio, {autoAlpha: 1, 'z-index': 999})
       .set(portfolio, {autoAlpha: 1})
       //.staggerFrom(li, 0.75, {scale: 0, ease: Circ.easeIn}, 0.15, 'in')
       .staggerTo(li, 0.8, {autoAlpha: 1, ease: Expo.easeIn}, 0.15, 'in')
-
-  //arwTL.play()
-  //.call(backBtnOn)
-//    .to(closeBtn, 0.5, {autoAlpha: 1}, 'in')
-//    .addPause('port_close')
-//    .to(closeBtn, 0.5, {autoAlpha: 0}).delay(.5)
 }
 
 portClose = function () {

@@ -1,7 +1,6 @@
 <?php
 /**
  * What Page? Site Front Page
- * Will be a simple landing page; layout cruft dropped.
  */
 session_start();
 
@@ -17,59 +16,53 @@ get_template_part('templates/header');
 <!--  <img width="1" height="1" src="http://dev.t3inf.com/content/uploads/logo_aaa.svg" class="svg-inject wp-post-image" alt="hud1">-->
 <!--</div>-->
 
-<?php include custom_template_path(); /* front-page.php */?>
+<?php include custom_template_path(); /* front-page.php */ ?>
 
 <?php get_template_part('templates/footer'); ?>
 
 <?php wp_footer(); ?>
 
-  <script type="text/javascript">
+<script type="text/javascript">
 
-    window.oncontextmenu = function(event) {
-      event.preventDefault();
-      event.stopPropagation();
-      return false;
-    };
+  set_scroll = function(){
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+  }
 
-    function init() {
+  // track img loading
+  function load_check() {
+    setTimeout(function () {
+      //imgs = document.querySelectorAll('img')
+      imgLoad = imagesLoaded('body')
 
-      jQuery(function ($) {
-        var mainTL = new TimelineLite({delay: 0.5})
-          .add(animateLogo_tripl3inf, 0)
-          .add(initMainMenu, 0)
-          .add(animateLogo_aaa, 2)
-          //.call(loadContact)
-          .call(initPortfolio)
-        //.to( 'header .logo', 2, {autoAlpha:1}, 's1')
-        //.from( 'header .logo', 1, {x:'-=300px'}, 's1')
-        //.to( '#aaaLogo_footer', 4, {autoAlpha:1}, 's2' )
-        //.from( '#aaaLogo_footer', 1, {x:'+=300px'}, 's2')
-        //setTimeout(function(){ backBtn(); }, 200);
+      imgLoad.on('always', function (instance) {
+        //console.log('done loading images')
+        init();
       });
 
+      /*imgLoad.on('progress', function (instance, image) {
+        var result = image.isLoaded ? 'loaded' : 'broken';
+        console.log('image is ' + result + ' for ' + image.img.src);
+      });*/
+    }, 500);
+  }
 
+  function init() {
+    function animate() {
+      var mainTL = new TimelineLite()
+        .add(animateLogo_tripl3inf, 0)
+        .add(initMainMenu, 1)
+        .add(logo_aaaTL.play(), 2)
 
     }
-    // Elements to inject
-    var SVGsToInject = document.querySelectorAll('img.inject');
 
-    // Options
-    var injectorOptions = {
-      each: function (svg) {
-        // Callback after each SVG is injected
-        console.log('SVG injected: ' + svg.getAttribute('id'));
-      }
-    };
-    // Do the injection
-    SVGInjector(SVGsToInject, null, init());
+    loaderTL.repeat(0).eventCallback("onComplete", animate);
+  }
 
+  jQuery(function ($) {
+    loader( initPortfolio( load_check(), animateLogo_aaa() ) );
+  });
 
-
-
-
-
-  </script>
-
+</script>
 
 
 </body>

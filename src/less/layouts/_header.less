@@ -16,7 +16,7 @@ header {
   //border: 1px solid red;
   background: url("../img/bg.png");
   background-repeat: repeat no-repeat;
-  //height: 200px;
+  min-height: 80px;
   //top: 40%;
   margin: auto;
   z-index: 2;
@@ -28,7 +28,7 @@ header {
     //width: 100%;
     //position: absolute;
     margin: 10px auto 0;
-    padding: 0;
+   tadding: 0;
     //top: 65px;
     //left: 50%;
     //width: 400px;
@@ -57,6 +57,11 @@ header {
   text-align: center;
   z-index: 1;
   margin: 125px 0;
+
+
+  @media (min-width: @screen-sm-min) {
+    margin: 0;
+  }
 
   > ul {
     position: relative;

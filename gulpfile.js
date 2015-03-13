@@ -1,7 +1,7 @@
 var theme_name = 'custom';
 
 var js_foot = [
-  'vendor/bower/svg-injector/svg-injector.js',
+  //'vendor/bower/svg-injector/svg-injector.js',
   'vendor/bower/imagesloaded/imagesloaded.pkgd.js',
   'vendor/bower/greensock/src/uncompressed/TweenMax.js',
   'vendor/bower/d3/d3.js',
