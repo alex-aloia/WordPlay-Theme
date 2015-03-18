@@ -134,23 +134,29 @@ initMainMenu = function () {
     window.open('http://codepen.io/tripl3inf/','_target')
   })
 
-  var testEl = document.querySelector('li.contact');
 
-  var mc = new Hammer(testEl);
-
-// listen to events...
-  mc.on("tap press", function (ev) {
-    var a = menuItem[0][0].animation;
-
-    if (a.reversed()) {
-      a.play();
+  // touch events...
+  var contact_press = new Hammer(menuItem[0][0]);
+  contact_press.on("tap press", function (ev) {
+    var tl = menuItem[0][0].animation;
+    if (tl.reversed()) {
+      tl.play();
     }
     else {
-      a.reverse();
+      tl.reverse();
     }
-
   });
 
+  var works_press = new Hammer(menuItem[0][2]);
+  works_press.on("tap press", function (ev) {
+    var tl = menuItem[0][2].animation;
+    if (tl.reversed()) {
+      tl.play();
+    }
+    else {
+      tl.reverse();
+    }
+  });
 
   function closeMenu() {
 //  closeMenu = function () {
