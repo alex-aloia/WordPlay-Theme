@@ -104,7 +104,7 @@ gulp.task('copy_svgs', function () {
  */
 
 gulp.task('svg-min', function () {
-  return gulp.src('./src/svg/symbols/*.svg')
+  return gulp.src('./src/svg/unprocessed/*.svg')
     .pipe(svgmin({
       plugins: [
         {prettyPrint: true},
@@ -344,13 +344,13 @@ gulp.task('watch', ['browser-sync'], function () {
   // watch scripts
   gulp.watch('src/js/**/*.js', ['dev_js', browserSync.reload]);
   // watch svg files
-  gulp.watch('src/svg/**/*.svg', ['svg-min', browserSync.reload]);
+  gulp.watch('src/svg/unprocessed/*.svg', ['svg-min', browserSync.reload]);
   // watch img files
   gulp.watch('src/img/**/*', ['copy-imgs', browserSync.reload]);
 });
 
 // Default task to be run with `gulp`
-gulp.task('dev-build', ['copy_imgs', 'copy_svgs', 'less_dev', 'dev_js', 'jshint', 'watch', 'browser-sync']);
-gulp.task('dev-watch', ['less_dev', 'dev_js', 'watch', 'browser-sync']);
+gulp.task('dev-build', ['copy_imgs', 'less_dev', 'dev_js', 'jshint', 'watch', 'browser-sync']);
+gulp.task('dev-watch', ['less_dev', 'svg-min', 'dev_js', 'watch', 'browser-sync']);
 gulp.task('default', ['copy_imgs', 'copy_svgs', 'less', 'js']);
 

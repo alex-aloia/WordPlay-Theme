@@ -8,7 +8,7 @@ initMainMenu = function () {
   var body = document.querySelector('body'),
     mainMenu = d3.select('#main_menu'),
     menuItem = mainMenu.selectAll('li'),
-    portBtn = mainMenu.select('.works'),
+    //portBtn = mainMenu.select('.works'),
     link = mainMenu.selectAll('a'),
     svg = menuItem.selectAll('svg'),
     circlePath1 = svg.selectAll('.center circle.center1'),
@@ -17,7 +17,12 @@ initMainMenu = function () {
     ring2 = svg.selectAll('.ring2'),
     ring3 = svg.selectAll('.ring3'),
     btns = svg.selectAll('.buttons > g'),
-    btn_mail = svg.selectAll('.btn-mail');
+    btn_mail = svg.selectAll('.btn-mail'),
+    btn_linked = svg.selectAll('.btn-linked'),
+    btn_gplus = svg.selectAll('.btn-gplus'),
+    btn_github = svg.selectAll('.btn-github'),
+    btn_portf = svg.selectAll('.btn-portfolio'),
+    btn_cpen = svg.selectAll('.btn-codepen');
 
   var backBtn = d3.select('#back_arw'),
     backBtnArw = backBtn.select('.arw'),
@@ -63,9 +68,14 @@ initMainMenu = function () {
       targetRing3 = ring3[i][0];
 
     if (i === 0) {
-      hoverTL.to(btns[0][0], .3, {x: '-=90px', y: '-=60px', autoAlpha: '1'}, 0)
+      hoverTL.to(btns[0][0], .3, {x: '-=80px', y: '-=60px', autoAlpha: '1'}, 0)
         .to(btns[0][1], .3, {x: '-=90px', y: '+=45px', autoAlpha: '1'}, 0.2)
         .to(btns[0][2], .3, {x: '-=30px', y: '+=120px', autoAlpha: '1'}, 0.4);
+    }
+    if (i === 2) {
+      hoverTL.to(btns[2][2], .3, {x: '+=100px', y: '-=60px', autoAlpha: '1'}, 0)
+        .to(btns[2][0], .3, {x: '+=110px', y: '+=45px', autoAlpha: '1'}, 0.2)
+        .to(btns[2][1], .3, {x: '+=60px', y: '+=130px', autoAlpha: '1'}, 0.4);
     }
     hoverTL
       .to(targetPath, 1, {autoAlpha: 0.9}, 0)
@@ -99,15 +109,30 @@ initMainMenu = function () {
     d3.event.preventDefault();
   })
 
+  // contact btns
   btn_mail.on("mousedown", function () {
-    //contactTL.play();
     closeMenu(loadContact());
   })
 
-  portBtn.on("mousedown", function () {
+  btn_linked.on("mousedown", function () {
+    window.open('https://www.linkedin.com/in/tripl3inf','_target')
+  })
+
+  btn_gplus.on("mousedown", function () {
+    window.open('https://plus.google.com/u/0/108844291722497947799','_target')
+  })
+
+  btn_portf.on("mousedown", function () {
     closeMenu(portOpen());
   })
 
+  btn_github.on("mousedown", function () {
+    window.open('https://github.com/tripl3inf','_target')
+  })
+
+  btn_cpen.on("mousedown", function () {
+    window.open('http://codepen.io/tripl3inf/','_target')
+  })
 
   var testEl = document.querySelector('li.contact');
 

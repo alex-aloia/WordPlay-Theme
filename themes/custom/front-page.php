@@ -31,6 +31,8 @@ if (!empty($post)) {
 </nav>
 
 
+
+
 <div class="content">
   <div id="contact_container">
     <?php echo do_shortcode('[cscf-contact-form]'); ?>

@@ -117,7 +117,7 @@ var loadPortfolioDetail = function (d) {
   //detailBox.center();
 
   document.body.scrollTop = document.documentElement.scrollTop = 0;
-  TweenLite.to(detailBox, 0.6, {autoAlpha: 1})
+  TweenLite.to(detailBox, 0.6, {autoAlpha: 1, delay: 1})
 
   closeBtn.on('mousedown', function () {
     closeBtnTL.reverse();
