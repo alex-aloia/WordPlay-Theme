@@ -31,6 +31,55 @@ svg.logo {
 
 
 
+.logo_aaa {
+  //.trans();
+  position: absolute;
+  display: block;
+  max-width: 450px;
+  width: 100%;
+  left: 50%;
+  bottom: 0px;
+  //width: 50%;
+  //max-width: 300px;
+  //min-width: 250px;
+
+  transform: translate(-50%, 0);
+
+  @media (min-width: @screen-sm) {
+    //max-width: 200px;
+  }
+
+  p {
+    .trans();
+    color: @gray-light;
+    position: absolute;
+    bottom: -24px;
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-align: center;
+    width: 100%;
+    font-family: orbitron;
+
+    div.char {
+      .trans();
+    }
+  }
+
+  > svg {
+    fill: @brand-primary;
+    width: 100%;
+    bottom: 0;
+
+    .lines path {
+      fill: none;
+      .trans();
+      stroke: @brand-primary;
+      stroke-miterlimit: 10;
+    }
+  }
+
+
+}
 
 
 

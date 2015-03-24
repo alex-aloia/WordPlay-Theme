@@ -18,6 +18,7 @@ initMainMenu = function () {
     ring3 = svg.selectAll('.ring3'),
     btns = svg.selectAll('.buttons > g'),
     btn_mail = svg.selectAll('.btn-mail'),
+    btn_about = mainMenu.select('.about'),
     btn_linked = svg.selectAll('.btn-linked'),
     btn_gplus = svg.selectAll('.btn-gplus'),
     btn_github = svg.selectAll('.btn-github'),
@@ -114,6 +115,10 @@ initMainMenu = function () {
     closeMenu(loadContact());
   })
 
+  btn_about.on("mousedown", function () {
+    closeMenu(loadAbout());
+  })
+
   btn_linked.on("mousedown", function () {
     window.open('https://www.linkedin.com/in/tripl3inf','_target')
   })
@@ -169,7 +174,7 @@ initMainMenu = function () {
 //      .add(logo_aaaTL.reverse().timeScale(2))
       .add(mainMenuTL.reverse().timeScale(1.5), 0)
       .set(backBtn, {display: 'block'})
-      .add(TweenLite.to(logo_aaa, 1, {y:'+=200px'}))
+      .add(TweenLite.to('.logo_tripl3inf', 1, {'margin-bottom':'-200px'}))
       .add(TweenLite.to(backBtnArw, .8, {drawSVG: '100%', autoAlpha: .7}));
   }
 
@@ -180,7 +185,7 @@ initMainMenu = function () {
       .set(mainMenu, {display: 'block'})
       //.set($('body'), {overflow: 'hidden'})
       .add(mainMenuTL.play())
-      .add(TweenLite.to(logo_aaa, .6, {y:'-=200px'}))
+      .add(TweenLite.to('.logo_tripl3inf', .6, {'margin-bottom':0}))
       .set(backBtn, {display: 'none'})
   }
 

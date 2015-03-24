@@ -1,5 +1,4 @@
 function loader(){
-  set_scroll();
 
   var loader = d3.select('#loader'),
     lp = loader.select('.loader-path');
