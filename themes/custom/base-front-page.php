@@ -24,6 +24,8 @@ get_template_part('templates/header');
 
 <script type="text/javascript">
 
+
+
   set_scroll = function(){
     document.body.scrollTop = document.documentElement.scrollTop = 0;
   }

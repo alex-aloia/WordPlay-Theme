@@ -36,10 +36,12 @@ if (!empty($post)) {
 
   <div id="about_container">
     <h1>Welcome to my world...</h1>
+    <!--    <img src="--><?php //echo get_stylesheet_directory_uri(); ?><!--/assets/img/me.jpg" alt=""/>-->
 
     <p>
       In this digital age... the terminology, job titles & jargon inherently associated with technology, often mask the
-      ultimate objective of its true nature: communication. I am a designer & full-stack web developer focused on improving communication by creating unique end-user
+      ultimate objective of its true nature: communication. I am a designer & full-stack web developer focused on
+      improving communication by creating unique end-user
       experiences with modern, standard-based code; supported by highly efficient and scalable infrastructure.  
       <br><br>
       As a child, I became enamored with both Art & Technology: two realms that continue to forge the passion of my
@@ -48,8 +50,13 @@ if (!empty($post)) {
       in my mind... leaving the ‘World Wide Web’ at the crux of my fascination.  
       <br><br>
       I LOVE everything about the Internet! I especially enjoy building hybrid/responsive web applications. From
-      inception to deployment, through continued development and maintenance, I enjoy being a part of every aspect of the seemingly daunting process.
-      My preferred 'weapon of choice' is the open-source 'LEMP stack', built on top of  Ubuntu.
+      inception to deployment, through continued development and maintenance, I enjoy being a part of every aspect of
+      the seemingly daunting process. My preferred 'weapon of choice' is the open-source 'LEMP stack', built on top of Ubuntu.
+      <br><br>
+      Currently, I have been working on a couple of open-source projects centered on creating deployable Wordpress
+      environments. Utilizing Packer & Ansible, I have created a framework that allows me to create new,
+      pre-provisioned cloud instances on the fly. The same codebase also lets me deploy updates from a Git repo with ease.
+      You can check out my work on <a href="http://codepen.io/tripl3inf/">github</a> if your curious!
       <br><br>
        Besides all the ‘nerd stuff’, I also have a passion for music. I rock out on my Les Paul guitar through a very
       unnecessary Mesa Boogie amp... My neighbors love me! I enjoy playing almost anything, from bluesy Zeppelin leads
@@ -57,6 +64,7 @@ if (!empty($post)) {
       On a rare occasion, you might find me tearing up the dance
       floor at a indiscriminate Chicago nitespot; as long as their playing some deep house tracks.
     </p>
+
   </div>
 </div>
 
