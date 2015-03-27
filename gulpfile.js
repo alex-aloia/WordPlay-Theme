@@ -32,7 +32,9 @@ var gulp = require('gulp'),
 //var mainBowerFiles = require('main-bower-files'),
   jshint = require('gulp-jshint'),
   watch = require('gulp-watch'),
-  less = require('gulp-less'),
+  //less = require('gulp-less'),
+  path = require('path'),
+  less = require('gulp-less-sourcemap'),
   minifyCSS = require('gulp-minify-css'),
   sourcemaps = require('gulp-sourcemaps'),
   concat = require('gulp-concat'),
@@ -66,15 +68,6 @@ gulp.task('browser-sync', function () {
     open: false
   });
 });
-
-
-
-
-
-
-
-
-
 
 
 /*
@@ -266,9 +259,19 @@ gulp.task('id-to-class', function () {
  * Less / CSS
  */
 
-var path = require('path');
 
+gulp.task('less_dev', function () {
+  gulp.src('src/less/main.less')
+    .pipe(less({
+      sourceMap: {
+        sourceMapRootpath: '/src/less' // Optional absolute or relative path to your LESS files
+      }
+    }))
+    //.pipe(autoprefixer())
+    .pipe(gulp.dest('./themes/' + theme_name + '/assets/css'));
+});
 
+/*
 gulp.task('less_dev', function () {
   gulp.src('src/less/main.less')
     .pipe(sourcemaps.init())
@@ -279,7 +282,7 @@ gulp.task('less_dev', function () {
 //        .pipe(sourcemaps.write())
     .pipe(gulp.dest('./themes/' + theme_name + '/assets/css'));
 });
-
+*/
 
 gulp.task('less', function () {
   gulp.src('src/less/main.less')

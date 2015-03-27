@@ -117,7 +117,7 @@ var loadPortfolioDetail = function (d) {
   //detailBox.center();
 
   document.body.scrollTop = document.documentElement.scrollTop = 0;
-  TweenLite.to(detailBox, 0.6, {autoAlpha: 1, delay: 1})
+  TweenLite.to(detailBox, 0.6, {autoAlpha: 1, delay: 1, zIndex:5})
 
   closeBtn.on('mousedown', function () {
     closeBtnTL.reverse();
@@ -141,8 +141,9 @@ var loadPortfolioDetail = function (d) {
 
 var createSVGimgs = function (jsonObj) {
 
-  var container = d3.select('.content').append('div').attr('id', 'portfolio'),
-    list = container.append("ul"),
+  var container = d3.select('#portfolio'),
+    content = container.append('div').attr('class', 'content'),
+    list = content.append("ul"),
     li = list.selectAll("li")
       .data(jsonObj)
       .enter()
@@ -230,16 +231,22 @@ var createSVGimgs = function (jsonObj) {
 
 
 portOpen = function () {
-  document.body.scrollTop = document.documentElement.scrollTop = 0;
+  //document.body.scrollTop = document.documentElement.scrollTop = 0;
 
   var portfolio = document.querySelectorAll('#portfolio'),
     li = document.querySelectorAll('#portfolio ul>li'),
     portOpenTL = new TimelineLite({delay:1})
       .call(layout)
+      .call(set_scroll)
       //.to('.logo_aaa', 1, {y: '+=200px'})
       .set(li, {transformOrigin: "50% 50%"})
       //.set(portfolio, {autoAlpha: 1, 'z-index': 999})
-      .set(portfolio, {autoAlpha: 1})
+      .set(portfolio, {display: 'block'})
+      .call(animate_title, ['#portfolio'])
+      //.set(title_block, {display: 'block'})
+      //.staggerTo(split.chars, .25, {autoAlpha: 1}, 0.1, 'title')
+      //.staggerFrom(split.chars, .25, {y: '-=25px'}, 0.1, 'title')
+      //.to(lines[0][0], 1, {drawSVG: '0 100%'}, 'lines')
       //.staggerFrom(li, 0.75, {scale: 0, ease: Circ.easeIn}, 0.15, 'in')
       .staggerTo(li, 0.8, {autoAlpha: 1, ease: Expo.easeIn}, 0.15, 'in')
 }

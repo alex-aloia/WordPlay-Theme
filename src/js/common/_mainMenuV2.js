@@ -56,6 +56,7 @@ initMainMenu = function () {
     .on('mousedown', function () {
       //arwTL.reverse()
       portClose()
+      animate_title_close()
       openMenu();
     })
 
@@ -175,7 +176,7 @@ initMainMenu = function () {
       .add(mainMenuTL.reverse().timeScale(1.5), 0)
       .set(backBtn, {display: 'block'})
       .add(TweenLite.to('.logo_tripl3inf', 1, {'margin-bottom':'-200px'}))
-      .add(TweenLite.to(backBtnArw, .8, {drawSVG: '100%', autoAlpha: .7}));
+      .add(TweenLite.to(backBtnArw, .8, {drawSVG: '100%', autoAlpha: .9}));
   }
 
   function openMenu() {

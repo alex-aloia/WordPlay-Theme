@@ -11,7 +11,7 @@ var animateLogo_aaa = function () {
   logo_aaaTL = new TimelineMax({paused:true})
     //.set(pwrd, {autoAlpha: 1})
     .set(pwrd, {autoAlpha: 1})
-    .staggerTo(split.chars, 1, {autoAlpha: 1}, 0.2, 2)
+    .staggerTo(split.chars, 1, {autoAlpha: 1}, 0.1, .8)
     .to(line[0][0], 1, {drawSVG: '100%', autoAlpha: 1}, 0)
     .to(line[0][1], 1, {drawSVG: '100%', autoAlpha: 1}, .4)
     .to(line[0][2], 1, {drawSVG: '100%', autoAlpha: 1}, .7)

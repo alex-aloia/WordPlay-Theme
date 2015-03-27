@@ -54,6 +54,7 @@ get_template_part('templates/header');
         .add(logo_aaaTL.play(), 0)
         .add(initMainMenu, 1)
         //.add(loadAbout, 0)
+        //.add(portOpen)
         .add(animateLogo_tripl3inf, 3)
     }
 
