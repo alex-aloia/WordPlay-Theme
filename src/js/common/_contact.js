@@ -24,7 +24,6 @@ var loadContact = function () {
 function formLabels() {
   var form = $('form'),
     inputs = form.find(':input');
-
   inputs.each(function () {
     var $this = $(this),
       label = $this.prev('label');
