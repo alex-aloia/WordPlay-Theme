@@ -39,8 +39,10 @@ if (!empty($post)) {
         <line x1="0" y1="0" x2="1200" y2="0"/>
       </svg>
     </div>
+    <div class="content">
+      <?php echo do_shortcode('[cscf-contact-form]'); ?>
+    </div>
 
-    <?php echo do_shortcode('[cscf-contact-form]'); ?>
   </div>
 
 

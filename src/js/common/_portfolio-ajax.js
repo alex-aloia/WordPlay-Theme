@@ -68,7 +68,7 @@ var layout = function (container) {
 
 var loadPortfolioDetail = function (d) {
 
-  TweenLite.to( '#back_arw .arw', .8, {drawSVG: 0, autoAlpha: 0});
+  TweenLite.to('#back_arw .arw', .8, {drawSVG: 0, autoAlpha: 0});
 
   var detCloseBtn = d3.select('.port_close'),
     x1 = detCloseBtn.select('.port_close_x1'),
@@ -84,7 +84,7 @@ var loadPortfolioDetail = function (d) {
     .set(x1, {x: '+=120px', y: '+=120px', autoAlpha: 0, transformOrigin: "50% 50%"})
     .set(x2, {x: '-=120px', y: '+=120px', autoAlpha: 0, transformOrigin: "50% 50%"})
     .to(x1, .4, {x: '0px', y: '0px', autoAlpha: .8}, '+=1')
-    .to(x2, .4, {x: '0px', y: '0px', autoAlpha: .8}, '-=.2')
+    .to(x2, .4, {x: '0px', y: '0px', autoAlpha: .8}, '-=.2');
 
 
   var url = d.img_url,
@@ -103,21 +103,26 @@ var loadPortfolioDetail = function (d) {
   $('body').append(detailBox);
 
 
-   if (w > win_w) {
-     //calc_h = win_h - h;
-     calc_w = win_w - w;
-     //img.attr('height', calc_h);
-     img.attr('width', calc_w);
-   }
-  else{
-     img.attr('height', h);
-     img.attr('width', w);
-   }
+  if (w > win_w) {
+    //calc_h = win_h - h;
+    calc_w = win_w - w;
+    //img.attr('height', calc_h);
+    img.attr('width', calc_w);
+  }
+  else {
+    img.attr('height', h);
+    img.attr('width', w);
+  }
 
   //detailBox.center();
 
-  document.body.scrollTop = document.documentElement.scrollTop = 0;
-  TweenLite.to(detailBox, 0.6, {autoAlpha: 1, delay: 1, zIndex:5})
+  var scrollUp = function () {
+    TweenLite.to('body', .8, {scrollTo: {y: 0, autoKill: false}, ease: Power3.easeOut})
+  }
+
+  scrollUp();
+
+  TweenLite.to(detailBox, 0.6, {autoAlpha: 1, delay: 1, zIndex: 5})
 
   closeBtn.on('mousedown', function () {
     closeBtnTL.reverse();
@@ -134,7 +139,8 @@ var loadPortfolioDetail = function (d) {
   var closeDetail = function () {
     detail_active = false;
     detailBox.remove();
-    portOpen( TweenLite.to( '#back_arw .arw', .8, {drawSVG: '100%', autoAlpha:.7}));
+    scrollUp();
+    portOpen(TweenLite.to('#back_arw .arw', .8, {drawSVG: '100%', autoAlpha: .7}));
   }
 }
 
@@ -235,9 +241,9 @@ portOpen = function () {
 
   var portfolio = document.querySelectorAll('#portfolio'),
     li = document.querySelectorAll('#portfolio ul>li'),
-    portOpenTL = new TimelineLite({delay:1})
+    portOpenTL = new TimelineLite({delay: 1})
       .call(layout)
-      .call(set_scroll)
+      //.call(set_scroll)
       //.to('.logo_aaa', 1, {y: '+=200px'})
       .set(li, {transformOrigin: "50% 50%"})
       //.set(portfolio, {autoAlpha: 1, 'z-index': 999})

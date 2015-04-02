@@ -11,11 +11,6 @@ get_template_part('templates/header');
 
 <body <?php body_class(); ?>>
 
-
-<!--<div class="logo_aaa">-->
-<!--  <img width="1" height="1" src="http://dev.t3inf.com/content/uploads/logo_aaa.svg" class="svg-inject wp-post-image" alt="hud1">-->
-<!--</div>-->
-
 <?php include custom_template_path(); /* front-page.php */ ?>
 
 <?php get_template_part('templates/footer'); ?>
@@ -24,9 +19,14 @@ get_template_part('templates/header');
 
 <script type="text/javascript">
 
+  // prevent touch/hold window events
+  window.oncontextmenu = function (event) {
+    //event.preventDefault();
+    //event.stopPropagation();
+    //return false;
+  };
 
-
-  set_scroll = function(){
+  set_scroll = function () {
     document.body.scrollTop = document.documentElement.scrollTop = 0;
   }
 
@@ -42,15 +42,16 @@ get_template_part('templates/header');
       });
 
       /*imgLoad.on('progress', function (instance, image) {
-        var result = image.isLoaded ? 'loaded' : 'broken';
-        console.log('image is ' + result + ' for ' + image.img.src);
-      });*/
+       var result = image.isLoaded ? 'loaded' : 'broken';
+       console.log('image is ' + result + ' for ' + image.img.src);
+       });*/
     }, 500);
   }
 
   function init() {
     function animate() {
       var mainTL = new TimelineLite()
+        .set('#loader-wrap', {display: 'none'})
         .add(logo_aaaTL.play(), 0)
         .add(initMainMenu, 1)
         //.add(loadAbout, 0)
@@ -62,7 +63,7 @@ get_template_part('templates/header');
   }
 
   jQuery(function ($) {
-    loader( initPortfolio( set_scroll(), load_check(), animateLogo_aaa() ) );
+    loader(initPortfolio(set_scroll(), load_check(), animateLogo_aaa()));
   });
 
 </script>

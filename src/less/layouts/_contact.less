@@ -1,19 +1,29 @@
 #contact {
-  display: none;
-  .trans();
-  margin: auto;
-  width: 50%;
   padding-top: 15px;
   min-width: 250px;
   color: @brand-primary;
 
-  form {
-    label {
-      position: relative;
-      left: 16px;
-      top: 32px;
-      background: #000;
+  .content {
+    .trans;
+
+    p {
+      text-align: center;
+    }
+
+    form {
+      width: 50%;
+      margin: auto;
+
+      label {
+        position: relative;
+        left: 16px;
+        top: 32px;
+        background: #000;
+      }
+      .help-inline.error {
+        position: relative;
+        left: 16px;
+      }
     }
   }
-
 }

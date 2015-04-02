@@ -5,13 +5,16 @@
 
 var loadContact = function () {
   var container = document.querySelector('#contact'),
+    content = container.querySelector('.content')
     backBtn = $('#back_arw');
+
+  animate_title(container);
 
   contactTL = new TimelineLite()
     .set(container, {display: 'block'}, 'show')
-    .to(container, 1, {autoAlpha: 1}, '+=1')
+    .to(content, 1, {autoAlpha: 1}, '+=1')
     .addPause('hide')
-    .to(container, 1, {autoAlpha: 0})
+    .to(content, 1, {autoAlpha: 0})
     .set(container, {display: 'none'}, '+=1')
 
   backBtn.on('click', function () {
@@ -19,6 +22,9 @@ var loadContact = function () {
     backBtn.off('click');
   })
 }
+
+
+
 
 // form label animations
 function formLabels() {
