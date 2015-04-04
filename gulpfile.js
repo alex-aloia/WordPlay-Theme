@@ -11,6 +11,7 @@ var js_foot = [
   'vendor/bower/jlayout/lib/jlayout.flow.js',
   'vendor/bower/jlayout/lib/jquery.jlayout.js',
   'vendor/bower/jquery.center.js/src/jquery.center.js',
+  'vendor/bower/video.js/dist/video-js/video.dev.js',
 //  'vendor/bower/bootstrap/js/transition.js',
 //  'vendor/bower/bootstrap/js/alert.js',
 //  'vendor/bower/bootstrap/js/button.js',

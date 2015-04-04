@@ -22,9 +22,11 @@ $custom_includes = array(
   'lib/comments.php',        // Custom comments modifications
   'lib/scripts.php',         // Scripts and stylesheets
   'lib/ajax.php',            // Ajax handlers
-  'lib/type_main_menu.php',  // Main Menu
-  'lib/type_portfolio.php',  // Porfolio stuff
+  'lib/cpt_main_menu.php',  // Main Menu
+  'lib/cpt_portfolio.php',  // Porfolio stuff
+  'lib/cpt_vid_intro.php',  // Video Intros
   'lib/extras.php',          // Custom functions
+  //'lib/DEV-ONLY.php',          // FOR DEV
 );
 
 foreach ($custom_includes as $file) {

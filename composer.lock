@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c3d1e9e90baa9b71ce24c30fa729c2cd",
+    "hash": "3987ff2c1877ed555a32f5beb171810c",
     "packages": [
         {
             "name": "composer/installers",
@@ -222,6 +222,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/simple-page-ordering/"
+        },
+        {
+            "name": "wpackagist-plugin/videojs-html5-video-player-for-wordpress",
+            "version": "4.5.0",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/videojs-html5-video-player-for-wordpress/",
+                "reference": "tags/4.5.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/videojs-html5-video-player-for-wordpress.4.5.0.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/videojs-html5-video-player-for-wordpress/"
         },
         {
             "name": "wpackagist-plugin/wp-slimstat",

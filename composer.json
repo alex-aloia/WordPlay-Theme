@@ -16,7 +16,8 @@
         "wpackagist-plugin/piklist": "*",
         "wpackagist-plugin/wp-slimstat": "*",
         "wpackagist-plugin/simple-page-ordering": "*",
-        "wpackagist-plugin/check-email": "*"
+        "wpackagist-plugin/check-email": "*",
+        "wpackagist-plugin/videojs-html5-video-player-for-wordpress": "*"
     },
 
     "require-dev" : {
