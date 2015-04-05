@@ -64,15 +64,6 @@ get_template_part('templates/header');
 
   jQuery(function ($) {
     loader(initPortfolio(set_scroll(), load_check(), animateLogo_aaa()));
-
-    videojs(document.getElementsByClassName('embed-responsive-item'), {}, function() {
-      alert('vid load')
-      // You can grab an element by class if you'd like, just make sure
-      // if it's an array that you pick one (here we chose the first).
-    });
-
-   //$("#example_video_id_1740498785_html5_api").fitVids({ customSelector: "iframe[src^='http://dev.t3inf.com']});
-
   });
 
 </script>

@@ -1,21 +1,25 @@
 // Bootstrap
 // !IMPORTANT - Custom variable/override file defined in bootstrap include below
-@import "bootstrap";
+
+@import "../../vendor/bower/bootstrap/less/bootstrap.less";
+
 //@import "../../vendor/bower/font-awesome/less/font-awesome.less";
 //@path-fonts:    '../fonts';
 
-@import "../../vendor/bower/video.js/dist/video-js/video-js";
-@import "videojs-responsive-override";
+//@import "../../vendor/bower/video.js/dist/video-js/video-js";
+//@import "videojs-responsive-override";
 
 // Roots
-@import "sprites/_sprite-jpg";       // CSS/JGP sprites
+
+@import "_variables"; // Bootstrap variable overrides and custom variables
+//@import "sprites/_sprite-jpg";       // CSS/JGP sprites
 @import "_global";                   // Base styling & custom mixins
 @import "_mixins";                   // Mixins
 @import "_logo";                      // SVG's
 @import "components/_buttons";       // Button tweaks
 @import "components/_forms";         // Form tweaks
-//@import "components/_media";         // WordPress media
-@import "components/_wp-classes";    // WordPress generated classes
+@import "components/_media";         // WordPress media
+//@import "components/_wp-classes";    // WordPress generated classes
 @import "components/_navs";          // Navbar
 @import "layouts/_general";          // General styling
 @import "layouts/_header";           // Header styling
@@ -27,6 +31,7 @@
 @import "layouts/_contact";          // Contact page styling
 @import "layouts/_about";            // About page styling
 @import "layouts/_posts";            // Post styling
+@import "layouts/_videointro";
 
 //@import "svg-sprite";                // SVG sprites
 //@import url("http://fonts.googleapis.com/css?family=Orbitron");

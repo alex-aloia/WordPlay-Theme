@@ -5,12 +5,10 @@
   $vidURL = wp_get_attachment_url($vidID);
   //$parsed = parse_url( wp_get_attachment_url( $vidID ) );
   $copy = get_post_meta($post->ID, 'vid_intro_copy', true);
-//$vid_thumb = get_video_thumbnail();
-//$project_desc_long = get_post_meta( $post->ID, 'project_desc_long', true );
 
   ?>
 
-  <article>
+  <article class="vidintro">
     <h1 class="entry-title"><?php the_title(); ?></h1>
 
     <?php get_template_part('templates/entry-meta'); ?>
