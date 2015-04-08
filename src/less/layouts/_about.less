@@ -1,15 +1,46 @@
 #about {
+
   .content {
     .trans;
     color: @gray;
-  }
-//  color: @brand-success;
-//
-  h1 {
-    color: @brand-success;
-    font-family: orbitron, sans-serif;
-    text-align: center;
-    margin-top: 0;
+    //.make-sm-column(12);
+
+    h3 {
+      color: @brand-success;
+      font-family: orbitron, sans-serif;
+      text-align: center;
+      margin-top: 0;
+    }
+
+    article {
+      //.make-sm-column(6);
+    }
+
+    aside {
+      float: right;
+      margin-left: 10px;
+
+      img {
+        display: block;
+        text-align: center;
+      }
+
+      svg {
+        margin-top: 6px;
+      }
+
+      p {
+        color: @brand-success;
+        letter-spacing: 4px;
+        font-size: 14px;
+        text-align: center;
+        margin: 0;
+        padding: 8px 0 0 0;
+        font-family: orbitron;
+
+      }
+    }
+
   }
 
 }

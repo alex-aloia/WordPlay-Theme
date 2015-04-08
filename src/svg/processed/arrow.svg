@@ -1,15 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="arrow" width="356.9683px" height="119.0504px" x="0px" y="0px" version="1.1" viewBox="0 0 356.9683 119.0504" enable-background="new 0 0 356.9683 119.0504" xml:space="preserve">
+<svg xmlns="http://www.w3.org/2000/svg" id="arrow" width="249.4763px" height="89.0519px" x="0px" y="0px" version="1.1" viewBox="0 0 249.4763 89.0519" enable-background="new 0 0 249.4763 89.0519" xml:space="preserve">
     <defs>
-        <filter id="Adobe_OpacityMaskFilter" width="356.9683" height="119.0504" x="0" y="0" filterUnits="userSpaceOnUse">
+        <filter id="Adobe_OpacityMaskFilter" width="249.4763" height="89.0519" x="0" y="0" filterUnits="userSpaceOnUse">
             <feColorMatrix type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0"/>
         </filter>
     </defs>
-    <mask id="SVGID_1_" width="356.9683" height="119.0504" x="0" y="0" maskUnits="userSpaceOnUse">
+    <mask id="SVGID_1_" width="249.4763" height="89.0519" x="0" y="0" maskUnits="userSpaceOnUse">
         <g filter="url(#Adobe_OpacityMaskFilter)">
             <g>
-                <path fill="#F7F7F9" d="M98.9812,67.4186c0.0043,0.0026,0.0088,0.0053,0.0132,0.0079v-0.0079h182.8694l69.0206,0.0449 l-30.6892-17.7112H98.9944V2.7245C66.7228,21.3504,35.0016,39.7012,2.5938,58.3965 c32.479,18.5579,64.3362,36.7709,96.608,55.1896V94.8225C77.942,82.6786,57.392,70.7789,35.3002,58.1554 c16.9679-9.7962,31.5525-18.4048,48.1044-27.9939c-0.0016,13.1061,0.0217,15.4112,0.0217,27.8274 c4.9646,2.9546,10.3984,6.3749,15.5059,9.4004v0.0293H98.9812z"/>
+                <path fill="#F7F7F9" d="M73.5595,51.2185c0.003,0.0018,0.006,0.0036,0.009,0.0054v-0.0054h124.6954l47.0639,0.0306 l-20.9264-12.077H73.5685V7.1048C51.5631,19.8055,29.933,32.3185,7.8346,45.0666C29.9815,57.7209,51.7043,70.14,73.7099,82.6993 V69.9048c-14.4967-8.2807-28.5093-16.3949-43.5734-25.0027c11.5701-6.6799,21.5151-12.5499,32.8016-19.0885 c-0.0011,8.9368,0.0148,10.5086,0.0148,18.975c3.3853,2.0147,7.0905,4.3469,10.5732,6.41v0.0199H73.5595z"/>
             </g>
         </g>
     </mask>
-    <path fill="none" stroke="#AAFF00" stroke-width="19" stroke-miterlimit="10" d="M356.9683 58.4938L91.4683 58.4938 91.4683 16.4938 19.0683 58.4938 110.9683 110.7938" mask="url(#SVGID_1_)"/>
+    <path fill="none" stroke="#AAFF00" stroke-width="19" stroke-miterlimit="10" d="M249.4763 45.1329L68.4366 45.1329 68.4366 16.4938 19.0683 45.1329 81.7333 80.7953" mask="url(#SVGID_1_)"/>
 </svg>

@@ -21,9 +21,9 @@ get_template_part('templates/header');
 
   // prevent touch/hold window events
   window.oncontextmenu = function (event) {
-    //event.preventDefault();
-    //event.stopPropagation();
-    //return false;
+    event.preventDefault();
+    event.stopPropagation();
+    return false;
   };
 
   set_scroll = function () {
