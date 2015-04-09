@@ -5,10 +5,7 @@ loadAbout = function(){
     content = container.querySelector('.content'),
     backBtn = $('#back_arw');
 
-  animate_title(container);
-
-  //console.log( icon_container[0].length )
-
+  animate_title('About Me');
 
 
   aboutTL = new TimelineLite()

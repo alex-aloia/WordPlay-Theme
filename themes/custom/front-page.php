@@ -29,16 +29,17 @@ if (!empty($post)) {
 </nav>
 
 
+<div id="title-block" class="container">
+</div>
+
+<!--<svg class="title-hr" viewBox="0 0 1200 4" preserveAspectRatio="none">-->
+<!--  <line x1="0" y1="0" x2="1200" y2="0"/>-->
+<!--</svg>-->
+
 <div class="wrap container">
 
 
   <section id="contact" class="container2">
-    <div class="title-block">
-      <h2>Contact Me</h2>
-      <svg class="title-hr" viewBox="0 0 1200 4" preserveAspectRatio="none">
-        <line x1="0" y1="0" x2="1200" y2="0"/>
-      </svg>
-    </div>
     <div class="content">
       <?php echo do_shortcode('[cscf-contact-form]'); ?>
     </div>
@@ -47,24 +48,16 @@ if (!empty($post)) {
 
 
   <section id="about" class="container2">
-    <div class="title-block">
-      <h2>About Me</h2>
-      <svg class="title-hr" viewBox="0 0 1200 4" preserveAspectRatio="none">
-        <line x1="0" y1="0" x2="1200" y2="0"/>
-      </svg>
-    </div>
     <div class="content">
       <article>
-<!--        <h3>Welcome to my world...</h3>-->
+        <!--        <h3>Welcome to my world...</h3>-->
         <p>
-          <aside>
-              </a>
 
-            </svg>
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/me.png" alt=""/>
-            <?php get_template_part('assets/svg/common', 'social.svg'); ?>
-            <p>Check me out!</p>
-          </aside>
+        <div class="pic_box">
+          <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/me.png" alt=""/>
+          <p>Check me out!</p>
+          <?php get_template_part('assets/svg/common', 'social.svg'); ?>
+        </div>
 
           In this digital age... the terminology, job titles & jargon inherently associated with technology, often mask
           the ultimate objective of its true nature: communication.
@@ -111,12 +104,6 @@ if (!empty($post)) {
 
 
   <section id="portfolio" class="container2">
-    <div class="title-block">
-      <h2>Featured Works</h2>
-      <svg class="title-hr" viewBox="0 0 1200 4" preserveAspectRatio="none">
-        <line x1="0" y1="0" x2="1200" y2="0"/>
-      </svg>
-    </div>
   </section>
 
 </div> <!-- end wrap-->

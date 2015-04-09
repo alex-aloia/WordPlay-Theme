@@ -196,3 +196,45 @@ initMainMenu = function () {
 
 
 
+
+
+// title animations
+var animate_title = function (text) {
+  var tc = d3.select('#title-block'),
+    title = tc.append('h2')
+      .text(text),
+    svg = tc.append('svg')
+      .attr('viewBox', '0 0 1200 4')
+      .attr('preserveAspectRatio', 'none'),
+    line = svg.append('line')
+      .attr('x1', '0')
+      .attr('y1', '0')
+      .attr('x2', '1200')
+      .attr('y2', '0')
+
+  var split = new SplitText(title, {type: "chars", charsClass: "char"}),
+    tTL = new TimelineLite({})
+      .set(title, {display: 'block'})
+      .set(line, {drawSVG: '50% 50%'})
+      .staggerTo(split.chars, .25, {autoAlpha: 1}, 0.1, 'title')
+      .staggerFrom(split.chars, .25, {y: '-=25px'}, 0.1, 'title')
+      .to(line, 1, {drawSVG: '0 100%'}, 'title+=.5');
+
+}
+
+
+var animate_title_close = function() {
+  var tc = $('#title-block'),
+    title = tc.children('h2'),
+    letters = title.children('div'),
+    svg = tc.find('svg'),
+    line = svg.children('line'),
+    hide = function(){
+      title.remove();
+      svg.remove();
+      console.log('remove');
+    },
+    tTL = new TimelineLite({onComplete:hide})
+      .to(line, 1, {drawSVG: '50% 50%'})
+      .staggerTo(letters, .5, {autoAlpha: 0, y:'-=25px'}, .1, .5)
+}

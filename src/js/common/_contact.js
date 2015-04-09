@@ -8,7 +8,7 @@ var loadContact = function () {
     content = container.querySelector('.content')
     backBtn = $('#back_arw');
 
-  animate_title(container);
+  animate_title('Contact Me');
 
   contactTL = new TimelineLite()
     .set(container, {display: 'block'}, 'show')

@@ -4,10 +4,12 @@ ajax_active = false;
 
 portTL = new TimelineMax({paused: true});
 
+
+
 // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
 function isElementInViewport(el) {
   var rect = el.getBoundingClientRect();
-  var windowHeight = (window.innerHeight || document.documentElement.clientHeight) - 50;
+  var windowHeight = ((window.innerHeight || document.documentElement.clientHeight) - 100);
   var windowWidth = (window.innerWidth || document.documentElement.clientWidth);
 
   return (
@@ -17,6 +19,8 @@ function isElementInViewport(el) {
   && ((rect.top + rect.height) <= windowHeight)
   );
 }
+
+
 
 var initPortfolio = function () {
 
@@ -69,6 +73,7 @@ var layout = function (container) {
 var loadPortfolioDetail = function (d) {
 
   TweenLite.to('#back_arw .arw', .8, {drawSVG: 0, autoAlpha: 0});
+  animate_title_close();
 
   var detCloseBtn = d3.select('.port_close'),
     x1 = detCloseBtn.select('.port_close_x1'),
@@ -155,7 +160,12 @@ var createSVGimgs = function (jsonObj) {
       .enter()
       .append("li")
       .style('width', function (d) {
-        return d.thumb_w + 'px';
+        if (d.img_url == null){
+          return;
+        }
+        else {
+          return d.thumb_w + 'px';
+        }
       }),
     svg = li.append('svg'),
     filter = svg.append("defs")
@@ -177,7 +187,12 @@ var createSVGimgs = function (jsonObj) {
     img = link.append("img"),
     imgAttributes = img
       .attr("src", function (d) {
-        return d.img_url;
+        if(d.img_url != null){
+          return d.img_url;
+        }
+        else{
+          return;
+        }
       })
       .style('filter', function (d, i) {
         return 'url(#filter_' + i + ')';
@@ -198,7 +213,8 @@ var createSVGimgs = function (jsonObj) {
 
     // check window width: if small screen size, we will poll each image to see if its in viewport
     if (winWidth < 993) {
-      var checkViz = function () {
+      $this.animation.play();
+      /*var checkViz = function () {
         var vis = isElementInViewport($this);
         if (vis) {
           $this.animation.play();
@@ -212,8 +228,10 @@ var createSVGimgs = function (jsonObj) {
 
       $(window).scroll(function () {
         checkViz();
-      })
-    }
+      })*/
+
+    } // end if
+
   })
 
   // Event handlers
@@ -248,7 +266,7 @@ portOpen = function () {
       .set(li, {transformOrigin: "50% 50%"})
       //.set(portfolio, {autoAlpha: 1, 'z-index': 999})
       .set(portfolio, {display: 'block'})
-      .call(animate_title, ['#portfolio'])
+      .call(animate_title, ['Featured Works'])
       //.set(title_block, {display: 'block'})
       //.staggerTo(split.chars, .25, {autoAlpha: 1}, 0.1, 'title')
       //.staggerFrom(split.chars, .25, {y: '-=25px'}, 0.1, 'title')

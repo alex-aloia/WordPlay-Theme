@@ -25,8 +25,8 @@ var js_foot = [
 //  'vendor/bower/bootstrap/js/tab.js',
 //  'vendor/bower/bootstrap/js/affix.js',
   'src/js/plugins/*.js',
-  'src/js/common/_*.js',
-  'src/js/_main.js'
+  'src/js/common/_*.js'
+//  'src/js/_main.js'
 ];
 
 var gulp = require('gulp'),
@@ -350,7 +350,7 @@ gulp.task('watch', ['browser-sync'], function () {
   // watch svg files
   gulp.watch('src/svg/unprocessed/*.svg', ['svg-min', browserSync.reload]);
   // watch img files
-  gulp.watch('src/img/**/*', ['copy-imgs', browserSync.reload]);
+  gulp.watch('src/img/**/*', ['copy_imgs', browserSync.reload]);
 });
 
 // Default task to be run with `gulp`
