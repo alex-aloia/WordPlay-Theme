@@ -1,24 +1,15 @@
-//*:not(input):not(textarea) {
-//  -webkit-user-select: none; /* disable selection/Copy of UIWebView */
-//  -webkit-touch-callout: none; /* disable the IOS popup when long-press on a link */
-//}
-//
-//a {
-//  -webkit-user-select: none; /* disable selection/Copy of UIWebView */
-//  -webkit-touch-callout: none; /* disable the IOS popup when long-press on a link */
-//}
-
 header {
   top: 0;
   width: 100%;
   position: fixed;
   //border: 1px solid red;
-  background: url("../img/bg_lg.png");
-  background-repeat: repeat no-repeat;
-  min-height: 200px;
-  //top: 40%;
   margin: auto;
   z-index: 2;
+
+  background: url("../img/bg_new.png");
+  background-repeat: repeat no-repeat;
+  min-height: 150px;
+
 }
 
 #main_menu {
@@ -29,7 +20,7 @@ header {
   display: block;
   text-align: center;
   z-index: 1;
-  margin: 125px 0;
+  margin: 160px 0;
 
   @media (min-width: @screen-sm-min) {
     margin: 0;
@@ -41,12 +32,12 @@ header {
     margin: 0;
 
     > li {
-
       display: none;
       position: relative;
       width: 225px;
       margin: 0 auto;
       display: inline-block;
+      text-align: center;
       .trans();
 
       > svg {
@@ -63,7 +54,7 @@ header {
         font-family: Orbitron;
         letter-spacing: 4px;
         text-shadow: 0 2px 5px #663399;
-        font-size: 16px;
+        font-size: 14px;
         font-weight: bold;
 
         &:hover {
@@ -77,7 +68,7 @@ header {
         width: 275px;
 
         a {
-          font-size: 16px;
+          //font-size: 16px;
         }
       }
 

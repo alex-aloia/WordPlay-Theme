@@ -29,8 +29,6 @@ if (!empty($post)) {
 </nav>
 
 
-<div id="title-block" class="container">
-</div>
 
 <!--<svg class="title-hr" viewBox="0 0 1200 4" preserveAspectRatio="none">-->
 <!--  <line x1="0" y1="0" x2="1200" y2="0"/>-->

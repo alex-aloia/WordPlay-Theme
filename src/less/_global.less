@@ -3,9 +3,6 @@ html {
 }
 
 body {
-  //overflow: hidden;
-  //min-height: 600px;
-  //              url("../img/bg_rev.jpg") bottom transparent;
   background-color: #000;
 
   .page-header {
@@ -16,13 +13,17 @@ body {
     position: fixed;
     width: 80%;
     left: 50%;
-    top: 120px;
+    top: 110px;
     //height: 65px;
     //line-height: 65px;
     //display: none;
     text-align: center;
-
+    //z-index: 5;
     transform: translate(-50%, 0);
+
+    @media (min-width: @screen-md-min) {
+      top: 120px;
+    }
 
     > * {
       display: inline-block;
@@ -47,9 +48,6 @@ body {
         stroke-width: 3px;
       }
 
-      @media (min-width: @screen-sm-min) {
-        //width: 600px;
-      }
     }
 
 
@@ -63,11 +61,18 @@ body {
       font-weight: normal;
 
       div {
-        background-color: #000;
+        background-color: transparent;
+        background: -moz-linear-gradient(top,  rgba(0,0,0,0) 1%, rgba(0,0,0,1) 50%, rgba(0,0,0,0.06) 97%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(0,0,0,0)), color-stop(50%,rgba(0,0,0,1)), color-stop(97%,rgba(0,0,0,0.06)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 1%,rgba(0,0,0,1) 50%,rgba(0,0,0,0.06) 97%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  rgba(0,0,0,0) 1%,rgba(0,0,0,1) 50%,rgba(0,0,0,0.06) 97%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  rgba(0,0,0,0) 1%,rgba(0,0,0,1) 50%,rgba(0,0,0,0.06) 97%,rgba(0,0,0,0) 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  rgba(0,0,0,0) 1%,rgba(0,0,0,1) 50%,rgba(0,0,0,0.06) 97%,rgba(0,0,0,0) 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
       }
 
       @media (min-width: @screen-sm-min) {
-        font-size: 24px;
+        font-size: 22px;
       }
 
       > * {
