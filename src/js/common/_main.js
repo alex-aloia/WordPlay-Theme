@@ -236,5 +236,5 @@ var animate_title_close = function() {
     },
     tTL = new TimelineLite({onComplete:hide})
       .to(line, 1, {drawSVG: '50% 50%'})
-      .staggerTo(letters, .5, {autoAlpha: 0, y:'-=25px'}, .1, .5)
+      .staggerTo(letters, .3, {autoAlpha: 0, y:'-=25px'}, .1, .5)
 }

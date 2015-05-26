@@ -4,7 +4,6 @@ ajax_active = false;
 
 portTL = new TimelineMax({paused: true});
 
-
 // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
 function isElementInViewport(el) {
   var rect = el.getBoundingClientRect();
@@ -19,7 +18,9 @@ function isElementInViewport(el) {
   );
 }
 
-
+/*
+ **** Init portfolio ajax request
+ */
 var initPortfolio = function () {
 
   if (ajax_active) {
@@ -95,27 +96,15 @@ function portClose() {
 };
 
 
+/*
+ **** Portfolio Detail
+ */
+
 var loadPortfolioDetail = function (d) {
 
   TweenLite.to('#back_arw .arw', .8, {drawSVG: 0, autoAlpha: 0});
+
   animate_title_close();
-
-  var detCloseBtn = d3.select('.port_close'),
-    x1 = detCloseBtn.select('.port_close_x1'),
-    x2 = detCloseBtn.select('.port_close_x2'),
-    closeBtnHvrTL = new TimelineLite({paused: true})
-      .to(x1, .4, {fill: '#9933FF'}, 'stage1')
-      .to(x2, .4, {fill: '#9933FF'}, 'stage1');
-
-  detCloseBtn.animation = closeBtnHvrTL;
-
-  closeBtnTL = new TimelineLite()
-    .set(detCloseBtn, {display: 'block'})
-    .set(x1, {x: '+=120px', y: '+=120px', autoAlpha: 0, transformOrigin: "50% 50%"})
-    .set(x2, {x: '-=120px', y: '+=120px', autoAlpha: 0, transformOrigin: "50% 50%"})
-    .to(x1, .4, {x: '0px', y: '0px', autoAlpha: .8}, '+=1')
-    .to(x2, .4, {x: '0px', y: '0px', autoAlpha: .8}, '-=.2');
-
 
   var img_url = d.img_url,
     w = d.detail_imgW,
@@ -123,46 +112,77 @@ var loadPortfolioDetail = function (d) {
     type = d.type,
     desc = d.desc,
     extLink = d.ext_link,
-    detailBox = $('<div>').addClass('portDetail'),
-    imgContainer = $('<div>').addClass('imgContainer'),
-    txtContainer = $('<div>').addClass('txtContainer'),
-    txtContent = $('<div>').addClass('txtContent'),
-    txtDL = $('<dl>');
 
+    detailBox = d3.select('#portDetailWrap').append('div').attr('class', 'portDetail'),
+    imgContainer = detailBox.append('div').attr('class', 'imgContainer'),
+    txtContainer = detailBox.append('div').attr('class', 'txtContainer'),
+    txtContent = txtContainer.append('div').attr('class', 'txtContent');
 
-  //closeBtn = d3.select('.port_close');
+  function createCloseBtn() {
+    var paths = ['M0 0L64.3639 64.3638 77.8152 64.3638 13.4513 0z', 'M64.3639 0L0 64.3638 13.4513 64.3638 77.8152 0z'],
+      closeBtn = txtContent.append('svg')
+        .attr('class', 'port_close')
+        .attr('viewBox', '0 0 78 64'),
+      xParts = closeBtn.selectAll('path')
+        .data(paths)
+        .enter()
+        .append('path')
+        .attr('d', function (d) {
+          return d;
+        }),
+      closeBtnHvrTL = new TimelineLite({paused: true})
+        .to(xParts[0][0], .4, {fill: '#9933FF'}, 'stage1')
+        .to(xParts[0][1], .4, {fill: '#9933FF'}, 'stage1'),
+      closeBtnTL = new TimelineLite()
+        .set(closeBtn, {display: 'block'})
+        .set(xParts[0][0], {x: '+=120px', y: '+=120px', autoAlpha: 0, transformOrigin: "50% 50%"})
+        .set(xParts[0][1], {x: '-=120px', y: '+=120px', autoAlpha: 0, transformOrigin: "50% 50%"})
+        .to(xParts[0][0], .4, {x: '0px', y: '0px', autoAlpha: .8}, '+=1')
+        .to(xParts[0][1], .4, {x: '0px', y: '0px', autoAlpha: .8}, '-=.2');
 
+    function closeDetail() {
+      detailBox.remove();
+      portOpen(TweenLite.to('#back_arw .arw', .8, {drawSVG: '100%', autoAlpha: .7}));
+    }
 
-  $('#portDetailWrap').append(detailBox);
-  detailBox.append(imgContainer);
-  detailBox.append(txtContainer);
-  txtContainer.append(txtContent);
+    closeBtn.animation = closeBtnHvrTL;
 
-  if (title.length > 0) {
-    title = $('<h3>').text(d.title);
-    txtContent.append(title);
+    closeBtn
+      .on('mouseover', function () {
+        closeBtnHvrTL.play();
+      })
+      .on('mouseout', function () {
+        closeBtnHvrTL.reverse();
+      })
+      .on('mousedown', function () {
+        closeBtnTL.reverse();
+        TweenLite.to(detailBox, 0.6, {autoAlpha: 0, onComplete: closeDetail});
+
+        $(window).disablescroll("undo");
+      })
   }
 
-  txtContent.append(txtDL);
+
+  if (title.length > 0) {
+    title = txtContent.append('h3').text(d.title);
+  }
+
+  txtDL = txtContent.append('dl');
 
   if (type.length > 0) {
-    var h = $('<dd>').text('type: ');
-    type = $('<dt>').text(d.type);
-    txtDL.append(h, type);
+    var h = txtDL.append('dd').text('type: ');
+    type = txtDL.append('dt').text(d.type);
   }
 
   if (desc.length > 0) {
-    var h = $('<dd>').text('info: ');
-    desc = $('<dt>').text(d.desc);
-    txtDL.append(h, desc);
+    var h = txtDL.append('dd').text('info: ');
+    desc = txtDL.append('dt').text(d.desc);
   }
 
   if (extLink.length > 0) {
-    extLink = $('<a>').attr('href', extLink).attr('target', '_blank').html('view live');
-    txtContent.append(extLink);
+    extLink = txtContent.append('a').attr('href', extLink).attr('target', '_blank').text('view live');
   }
 
-  console.info(extLink)
 
   function loadImg(src) {
     var defObj = $.Deferred(),
@@ -185,46 +205,28 @@ var loadPortfolioDetail = function (d) {
 
   function animateDetail() {
     var $window = $(window),
-      detTL = new TimelineLite();
-
+      detTL = new TimelineLite({delay: 1});
 
     $window.disablescroll({
       handleWheel: true,
       handleKeys: true
     });
 
-    detTL.to(detailBox, 3, {autoAlpha: 1});
-
-    console.log('done')
+    detTL.to(detailBox, 3, {autoAlpha: 1})
+      .add(createCloseBtn, 0);
 
   }
-
 
   $.when(portClose(), loadImg(img_url))
     .done(animateDetail());
 
 
-  detCloseBtn.on('mousedown', function () {
-    closeBtnTL.reverse();
-    TweenLite.to(detailBox, 0.6, {autoAlpha: 0, onComplete: closeDetail});
-
-    $(window).disablescroll("undo");
-  })
-    .on('mouseover', function () {
-      closeBtnHvrTL.play();
-    })
-    .on('mouseout', function () {
-      closeBtnHvrTL.reverse();
-    })
-
-
-  var closeDetail = function () {
-    detail_active = false;
-    detailBox.remove();
-    portOpen(TweenLite.to('#back_arw .arw', .8, {drawSVG: '100%', autoAlpha: .7}));
-  }
 }
 
+
+/*
+ **** Create Portfolio Thumbs w/ ajax json
+ */
 
 var createSVGimgs = function (jsonObj) {
 
