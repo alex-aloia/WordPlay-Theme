@@ -33,7 +33,6 @@ get_template_part('templates/header');
   // track img loading
   function load_check() {
     setTimeout(function () {
-      //imgs = document.querySelectorAll('img')
       imgLoad = imagesLoaded('body')
 
       imgLoad.on('always', function (instance) {
@@ -54,9 +53,9 @@ get_template_part('templates/header');
         .set('#loader-wrap', {display: 'none'})
         .add(logo_aaaTL.play(), 0)
         .add(initMainMenu, 1)
+        .add(animateLogo_tripl3inf, 2)
         //.add(loadAbout, 0)
         //.add(portOpen)
-        .add(animateLogo_tripl3inf, 3)
     }
 
     loaderTL.repeat(0).eventCallback("onComplete", animate);

@@ -14,17 +14,15 @@
   ],
   "dependencies": {
     "respond": "1.4.2",
-    "d3": "~3.4.13",
-    "greensock": "~1.14.2",
+    "d3": "~3.5.5",
+    "greensock": "~1.16.1",
     "bootstrap": "~3.3.0",
-    "jquery-contentsize": "git@github.com:gilmoreorless/jquery-contentsize.git",
     "font-awesome": "~4.2.0",
     "jlayout": "git@github.com:bramstein/jlayout.git",
     "jquery.center.js": "~0.3.0",
-    "svg-injector": "~1.1.2",
     "imagesloaded": "~3.1.8",
     "hammer.js": "~2.0.4",
-    "video.js": "~4.12.5"
+    "video.js": "~5"
   },
   "resolutions": {
     "bootstrap": "~3.3.0",

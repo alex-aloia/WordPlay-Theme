@@ -37,7 +37,7 @@ if (!empty($post)) {
 <div class="wrap container">
 
 
-  <section id="contact" class="container2">
+  <section id="contact">
     <div class="content">
       <?php echo do_shortcode('[cscf-contact-form]'); ?>
     </div>
@@ -45,7 +45,7 @@ if (!empty($post)) {
   </section>
 
 
-  <section id="about" class="container2">
+  <section id="about">
     <div class="content">
       <article>
         <!--        <h3>Welcome to my world...</h3>-->
@@ -101,10 +101,12 @@ if (!empty($post)) {
   </section>
 
 
-  <section id="portfolio" class="container2">
+  <section id="portfolio">
   </section>
 
 </div> <!-- end wrap-->
+
+<div id="portDetailWrap"></div>
 
 <div id="loader-wrap">
   <?php get_template_part('assets/svg/common', 'tri-loader.svg'); ?>

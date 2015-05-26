@@ -5,7 +5,6 @@ ajax_active = false;
 portTL = new TimelineMax({paused: true});
 
 
-
 // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
 function isElementInViewport(el) {
   var rect = el.getBoundingClientRect();
@@ -19,7 +18,6 @@ function isElementInViewport(el) {
   && ((rect.top + rect.height) <= windowHeight)
   );
 }
-
 
 
 var initPortfolio = function () {
@@ -70,6 +68,33 @@ var layout = function (container) {
 }
 
 
+portOpen = function () {
+  var portfolio = document.querySelectorAll('#portfolio'),
+    li = document.querySelectorAll('#portfolio ul>li'),
+    portOpenTL = new TimelineLite({delay: 0.5})
+      .call(layout)
+      .set(li, {transformOrigin: "50% 50%"})
+      .set(portfolio, {display: 'block'})
+      .call(animate_title, ['Featured Works'])
+      .staggerTo(li, 0.5, {autoAlpha: 1, ease: Expo.easeIn}, 0.15, 'in')
+}
+
+function portClose() {
+  var defObj = $.Deferred();
+
+  var portfolio = document.querySelectorAll('#portfolio'),
+    li = document.querySelectorAll('#portfolio ul>li'),
+    portCloseTL = new TimelineLite();
+
+  portCloseTL
+    .staggerTo(li, 0.5, {autoAlpha: 0, ease: Expo.easeOut}, 0.1, 'out')
+    .set(portfolio, {'z-index': '-9'})
+    .call(defObj.resolve);
+
+  return defObj.promise();
+};
+
+
 var loadPortfolioDetail = function (d) {
 
   TweenLite.to('#back_arw .arw', .8, {drawSVG: 0, autoAlpha: 0});
@@ -92,46 +117,98 @@ var loadPortfolioDetail = function (d) {
     .to(x2, .4, {x: '0px', y: '0px', autoAlpha: .8}, '-=.2');
 
 
-  var url = d.img_url,
-    w = d.img_w,
-    h = d.img_h,
-    win_w = document.documentElement.clientWidth,
-    win_h = document.documentElement.clientHeight,
-    calc_w = null,
-    calc_h = null,
-    detailBox = $('<div>').addClass('portDetailBox'),
-    img = $('<img>').attr('src', url),
-    closeBtn = d3.select('.port_close');
-  console.log('img w ' + w)
-  console.log('img h ' + h)
-  detailBox.append(img);
-  $('body').append(detailBox);
+  var img_url = d.img_url,
+    w = d.detail_imgW,
+    title = d.title,
+    type = d.type,
+    desc = d.desc,
+    extLink = d.ext_link,
+    detailBox = $('<div>').addClass('portDetail'),
+    imgContainer = $('<div>').addClass('imgContainer'),
+    txtContainer = $('<div>').addClass('txtContainer'),
+    txtContent = $('<div>').addClass('txtContent'),
+    txtDL = $('<dl>');
 
 
-  if (w > win_w) {
-    //calc_h = win_h - h;
-    calc_w = win_w - w;
-    //img.attr('height', calc_h);
-    img.attr('width', calc_w);
-  }
-  else {
-    img.attr('height', h);
-    img.attr('width', w);
-  }
+  //closeBtn = d3.select('.port_close');
 
-  //detailBox.center();
 
-  var scrollUp = function () {
-    TweenLite.to('body', .8, {scrollTo: {y: 0, autoKill: false}, ease: Power3.easeOut})
+  $('#portDetailWrap').append(detailBox);
+  detailBox.append(imgContainer);
+  detailBox.append(txtContainer);
+  txtContainer.append(txtContent);
+
+  if (title.length > 0) {
+    title = $('<h3>').text(d.title);
+    txtContent.append(title);
   }
 
-  scrollUp();
+  txtContent.append(txtDL);
 
-  TweenLite.to(detailBox, 0.6, {autoAlpha: 1, delay: 1, zIndex: 5})
+  if (type.length > 0) {
+    var h = $('<dd>').text('type: ');
+    type = $('<dt>').text(d.type);
+    txtDL.append(h, type);
+  }
 
-  closeBtn.on('mousedown', function () {
+  if (desc.length > 0) {
+    var h = $('<dd>').text('info: ');
+    desc = $('<dt>').text(d.desc);
+    txtDL.append(h, desc);
+  }
+
+  if (extLink.length > 0) {
+    extLink = $('<a>').attr('href', extLink).attr('target', '_blank').html('view live');
+    txtContent.append(extLink);
+  }
+
+  console.info(extLink)
+
+  function loadImg(src) {
+    var defObj = $.Deferred(),
+      image = new Image();
+
+    image.onload = function () {
+      $(image).addClass('img-responsive').appendTo(imgContainer);
+      defObj.resolve();
+    }
+
+    image.onerror = function () {
+      defObj.reject();
+    }
+
+    image.src = src;
+
+    return defObj.promise();
+  };
+
+
+  function animateDetail() {
+    var $window = $(window),
+      detTL = new TimelineLite();
+
+
+    $window.disablescroll({
+      handleWheel: true,
+      handleKeys: true
+    });
+
+    detTL.to(detailBox, 3, {autoAlpha: 1});
+
+    console.log('done')
+
+  }
+
+
+  $.when(portClose(), loadImg(img_url))
+    .done(animateDetail());
+
+
+  detCloseBtn.on('mousedown', function () {
     closeBtnTL.reverse();
     TweenLite.to(detailBox, 0.6, {autoAlpha: 0, onComplete: closeDetail});
+
+    $(window).disablescroll("undo");
   })
     .on('mouseover', function () {
       closeBtnHvrTL.play();
@@ -144,7 +221,6 @@ var loadPortfolioDetail = function (d) {
   var closeDetail = function () {
     detail_active = false;
     detailBox.remove();
-    scrollUp();
     portOpen(TweenLite.to('#back_arw .arw', .8, {drawSVG: '100%', autoAlpha: .7}));
   }
 }
@@ -160,7 +236,7 @@ var createSVGimgs = function (jsonObj) {
       .enter()
       .append("li")
       .style('width', function (d) {
-        if (d.img_url == null){
+        if (d.img_url == null) {
           return;
         }
         else {
@@ -187,10 +263,10 @@ var createSVGimgs = function (jsonObj) {
     img = link.append("img"),
     imgAttributes = img
       .attr("src", function (d) {
-        if(d.img_url != null){
+        if (d.img_url != null) {
           return d.img_url;
         }
-        else{
+        else {
           return;
         }
       })
@@ -215,20 +291,20 @@ var createSVGimgs = function (jsonObj) {
     if (winWidth < 993) {
       $this.animation.play();
       /*var checkViz = function () {
-        var vis = isElementInViewport($this);
-        if (vis) {
-          $this.animation.play();
-        }
-        else {
-          $this.animation.reverse();
-        }
-      }
+       var vis = isElementInViewport($this);
+       if (vis) {
+       $this.animation.play();
+       }
+       else {
+       $this.animation.reverse();
+       }
+       }
 
-      checkViz();
+       checkViz();
 
-      $(window).scroll(function () {
-        checkViz();
-      })*/
+       $(window).scroll(function () {
+       checkViz();
+       })*/
 
     } // end if
 
@@ -242,10 +318,7 @@ var createSVGimgs = function (jsonObj) {
       this.animation.reverse();
     })
     .on('mousedown', function (d) {
-      portClose(loadPortfolioDetail(d));
-      //if (!portTL.isActive()) {
-      //}
-
+      loadPortfolioDetail(d);
     });
 
   $(window).resize(function () {
@@ -254,37 +327,7 @@ var createSVGimgs = function (jsonObj) {
 };
 
 
-portOpen = function () {
-  //document.body.scrollTop = document.documentElement.scrollTop = 0;
 
-  var portfolio = document.querySelectorAll('#portfolio'),
-    li = document.querySelectorAll('#portfolio ul>li'),
-    portOpenTL = new TimelineLite({delay: 1})
-      .call(layout)
-      //.call(set_scroll)
-      //.to('.logo_aaa', 1, {y: '+=200px'})
-      .set(li, {transformOrigin: "50% 50%"})
-      //.set(portfolio, {autoAlpha: 1, 'z-index': 999})
-      .set(portfolio, {display: 'block'})
-      .call(animate_title, ['Featured Works'])
-      //.set(title_block, {display: 'block'})
-      //.staggerTo(split.chars, .25, {autoAlpha: 1}, 0.1, 'title')
-      //.staggerFrom(split.chars, .25, {y: '-=25px'}, 0.1, 'title')
-      //.to(lines[0][0], 1, {drawSVG: '0 100%'}, 'lines')
-      //.staggerFrom(li, 0.75, {scale: 0, ease: Circ.easeIn}, 0.15, 'in')
-      .staggerTo(li, 0.8, {autoAlpha: 1, ease: Expo.easeIn}, 0.15, 'in')
-}
-
-portClose = function () {
-  var portfolio = document.querySelectorAll('#portfolio'),
-    li = document.querySelectorAll('#portfolio ul>li'),
-    portCloseTL = new TimelineLite();
-
-  portCloseTL
-    //.staggerTo(li, 0.8, {scale: 0, ease: Expo.easeOut}, 0.1, 'out')
-    .staggerTo(li, 0.8, {autoAlpha: 0, ease: Expo.easeOut}, 0.1, 'out')
-    .set(portfolio, {'z-index': '-9'})
-}
 
 
 

@@ -22,35 +22,40 @@ function portfolio_page_request()
     //$postID = sanitize_text_field($post->ID);
     $postID = $post->ID;
     $postTitle = sanitize_text_field($post->post_title);
-    $info = get_post_meta($post->ID, 'port_description');
-    $info = sanitize_text_field($info[0]);
 
-    $thumb_id = get_post_thumbnail_id();
-    $thumb = wp_get_attachment_image_src($thumb_id, 'large');
+    $type = get_post_meta($post->ID, 'port_type');
+    $type = sanitize_text_field($type[0]);
+
+    $desc = get_post_meta($post->ID, 'port_desc');
+    $desc = sanitize_text_field($desc[0]);
+
+    $img_id = get_post_thumbnail_id();
+    $img_url = wp_get_attachment_image_src($img_id, 'large');
     //$thumb = sanitize_text_field( wp_get_attachment_url( get_post_thumbnail_id($postID) ));
 
-		$thumb_sml = wp_get_attachment_thumb_url($thumb_id);
+		//$thumb_sml = wp_get_attachment_thumb_url($thumb_id);
 
-    $imgW = get_post_meta($post->ID, 'port_imgW');
-    $imgW = sanitize_text_field($imgW[0]);
+    $detail_imgW = get_post_meta($post->ID, 'detail_imgW');
+
+    //$imgW = sanitize_text_field($imgW[0]);
     $thumbW = get_post_meta($post->ID, 'port_thumbW');
     $thumbW = sanitize_text_field($thumbW[0]);
 
     $extLink = get_post_meta($post->ID, 'ext_link');
     $extLink = sanitize_text_field($extLink[0]);
 
-    $response = array(
-      'ID' => $thumb_id,
-      'title' => $postTitle,
-      'content' => $info,
-			'thumb_url' => $thumb_sml,
-      'img_url' => $thumb[0],
-      'img_w' =>  $thumb[1],
-      'img_h' =>  $thumb[2],
+//    $extLink = sanitize_text_field( $_POST['ext_link'] );
+//    update_post_meta($post->ID, 'ext_link', $extLink);
 
-      //'img_w' => $imgW,
-      'thumb_w' => $thumbW,
-      'ext_link' => $extLink
+    $response = array(
+      'ID' => $img_id,
+      'title' => $postTitle,
+      'type' => $type,
+      'desc' => $desc,
+      'ext_link' => $extLink,
+      'img_url' => $img_url[0],
+      'detail_imgW' => $detail_imgW,
+      'thumb_w' => $thumbW
     );
     array_push($responses, $response);
   }

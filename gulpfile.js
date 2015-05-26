@@ -1,16 +1,15 @@
 var theme_name = 'custom';
 
 var js_foot = [
-  //'vendor/bower/svg-injector/svg-injector.js',
   'vendor/bower/imagesloaded/imagesloaded.pkgd.js',
   'vendor/bower/greensock/src/uncompressed/TweenMax.js',
   'vendor/bower/d3/d3.js',
   'vendor/bower/hammer.js/hammer.js',
-//  'vendor/bower/jquery-contentsize/jquery.contentsize.js',
   'vendor/bower/jlayout/lib/jquery.sizes.js',
   'vendor/bower/jlayout/lib/jlayout.flow.js',
   'vendor/bower/jlayout/lib/jquery.jlayout.js',
   'vendor/bower/jquery.center.js/src/jquery.center.js',
+  'vendor/bower/jquery-disablescroll/jquery.disablescroll.js',
   'vendor/bower/video.js/dist/video-js/video.dev.js',
 //  'vendor/bower/bootstrap/js/transition.js',
 //  'vendor/bower/bootstrap/js/alert.js',
