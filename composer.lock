@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3987ff2c1877ed555a32f5beb171810c",
+    "hash": "e24b399c31418dc57a4db0c937e0c91c",
     "packages": [
         {
             "name": "composer/installers",
@@ -144,16 +144,16 @@
             "time": "2013-03-15 17:51:14"
         },
         {
-            "name": "wpackagist-plugin/check-email",
-            "version": "0.3",
+            "name": "wpackagist-plugin/admin-management-xtended",
+            "version": "2.3.9.2",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/check-email/",
-                "reference": "trunk"
+                "url": "http://plugins.svn.wordpress.org/admin-management-xtended/",
+                "reference": "tags/2.3.9.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/check-email.zip",
+                "url": "https://downloads.wordpress.org/plugin/admin-management-xtended.2.3.9.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -161,19 +161,19 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/check-email/"
+            "homepage": "https://wordpress.org/plugins/admin-management-xtended/"
         },
         {
             "name": "wpackagist-plugin/clean-and-simple-contact-form-by-meg-nicholas",
-            "version": "4.4.4",
+            "version": "4.3.4",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/clean-and-simple-contact-form-by-meg-nicholas/",
-                "reference": "tags/4.4.4"
+                "reference": "tags/4.3.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/clean-and-simple-contact-form-by-meg-nicholas.4.4.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/clean-and-simple-contact-form-by-meg-nicholas.4.3.4.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -184,16 +184,76 @@
             "homepage": "https://wordpress.org/plugins/clean-and-simple-contact-form-by-meg-nicholas/"
         },
         {
-            "name": "wpackagist-plugin/piklist",
-            "version": "0.9.4.25",
+            "name": "wpackagist-plugin/cmb2",
+            "version": "2.0.6",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/piklist/",
-                "reference": "tags/0.9.4.25"
+                "url": "http://plugins.svn.wordpress.org/cmb2/",
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/piklist.0.9.4.25.zip",
+                "url": "https://downloads.wordpress.org/plugin/cmb2.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/cmb2/"
+        },
+        {
+            "name": "wpackagist-plugin/display-widgets",
+            "version": "2.03",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/display-widgets/",
+                "reference": "tags/2.03"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/display-widgets.2.03.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/display-widgets/"
+        },
+        {
+            "name": "wpackagist-plugin/oembed-in-library",
+            "version": "1.0.2",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/oembed-in-library/",
+                "reference": "tags/1.0.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/oembed-in-library.1.0.2.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/oembed-in-library/"
+        },
+        {
+            "name": "wpackagist-plugin/piklist",
+            "version": "0.9.4.26",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/piklist/",
+                "reference": "tags/0.9.4.26"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/piklist.0.9.4.26.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -204,16 +264,16 @@
             "homepage": "https://wordpress.org/plugins/piklist/"
         },
         {
-            "name": "wpackagist-plugin/simple-page-ordering",
-            "version": "2.2.4",
+            "name": "wpackagist-plugin/video-thumbnails",
+            "version": "2.10.2",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/simple-page-ordering/",
-                "reference": "trunk"
+                "url": "http://plugins.svn.wordpress.org/video-thumbnails/",
+                "reference": "tags/2.10.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/simple-page-ordering.zip",
+                "url": "https://downloads.wordpress.org/plugin/video-thumbnails.2.10.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -221,39 +281,19 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/simple-page-ordering/"
-        },
-        {
-            "name": "wpackagist-plugin/videojs-html5-video-player-for-wordpress",
-            "version": "4.5.0",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/videojs-html5-video-player-for-wordpress/",
-                "reference": "tags/4.5.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/videojs-html5-video-player-for-wordpress.4.5.0.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/videojs-html5-video-player-for-wordpress/"
+            "homepage": "https://wordpress.org/plugins/video-thumbnails/"
         },
         {
             "name": "wpackagist-plugin/wp-slimstat",
-            "version": "3.9.8.2",
+            "version": "3.7.2",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/wp-slimstat/",
-                "reference": "tags/3.9.8.2"
+                "reference": "tags/3.7.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-slimstat.3.9.8.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-slimstat.3.7.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -275,7 +315,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/debug-bar.0.8.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/debug-bar.0.8.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -283,7 +323,7 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/debug-bar/"
+            "homepage": "https://wordpress.org/plugins/debug-bar/"
         },
         {
             "name": "wpackagist-plugin/debug-bar-console",
@@ -295,7 +335,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/debug-bar-console.0.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/debug-bar-console.0.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -303,7 +343,7 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/debug-bar-console/"
+            "homepage": "https://wordpress.org/plugins/debug-bar-console/"
         },
         {
             "name": "wpackagist-plugin/wordpress-importer",
@@ -315,7 +355,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/wordpress-importer.0.6.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-importer.0.6.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -323,7 +363,27 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/wordpress-importer/"
+            "homepage": "https://wordpress.org/plugins/wordpress-importer/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-migrate-db",
+            "version": "0.6.1",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/wp-migrate-db/",
+                "reference": "tags/0.6.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-migrate-db.0.6.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-migrate-db/"
         }
     ],
     "aliases": [],

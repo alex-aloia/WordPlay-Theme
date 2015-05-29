@@ -1,0 +1,32 @@
+<?php
+/**
+ * Bug testing only. Not to be used on a production site!!
+ * User: tripl3inf
+ * Date: 8/26/14
+ * Time: 9:28 PM
+ */
+
+
+
+add_action( 'wp_footer', 'roots_wrap_info' );
+
+function roots_wrap_info() {
+  $format = '<h6>The %s template being used is: %s</h6>';
+  $main   = Roots_Wrapping::$main_template;
+  global $template;
+
+  printf( $format, 'Main', $main );
+  printf( $format, 'Base', $template );
+
+ echo WP_CONTENT_DIR;  // no trailing slash, full paths only
+  echo "<br />";
+ echo WP_CONTENT_URL;  // full url
+  echo "<br />";
+ echo WP_PLUGIN_DIR;  // full path, no trailing slash
+  echo "<br />";
+ echo WP_PLUGIN_URL;  // full url, no trailing slash
+  echo "<br />";
+ echo site_url();
+
+
+}

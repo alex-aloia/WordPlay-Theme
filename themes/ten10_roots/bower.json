@@ -1,0 +1,33 @@
+{
+  "name": "ten10",
+  "version": "1.0.0",
+  "homepage": "http://t3inf.com",
+  "authors": [
+    "Alex Aloia - tripl3infinity@gmail.com"
+  ],
+  "license": "PRIVATE",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "assets/vendor"
+  ],
+  "dependencies": {
+    "modernizr": "2.8.2",
+    "jquery": "1.11.1",
+    "bootstrap": "3.2.0",
+    "respond": "1.4.2",
+    "font-awesome": "~4.1.0",
+    "rangeslider.js": "~0.3.2",
+    "greensock": "~1.13.1",
+    "jquery-colorbox": "~1.5.13",
+    "sidr": "~1.2.1",
+    "jquery-touchswipe": "~1.6.6",
+    "jquery-ui": "~1.11.1",
+    "jquery-ui-slider-pips": "~1.6.1",
+    "magnific-popup": "~0.9.9"
+  },
+  "devDependencies": {
+    "livereload": "~2.0.8"
+  }
+}

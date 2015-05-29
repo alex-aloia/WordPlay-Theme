@@ -1,0 +1,200 @@
+header {
+  // hide overflow on small devices to prevent content showing outside of body
+  @media @sm-all {
+    overflow: hidden;
+  }
+}
+
+header {
+  position: relative;
+  background: @brand-primary;
+  padding-top: 10px;
+  border-bottom: 2px solid #fff;
+  .banner-wrap {
+    .container();
+    @media @sm-all {
+      margin-top: 2em;
+    }
+    .banner {
+      .make-row();
+      //margin-bottom: 1em;
+      @media @md  {
+        height: unset;
+      }
+      @media @lg {
+        height: 6em;
+        margin-bottom: 1em;
+      }
+
+      .logo {
+        .make-sm-column(8);
+        display: block;
+        @media @sm-all {
+          margin-bottom: 1em;
+        }
+        svg {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .mod_featured {
+        .make-sm-column(4);
+        .helvetica-md-cond();
+        text-transform: uppercase;
+        color: #fff;
+        height: 98%;
+        /*
+                .content {
+                  padding: 0.3em 1.5em 0.3em 0.5em;
+                  @media @lg {
+                    padding: 0.6em 1.5em 0.3em 0.5em;
+                  }
+                  height: inherit;
+                  border: 2px solid #fff;
+                  background: #3490D3;
+                  p {
+                    margin: 0;
+                    font-size: 1em;
+                    @media @md {
+                      font-size: 1.1em;
+                    }
+                    @media @lg {
+                      font-size: 1.5em;
+                    }
+                  }
+                }
+                .img {
+                  position: absolute;
+                  height: 8em;
+                  width: 8em;
+                  right: -2.5em;
+                  top: 50%;
+                  margin-top: -4.5em;
+
+                  &:after {
+                    content: '';
+                    background: url("../img/cam_on_boom.png") no-repeat;
+                    display: block;
+                    background-size: 100%;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                  }
+                }
+        */
+      }
+    }
+  }
+  #menu-primary-navigation {
+    display: none;
+    @media @md {
+      display: block;
+    }
+  }
+
+  .nav-wrap {
+    @media @sm-all {
+      position: absolute;
+      top: 0;
+      height: 2em;
+      background: #054069;
+      width: 100%;
+    }
+    nav {
+      .container();
+      .navbar {
+        .make-row();
+        margin: 0;
+        padding: 0;
+        bottom: 0;
+
+        .mobile_BTN {
+          position: absolute;
+          display: none;
+          right: 0;
+          top: 3px;
+          font-size: 1.5em;
+          color: #fff;
+          z-index: 0;
+        }
+
+        #mobile_open_BTN {
+          z-index: 9;
+        }
+
+        #mobile_close_BTN {
+          //opacity: 0
+        }
+
+        > ul {
+          .make-row();
+          .make-xs-column(12);
+          li {
+            &:last-child > a {
+              &:after {
+                content: none;
+              }
+            }
+            &.active:after {
+              content: '';
+              display: block;
+              position: absolute;
+              margin: 1px 0 0 50%;
+              left: -15px;
+              height: 18px;
+              width: 28px;
+              background: url("../img/menu_tri.png") transparent 0 0 no-repeat;
+            }
+
+            > a {
+              &:after {
+                content: '|';
+                display: inline-block;
+                position: relative;
+                left: 0.8em;
+                top: -0.1em;
+                color: #fff;
+                font-weight: bold;
+                font-size: 0.9em;
+              }
+            }
+            > a {
+              padding: 0 1em .5em .5em;
+              font-size: 1em;
+
+              @media @md {
+                font-size: .88em;
+                padding: 0 .8em .5em .4em;
+              }
+              @media @lg {
+                font-size: 1em;
+                padding: 0 1em .5em .5em;
+
+              }
+              &:focus,
+              &:hover {
+                color: lighten(@brand-primary, 30%);
+                background: transparent;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

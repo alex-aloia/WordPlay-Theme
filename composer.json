@@ -1,27 +1,35 @@
 {
-    "name": "WordPlay Theme",
+    "name": "ten10",
     "description": "Custom WordPress Theme",
+
     "repositories": [
         {
             "type": "composer",
             "url": "http://wpackagist.org"
         }
+
     ],
+
+
 
     "require": {
         "php": ">=5.3.0",
         "composer/installers": "~1.0",
-        "fancyguy/webroot-installer": "*",
-        "wpackagist-plugin/clean-and-simple-contact-form-by-meg-nicholas": "*",
+        "fancyguy/webroot-installer": "1.*",
+        "wpackagist-plugin/clean-and-simple-contact-form-by-meg-nicholas": "4.3.4",
         "wpackagist-plugin/piklist": "*",
-        "wpackagist-plugin/wp-slimstat": "*",
-        "wpackagist-plugin/simple-page-ordering": "*",
-        "wpackagist-plugin/check-email": "*",
-        "wpackagist-plugin/videojs-html5-video-player-for-wordpress": "*"
+        "wpackagist-plugin/cmb2": "*",
+        "wpackagist-plugin/wp-slimstat": "3.7.2",
+        "wpackagist-plugin/display-widgets": "2.03",
+        "wpackagist-plugin/oembed-in-library": "1.0.2",
+        "wpackagist-plugin/video-thumbnails": "2.10.2",
+        "wpackagist-plugin/admin-management-xtended": "2.3.9.2"
+
     },
 
     "require-dev" : {
         "wpackagist-plugin/wordpress-importer": "*",
+        "wpackagist-plugin/wp-migrate-db": "*",
         "wpackagist-plugin/debug-bar": "*",
         "wpackagist-plugin/debug-bar-console": "*"
     },
@@ -29,13 +37,15 @@
     "autoload": {
     },
 
+
+
     "extra": {
-        "webroot-dir": "../wordpress",
-        "webroot-package": "../wordpress",
+        "webroot-dir": "wordpress",
+        "webroot-package": "wordpress",
         "installer-paths": {
-            "vendor/plugins/{$name}/": ["type:wordpress-plugin"],
-            "vendor/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
-            "themes/{$name}/": ["type:wordpress-theme"]
+          "vendor/plugins/{$name}/": ["type:wordpress-plugin"],
+          "vendor/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+          "themes/{$name}/": ["type:wordpress-theme"]
         }
     }
 

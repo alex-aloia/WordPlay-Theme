@@ -1,0 +1,43 @@
+footer {
+  position: relative;
+  bottom: 0;
+  height: 80px;
+  width: 100%;
+  border-top: 2px solid #fff;
+  background: #3a8bc1;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #3a8bc1 2%, #025287 89%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(2%, #3a8bc1), color-stop(89%, #025287));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #3a8bc1 2%, #025287 89%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #3a8bc1 2%, #025287 89%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #3a8bc1 2%, #025287 89%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #3a8bc1 2%, #025287 89%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3a8bc1', endColorstr='#025287', GradientType=0);
+  /* IE6-9 */
+}
+footer .container {
+  height: inherit;
+}
+footer .container nav {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+footer .container nav ul li {
+  font-size: 12px;
+}
+footer .container nav ul li a {
+  color: #FDFDFD;
+}
+footer .container nav .social_media {
+  font-size: 9px;
+}
+footer .container nav .social_media li {
+  margin: -0.2em 0.8em 0 0;
+}

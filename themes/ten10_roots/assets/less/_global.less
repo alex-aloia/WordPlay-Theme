@@ -1,0 +1,97 @@
+/* =============================================================================
+   Media queries for different screen sizes
+   ========================================================================== */
+
+#overlay_toolz_container {
+  opacity: 0.75;
+  width: 1140px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -570px;
+
+  display: none;
+}
+
+.overlay_tool_options {
+  position: fixed;
+  right: 0;
+  top: 45%;
+  height: 20px;
+  width: 20px;
+}
+
+html {
+  margin-top: 0 !important;
+}
+
+#wpadminbar {
+  bottom: 0 !important;
+  top: unset !important;
+  position: fixed !important;
+}
+
+#wpadminbar .ab-top-secondary .menupop .ab-sub-wrapper {
+  position: relative !important;
+  top: -130px !important;
+  right: -25px;
+}
+
+/*
+*  MIXINS
+*/
+
+.helvetica-md-cond {
+  font-family: "HelveticaNeueMediumCondensed", "HelveticaNeue-Medium-Condensed", "Helvetica Neue Medium Condensed", "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnRegular', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif;
+  font-weight: 500;
+  font-stretch: condensed;
+}
+
+.impact {
+  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans serif;
+}
+
+.shadow {
+
+  -webkit-filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.5));
+
+  filter: url(shadow.svg#drop-shadow);
+
+}
+
+main {
+  .container();
+
+  section {
+    .make-row();
+  }
+}
+
+.carousel {
+  .carousel-control {
+    background: none;
+  }
+}
+
+.dropdown-toggle {
+  .caret {
+    display: none;
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+  background: transparent;
+}
+
+//.dropdown-menu {
+//  border: none;
+//  background: rgba(255, 255, 255, 0.6);
+//}
+
+
+

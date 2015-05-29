@@ -1,0 +1,62 @@
+/* =============================================================================
+   Media queries for different screen sizes
+   ========================================================================== */
+.nav > li > a:hover,
+.nav > li > a:focus {
+  text-decoration: none;
+  background-color: transparent;
+}
+.navbar {
+  margin-bottom: 0;
+}
+.dropdown-menu {
+  border: none;
+  background: rgba(255, 255, 255, 0.6);
+}
+.navbar-nav {
+  margin-bottom: 0;
+}
+.navbar-nav li a {
+  color: #FFF;
+  padding: 10px 13px;
+}
+.navbar-nav li a:focus,
+.navbar-nav li a:hover {
+  background: transparent;
+}
+.navbar-nav li a:after {
+  content: '|';
+  display: inline-block;
+  position: relative;
+  left: 15px;
+}
+.navbar-nav li a:focus:after,
+.navbar-nav li a:hover:after {
+  color: #fff;
+}
+.navbar-nav li:first-child a {
+  padding-left: 0;
+}
+.navbar-nav li:last-child a:after {
+  content: none;
+}
+.navbar-nav li.active > a {
+  color: #333;
+  font-weight: bold;
+}
+.navbar-nav li.active a:after {
+  color: #fff;
+}
+.navbar-nav .dropdown-toggle .caret {
+  display: none;
+}
+#menu-primary-navigation.navbar-nav > li.active:after {
+  content: '';
+  display: block;
+  position: absolute;
+  margin: 1px 0 0 50%;
+  left: -15px;
+  height: 30px;
+  width: 30px;
+  background: url("../img/menu_tri.svg") transparent 0 0 no-repeat;
+}

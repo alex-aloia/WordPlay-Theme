@@ -1,0 +1,132 @@
+//@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,900);
+
+body {
+  //Content wrapper
+  //background: @gray-light;
+  background: #fff;
+
+  .wrap {
+
+    main {
+      section.content-wrap {
+        margin: 0;
+        background: #fff;
+
+        .featured {
+          padding: 0;
+
+        }
+
+        article {
+          h3 {
+            //margin-top: 10px;
+          }
+
+          p {
+            //font-size: 12px;
+          }
+        }
+
+      }
+
+      .right_rail {
+        .make-sm-column(4);
+        padding-top: 15px;
+      }
+
+    }
+  }
+}
+
+
+/*
+*  Main content area
+*/
+.main {
+  .featured {
+    padding: 0;
+  }
+
+  .entry-content {
+    -moz-column-count: 2;
+    -moz-column-gap: 20px;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 20px;
+
+  }
+}
+
+/*
+*  Range Slider
+.rangeslider {
+  #gradient > .horizontal-three-colors( @start-color:@brand-secondary; @mid-color:@brand-success; @end-color:darken(@brand-primary, 12%););
+  display: block;
+  height: 32px;
+  width: 100%;
+  box-shadow: 0 0 3px #ccc, inset 1px 3px 5px #3D3D3D;
+  border-radius: 30px;
+  //    margin: 0 30px;
+}
+
+.rangeslider {
+  position: relative;
+}
+
+.rangeslider--disabled {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+  opacity: 0.4;
+}
+
+.rangeslider__fill {
+  background: transparent;
+  display: none;
+  position: absolute;
+  top: 0;
+}
+
+.rangeslider__handle {
+  background: none;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  display: inline-block;
+  position: absolute;
+  top: -6px;
+  padding: 0 40px;
+
+}
+
+.rangeslider__handle:after {
+  content: "";
+  display: block;
+  width: 43px;
+  height: 45px;
+  background: url("../img/ui/UI_slider_handle.png") transparent no-repeat center;
+  //box-shadow: 0 0 3px #3D3D3D, inset 0 0 1px #000;
+  box-shadow: none;
+  border-radius: 50%;
+  border: none;
+
+}
+
+.rangeslider__handle:active {
+
+}
+
+input[type="range"]:focus + .rangeslider .rangeslider__handle {
+}
+*/
+
+
+    .carousel-control {
+      display: table;
+      background: none;
+      box-shadow: none;
+      font-size: 6em;
+      span {
+        display: table-cell;
+        height: 6em;
+        vertical-align: middle;
+        text-shadow: 0 0 6px #000;
+      }
+    }

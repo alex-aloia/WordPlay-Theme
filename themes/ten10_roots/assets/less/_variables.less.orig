@@ -1,0 +1,31 @@
+// Brand colors
+// -------------------------
+
+<<<<<<< HEAD
+@brand-primary:         #222;
+
+
+
+=======
+//@brand-primary:         red;
+>>>>>>> 453cac6b1a22870510bda7677d54f315975f0be6
+
+
+// Glyphicons path
+// -------------------------
+
+@icon-font-path:        "../vendor/bootstrap/fonts/";
+
+
+<<<<<<< HEAD
+=======
+@navbar-color:             red;
+@navbar-default-link-color:                red;
+
+@navbar-height: 30px;
+@navbar-default-bg: blue;
+
+#mainBanner {
+  /*background: #333;  Old browsers */
+}
+>>>>>>> 453cac6b1a22870510bda7677d54f315975f0be6

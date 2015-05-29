@@ -1,0 +1,68 @@
+// projects template styles
+
+.archive-gallery {
+
+  .entry-content {
+    margin: 10px -15px 0 -15px;
+
+    .vid_link_wrap {
+      .make-sm-column(3);
+      position: relative;
+      height: 160px;
+      overflow: hidden;
+      margin-bottom: 15px;
+
+      > a {
+        position: relative;
+        display: block;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+        }
+        .hover_info {
+          position: absolute;
+          bottom: -40px;
+          width: 100%;
+          padding: 0.6em 0;
+          //display: none;
+          visibility: hidden;
+          background: @brand-primary;
+          text-align: center;
+          color: #fff;
+
+          p {
+            margin: 0;
+            font-weight: normal;
+            font-size: 0.9em;
+          }
+          p.title {
+            font-weight: bold;
+          }
+        }
+      }
+
+    }
+
+  }
+
+  .mfp-image-holder {
+    img.mfp-img {
+      max-width: 600px !important;
+    }
+    .btn {
+      position: absolute;
+      bottom: 55px;
+      left: 25px;
+      font-size: 16px;
+      padding: 4px 16px;
+    }
+
+    .mfp-figure:after {
+      top: 0;
+      bottom: 0;
+      background: none;
+      box-shadow: none;
+    }
+  }
+}

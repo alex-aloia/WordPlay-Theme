@@ -1,0 +1,153 @@
+/*
+*  Template - Risk Tolerance
+*/
+.template-risk {
+
+  .featured {
+    .make-md-column(4);
+
+  }
+
+  .content {
+    .make-md-column(8);
+    //padding: 0 22px;
+
+    .widget_wrap {
+      width: 100%;
+      margin: 2em 0;
+      //padding: 22px;
+      min-height: 500px;
+      border: 1px solid @gray-light;
+
+      .slider_wrap {
+        position: relative;
+        margin: 4.5em 2em 2.5em 2em;
+        #gradient > .horizontal-three-colors( @start-color:@brand-secondary; @mid-color:@brand-success; @end-color:darken(@brand-primary, 12%););
+        display: block;
+        height: 2.25em;
+        box-shadow: 0 0 3px #ccc, inset 1px 3px 5px #3D3D3D;
+        border-radius: 30px;
+
+
+        .ui-widget.range_slider {
+          width: 88%;
+          margin: 0 auto;
+          background: none;
+          border: none;
+
+
+          .ui-slider-handle {
+            display: block;
+            width: 44px;
+            height: 44px;
+            margin-left: -20px;
+            background: url("../img/ui/UI_slider_handle.png") transparent no-repeat center;
+            //box-shadow: 0 0 3px #3D3D3D, inset 0 0 1px #000;
+            box-shadow: none;
+            border-radius: 50%;
+            border: none;
+
+            &:after {
+              box-shadow: none;
+            }
+            .ui-state-active,
+            .ui-state-focus,
+            .ui-state-hover {
+              box-shadow: none;
+            }
+          }
+
+          .ui-slider-pip {
+            font-size: 1.25em;
+            top: -1em;
+
+            .ui-slider-label {
+              top: -1.25em;
+              color: @brand-primary;
+            }
+            .ui-slider-line {
+              height: .6em;
+              width: 2px;
+              margin-left: -1px;
+              background: @brand-primary;
+            }
+          }
+          .ui-slider-pip-selected {
+            .ui-slider-label {
+              color: @brand-success;
+            }
+          }
+
+        }
+      }
+
+
+
+      .display_box_panels {
+        position: relative;
+
+        .panel {
+          visibility: hidden;
+          position: absolute;
+          height: 325px;
+          width: 100%;
+
+          &:first-child {
+           visibility: visible;
+          }
+
+          .display_boxes {
+            list-style: none;
+            padding: 0;
+            height: 100%;
+
+            > li {
+              display: inline-block;
+              float: left;
+              position: relative;
+              width: 30%;
+              height: 100%;
+              border: 1px solid @gray-light;
+              text-align: center;
+              padding: 12px;
+              margin: 0 1.25em;
+
+              &:first-child {
+                margin-right: 0;
+              }
+
+              &:last-child {
+                margin-left: 0;
+              }
+
+              h5 {
+                font-size: 16px;
+                font-weight: bold;
+              }
+
+              h6 {
+                .impact();
+                font-size: 4.5em;
+                font-size: bold;
+                color: @brand-primary;
+
+                &:after {
+                  content: '%';
+                  display: inline-block;
+                }
+              }
+
+              p {
+                font-size: 11px;
+                text-align: left;
+              }
+            }
+          }
+        }
+
+
+
+      }
+    }
+  }
+}

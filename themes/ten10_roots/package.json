@@ -1,0 +1,40 @@
+{
+  "name": "ten10_theme",
+  "version": "0.1.0",
+  "author": "Alex Aloia - tripl3infinity",
+  "homepage": "http://t3inf.com",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/roots/roots.git"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
+  "scripts": {
+    "postinstall": "node_modules/.bin/bower install"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "devDependencies": {
+    "bower": "~1.3.5",
+    "grunt": "~0.4.5",
+    "grunt-autoprefixer": "~0.8.1",
+    "grunt-contrib-concat": "~0.4.0",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-less": "~0.11.3",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-cssbeautifier": "^0.1.2",
+    "grunt-modernizr": "~0.5.2",
+    "grunt-wiredep": "^1.8.0",
+    "grunt-wp-assets": "~0.2.6",
+    "load-grunt-config": "^0.13.1",
+    "load-grunt-tasks": "~0.6.0",
+    "time-grunt": "~0.3.2",
+    "tiny-lr": "0.0.9"
+  }
+}
