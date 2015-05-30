@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="loader" x="0px" y="0px" version="1.1" viewBox="0 0 367.9279 350.8244" xml:space="preserve">
-    <defs>
-        <mask id="loader_mask" width="367.9279" height="350.8244" x="0" y="0" maskUnits="userSpaceOnUse">
-            <path fill="#FFFFFF" d="M156.3017,262.2634c-9.4242,15.8357-20.3418,33.1752-29.9818,49.4582h234.4984 C301.646,209.1982,243.3477,108.4237,183.9545,5.4675C124.9981,108.6496,67.1375,209.8563,8.6234,312.3802h59.61 c38.5799-67.5399,76.384-132.8247,116.4874-203.0081c31.1214,53.9049,58.4699,100.2387,88.9332,152.8224 C232.0175,262.1894,195.7465,262.2634,156.3017,262.2634z"/>
-        </mask>
-    </defs>
-    <path fill="none" stroke="#AAFF00" stroke-width="56" stroke-miterlimit="10" d="M24.3405 336.9846L184.0074 56.1721 319.3037 288.8723 118.6784 289.1867" mask="url(#loader_mask)" class="loader-loader"/>
-</svg>

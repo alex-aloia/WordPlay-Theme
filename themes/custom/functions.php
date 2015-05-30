@@ -10,6 +10,7 @@
  * @link https://github.com/roots/custom/pull/1042
  */
 $custom_includes = array(
+  'lib/DEV-ONLY.php',         // FOR DEV
   'lib/utils.php',           // Utility functions
   'lib/init.php',            // Initial theme setup and constants
   'lib/wrapper.php',         // Theme wrapper class
@@ -20,13 +21,9 @@ $custom_includes = array(
   'lib/nav.php',             // Custom nav modifications
   'lib/gallery.php',         // Custom [gallery] modifications
   'lib/comments.php',        // Custom comments modifications
-  'lib/scripts.php',         // Scripts and stylesheets
+  'lib/assets.php',         // Scripts and stylesheets
   'lib/ajax.php',            // Ajax handlers
-  'lib/cpt_main_menu.php',  // Main Menu
-  'lib/cpt_portfolio.php',  // Porfolio stuff
-  'lib/cpt_vid_intro.php',  // Video Intros
-  'lib/extras.php',          // Custom functions
-  //'lib/DEV-ONLY.php',          // FOR DEV
+  'lib/extras.php'           // Custom functions
 );
 
 foreach ($custom_includes as $file) {

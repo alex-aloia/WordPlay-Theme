@@ -7,9 +7,7 @@
     </div>
   <![endif]-->
 
-  <?php
-    get_template_part('templates/header');
-  ?>
+  <?php get_template_part('templates/header'); ?>
 
   <div class="wrap container" role="document">
     <div class="content row">
@@ -28,18 +26,7 @@
 
   <?php wp_footer(); ?>
 
-<div id='bgOverlay'></div>
-
 </body>
-
-<script type="text/javascript">
-  jQuery(function ($) {
-    $(window).load(function() {
-      TweenLite.to( $('.wrap'), 1, {autoAlpha:1})
-    });
-  });
-</script>
-
 
 
 </html>

@@ -1,106 +1,18 @@
-<?php
-/**
- *  Site Front Page
- */
-global $post;
-if (!empty($post)) {
-  $args = array('post_type' => 'cpt_main_menu', 'posts_per_page' => -1);
-  $loop = new WP_Query($args);
-}
-?>
-
-<nav id="main_menu" class="menu" role="navigation">
-  <ul>
-    <?php while ($loop->have_posts()) : $loop->the_post();
-      $post_id = get_the_ID();
-      $dir = get_template_directory_uri();
-      $title = get_the_title();
-      $title = strtolower($title);
-      ?>
-      <li class="<?php echo $title; ?>">
-        <?php get_template_part('assets/svg/nav-menu', $title . '.svg'); ?>
-        <a href="<?php echo the_permalink(); ?>"><?php the_title() ?></a>
-      </li>
-
-    <?php endwhile; ?>
-  </ul>
-</nav>
+<?php /**  Site Front Page **/ ?>
 
 
-<div class="wrap container">
-
-
-  <section id="contact">
+<div class="wrap container" role="document">
     <div class="content">
-      <?php echo do_shortcode('[cscf-contact-form]'); ?>
+        <main class="main" role="main">
+        <h1>I'm serious as a heart attack</h1>
+
+        <p>Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine.
+          You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water.
+          We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are
+          connected, you and I. We're on the same curve, just on opposite ends.</p>
+
+      </main>
     </div>
-  </section>
-
-
-  <section id="about">
-    <div class="content">
-      <article>
-        <p>
-
-        <div class="pic_box">
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/me.png" alt=""/>
-          <p>Check me out!</p>
-          <?php get_template_part('assets/svg/common', 'social.svg'); ?>
-        </div>
-
-          In this digital age... the terminology, job titles & jargon inherently associated with technology, often mask
-          the ultimate objective of its true nature: communication.
-          I am a designer & full-stack web developer focused on
-          improving communication by creating unique end-user
-          experiences with modern, standard-based code; supported by highly efficient and scalable infrastructure.  
-          <br><br>
-          As a child, I became enamored with both Art & Technology: two realms that continue to forge the passion of my
-          existence. Artistry and its fundamentals were always at the center of my elementary training, giving me a keen
-          eye
-          for aesthetics. Somewhere along the way, I discovered Design; which has proven to meld these two worlds
-          together
-          in my mind... leaving the ‘World Wide Web’ at the crux of my fascination.  
-          <br><br>
-          I LOVE everything about the Internet! I especially enjoy building hybrid/responsive web applications. From
-          inception to deployment, through continued development and maintenance, I enjoy being a part of every aspect
-          of
-          the seemingly daunting process. My preferred 'weapon of choice' is the open-source 'LEMP stack', built on top
-          of
-          Ubuntu.
-          <br><br>
-          Currently, I have been working on a couple of open-source projects centered on creating deployable Wordpress
-          environments. Utilizing Packer & Ansible, I have created a framework that allows me to create new,
-          pre-provisioned cloud instances on the fly. The same codebase also lets me deploy updates from a Git repo with
-          ease. You can check out my work on <a href="http://codepen.io/tripl3inf/">github</a> if your curious!
-          <br><br>
-           Besides all the ‘nerd stuff’, I also have a passion for music. I rock out on my Les Paul guitar through a
-          very
-          unnecessary Mesa Boogie amp... My neighbors love me! I enjoy playing almost anything, from bluesy Zeppelin
-          leads
-          to hammering Pantera riffs. Want to jam? I’d love to be in your band!
-          <br><br>
-          If you have a project that you'd like to discuss, or just want to 'drop me a line', please get in touch! You
-          can
-          use my contact page, or find me on social networks.
-
-
-        </p>
-      </article>
-
-
-    </div>
-  </section>
-
-
-  <section id="portfolio">
-  </section>
-
 </div> <!-- end wrap-->
 
-<div id="portDetailWrap"></div>
 
-<div id="loader-wrap">
-  <?php get_template_part('assets/svg/common', 'tri-loader.svg'); ?>
-</div>
-
-<?php get_template_part('assets/svg/common', 'back-arw.svg'); ?>

@@ -83,7 +83,7 @@
                     <path d="M98.1921,225.1911c-5.2484-9.3583-9.4764-19.3611-12.5285-29.8611 l-11.5959,3.1071c3.3295,11.5236,7.9667,22.4961,13.7338,32.7531L98.1921,225.1911z"/>
                 </g>
             </g>
-            <g transform="scale(200 -200) translate(1 -1)" opacity="0.5" class="hud1-sphere">
+            <g transform="matrix(200 0 0 -200 200 200)" opacity="0.5" class="hud1-sphere">
                 <g class="hud1-sphere-front">
                     <g fill="#1B1F77" class="hud1-sphere-half">
                         <g class="hud1-meridians">

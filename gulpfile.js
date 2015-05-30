@@ -1,57 +1,42 @@
 var theme_name = 'custom';
 
 var js_foot = [
-  'vendor/bower/imagesloaded/imagesloaded.pkgd.js',
-  'vendor/bower/greensock/src/uncompressed/TweenMax.js',
-  'vendor/bower/d3/d3.js',
-  'vendor/bower/hammer.js/hammer.js',
-  'vendor/bower/jlayout/lib/jquery.sizes.js',
-  'vendor/bower/jlayout/lib/jlayout.flow.js',
-  'vendor/bower/jlayout/lib/jquery.jlayout.js',
-  'vendor/bower/jquery.center.js/src/jquery.center.js',
-  'vendor/bower/jquery-disablescroll/jquery.disablescroll.js',
-  'vendor/bower/video.js/dist/video-js/video.dev.js',
-//  'vendor/bower/bootstrap/js/transition.js',
-//  'vendor/bower/bootstrap/js/alert.js',
-//  'vendor/bower/bootstrap/js/button.js',
-//  'vendor/bower/bootstrap/js/carousel.js',
-//  'vendor/bower/bootstrap/js/collapse.js',
-//  'vendor/bower/bootstrap/js/dropdown.js',
-//  'vendor/bower/bootstrap/js/modal.js',
-//  'vendor/bower/bootstrap/js/tooltip.js',
-//  'vendor/bower/bootstrap/js/popover.js',
-//  'vendor/bower/bootstrap/js/scrollspy.js',
-//  'vendor/bower/bootstrap/js/tab.js',
-//  'vendor/bower/bootstrap/js/affix.js',
-  'src/js/plugins/*.js',
-  'src/js/common/_*.js'
-//  'src/js/_main.js'
+    'vendor/bower/bootstrap/js/transition.js',
+    'vendor/bower/bootstrap/js/alert.js',
+    'vendor/bower/bootstrap/js/button.js',
+    'vendor/bower/bootstrap/js/carousel.js',
+    'vendor/bower/bootstrap/js/collapse.js',
+    'vendor/bower/bootstrap/js/dropdown.js',
+    'vendor/bower/bootstrap/js/modal.js',
+    'vendor/bower/bootstrap/js/tooltip.js',
+    'vendor/bower/bootstrap/js/popover.js',
+    'vendor/bower/bootstrap/js/scrollspy.js',
+    'vendor/bower/bootstrap/js/tab.js',
+    'vendor/bower/bootstrap/js/affix.js',
+    'src/js/plugins/*.js',
+    'src/js/common/*.js',
+    'src/js/main.js'
 ];
 
 var gulp = require('gulp'),
-//var mainBowerFiles = require('main-bower-files'),
-  jshint = require('gulp-jshint'),
-  watch = require('gulp-watch'),
-  //less = require('gulp-less'),
-  path = require('path'),
-  less = require('gulp-less-sourcemap'),
-  minifyCSS = require('gulp-minify-css'),
-  sourcemaps = require('gulp-sourcemaps'),
-  concat = require('gulp-concat'),
-  uglify = require('gulp-uglify'),
-  rename = require("gulp-rename"),
-  browserSync = require('browser-sync'),
-  plumber = require('gulp-plumber'),
-//phantomjs = require('phantomjs'),
-//svgSprite = require("gulp-svg-sprites"),
-  copy = require("gulp-copy"),
-  autoprefixer = require('gulp-autoprefixer'),
-//consolidate = require('gulp-consolidate'),
-  svgmin = require('gulp-svgmin'),
-  gulpif = require('gulp-if'),
-//sprite = require('css-sprite').stream,
-  reload = browserSync.reload;
-  cheerio = require('gulp-cheerio');
+//mainBowerFiles = require('main-bower-files'), TODO: setup auto bower
+    jshint = require('gulp-jshint'),
+    watch = require('gulp-watch'),
+    path = require('path'),
+    less = require('gulp-less-sourcemap'),
+    minifyCSS = require('gulp-minify-css'),
+    sourcemaps = require('gulp-sourcemaps'),
+    concat = require('gulp-concat'),
+    uglify = require('gulp-uglify'),
+    rename = require("gulp-rename"),
+    browserSync = require('browser-sync'),
+    plumber = require('gulp-plumber'),
+    copy = require("gulp-copy"),
+    autoprefixer = require('gulp-autoprefixer'),
+    svgmin = require('gulp-svgmin'),
+    gulpif = require('gulp-if'),
+    reload = browserSync.reload;
+    cheerio = require('gulp-cheerio');
 
 
 /**********************************************************
@@ -62,238 +47,195 @@ var gulp = require('gulp'),
  * Browser-Sync
  */
 gulp.task('browser-sync', function () {
-  browserSync({
-    proxy: "dev.t3inf.com",
-    ghostMode: false,
-    open: false
-  });
+    browserSync({
+        proxy: "theme", // Must change to FQDN if used -- use dnsmasq to create 'fake domains'
+        ghostMode: false,
+        open: false
+    });
 });
 
 
 /*
- * Fonts
+ * Copy jQuery fallback
  */
-//gulp.task('copy-fonts', function () {
-//  return gulp.src('./src/fonts/**/*.{ttf,woff,eot,otf,svg}')
-//    .pipe(gulp.dest('./themes/' + theme_name + '/assets/fonts/'));
-//});
+gulp.task('jq-fallback', function () {
+    return gulp.src('./vendor/bower/jquery/dist/jquery.min.js')
+        .pipe(gulp.dest('./themes/' + theme_name + '/assets/js'));
+});
 
 
 /*
- * copy src images
+ * Copy fonts
  */
-gulp.task('copy_imgs', function () {
-  return gulp.src('./src/img/**/*.{jpg,png}')
-    .pipe(gulp.dest('./themes/' + theme_name + '/assets/img'));
+gulp.task('copy-fonts', function () {
+    return gulp.src('./src/fonts/**/*.{ttf,woff,eot,otf,svg}')
+        .pipe(gulp.dest('./themes/' + theme_name + '/assets/fonts/'));
 });
 
-gulp.task('copy_svgs', function () {
-  return gulp.src('./src/svg/hold/*.{svg,php}')
-    .pipe(gulp.dest('./themes/' + theme_name + '/assets/svg/'));
+
+/*
+ * Copy src images
+ */
+gulp.task('copy-imgs', function () {
+    return gulp.src('./src/img/**/*.{jpg,png}')
+        .pipe(gulp.dest('./themes/' + theme_name + '/assets/img'));
 });
+
 
 /*
  *  SVG
  */
 
-gulp.task('svg-min', function () {
-  return gulp.src('./src/svg/unprocessed/*.svg')
-    .pipe(svgmin({
-      plugins: [
-        {prettyPrint: true},
-        {removeDoctype: true},
-        {removeXMLProcInst: true},
-        {removeComments: true},
-        {removeMetadata: true},
-        {removeEditorsNSData: false},
-        {cleanupAttrs: true},
-        {convertStyleToAttrs: false},
-        {removeRasterImages: false},
-        {cleanupNumericValues: false},
-        {cleanupListOfValues: false},
-        {convertColors: false},
-        {removeUnknownsAndDefaults: false},
-        {removeNonInheritableGroupAttrs: true},
-        {removeUselessStrokeAndFill: false},
-        {removeViewBox: false},
-        {cleanupEnableBackground: true},
-        {removeHiddenElems: true},
-        {removeEmptyText: false},
-        {convertShapeToPath: true},
-        {moveElemsAttrsToGroup: true},
-        {moveGroupAttrsToElems: false},
-        {collapseGroups: false},
-        {convertPathData: false},
-        {convertTransform: true},
-        {removeEmptyAttrs: true},
-        {removeEmptyContainers: true},
-        {mergePaths: false},
-        {cleanupIDs: false},
-        {removeUnusedNS: true},
-        {transformsWithOnePath: false},
-        {sortAttrs: true},
-        {removeTitle: true},
-        {removeDesc: true}
-      ],
-      js2svg: {
-        pretty: true
-      }
-    }))
+gulp.task('svg_min', function () {
+    return gulp.src('./src/svg/unprocessed/*.svg')
+        .pipe(svgmin({
+            plugins: [
+                {prettyPrint: true},
+                {removeDoctype: true},
+                {removeXMLProcInst: true},
+                {removeComments: true},
+                {removeMetadata: true},
+                {removeEditorsNSData: false},
+                {cleanupAttrs: true},
+                {convertStyleToAttrs: false},
+                {removeRasterImages: false},
+                {cleanupNumericValues: false},
+                {cleanupListOfValues: false},
+                {convertColors: false},
+                {removeUnknownsAndDefaults: false},
+                {removeNonInheritableGroupAttrs: true},
+                {removeUselessStrokeAndFill: false},
+                {removeViewBox: false},
+                {cleanupEnableBackground: true},
+                {removeHiddenElems: true},
+                {removeEmptyText: false},
+                {convertShapeToPath: true},
+                {moveElemsAttrsToGroup: true},
+                {moveGroupAttrsToElems: false},
+                {collapseGroups: false},
+                {convertPathData: false},
+                {convertTransform: true},
+                {removeEmptyAttrs: true},
+                {removeEmptyContainers: true},
+                {mergePaths: false},
+                {cleanupIDs: false},
+                {removeUnusedNS: true},
+                {transformsWithOnePath: false},
+                {sortAttrs: true},
+                {removeTitle: true},
+                {removeDesc: true}
+            ],
+            js2svg: {
+                pretty: true
+            }
+        }))
 
-    .pipe(cheerio({
-      run: function ($, file) {
+        .pipe(cheerio({
+            run: function ($, file) {
 
 
-        // Elements on which we want to convert ids to classes...
-        var shapesAndText = 'g,path,rect,circle,ellipse,line,polyline,polygon,altGlyph,textPath,text,tref,tspan';
+                // Elements on which we want to convert ids to classes...
+                var shapesAndText = 'g,path,rect,circle,ellipse,line,polyline,polygon,altGlyph,textPath,text,tref,tspan';
 
-        // ...but don't touch any in defs/clipPath/masks tags
-        var excludeContainers = 'defs,clipPath,mask';
+                // ...but don't touch any in defs/clipPath/masks tags
+                var excludeContainers = 'defs,clipPath,mask';
 
-        function inExcludedContainer(index, node) {
-          return $(node).parents(excludeContainers).length;
-        }
+                function inExcludedContainer(index, node) {
+                    return $(node).parents(excludeContainers).length;
+                }
 
-        function convertIdToClass(index, node) {
-          var id = $(node).attr('id');
-          if (id) {
-            $(node).addClass(id);
-            $(node).removeAttr('id');
-          }
-        }
+                function convertIdToClass(index, node) {
+                    var id = $(node).attr('id');
+                    if (id) {
+                        $(node).addClass(id);
+                        $(node).removeAttr('id');
+                    }
+                }
 
-        $('svg').find(shapesAndText).not(inExcludedContainer).each(convertIdToClass);
+                $('svg').find(shapesAndText).not(inExcludedContainer).each(convertIdToClass);
 
-      },
+            },
 
-      parserOptions: {
-        xmlMode: true
-      }
+            parserOptions: {
+                xmlMode: true
+            }
 
-    }))
-    .pipe(gulp.dest('./src/svg/processed'));
+        }))
+        .pipe(gulp.dest('./src/svg/processed'));
 });
 
 
 // convert ids to classes
 gulp.task('id-to-class', function () {
-  return gulp
-    .src(['src/svg/processed/*.svg'])
-    .pipe(cheerio({
-      run: function ($, file) {
+    return gulp
+        .src(['src/svg/processed/*.svg'])
+        .pipe(cheerio({
+            run: function ($, file) {
 
 
-        // Elements on which we want to convert ids to classes...
-        var shapesAndText = 'g,path,rect,circle,ellipse,line,polyline,polygon,altGlyph,textPath,text,tref,tspan';
+                // Elements on which we want to convert ids to classes...
+                var shapesAndText = 'g,path,rect,circle,ellipse,line,polyline,polygon,altGlyph,textPath,text,tref,tspan';
 
-        // ...but don't touch any in defs/clipPath/masks tags
-        var excludeContainers = 'defs,clipPath,mask';
+                // ...but don't touch any in defs/clipPath/masks tags
+                var excludeContainers = 'defs,clipPath,mask';
 
-        function inExcludedContainer(index, node) {
-          return $(node).parents(excludeContainers).length;
-        }
+                function inExcludedContainer(index, node) {
+                    return $(node).parents(excludeContainers).length;
+                }
 
-        function convertIdToClass(index, node) {
-          var id = $(node).attr('id');
-          if (id) {
-            $(node).addClass(id);
-            $(node).removeAttr('id');
-          }
-        }
+                function convertIdToClass(index, node) {
+                    var id = $(node).attr('id');
+                    if (id) {
+                        $(node).addClass(id);
+                        $(node).removeAttr('id');
+                    }
+                }
 
-        $('svg').find(shapesAndText).not(inExcludedContainer).each(convertIdToClass);
+                $('svg').find(shapesAndText).not(inExcludedContainer).each(convertIdToClass);
 
-      },
+            },
 
-      parserOptions: {
-        xmlMode: true
-      }
+            parserOptions: {
+                xmlMode: true
+            }
 
-    }))
-    .pipe(gulp.dest('src/svg/processed2/'));
+        }))
+        .pipe(gulp.dest('src/svg/processed/'));
 });
-//var sprite_config = {
-//    templates: {
-//        css: require("fs").readFileSync("./src/less/sprite-template.less", "utf-8")
-//    },
-//    common: "sprite",
-//    cssFile: "src/less/svg-sprite.css",
-//    svgPath: "../img/%f",
-//    pngPath: "../img/%f",
-//    svg: {
-//        sprite: "spritesheet.svg"
-//    },
-//    preview: {
-//        sprite: "sprite-index.html"
-//    }
-//};
-//
-//gulp.task('svg-sprite', function () {
-//    return gulp.src('src/svg/sprites/*.svg')
-//        .pipe(plumber())
-//        .pipe(svgSprite(sprite_config))
-//        .pipe(gulp.dest('./themes/' + theme_name + '/assets/img'));
-//});
-//
-//
-//var symbol_config = {
-//    mode: "symbols",
-//    common: "symbol",
-//    svg: {
-//        symbols: "inline-symbols.svg.php"
-//    },
-//    preview: {
-//        symbols: "symbol-index.html"
-//    }
-//};
-//
-//gulp.task('svg-symbol', function () {
-//    return gulp.src('src/svg/symbols/*.svg')
-//        .pipe(plumber())
-//        .pipe(svgSprite(symbol_config))
-//        .pipe(gulp.dest('./themes/' + theme_name + '/assets/img'));
-//});
 
+
+gulp.task('copy-svgs', function () {
+    return gulp.src('./src/svg/processed/*.{svg,php}')
+        .pipe(gulp.dest('./themes/' + theme_name + '/assets/svg/'));
+});
 
 /*
  * Less / CSS
  */
 
 
-gulp.task('less_dev', function () {
-  gulp.src('src/less/main.less')
-    .pipe(less({
-      sourceMap: {
-        sourceMapRootpath: '/src/less' // Optional absolute or relative path to your LESS files
-      }
-    }))
-    //.pipe(autoprefixer())
-    .pipe(gulp.dest('./themes/' + theme_name + '/assets/css'));
+gulp.task('less-dev', function () {
+    gulp.src('src/less/_main.less')
+        .pipe(less({
+            sourceMap: {
+                sourceMapRootpath: '/src/less' // Optional absolute or relative path to your LESS files
+            }
+        }))
+        //.pipe(autoprefixer())
+        .pipe(gulp.dest('./themes/' + theme_name + '/assets/css'));
 });
 
-/*
-gulp.task('less_dev', function () {
-  gulp.src('src/less/main.less')
-    .pipe(sourcemaps.init())
-    .pipe(less())
-    .pipe(autoprefixer())
-//        .pipe(minifyCSS({keepBreaks: true, debug: true}))
-    .pipe(sourcemaps.write({includeContent: true}))
-//        .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./themes/' + theme_name + '/assets/css'));
-});
-*/
 
 gulp.task('less', function () {
-  gulp.src('src/less/main.less')
-    .pipe(less({
-      generateSourceMap: false,
-      paths: [path.join(__dirname)]
-    }))
-    .pipe(autoprefixer())
-    .pipe(minifyCSS({keepBreaks: false, debug: false}))
-    .pipe(rename('main.min.css'))
-    .pipe(gulp.dest('./themes/' + theme_name + '/assets/css'));
+    gulp.src('src/less/_main.less')
+        .pipe(less({
+            generateSourceMap: false,
+            paths: [path.join(__dirname)]
+        }))
+        .pipe(autoprefixer())
+        .pipe(minifyCSS({keepBreaks: false, debug: false}))
+        .pipe(rename('main.min.css'))
+        .pipe(gulp.dest('./themes/' + theme_name + '/assets/css'));
 });
 
 
@@ -302,36 +244,35 @@ gulp.task('less', function () {
  */
 
 
-
 gulp.task('js', function () {
-  gulp.src(js_foot)
-    .pipe(concat('js-foot.min.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('themes/' + theme_name + '/assets/js'))
+    gulp.src(js_foot)
+        .pipe(concat('main.min.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('themes/' + theme_name + '/assets/js'))
 });
 
 
-gulp.task('dev_js', function () {
-  gulp.src(js_foot)
-    .pipe(sourcemaps.init())
-    .pipe(concat('js-foot.js'))
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest('themes/' + theme_name + '/assets/js'))
+gulp.task('js-dev', function () {
+    gulp.src(js_foot)
+        .pipe(sourcemaps.init())
+        .pipe(concat('main.js'))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('themes/' + theme_name + '/assets/js'))
 });
 
 
 gulp.task('jshint', function () {
-  return gulp.src(['src/js/**/*.js'])
-    .pipe(jshint())
-    .pipe(jshint.reporter('default'));
+    return gulp.src(['src/js/**/*.js'])
+        .pipe(jshint())
+        .pipe(jshint.reporter('default'));
 });
 
 
 gulp.task('bower', function () {
-  return gulp.src(mainBowerFiles(/* options */), {base: 'vendor/bower'})
-    .pipe(concat('main.min.js'))
-    .pipe(jshint())
-    .pipe(gulp.dest('themes/' + theme_name + '/assets/js'))
+    return gulp.src(mainBowerFiles(/* options */), {base: 'vendor/bower'})
+        .pipe(concat('main.min.js'))
+        .pipe(jshint())
+        .pipe(gulp.dest('themes/' + theme_name + '/assets/js'))
 });
 
 /*
@@ -340,20 +281,20 @@ gulp.task('bower', function () {
 
 // Dev
 gulp.task('watch', ['browser-sync'], function () {
-  // watch PHP files
-  gulp.watch('themes/' + theme_name + '/**/*.php', browserSync.reload);
-  // watch less files
-  gulp.watch('src/less/**/*.less', ['less_dev', browserSync.reload]);
-  // watch scripts
-  gulp.watch('src/js/**/*.js', ['dev_js', browserSync.reload]);
-  // watch svg files
-  gulp.watch('src/svg/unprocessed/*.svg', ['svg-min', browserSync.reload]);
-  // watch img files
-  gulp.watch('src/img/**/*', ['copy_imgs', browserSync.reload]);
+    // watch PHP files
+    gulp.watch('themes/' + theme_name + '/**/*.php', browserSync.reload);
+    // watch less files
+    gulp.watch('src/less/**/*.less', ['less-dev', browserSync.reload]);
+    // watch scripts
+    gulp.watch('src/js/**/*.js', ['js-dev', browserSync.reload]);
+    // watch svg files
+    gulp.watch('src/svg/unprocessed/*.svg', ['svg-min', browserSync.reload]);
+    // watch img files
+    gulp.watch('src/img/**/*', ['copy-imgs', browserSync.reload]);
 });
 
 // Default task to be run with `gulp`
-gulp.task('dev-build', ['copy_imgs', 'less_dev', 'dev_js', 'jshint', 'watch', 'browser-sync']);
-gulp.task('dev-watch', ['less_dev', 'svg-min', 'dev_js', 'watch', 'browser-sync']);
-gulp.task('default', ['copy_imgs', 'copy_svgs', 'less', 'js']);
+gulp.task('dev-full', ['copy-fonts', 'copy-imgs', 'svg-min', 'copy-svgs', 'less-dev', 'js-dev', 'jshint', 'watch', 'browser-sync']);
+gulp.task('dev-main', ['less-dev', 'js-dev', 'watch', 'browser-sync']);
+gulp.task('default', ['copy-fonts', 'copy-imgs', 'copy-svgs', 'less', 'js', 'jq-fallback']);
 

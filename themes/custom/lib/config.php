@@ -14,7 +14,7 @@ add_theme_support('jquery-cdn');            // Enable to load jQuery from the Go
 define('GOOGLE_ANALYTICS_ID', ''); // UA-XXXXX-Y (Note: Universal Analytics only, not Classic Analytics)
 
 if (!defined('WP_ENV')) {
-  define('WP_ENV', 'production');  // scripts.php checks for values 'production' or 'development'
+  define('WP_ENV', 'prod');  // assets.php checks for value 'dev' or else defaults to 'prod'
 }
 
 /**
@@ -54,8 +54,7 @@ function custom_display_sidebar() {
      * Any of these page templates that return true won't show the sidebar
      */
     array(
-      'template-custom.php',
-      'templates/portfolio.php'
+      'template-custom.php'
     )
   );
 

@@ -21,14 +21,14 @@ function custom_scripts() {
   if (WP_ENV === 'dev') {
     $assets = array(
       'css'       => '/assets/css/main.css',
-      'js-foot'        => '/assets/js/js-foot.js',
+      'js'        => '/assets/js/main.js',
     // 'modernizr' => '/assets/vendor/modernizr/modernizr.js',
       'jquery'    => '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js'
     );
   } else {
     $assets     = array(
       'css'       => '/assets/css/main.min.css',
-      'js-foot'        => '/assets/js/js-foot.min.js',
+      'js'        => '/assets/js/main.min.js',
     //  'modernizr' => '/assets/js/vendor/modernizr.min.js',
       'jquery'    => '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'
     );
@@ -55,21 +55,13 @@ function custom_scripts() {
   //wp_enqueue_script('modernizr', get_template_directory_uri() . $assets['modernizr'], array(), null, false);
   wp_enqueue_script('jquery');
 
-  // scripts in header
-  //wp_enqueue_script('js-head', get_template_directory_uri() . $assets['js-head'], array(), null, false); // false
-  // indicates scripts in header
-  // scripts in footer
-  //wp_enqueue_script('js-foot', get_template_directory_uri() . $assets['js-foot'], array(), null, true); // true
-  // indicates scripts in footer
 
-
-  //wp_enqueue_script( 'js-foot', get_template_directory_uri().'/assets/js/ajax.js', 'jquery', true);
-  wp_enqueue_script( 'js-foot', get_template_directory_uri() . $assets['js-foot'], array(), null, true);
+  wp_enqueue_script( 'js', get_template_directory_uri() . $assets['js'], array(), null, true);
 
 
 
 
-  wp_localize_script( 'js-foot', 'ajax_handler', array(
+  wp_localize_script( 'js', 'ajax_handler', array(
       // URL to wp-admin/admin-ajax.php to process the request
       'ajaxurl'          => admin_url( 'admin-ajax.php' ),
 
@@ -91,7 +83,7 @@ function custom_jquery_local_fallback($src, $handle = null) {
   static $add_jquery_fallback = false;
 
   if ($add_jquery_fallback) {
-    echo '<script>window.jQuery || document.write(\'<script src="' . get_template_directory_uri() . '/assets/vendor/jquery/dist/jquery.min.js?1.11.1"><\/script>\')</script>' . "\n";
+    echo '<script>window.jQuery || document.write(\'<script src="' . get_template_directory_uri() . '/assets/js/jquery.min.js"><\/script>\')</script>' . "\n";
     $add_jquery_fallback = false;
   }
 
@@ -110,7 +102,7 @@ add_action('wp_head', 'custom_jquery_local_fallback');
  */
 function custom_google_analytics() { ?>
 <script>
-  <?php if (WP_ENV === 'production') : ?>
+  <?php if (WP_ENV === 'prod') : ?>
     (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
     function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
     e=o.createElement(i);r=o.getElementsByTagName(i)[0];
@@ -125,6 +117,6 @@ function custom_google_analytics() { ?>
 </script>
 
 <?php }
-if (GOOGLE_ANALYTICS_ID && (WP_ENV !== 'production' || !current_user_can('manage_options'))) {
+if (GOOGLE_ANALYTICS_ID && (WP_ENV !== 'prod' || !current_user_can('manage_options'))) {
   add_action('wp_footer', 'custom_google_analytics', 20);
 }
