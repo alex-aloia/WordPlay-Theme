@@ -48,7 +48,7 @@ var gulp = require('gulp'),
  */
 gulp.task('browser-sync', function () {
     browserSync({
-        proxy: "theme", // Must change to FQDN if used -- use dnsmasq to create 'fake domains'
+        proxy: "dev.theme.com", // Must change to FQDN if used -- use dnsmasq to create 'fake domains'
         ghostMode: false,
         open: false
     });
