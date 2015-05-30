@@ -86,7 +86,7 @@ gulp.task('copy-imgs', function () {
  *  SVG
  */
 
-gulp.task('svg_min', function () {
+gulp.task('svg-min', function () {
     return gulp.src('./src/svg/unprocessed/*.svg')
         .pipe(svgmin({
             plugins: [
@@ -215,7 +215,7 @@ gulp.task('copy-svgs', function () {
 
 
 gulp.task('less-dev', function () {
-    gulp.src('src/less/_main.less')
+    gulp.src('src/less/main.less')
         .pipe(less({
             sourceMap: {
                 sourceMapRootpath: '/src/less' // Optional absolute or relative path to your LESS files
@@ -227,7 +227,7 @@ gulp.task('less-dev', function () {
 
 
 gulp.task('less', function () {
-    gulp.src('src/less/_main.less')
+    gulp.src('src/less/main.less')
         .pipe(less({
             generateSourceMap: false,
             paths: [path.join(__dirname)]
@@ -294,7 +294,7 @@ gulp.task('watch', ['browser-sync'], function () {
 });
 
 // Default task to be run with `gulp`
-gulp.task('dev-full', ['copy-fonts', 'copy-imgs', 'svg-min', 'copy-svgs', 'less-dev', 'js-dev', 'jshint', 'watch', 'browser-sync']);
-gulp.task('dev-main', ['less-dev', 'js-dev', 'watch', 'browser-sync']);
+gulp.task('dev-build', ['copy-fonts', 'copy-imgs', 'svg-min', 'copy-svgs', 'less-dev', 'js-dev']);
+gulp.task('dev-watch', ['less-dev', 'js-dev', 'jshint', 'watch', 'browser-sync']);
 gulp.task('default', ['copy-fonts', 'copy-imgs', 'copy-svgs', 'less', 'js', 'jq-fallback']);
 
