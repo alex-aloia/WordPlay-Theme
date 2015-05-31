@@ -1,32 +1,37 @@
-#portfolio .content {
-  z-index: -1;
+#portfolio {
+  position: relative;
 
-  > ul {
-    list-style: none;
-    min-height: 800px;
-    display: block;
-    position: relative;
+  .content {
+    z-index: -1;
+    margin-top: 20px;
 
-    padding-bottom: 100px;
+    > ul {
+      list-style: none;
+      min-height: 800px;
+      display: block;
+      position: relative;
 
-    > li {
-      display: inline-block;
-      .trans();
+      padding: 0 0 100px 0;
 
-      &:last-child {
-        padding-bottom: 150px;
+      > li {
+        display: inline-block;
+        .trans();
+
+        &:last-child {
+          padding-bottom: 150px;
+        }
+
+        svg {
+          width: 1px;
+          height: 1px;
+          position: absolute;
+        }
+        img {
+          width: 100%;
+        }
       }
 
-      svg {
-        width: 1px;
-        height: 1px;
-        position: absolute;
-      }
-      img {
-        width: 100%;
-      }
     }
-
   }
 }
 
@@ -56,36 +61,28 @@
   display: none;
   fill: @brand-primary;
   position: absolute;
-  top: -20px;
-  right: 0;
+  top: -45px;
+  right: 28px;
   width: 36px;
 }
 
 #portDetailWrap {
   .container();
-
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  z-index: 5;
-
-  display: table;
+  margin-top: 20px;
+  margin-bottom: 60px;
+  //display: table;
 
   .portDetail {
     .make-row();
-    .trans();
 
-    display: table-row;
-    z-index: -1;
-
+    //display: table-row;
     .imgContainer,
     .txtContainer {
+      .trans();
       .make-xs-column(12);
-      .make-sm-column(6);
-      display: table-cell;
-      float: none !important;
+      .make-md-column(6);
+      //display: table-cell;
+      //float: none !important;
 
     }
 
@@ -97,10 +94,6 @@
 
     .txtContainer {
       .txtContent {
-        position: absolute;
-        top: 50%;
-        width: 100%;
-        transform: translate(0, -50%);
         font-family: Orbitron;
 
         h3 {

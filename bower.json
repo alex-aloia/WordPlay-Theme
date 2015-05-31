@@ -22,8 +22,7 @@
     "jquery.center.js": "~0.3.0",
     "imagesloaded": "~3.1.8",
     "hammer.js": "~2.0.4",
-    "video.js": "~5",
-    "jquery-disablescroll": "https://github.com/ultrapasty/jquery-disablescroll.git"
+    "video.js": "~5"
   },
   "resolutions": {
     "bootstrap": "~3.3.0",
