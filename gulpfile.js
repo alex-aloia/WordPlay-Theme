@@ -232,7 +232,7 @@ gulp.task('less', function () {
             generateSourceMap: false,
             paths: [path.join(__dirname)]
         }))
-        .pipe(autoprefixer())
+        //.pipe(autoprefixer())
         .pipe(minifyCSS({keepBreaks: false, debug: false}))
         .pipe(rename('main.min.css'))
         .pipe(gulp.dest('./themes/' + theme_name + '/assets/css'));
